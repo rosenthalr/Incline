@@ -1,22 +1,26 @@
 <ion-content>
 
     <ion-list>
-      <form #loginForm="ngForm" (ngSubmit)="checkLogin(loginForm.form);">
+      <form #loginForm="ngForm" (ngSubmit)="checkLogin(loginForm.value);">
 
         <h2 class="Login">Login</h2>
 
         <div class="input-container">
           <ion-item class='input-group'>
             <ion-label class='Field-Label' floating>Email</ion-label>
-            <ion-input type="text" name='email' ngModel value=""></ion-input>
+            <ion-input type="text" name="email"  ngModel value=""></ion-input>
           </ion-item>
         </div>
-    
+
         <div class="input-container">
           <ion-item class='input-group'>
             <ion-label class='Field-Label' floating>Password</ion-label>
-            <ion-input type="password" ngModel name='password' value=""></ion-input>
+            <ion-input type="password" name="password" ngModel value=""></ion-input>
           </ion-item>
+        </div>
+
+        <div>
+          {{this.loginMessage}}
         </div>
 
         <div>
@@ -30,7 +34,7 @@
               </div>
             </div>
             
-          </div>
+        </div>
 
         </form>
 
