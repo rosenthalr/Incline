@@ -12,10 +12,33 @@ import 'rxjs/add/operator/map';
 
 export class LoginPage {
   
-  public loginMessage: string
- 
+  public loginMessage: string;
+  public active: boolean;
+  public email: string;
+  public password: string;
+  public isComplete: boolean;
+
   constructor(private loginService: LoginService) {
     this.loginMessage = " ";
+    this.active = false;
+    this.isComplete = false;
+  }
+
+  checkIfComplete(userInfo, field) {
+
+    if(field == 'email') {
+      this.email = userInfo;
+    } else {
+      this.password = userInfo;
+    }
+
+    if(this.email && this.password) {
+       this.active = true;
+       this.isComplete = true;
+     } else {
+       this.active = false;
+       this.isComplete = false;
+     }
   }
 
   login(userInfo) {

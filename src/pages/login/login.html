@@ -1,10 +1,19 @@
 <ion-content>
 
+  
+
   <ion-row class='container'>
     <ion-col class='imgContainer'>
-        <!-- <ion-img class='login-graphic' style="width: 100%; height: 170.5px;" src="../../assets/imgs/login-graphic.png"></ion-img> -->
+
     </ion-col>
   </ion-row>
+
+  <ion-row class='container2'>
+      <ion-col class='logoContainer'>
+          <button type='button' class='Mask' ion-button icon-only>
+          </button>
+      </ion-col>
+    </ion-row>
 
     <ion-list>
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value);">
@@ -14,14 +23,14 @@
         <div class="input-container">
           <ion-item class='input-group'>
             <ion-label class='Field-Label' floating>Email</ion-label>
-            <ion-input type="text" name="email"  ngModel value=""></ion-input>
+            <ion-input type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
         </div>
 
         <div class="input-container">
           <ion-item class='input-group'>
             <ion-label class='Field-Label' floating>Password</ion-label>
-            <ion-input type="password" name="password" ngModel value=""></ion-input>
+            <ion-input type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
           </ion-item>
         </div>
 
@@ -30,7 +39,9 @@
         </div>
 
         <div>
-            <button class='login-btn Rectangle-3' ion-button>LOGIN</button>
+            <button  type='button' class='login-btn Rectangle-3' [ngClass]="{'active': active === true }" 
+            [disabled]="isComplete == false" 
+            ion-button>LOGIN</button>
       
             <div class='Forgot-password'>Forgot password?</div>
             <div class='newUser'>
