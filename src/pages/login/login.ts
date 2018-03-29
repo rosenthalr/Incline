@@ -26,7 +26,7 @@ export class LoginPage {
 
     this.loginService.login(user).subscribe(
       data => {
-        // refresh the list
+        // log the success message to the console
         console.log(data);
         return true;
       },
