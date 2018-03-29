@@ -14,7 +14,7 @@ export class LoginService {
 
   login(user) {
     let body = JSON.stringify(user);
-    return this.http.post('/login', body);
+    return this.http.post('http://localhost:7000/login', body);
   }
 
 }

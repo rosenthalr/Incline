@@ -20,7 +20,7 @@ export class LoginPage {
 
   login(userInfo) {
       let user = {
-        email: userInfo.email,
+        username: userInfo.email,
         password: userInfo.password
       };
 
