@@ -26,8 +26,11 @@ export class LoginPage {
 
     this.loginService.login(user).subscribe(
       data => {
+
         // log the success message to the console
         console.log(data);
+
+        // Not sure why I need to return true, but it doesn't work when I remove it
         return true;
       },
       error => {
@@ -36,42 +39,5 @@ export class LoginPage {
       }
     );
   }
-
-
-
-
-  /*
-  ionViewDidLoad(){
-    this.loginService.login()
-      .subscribe(response => this.users = response);
-  }
-  */
-  
-  
-  /*
-  checkLogin(userInfo) {
-
-    this.users.forEach(element => {
-
-      if( (userInfo.email == element.email) && (userInfo.password != element.password) ){
-        
-        // If current user's email address matches, but password does not
-        this.loginMessage = "Wrong password"
-
-      } else if( (userInfo.email == element.email) && (userInfo.password == element.password) ) {
-        
-        // If current user's email and password matches
-        this.loginMessage = "success";
-
-      } else {
-
-        // If cannot find email address
-        this.loginMessage = "account not recognized"
-
-      }
-    
-    });
-  }
-*/
 
 }
