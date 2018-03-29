@@ -12,7 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 
 // Including http module for use on login page
-import { HttpModule } from "@angular/http";
+import { HttpClientModule } from '@angular/common/http';
 
 // Import LoginService that is used to get users from db
 import { LoginService } from "../services/login.service";
@@ -26,7 +26,7 @@ import { LoginService } from "../services/login.service";
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
     IonicModule.forRoot(MyApp)
   ],

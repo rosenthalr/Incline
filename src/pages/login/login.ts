@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import { LoginService } from '../../services/login.service';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { LoginService } from '../../services/login.service';
 
 
 @Component({
@@ -11,20 +11,45 @@ import { LoginService } from '../../services/login.service';
 })
 
 export class LoginPage {
-  users: { email: string, password: string }[]
-  loginMessage: string
+  
+  public loginMessage: string
  
-  constructor(public http: Http, private loginService: LoginService) {
+  constructor(private loginService: LoginService) {
     this.loginMessage = " ";
   }
 
-  ionViewDidLoad(){
-    this.loginService.getUsers()
-      .subscribe(response => this.users = response);
+  login(userInfo) {
+      let user = {
+        email: userInfo.email,
+        password: userInfo.password
+      };
+
+    this.loginService.login(user).subscribe(
+      data => {
+        // refresh the list
+        console.log(data);
+        return true;
+      },
+      error => {
+        console.error("Error logging in user!");
+        return Observable.throw(error);
+      }
+    );
   }
 
-  checkLogin(userInfo) {
 
+
+
+  /*
+  ionViewDidLoad(){
+    this.loginService.login()
+      .subscribe(response => this.users = response);
+  }
+  */
+  
+  
+  /*
+  checkLogin(userInfo) {
 
     this.users.forEach(element => {
 
@@ -46,7 +71,7 @@ export class LoginPage {
       }
     
     });
-
   }
+*/
 
 }
