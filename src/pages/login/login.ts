@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
+import { NavController } from 'ionic-angular';
+import { SuccessPage } from '../success/success';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -12,15 +14,13 @@ import 'rxjs/add/operator/map';
 
 export class LoginPage {
   
-  public loginMessage: string;
   public active: boolean;
   public email: string;
   public password: string;
   public isComplete: boolean;
   public emailError: boolean;
 
-  constructor(private loginService: LoginService) {
-    this.loginMessage = " ";
+  constructor(private loginService: LoginService, public navCtrl: NavController) {
     this.active = false;
     this.isComplete = false;
     this.emailError = false;
@@ -57,8 +57,10 @@ export class LoginPage {
         // log the success message to the console
         console.log(data);
         this.emailError = false;
+
+        this.navCtrl.push(SuccessPage);
         // Not sure why I need to return true, but it doesn't work when I remove it
-        return true;
+        //return true;
       },
       error => {
         this.emailError = true;

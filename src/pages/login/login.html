@@ -25,6 +25,7 @@
             <ion-label  class='Field-Label' [ngClass]="{'error': emailError == true }" floating>Email</ion-label>
             <ion-input class='Field-Input Email-Input' [ngClass]="{'error': emailError == true }" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
+          <ion-item [hidden]='emailError != true' class='Error-Text'>Hmm...We don't have an account for this email.</ion-item>
         </div>
 
         <div class="input-container">
@@ -32,10 +33,6 @@
             <ion-label class='Field-Label' floating>Password</ion-label>
             <ion-input class='Field-Input' type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
           </ion-item>
-        </div>
-
-        <div>
-          {{this.loginMessage}}
         </div>
 
         <div>

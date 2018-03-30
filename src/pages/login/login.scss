@@ -109,6 +109,26 @@
     color: #d0021b !important;
     color: var(--error-red);
   }
+
+  .Error-Text {
+    background: transparent;
+    height: 11px;
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #d0021b;
+    color: var(--error-red);
+    width: 64.2667%;
+    margin: 0 auto;
+    z-index: 5;
+    padding-left: 0px;
+    margin-top: -12px;
+  }
   .floating {
     font-family: Lato;
     font-size: 9px;
@@ -144,16 +164,19 @@
       padding-left:0px;
   }
 
-  .list-ios .item-block .item-inner{
-      border-bottom: solid 0px var(--black) !important;
+  .item-ios.item-block .item-inner{
+    border-bottom: 0px !important;
   }
 
   .Field-Input {
-    border-bottom: solid 1px var(--black);
+    border-bottom: solid 2px var(--black);
   }
 
-  .Email-Input.error {
-    border-bottom: solid 1px var(--error-red);
+  .Field-Input.Email-Input.error {
+    border-bottom: solid 2px var(--error-red);
+  }
+  .text-input{
+    color: var(--black);
   }
 
   .login-btn{
