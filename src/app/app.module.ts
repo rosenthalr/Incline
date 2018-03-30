@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { SuccessPage } from '../pages/success/success';
+import { TestPage } from '../pages/test/test';
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +24,9 @@ import { LoginService } from "../services/login.service";
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    SuccessPage,
+    TestPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { LoginService } from "../services/login.service";
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    SuccessPage,
+    TestPage
   ],
   providers: [
     StatusBar,

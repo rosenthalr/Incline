@@ -1,0 +1,49 @@
+
+.contentBackground{
+    background-image: url('../assets/imgs/successBackground.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100%;
+}
+
+.youDidIt {
+    font-family: AvenirNext;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    // color: #1ea09f;
+    // color: var(--tealish);
+}
+
+.successMessage{
+    font-family: Lato;
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.startButton{
+    width: 255px;
+    height: 44px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    color: #ffffff;
+    background-color: #6addcb;
+    border-radius: 10px;
+}
+
+.content {
+    position: relative;
+    padding-top: 63%;
+}
