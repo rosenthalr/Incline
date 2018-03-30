@@ -14,7 +14,7 @@
   }
   /* Text styles */
   .h1-bold {
-    font-family: AvenirNext;
+    font-family: Lato;
     font-size: 36px;
     font-weight: bold;
     font-style: normal;
@@ -24,7 +24,7 @@
     text-align: center;
   }
   h1 {
-    font-family: AvenirNext;
+    font-family: Lato;
     font-size: 36px;
     font-weight: 600;
     font-style: normal;
@@ -193,7 +193,8 @@
   }
 
   .Rectangle-3.active {
-    background-color: rgb(133, 255, 236);
+    // background-color: rgb(133, 255, 236);
+    background-color: #6bddcb;
     opacity:1 !important;
   }
 
