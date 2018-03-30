@@ -178,6 +178,8 @@ $text-input-highlight-color-invalid: black !important;
 
   .Field-Input {
     border-bottom: solid 2px var(--black);
+    color: --var(black) !important;
+
   }
 
   .Field-Input.Email-Input.error {
@@ -336,37 +338,52 @@ $text-input-highlight-color-invalid: black !important;
   .item-md.item-input.input-has-focus .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
+    color: --var(black) !important;
   }
   
   .list-md .item-input.input-has-focus:last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
+    color: --var(black) !important;
+
   }
   
   .list-md .item-input.input-has-focus:last-child .item-inner {
     box-shadow: none;
+    color: --var(black) !important;
+
   }
   
   .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
+    color: --var(black) !important;
+
   }
   
   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
+    color: --var(black) !important;
+
   }
   
   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
     box-shadow: none;
+    color: --var(black) !important;
+
   }
   
   .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
+    color: --var(black) !important;
+
   }
   
   .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
+    color: --var(black) !important;
+
   }
