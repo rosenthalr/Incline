@@ -17,11 +17,13 @@ export class LoginPage {
   public email: string;
   public password: string;
   public isComplete: boolean;
+  public emailError: boolean;
 
   constructor(private loginService: LoginService) {
     this.loginMessage = " ";
     this.active = false;
     this.isComplete = false;
+    this.emailError = false;
   }
 
   checkIfComplete(userInfo, field) {
@@ -42,6 +44,8 @@ export class LoginPage {
   }
 
   login(userInfo) {
+    console.log(userInfo);
+
       let user = {
         username: userInfo.email,
         password: userInfo.password
@@ -52,11 +56,12 @@ export class LoginPage {
 
         // log the success message to the console
         console.log(data);
-
+        this.emailError = false;
         // Not sure why I need to return true, but it doesn't work when I remove it
         return true;
       },
       error => {
+        this.emailError = true;
         console.error("Error logging in user!");
         return Observable.throw(error);
       }

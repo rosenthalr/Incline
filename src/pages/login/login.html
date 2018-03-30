@@ -22,15 +22,15 @@
 
         <div class="input-container">
           <ion-item class='input-group'>
-            <ion-label class='Field-Label' floating>Email</ion-label>
-            <ion-input type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
+            <ion-label  class='Field-Label' [ngClass]="{'error': emailError == true }" floating>Email</ion-label>
+            <ion-input class='Field-Input Email-Input' [ngClass]="{'error': emailError == true }" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
         </div>
 
         <div class="input-container">
           <ion-item class='input-group'>
             <ion-label class='Field-Label' floating>Password</ion-label>
-            <ion-input type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
+            <ion-input class='Field-Input' type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
           </ion-item>
         </div>
 
@@ -39,7 +39,7 @@
         </div>
 
         <div>
-            <button  type='button' class='login-btn Rectangle-3' [ngClass]="{'active': active === true }" 
+            <button   class='login-btn Rectangle-3' [ngClass]="{'active': active === true }" 
             [disabled]="isComplete == false" 
             ion-button>LOGIN</button>
       

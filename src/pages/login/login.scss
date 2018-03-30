@@ -106,7 +106,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #d0021b;
+    color: #d0021b !important;
     color: var(--error-red);
   }
   .floating {
@@ -145,7 +145,15 @@
   }
 
   .list-ios .item-block .item-inner{
-      border-bottom: solid 2px var(--black) !important;
+      border-bottom: solid 0px var(--black) !important;
+  }
+
+  .Field-Input {
+    border-bottom: solid 1px var(--black);
+  }
+
+  .Email-Input.error {
+    border-bottom: solid 1px var(--error-red);
   }
 
   .login-btn{
