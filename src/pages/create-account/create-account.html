@@ -51,7 +51,7 @@ Ionic pages and navigation.
     
     
       <div>
-        <button id = "submit" [ngClass]="{'isComplete': isComplete === true }" [disabled]="isComplete == false"  ion-button> CREATE</button>
+        <button id = "submit" (click)="goToSuccessPage()" ion-button> CREATE</button>
       </div>
     
       <div class= "return">
@@ -60,3 +60,6 @@ Ionic pages and navigation.
       </div>
     
     </ion-content>
+
+
+    <!-- [ngClass]="{'isComplete': isComplete === true }" [disabled]="isComplete == false"  -->

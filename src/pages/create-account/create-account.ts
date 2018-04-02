@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { SuccessPage } from '../success/success';
 
 
 
@@ -60,6 +61,10 @@ export class CreateAccountPage {
 
   goToLogin(){
     this.navCtrl.pop();
+  }
+
+  goToSuccessPage(){
+    this.navCtrl.push(SuccessPage);
   }
 
   ionViewDidLoad() {
