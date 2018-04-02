@@ -58,7 +58,6 @@ export class LoginPage {
       data => {
 
         // log the success message to the console
-        console.log(data);
         this.emailError = false;
         this.passwordError = false;
         this.navCtrl.push(SuccessPage);
