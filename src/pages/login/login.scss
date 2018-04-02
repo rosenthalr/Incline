@@ -110,7 +110,7 @@ $text-input-highlight-color-invalid: black !important;
     letter-spacing: normal;
     text-align: left;
     color: #d0021b !important;
-    color: var(--error-red);
+    color: var(--error-red) !important;
   }
 
   .Error-Text {
@@ -124,8 +124,8 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #d0021b;
-    color: var(--error-red);
+    color: #d0021b !important;
+    color: var(--error-red) !important;
     width: 64.2667%;
     margin: 0 auto;
     z-index: 5;
@@ -339,6 +339,14 @@ $text-input-highlight-color-invalid: black !important;
     border-bottom-color: transparent !important;
     box-shadow: none !important;
     color: --var(black) !important;
+  }
+
+  .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+    color: #999!important;
+  }
+
+.label-md.error {
+    color: var(--error-red) !important;
   }
   
   .list-md .item-input.input-has-focus:last-child {
