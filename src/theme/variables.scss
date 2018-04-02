@@ -88,3 +88,31 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  src: url('../assets/fonts/Open_Sans/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  font-style: normal;
+  src: url('../assets/fonts/Avenir Next/AvenirNextLTPro-Demi.otf');
+}
+
+@font-face {
+  font-family: 'Avenir Next_Bold';
+  font-style: normal;
+  src: url('../assets/fonts/Avenir Next/AvenirNextLTPro-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  src: url('../assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+// h1 {
+//   font-family: 'Open Sans' !important;
+// }
