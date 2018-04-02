@@ -1,0 +1,389 @@
+$text-input-highlight-color-valid: black !important;
+$text-input-highlight-color-invalid: black !important;
+
+:root {
+    --dark-sky-blue: #59a9e4;
+    --cerulean: #0477d6;
+    --light-teal: #6bddcb;
+    --tealish: #1ea09f;
+    --orange: #ff6a00;
+    --error-red: #d0021b;
+    --pink: #fc355f;
+    --black: #000000;
+    --grey: #999999;
+    --white: #fafafa;
+    --white-two: #ffffff;
+    --light-aqua: #85ffec;
+  }
+  /* Text styles */
+  .h1-bold {
+    font-family: Lato;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  h1 {
+    font-family: Lato;
+    font-size: 36px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    color: var(--black);
+  }
+  h2 {
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  .h3-linked {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #0477d6;
+    color: var(--cerulean);
+  }
+  h3 {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: left;
+  }
+  button {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  h3 {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: left;
+  }
+  input {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  .error {
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #d0021b !important;
+    color: var(--error-red);
+  }
+
+  .Error-Text {
+    background: transparent;
+    height: 11px;
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #d0021b;
+    color: var(--error-red);
+    width: 64.2667%;
+    margin: 0 auto;
+    z-index: 5;
+    padding-left: 0px;
+    margin-top: -12px;
+  }
+  .floating {
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .Field-Label {
+    width: 241px;
+    height: 15px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #696969;
+  }
+
+
+.input-container{
+    height:79px;
+}
+  .input-group {
+      width:64.2667%;
+      margin:0 auto;
+      padding-left:0px;
+  }
+
+  .item-ios.item-block .item-inner, .item-input-has-focus{
+    border-bottom: 0px !important;
+  }
+
+  .list-md .item-block .item-inner {
+    border-bottom: 0px !important;
+
+  }
+
+  .Field-Input {
+    border-bottom: solid 2px var(--black);
+    color: --var(black) !important;
+
+  }
+
+  .Field-Input.Email-Input.error {
+    border-bottom: solid 2px var(--error-red);
+  }
+  .text-input{
+    color: var(--black);
+  }
+
+  .login-btn{
+    width: 255px;
+    height: 44px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    color: var(--black);
+    display:block;
+    margin:0 auto;
+  }
+
+  .Login {
+    margin-bottom: 0px;
+    height: 27px;
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4a4a4a;
+    margin-top: 35px;
+  }
+
+  .Rectangle-3 {
+    width: 255px;
+    height: 44px;
+    opacity: 0.49;
+    border-radius: 10px;
+    background-color: rgb(133, 255, 236);
+    margin-top:16px;
+    margin-bottom:16px;
+    transition: all 500ms ease;
+    opacity:.4 !important;
+  }
+
+  .Rectangle-3.active {
+    // background-color: rgb(133, 255, 236);
+    background-color: #6bddcb;
+    opacity:1 !important;
+  }
+
+ 
+  .Forgot-password {
+    width: 373px;
+    height: 17px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: #5c5b5c;
+  }
+
+  .newUser{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .newUser1{
+    width: 115px;
+    height: 17px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #4a4a4a;
+  }
+
+  .newUser2{
+    width: 93px;
+    height: 17px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #5c5b5c;
+  }
+
+  .login-btn.active {
+
+  }
+
+  .login-graphic {
+    background: #fff !important;
+  }
+
+  .container {
+    padding:0px !important;
+    position:relative;
+    margin-top:58.1px;
+  }
+
+  .container2 {
+    padding: 0px !important;
+    position: absolute;
+    top: 0px;
+    width:100%;
+  }
+
+  .imgContainer {
+    padding:0px !important;
+    width: 100%;
+    height: 170.5px;
+    background-image: url('../../assets/imgs/login-graphic.png');
+    background-size: cover;
+    margin-top:14px;
+  }
+
+  .logoContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .Mask {
+    border-radius: 50%;
+    width: 137px;
+    height: 137px;
+    opacity: 0.58;
+    background-color: #d6d6d6;
+  }
+
+
+  .item-md.item-input.input-has-focus .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    color: --var(black) !important;
+  }
+  
+  .list-md .item-input.input-has-focus:last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    color: --var(black) !important;
+
+  }
+  
+  .list-md .item-input.input-has-focus:last-child .item-inner {
+    box-shadow: none;
+    color: --var(black) !important;
+
+  }
+  
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    color: --var(black) !important;
+
+  }
+  
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    color: --var(black) !important;
+
+  }
+  
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
+    box-shadow: none;
+    color: --var(black) !important;
+
+  }
+  
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    color: --var(black) !important;
+
+  }
+  
+  .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    color: --var(black) !important;
+
+  }
