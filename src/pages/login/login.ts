@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
 import { SuccessPage } from '../success/success';
+import { CreateAccountPage } from '../create-account/create-account';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -28,6 +29,11 @@ export class LoginPage {
     this.emailError = false;
     this.passwordError = false;
   }
+
+  goToCreateAccountPage(){
+    this.navCtrl.push(CreateAccountPage);
+
+}
 
   checkIfComplete(userInfo, field) {
 

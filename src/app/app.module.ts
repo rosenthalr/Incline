@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
 import { TestPage } from '../pages/test/test';
+import { CreateAccountPage } from '../pages/create-account/create-account';
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +27,8 @@ import { LoginService } from "../services/login.service";
     HomePage,
     LoginPage,
     SuccessPage,
-    TestPage
+    TestPage,
+    CreateAccountPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { LoginService } from "../services/login.service";
     HomePage,
     LoginPage,
     SuccessPage,
-    TestPage
+    TestPage,
+    CreateAccountPage
   ],
   providers: [
     StatusBar,
