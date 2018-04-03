@@ -14,7 +14,10 @@ $text-input-highlight-color-invalid: black !important;
     --white: #fafafa;
     --white-two: #ffffff;
     --light-aqua: #85ffec;
+    --dark-grey: #4a4a4a;
   }
+
+
   /* Text styles */
   .h1-bold {
     font-family: Lato;
@@ -110,7 +113,6 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #d0021b !important;
     color: var(--error-red) !important;
   }
 
@@ -125,7 +127,6 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #d0021b !important;
     color: var(--error-red) !important;
     width: 64.2667%;
     margin: 0 auto;
@@ -155,7 +156,7 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #696969;
+    color: var(--grey);
   }
 
 
@@ -201,7 +202,6 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: #000000;
     color: var(--black);
     display:block;
     margin:0 auto;
@@ -218,7 +218,7 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: #4a4a4a;
+    color: var(--black);
     margin-top: 35px;
   }
 
@@ -227,7 +227,7 @@ $text-input-highlight-color-invalid: black !important;
     height: 44px;
     opacity: 0.49;
     border-radius: 10px;
-    background-color: rgb(133, 255, 236);
+    background-color: var(--light-teal);
     margin-top:16px;
     margin-bottom:16px;
     transition: all 500ms ease;
@@ -236,16 +236,15 @@ $text-input-highlight-color-invalid: black !important;
 
   .Rectangle-3.active {
     // background-color: rgb(133, 255, 236);
-    background-color: #6bddcb;
+    background-color: var(--light-teal);
     opacity:1 !important;
   }
 
  .signUp{
-  color: #488aff;
   text-decoration: underline;
   width: 140px;
-
  }
+
   .Forgot-password {
     width: 373px;
     height: 10px;
@@ -258,7 +257,7 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: center;
-    color: #5c5b5c;
+    color: var(--dark-grey);
   }
 
   .newUser{
@@ -280,7 +279,7 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: #4a4a4a;
+    color: var(--dark-grey);
   }
 
   .newUser2{
@@ -302,7 +301,7 @@ $text-input-highlight-color-invalid: black !important;
   }
 
   .login-graphic {
-    background: #fff !important;
+    background: var(--white) !important;
   }
 
   .container {
@@ -351,7 +350,7 @@ $text-input-highlight-color-invalid: black !important;
   }
 
   .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-    color: #999!important;
+    color: var(--grey) !important;
   }
 
 .label-md.error {
