@@ -7,87 +7,76 @@
 <ion-content>
     
     
-        <ion-icon name='arrow-back' id = 'back-button' (click)="goToLogin()"> </ion-icon>
-        <h3 class = 'create-account-header'>Create Account</h3>
+        <ion-icon name="arrow-back" id = "back-button" (click)="goToLogin()"> </ion-icon>
+        <h3 class="create-account-header">Create Account</h3>
       
 
     <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
 
-        <ion-item class = 'input-group'>
+        <ion-item class="input-group">
           <ion-label floating class='label'>First Name</ion-label>
-          <ion-input type="text" name="firstName" [ngModel]="user.firstName" [ngModelOptions] = "{ updateOn: 'blur' }"
+          <ion-input type="text" name="firstName" [ngModel]="user.firstName" [ngModelOptions]="{ updateOn: 'blur' }"
             required minlength="2" #firstName="ngModel"> </ion-input>
 
         </ion-item>
-        <ion-item no-lines class = 'error' [hidden]="firstName.valid || (firstName.pristine && !f.submitted)" >
+        <ion-item no-lines class="error" [hidden]="firstName.valid || (firstName.pristine && !f.submitted)" >
             First Name is required.
         </ion-item>
 
-        <ion-item class = 'input-group'>
-            <ion-label floating class='label'>Last Name</ion-label>
-            <ion-input type="text"  name="lastName" [ngModel]="user.lastName" [ngModelOptions] = "{ updateOn: 'blur' }"
+        <ion-item class="input-group">
+            <ion-label floating class="label">Last Name</ion-label>
+            <ion-input type="text"  name="lastName" [ngModel]="user.lastName" [ngModelOptions]="{ updateOn: 'blur' }"
               required minlength="2" #lastName="ngModel"> </ion-input>
            
           </ion-item>
-          <ion-item no-lines class = "error" [hidden]="lastName.valid || (lastName.pristine && !f.submitted)">
+          <ion-item no-lines class="error" [hidden]="lastName.valid || (lastName.pristine && !f.submitted)">
             Last Name is required.
         </ion-item>
     
 
-        <ion-item class = 'input-group'>
-            <ion-label floating class = 'label'>Email</ion-label>
+        <ion-item class="input-group">
+            <ion-label floating class="label">Email</ion-label>
 
-          <ion-input class= 'input' type="email"  name="email" [ngModel]="user.email" [ngModelOptions] = "{ updateOn: 'blur' }"
-            required  #email="ngModel"  ng-model-options="{ updateOn: 'blur' }" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"> </ion-input>
-            
-          <!--<pre *ngIf="email.errors" class="margin-20">{{ email.errors | json }}</pre>-->
+          <ion-input class="input" type="email"  name="email" [ngModel]="user.email" [ngModelOptions]="{ updateOn: "blur" }"
+            required  #email="ngModel"  ng-model-options="{ updateOn: "blur" }" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"> </ion-input>
+          
         </ion-item>
-        <ion-item no-lines class = 'error' [hidden]="email.valid || (email.pristine && !f.submitted)" >
+        <ion-item no-lines class="error" [hidden]="email.valid || (email.pristine && !f.submitted)" >
             Hmm...This email seems invalid.
         </ion-item>
 
-        <ion-item class = 'input-group'>
-            <ion-label floating class='label'>Password</ion-label>
+        <ion-item class="input-group">
+            <ion-label floating class="label">Password</ion-label>
 
-            <ion-input type="{{type}}" name="password" [ngModel]="user.password" [ngModelOptions] = "{ updateOn: 'blur' }"
+            <ion-input type="{{type}}" name="password" [ngModel]="user.password" [ngModelOptions]="{ updateOn: 'blur' }"
             required validateEqual="confirmPassword" minlength="6" reverse="true" #password="ngModel"></ion-input>
 
             <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
             <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
-          <!--<pre *ngIf="password.errors" class="margin-20">{{ password.errors | json }}</pre>-->
+    
         </ion-item>
-        <ion-item no-lines class = "error" [hidden]="password.valid || (password.pristine && !f.submitted)">
+        <ion-item no-lines class="error" [hidden]="password.valid || (password.pristine && !f.submitted)">
             Password must be at least 6 characters
         </ion-item>
 
 
-        <ion-item class = 'input-group'>
-          <ion-label floating class='label'>Confirm Password</ion-label>
+        <ion-item class="input-group">
+          <ion-label floating class="label">Confirm Password</ion-label>
 
-          <ion-input type="{{type2}}" name="confirmPassword" [ngModel]="user.confirmPassword" [ngModelOptions] = "{ updateOn: 'blur' }"
+          <ion-input type="{{type2}}" name="confirmPassword" [ngModel]="user.confirmPassword" [ngModelOptions]="{ updateOn: "blur" }"
             required validateEqual="password" reverse="false" #confirmPassword="ngModel"> </ion-input>
 
             <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
             <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
-          <!--<pre *ngIf="confirmPassword.errors" class="margin-20">{{ confirmPassword.errors | json }}</pre>-->
+          
         </ion-item>
         <ion-item no-lines class="error" [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)">
             Password mismatch
         </ion-item>
 
-        <!--
-        <button type="submit" class="btn btn-default">Submit</button>
-        
-        <div class="margin-20" *ngIf="f">
-            <div>Form details:-</div>
-            <pre>Is form valid?: <br>{{f.valid | json}}</pre>
-            <pre>Is form submitted?: <br>{{f.submitted | json}}</pre>
-            <pre>submitted value: <br>{{f.value | json}}</pre>
-        </div>
-        -->
         <div>
-            <button class='btn-create' [ngClass]="{'active': firstName.valid && lastName.valid && email.valid && password.valid && confirmPassword.valid }" 
-            [disabled]="firstName.invalid || lastName.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type = "submit" (click)="goToSuccessPage();" ion-button> CREATE</button>
+            <button class="btn-create" [ngClass]="{"active": firstName.valid && lastName.valid && email.valid && password.valid && confirmPassword.valid }" 
+            [disabled]="firstName.invalid || lastName.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" (click)="goToSuccessPage();" ion-button> CREATE</button>
         </div>
 
       

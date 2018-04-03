@@ -23,21 +23,19 @@ import { SuccessPage } from '../success/success';
 })
 export class CreateAccountPage implements OnInit {
 
-  public type = 'password';
-  public type2 = 'password';
-  public showPass = false;
-  public showPass2 = false;
-  public isComplete: boolean;
-  public emailError: boolean;
-  public passwordLengthError: boolean;
-  public passwordMatchError: boolean;
-  public firstName: string;
-  public lastName: string;
-  public email: string;
-  public password1: string;
-  public password2: string;
-  //public user : FormGroup;
-
+  public type='password';
+  public type2='password';
+  public showPass=false;
+  public showPass2=false;
+  public isComplete:boolean;
+  public emailError:boolean;
+  public passwordLengthError:boolean;
+  public passwordMatchError:boolean;
+  public firstName:string;
+  public lastName:string;
+  public email:string;
+  public password1:string;
+  public password2:string;
   public user: User;
   
     ngOnInit() {
@@ -57,15 +55,6 @@ export class CreateAccountPage implements OnInit {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    /*
-    this.user = new FormGroup({
-      firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      email: new FormControl('', [Validators.required,Validators.email]),
-      //password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      //confirmPassword: new FormControl('', [Validators.required, this.matchingPasswords("password", "confirmPassword")])
-      });
-      */
   }
 
 
@@ -141,37 +130,4 @@ export class CreateAccountPage implements OnInit {
          }
       }
 
-      /*
-      DB Connection 
-
-      CreateAccount(userInfo) {
-        console.log(userInfo);
-    
-          let user = {
-            firstName: userInfo.firstName,
-            lastName: userInfo.lastName,
-            username: userInfo.email,
-            password: userInfo.password
-          };
-    
-        this.CreateAccountService.createaccount(user).subscribe(
-          data => {
-    
-            // log the success message to the console
-            console.log(data);
-            this.emailError = false;
-    
-            //this.navCtrl.push(SuccessPage);
-            // Not sure why I need to return true, but it doesn't work when I remove it
-            //return true;
-          },
-          error => {
-            this.emailError = true;
-            console.error("");
-            return Observable.throw(error);
-          }
-        );
-      }
-
-*/
 }
