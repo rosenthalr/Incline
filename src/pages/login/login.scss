@@ -1,18 +1,4 @@
-:root {
-    --dark-sky-blue: #59a9e4;
-    --cerulean: #0477d6;
-    --light-teal: #6bddcb;
-    --tealish: #1ea09f;
-    --orange: #ff6a00;
-    --error-red: #d0021b;
-    --pink: #fc355f;
-    --black: #000000;
-    --grey: #999999;
-    --white: #fafafa;
-    --white-two: #ffffff;
-    --light-aqua: #85ffec;
-    --dark-grey: #4a4a4a;
-  }
+
 
 
   /* Text styles */
@@ -35,7 +21,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: var(--black);
+    color: color($colors,-black);
   }
   h2 {
     font-family: Lato;
@@ -56,7 +42,7 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: var(--cerulean);
+    color: color($colors,-cerulean);
   }
   h3 {
     font-family: Lato;
@@ -108,7 +94,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: var(--error-red) !important;
+    color: color($colors, -error-red) !important;
   }
 
   .Error-Text {
@@ -122,7 +108,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: var(--error-red) !important;
+    color: color($colors,-error-red) !important;
     width: 64.2667%;
     margin: 0 auto;
     z-index: 5;
@@ -151,7 +137,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: var(--grey);
+    color: color($colors, -grey);
   }
 
 
@@ -174,16 +160,16 @@
   }
 
   .Field-Input {
-    border-bottom: solid 2px var(--black);
-    color: var(--black) !important;
+    border-bottom: solid 2px color($colors,-black);
+    color: color($colors,-black) !important;
 
   }
 
   .Field-Input.Email-Input.error {
-    border-bottom: solid 2px var(--error-red);
+    border-bottom: solid 2px color($colors,-error-red);
   }
   .text-input{
-    color: var(--black);
+    color: color($colors,-black);
   }
 
   .login-btn{
@@ -197,7 +183,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: var(--black);
+    color: color($colors,-black);
     display:block;
     margin:0 auto;
   }
@@ -213,7 +199,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: var(--black);
+    color: color($colors,-black);
     margin-top: 35px;
   }
 
@@ -222,7 +208,7 @@
     height: 44px;
     opacity: 0.49;
     border-radius: 10px;
-    background-color: var(--light-teal);
+    background-color: color($colors,-light-teal);
     margin-top:16px;
     margin-bottom:16px;
     transition: all 500ms ease;
@@ -231,7 +217,7 @@
 
   .Rectangle-3.active {
     // background-color: rgb(133, 255, 236);
-    background-color: var(--light-teal);
+    background-color: color($colors,-light-teal);
     opacity:1 !important;
   }
 
@@ -252,7 +238,7 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: center;
-    color: var(--dark-grey);
+    color: color($colors, -dark-grey);
   }
 
   .newUser{
@@ -274,7 +260,7 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: var(--dark-grey);
+    color: color($colors,-dark-grey);
   }
 
   .newUser2{
@@ -288,11 +274,11 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: var(--dark-grey);
+    color: color($colors, -dark-grey);
   }
 
   .login-graphic {
-    background: var(--white) !important;
+    background: color($colors,-white) !important;
   }
 
   .container {
@@ -330,67 +316,67 @@
     width: 137px;
     height: 137px;
     opacity: 0.3;
-    background-color: var(--grey);
+    background-color: color($colors, -grey);
   }
 
 
   .item-md.item-input.input-has-focus .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: var(--black) !important;
+    color: color($colors, -black) !important;
   }
 
   .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-    color: var(--grey) !important;
+    color: color($colors, -grey) !important;
   }
 
 .label-md.error {
-    color: var(--error-red) !important;
+    color: color($colors, -error-red) !important;
   }
   
   .list-md .item-input.input-has-focus:last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: var(--black) !important;
+    color: color($colors, -black) !important;
 
   }
   
   .list-md .item-input.input-has-focus:last-child .item-inner {
     box-shadow: none;
-    color: var(--black) !important;
+    color: color($colors, -black) !important;
 
   }
   
   .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: var(--black) !important;
+    color: color($colors, -black) !important;
 
   }
   
   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: var(--black) !important;
+    color: color($colors, -black) !important;
 
   }
   
   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
     box-shadow: none;
-    color: var(--black) !important;
+    color: color($colors, -black) !important;
 
   }
   
   .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: var(--black) !important;
+    color: color($colors, -black) !important;
 
   }
   
   .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: var(--black) !important;
+    color: color($colors, -black)!important;
 
   }
