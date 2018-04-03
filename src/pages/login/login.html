@@ -22,22 +22,22 @@
 
         <div class="input-container">
           <ion-item class="input-group">
-            <ion-label  class="Field-Label" [ngClass]="{"error": emailError==true}" floating>Email</ion-label>
-            <ion-input class="Field-Input Email-Input" [ngClass]="{"error": emailError==true}" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, "email")" value=""></ion-input>
+            <ion-label  class="Field-Label" [ngClass]="{'error': emailError == true }" floating>Email</ion-label>
+            <ion-input class="Field-Input Email-Input" [ngClass]="{'error': emailError == true }" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
           <ion-item [hidden]="emailError != true" class="Error-Text">Hmm...We don't have an account for this email.</ion-item>
         </div>
 
         <div class="input-container">
           <ion-item class="input-group">
-            <ion-label class="Field-Label" [ngClass]="{"error": passwordError==true}" floating>Password</ion-label>
-            <ion-input class="Field-Input" [ngClass]="{"error": passwordError==true}" type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, "password")"  value=""></ion-input>
+            <ion-label class="Field-Label" [ngClass]="{'error': passwordError == true }" floating>Password</ion-label>
+            <ion-input class="Field-Input"  [ngClass]="{'error': passwordError == true }" type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
           </ion-item>
           <ion-item [hidden]="passwordError != true" class="Error-Text">Hmm...That's not the correct password.</ion-item>
         </div>
 
         <div>
-            <button class="login-btn Rectangle-3" [ngClass]="{"active": active===true}" 
+            <button   class="login-btn Rectangle-3" [ngClass]="{'active': active === true }" 
             [disabled]="isComplete == false" 
             ion-button>LOGIN</button>
       
