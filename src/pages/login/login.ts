@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
 import { SuccessPage } from '../success/success';
+import { CreateAccountPage } from '../create-account/create-account';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -19,12 +20,20 @@ export class LoginPage {
   public password: string;
   public isComplete: boolean;
   public emailError: boolean;
+  public passwordError: boolean;
+
 
   constructor(private loginService: LoginService, public navCtrl: NavController) {
     this.active = false;
     this.isComplete = false;
     this.emailError = false;
+    this.passwordError = false;
   }
+
+  goToCreateAccountPage(){
+    this.navCtrl.push(CreateAccountPage);
+
+}
 
   checkIfComplete(userInfo, field) {
 
@@ -47,7 +56,7 @@ export class LoginPage {
     console.log(userInfo);
 
       let user = {
-        username: userInfo.email,
+        email: userInfo.email,
         password: userInfo.password
       };
 
@@ -55,16 +64,21 @@ export class LoginPage {
       data => {
 
         // log the success message to the console
-        console.log(data);
         this.emailError = false;
-
+        this.passwordError = false;
         this.navCtrl.push(SuccessPage);
         // Not sure why I need to return true, but it doesn't work when I remove it
         //return true;
       },
       error => {
-        this.emailError = true;
-        console.error("Error logging in user!");
+       const errorMessage = error.error.info.message
+        if(errorMessage == 'Wrong Email') {
+          this.emailError = true;
+        } else {
+          this.passwordError = true;
+          this.emailError = false;
+        }
+
         return Observable.throw(error);
       }
     );
