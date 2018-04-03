@@ -14,8 +14,8 @@
     <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
 
         <ion-item class="input-group">
-          <ion-label floating class='label'>First Name</ion-label>
-          <ion-input type="text" name="firstName" [ngModel]="user.firstName" [ngModelOptions]="{ updateOn: 'blur' }"
+          <ion-label floating class="label">First Name</ion-label>
+          <ion-input type="text" name="firstName" [ngModel]="user.firstName" [ngModelOptions]="{ updateOn: "blur" }"
             required minlength="2" #firstName="ngModel"> </ion-input>
 
         </ion-item>
@@ -25,7 +25,7 @@
 
         <ion-item class="input-group">
             <ion-label floating class="label">Last Name</ion-label>
-            <ion-input type="text"  name="lastName" [ngModel]="user.lastName" [ngModelOptions]="{ updateOn: 'blur' }"
+            <ion-input type="text"  name="lastName" [ngModel]="user.lastName" [ngModelOptions]="{ updateOn: "blur" }"
               required minlength="2" #lastName="ngModel"> </ion-input>
            
           </ion-item>
@@ -48,7 +48,7 @@
         <ion-item class="input-group">
             <ion-label floating class="label">Password</ion-label>
 
-            <ion-input type="{{type}}" name="password" [ngModel]="user.password" [ngModelOptions]="{ updateOn: 'blur' }"
+            <ion-input type="{{type}}" name="password" [ngModel]="user.password" [ngModelOptions]="{ updateOn: "blur" }"
             required validateEqual="confirmPassword" minlength="6" reverse="true" #password="ngModel"></ion-input>
 
             <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>

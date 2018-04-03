@@ -13,7 +13,6 @@ export class SuccessPage {
   }
     goToTestPage(){
       this.navCtrl.push(TestPage);
-
   }
 
 }

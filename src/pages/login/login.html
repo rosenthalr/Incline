@@ -31,13 +31,13 @@
         <div class="input-container">
           <ion-item class="input-group">
             <ion-label class="Field-Label" [ngClass]="{"error": passwordError==true}" floating>Password</ion-label>
-            <ion-input class="Field-Input"  [ngClass]="{"error": passwordError==true}" type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, "password")"  value=""></ion-input>
+            <ion-input class="Field-Input" [ngClass]="{"error": passwordError==true}" type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, "password")"  value=""></ion-input>
           </ion-item>
           <ion-item [hidden]="passwordError != true" class="Error-Text">Hmm...That's not the correct password.</ion-item>
         </div>
 
         <div>
-            <button   class="login-btn Rectangle-3" [ngClass]="{"active": active===true}" 
+            <button class="login-btn Rectangle-3" [ngClass]="{"active": active===true}" 
             [disabled]="isComplete == false" 
             ion-button>LOGIN</button>
       

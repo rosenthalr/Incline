@@ -5,8 +5,6 @@ import { OnInit } from '@angular/core';
 import { HomePage } from '../home/home';
 import { User } from './user.interface';
 import { SuccessPage } from '../success/success';
-//UNCOMMENT TO MAKE CODE WORK -Reuven
-
 
 
 /**
@@ -62,35 +60,21 @@ export class CreateAccountPage implements OnInit {
     this.showPass = !this.showPass;
 
     if(this.showPass){
-      this.type = 'text';
+      this.type='text';
     } else {
-      this.type = 'password';
+      this.type='password';
     }
   }
 
   showPassword2() {
-    this.showPass2 = !this.showPass2;
+    this.showPass2=!this.showPass2;
 
     if(this.showPass2){
-      this.type2 = 'text';
+      this.type2='text';
     } else {
-      this.type2 = 'password';
+      this.type2='password';
     }
   }
-  /*
-  matchingPasswords(password1: string, password2: string) {
-    return (group: FormGroup): {[key: string]: any} => {
-      let password = group.controls[password1];
-      let confirmPassword = group.controls[password2];
-  
-      if (password.value !== confirmPassword.value) {
-        return {
-          mismatchedPasswords: true
-        };
-      }
-    }
-  }
-  */
 
   goToLogin(){
     this.navCtrl.pop();
@@ -106,19 +90,19 @@ export class CreateAccountPage implements OnInit {
 
   checkIfComplete(userInfo, field) {
     
-        if (field= 'firstName') {
+        if (field='firstName') {
           this.firstName = userInfo;
         }
-        else if (field= 'lastName'){
+        else if (field='lastName'){
           this.lastName = userInfo;
         }
-        else if (field= 'email') {
+        else if (field='email') {
           this.email = userInfo;
         }
-        else if (field= 'password1') {
+        else if (field='password1') {
           this.password1 = userInfo;
         }
-        else if (field= 'password2') {
+        else if (field='password2') {
           this.password2 = userInfo;
         }
     
