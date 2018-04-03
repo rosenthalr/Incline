@@ -1,6 +1,6 @@
 
 .contentBackground{
-    background-image: url('../assets/imgs/successBackground.png');
+    background-image: url('/assets/imgs/successBackground.png');
     background-repeat: no-repeat;
     background-size:cover;
     height: 100%;
@@ -17,7 +17,7 @@
 }
 
 .successMessage{
-    font-family: 'Open Sans';
+    font-family: 'Lato';
     font-size: 22px;
     margin-top: 30px;
     margin-bottom: 30px;

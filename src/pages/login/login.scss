@@ -80,6 +80,7 @@ $text-input-highlight-color-invalid: black !important;
     letter-spacing: normal;
     text-align: center;
   }
+
   h3 {
     font-family: Lato;
     font-size: 14px;
@@ -239,10 +240,16 @@ $text-input-highlight-color-invalid: black !important;
     opacity:1 !important;
   }
 
- 
+ .signUp{
+  color: #fd7b3b;
+  text-decoration: underline;
+  width: 140px;
+
+ }
   .Forgot-password {
     width: 373px;
     height: 17px;
+    padding-bottom: 8%;
     font-family: Lato;
     font-size: 14px;
     font-weight: bold;
@@ -262,8 +269,9 @@ $text-input-highlight-color-invalid: black !important;
   }
 
   .newUser1{
-    width: 115px;
+    width: 130px;
     height: 17px;
+    padding-right: 10px;
     font-family: Lato;
     font-size: 14px;
     font-weight: normal;
@@ -314,7 +322,7 @@ $text-input-highlight-color-invalid: black !important;
     padding:0px !important;
     width: 100%;
     height: 170.5px;
-    background-image: url('../../assets/imgs/login-graphic.png');
+    background-image: url('/assets/imgs/login-graphic.png');
     background-size: cover;
     margin-top:14px;
   }
