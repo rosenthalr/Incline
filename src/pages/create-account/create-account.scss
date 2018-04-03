@@ -1,70 +1,79 @@
 page-create-account {
-    #submit {
-      width: 255px;
-      height: 44px;
+
+
+      .btn-create {
+        width: 255px;
+        height: 44px;
+        font-size: 14px;
+        color: black;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        opacity: 0.49;
+        border-radius: 10px;
+        background-color: #6bddcb;
+        margin-top: 40px;
+      }
+
+      .btn-create.active{
+        background-color: #6bddcb;
+        opacity:1 !important;
+      }
+
+      #back-button{
+        font-size: 40px;
+        margin-left: 17px;
+        margin-top: 5px;
+      }
+
+      .error{
+        color: #d0021b !important;
+        font-size: 12px;
+        border-style: none;
+        text-align: left;
+        width: 64%;
+        background-color: transparent !important; 
+        padding-left:0px;
+        margin:0 auto;
+        
+      }
+
+      .input-group {
+        width:64.2667%;
+        height: 70px;
+        margin:0 auto;
+        padding-left:0px;
+        color: #696969;
+        background-color: transparent !important; 
+    }
+
+    .return{
+      text-align: center;
       font-size: 14px;
-      font-family: lato;
-      color: black;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      opacity: 0.49;
-      border-radius: 10px;
-      background-color: #6bddcb;
-      margin-top: 17px;
     }
 
-    #back-button{
-      font-size: 50px;
-      margin-left: 17px;
-      margin-top: 5px;
-    }
-  
-    ion-label {
-      width: 241px;
-      height: 15px;
-      font-family: Lato;
+    .return-link{
+      font-weight: bold;
       font-size: 14px;
-      text-align: left;
-      color: #696969;
     }
 
-    .input-group {
-      width:64.2667%;
-      height: 70px;
-      margin:0 auto;
-      padding-left:0px;
-      background-color: transparent !important; 
+    .create-account-header {
+        height: 27px;
+        font-size: 22px;
+        text-align: center !important;
+        color: #4a4a4a;
+      }
 
-  }
 
-  ion-input { 
-    background-color: transparent !important; 
-  }
+      .input{
+        color: black;
+      }
 
-  .return{
-    text-align: center;
-    font-size: 16px;
-  }
-
-  .return-link{
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 16px;
-  }
-
-  .create-account-header {
-      height: 27px;
-      font-size: 22px;
-      text-align: center !important;
-      color: black;
-      margin-top: 15px;
-      margin-bottom: 25px;
+      
+      ion-content{
+        background-image: url('/assets/imgs/Background Graphic 2.png');
+        background-size: 100%;
     }
-
-    ion-content{
-      background-image: url('/assets/imgs/Background Graphic 2.png');
-      background-size: 100%;
-  }
+    
 }
