@@ -37,7 +37,7 @@ export class LoginPage {
 
   checkIfComplete(userInfo, field) {
 
-    if(field == 'email') {
+    if(field=='email') {
       this.email = userInfo;
     } else {
       this.password = userInfo;

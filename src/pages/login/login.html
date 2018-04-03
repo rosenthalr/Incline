@@ -2,15 +2,15 @@
 
   
 
-  <ion-row class='container'>
-    <ion-col class='imgContainer'>
+  <ion-row class="container">
+    <ion-col class="imgContainer">
 
     </ion-col>
   </ion-row>
 
-  <ion-row class='container2'>
-      <ion-col class='logoContainer'>
-          <button type='button' class='Mask' ion-button icon-only>
+  <ion-row class="container2">
+      <ion-col class="logoContainer">
+          <button type="button" class="Mask" ion-button icon-only>
           </button>
       </ion-col>
     </ion-row>
@@ -21,31 +21,31 @@
         <h2 class="Login">Login</h2>
 
         <div class="input-container">
-          <ion-item class='input-group'>
-            <ion-label  class='Field-Label' [ngClass]="{'error': emailError == true }" floating>Email</ion-label>
-            <ion-input class='Field-Input Email-Input' [ngClass]="{'error': emailError == true }" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
+          <ion-item class="input-group">
+            <ion-label  class="Field-Label" [ngClass]="{'error': emailError == true }" floating>Email</ion-label>
+            <ion-input class="Field-Input Email-Input" [ngClass]="{'error': emailError == true }" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
-          <ion-item [hidden]='emailError != true' class='Error-Text'>Hmm...We don't have an account for this email.</ion-item>
+          <ion-item [hidden]="emailError != true" class="Error-Text">Hmm...We don't have an account for this email.</ion-item>
         </div>
 
         <div class="input-container">
-          <ion-item class='input-group'>
-            <ion-label class='Field-Label' [ngClass]="{'error': passwordError == true }" floating>Password</ion-label>
-            <ion-input class='Field-Input'  [ngClass]="{'error': passwordError == true }" type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
+          <ion-item class="input-group">
+            <ion-label class="Field-Label" [ngClass]="{'error': passwordError == true }" floating>Password</ion-label>
+            <ion-input class="Field-Input"  [ngClass]="{'error': passwordError == true }" type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
           </ion-item>
-          <ion-item [hidden]='passwordError != true' class='Error-Text'>Hmm...That's not the correct password.</ion-item>
+          <ion-item [hidden]="passwordError != true" class="Error-Text">Hmm...That's not the correct password.</ion-item>
         </div>
 
         <div>
-            <button   class='login-btn Rectangle-3' [ngClass]="{'active': active === true }" 
+            <button   class="login-btn Rectangle-3" [ngClass]="{'active': active === true }" 
             [disabled]="isComplete == false" 
             ion-button>LOGIN</button>
       
-            <div class='Forgot-password'>Forgot password?</div>
-            <div class='newUser'>
-              <div class='newUser1'>Are you a new user? </div> 
-              <div class='newUser2'>
-                <a (click)="goToCreateAccountPage()">Sign up for free</a>
+            <div class="Forgot-password">Forgot password?</div>
+            <div class="newUser">
+              <div class="newUser1">Are you a new user? </div> 
+              <div class="newUser2">
+                <a class="signUp" (click)="goToCreateAccountPage()">Sign up for free</a>
               </div>
             </div>
             

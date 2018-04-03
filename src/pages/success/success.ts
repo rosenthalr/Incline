@@ -7,14 +7,12 @@ import { TestPage } from '../test/test';
   templateUrl: 'success.html'
 })
 export class SuccessPage {
-  // testPage = TestPage;
 
   constructor(public navCtrl: NavController) {
 
   }
     goToTestPage(){
       this.navCtrl.push(TestPage);
-
   }
 
 }

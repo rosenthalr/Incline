@@ -19,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Import LoginService that is used to get users from db
 import { LoginService } from "../services/login.service";
-
+import { EqualValidator } from '../pages/create-account/equal-validator.directive';
 
 @NgModule({ 
   declarations: [
@@ -28,7 +28,8 @@ import { LoginService } from "../services/login.service";
     LoginPage,
     SuccessPage,
     TestPage,
-    CreateAccountPage
+    CreateAccountPage,
+    EqualValidator
   ],
   imports: [
     BrowserModule,
