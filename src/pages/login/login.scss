@@ -1,6 +1,3 @@
-$text-input-highlight-color-valid: black !important;
-$text-input-highlight-color-invalid: black !important;
-
 :root {
     --dark-sky-blue: #59a9e4;
     --cerulean: #0477d6;
@@ -38,7 +35,6 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: #000000;
     color: var(--black);
   }
   h2 {
@@ -60,7 +56,6 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: #0477d6;
     color: var(--cerulean);
   }
   h3 {
@@ -180,7 +175,7 @@ $text-input-highlight-color-invalid: black !important;
 
   .Field-Input {
     border-bottom: solid 2px var(--black);
-    color: --var(black) !important;
+    color: var(--black) !important;
 
   }
 
@@ -293,11 +288,7 @@ $text-input-highlight-color-invalid: black !important;
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: #5c5b5c;
-  }
-
-  .login-btn.active {
-
+    color: var(--dark-grey);
   }
 
   .login-graphic {
@@ -338,15 +329,15 @@ $text-input-highlight-color-invalid: black !important;
     border-radius: 50%;
     width: 137px;
     height: 137px;
-    opacity: 0.58;
-    background-color: #d6d6d6;
+    opacity: 0.3;
+    background-color: var(--grey);
   }
 
 
   .item-md.item-input.input-has-focus .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: --var(black) !important;
+    color: var(--black) !important;
   }
 
   .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
@@ -360,46 +351,46 @@ $text-input-highlight-color-invalid: black !important;
   .list-md .item-input.input-has-focus:last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: --var(black) !important;
+    color: var(--black) !important;
 
   }
   
   .list-md .item-input.input-has-focus:last-child .item-inner {
     box-shadow: none;
-    color: --var(black) !important;
+    color: var(--black) !important;
 
   }
   
   .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: --var(black) !important;
+    color: var(--black) !important;
 
   }
   
   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: --var(black) !important;
+    color: var(--black) !important;
 
   }
   
   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
     box-shadow: none;
-    color: --var(black) !important;
+    color: var(--black) !important;
 
   }
   
   .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: --var(black) !important;
+    color: var(--black) !important;
 
   }
   
   .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: --var(black) !important;
+    color: var(--black) !important;
 
   }
