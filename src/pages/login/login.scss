@@ -1,10 +1,9 @@
-
-
+@import "../../styles/global.scss";
 
   /* Text styles */
   .h1-bold {
     font-family: Lato;
-    font-size: 36px;
+    font-size: 36px;  
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
@@ -21,7 +20,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: color($colors,-black);
+    color: $black;
   }
   h2 {
     font-family: Lato;
@@ -42,7 +41,7 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: color($colors,-cerulean);
+    color: $cerulean;
   }
   h3 {
     font-family: Lato;
@@ -94,7 +93,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: color($colors, -error-red) !important;
+    color: $error-red !important;
   }
 
   .Error-Text {
@@ -108,7 +107,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: color($colors,-error-red) !important;
+    color: $error-red !important;
     width: 64.2667%;
     margin: 0 auto;
     z-index: 5;
@@ -137,7 +136,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: color($colors, -grey);
+    color: $grey;
   }
 
 
@@ -160,16 +159,16 @@
   }
 
   .Field-Input {
-    border-bottom: solid 2px color($colors,-black);
-    color: color($colors,-black) !important;
+    border-bottom: solid 2px $black;
+    color: $black !important;
 
   }
 
   .Field-Input.Email-Input.error {
-    border-bottom: solid 2px color($colors,-error-red);
+    border-bottom: solid 2px $error-red;
   }
   .text-input{
-    color: color($colors,-black);
+    color: $black;
   }
 
   .login-btn{
@@ -183,7 +182,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: color($colors,-black);
+    color: $black;
     display:block;
     margin:0 auto;
   }
@@ -199,7 +198,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: color($colors,-black);
+    color: $black;
     margin-top: 35px;
   }
 
@@ -208,7 +207,7 @@
     height: 44px;
     opacity: 0.49;
     border-radius: 10px;
-    background-color: color($colors,-light-teal);
+    background-color: $light-teal;
     margin-top:16px;
     margin-bottom:16px;
     transition: all 500ms ease;
@@ -217,7 +216,7 @@
 
   .Rectangle-3.active {
     // background-color: rgb(133, 255, 236);
-    background-color: color($colors,-light-teal);
+    background-color: $light-teal;
     opacity:1 !important;
   }
 
@@ -238,7 +237,7 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: center;
-    color: color($colors, -dark-grey);
+    color: $dark-grey;
   }
 
   .newUser{
@@ -260,7 +259,7 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: color($colors,-dark-grey);
+    color: $dark-grey;
   }
 
   .newUser2{
@@ -274,11 +273,11 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: left;
-    color: color($colors, -dark-grey);
+    color: $dark-grey;
   }
 
   .login-graphic {
-    background: color($colors,-white) !important;
+    background: $white !important;
   }
 
   .container {
@@ -316,67 +315,75 @@
     width: 137px;
     height: 137px;
     opacity: 0.3;
-    background-color: color($colors, -grey);
+    background-color: $grey;
   }
 
 
   .item-md.item-input.input-has-focus .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: color($colors, -black) !important;
+    color: $black !important;
   }
 
   .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-    color: color($colors, -grey) !important;
+    color: $grey !important;
   }
 
 .label-md.error {
-    color: color($colors, -error-red) !important;
+    color: $error-red !important;
   }
   
   .list-md .item-input.input-has-focus:last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: color($colors, -black) !important;
+    color: $black !important;
 
   }
   
   .list-md .item-input.input-has-focus:last-child .item-inner {
     box-shadow: none;
-    color: color($colors, -black) !important;
+    color: $black !important;
 
   }
   
   .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: color($colors, -black) !important;
+    color: $black !important;
 
   }
   
   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: color($colors, -black) !important;
+    color: $black !important;
 
   }
   
   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
     box-shadow: none;
-    color: color($colors, -black) !important;
+    color: $black !important;
 
   }
   
   .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: color($colors, -black) !important;
+    color: $black !important;
 
   }
   
   .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
-    color: color($colors, -black)!important;
+    color: $black !important;
 
   }
+
+
+  .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
