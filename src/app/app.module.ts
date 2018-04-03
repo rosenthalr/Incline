@@ -6,13 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { CreateAccountPage } from '../pages/create-account/create-account';
+import { CreateAccountPage} from '../pages/create-account/create-account';
+import { EqualValidator } from '../pages/create-account/equal-validator.directive';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CreateAccountPage
+    CreateAccountPage,
+    EqualValidator
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,7 @@ import { CreateAccountPage } from '../pages/create-account/create-account';
   entryComponents: [
     MyApp,
     HomePage,
-    CreateAccountPage
+    CreateAccountPage,
   ],
   providers: [
     StatusBar,

@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormControl, FormGroup, Validators,ValidatorFn,AbstractControl } from '@angular/forms';
+import { OnInit } from '@angular/core';
 import { HomePage } from '../home/home';
+import { User } from './user.interface';
+import { SuccessPage } from '../success/success';
+//UNCOMMENT TO MAKE CODE WORK -Reuven
 
 
 
@@ -16,7 +21,7 @@ import { HomePage } from '../home/home';
   selector: 'page-create-account',
   templateUrl: 'create-account.html',
 })
-export class CreateAccountPage {
+export class CreateAccountPage implements OnInit {
 
   public type = 'password';
   public type2 = 'password';
@@ -31,12 +36,38 @@ export class CreateAccountPage {
   public email: string;
   public password1: string;
   public password2: string;
+  //public user : FormGroup;
+
+  public user: User;
+  
+    ngOnInit() {
+      this.user = {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+      }
+    }
+  
+    save(model: User, isValid: boolean) {
+      // call API to save customer
+      console.log(model, isValid);
+    }
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.isComplete = false;
-    this.emailError = false;
+    /*
+    this.user = new FormGroup({
+      firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      email: new FormControl('', [Validators.required,Validators.email]),
+      //password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      //confirmPassword: new FormControl('', [Validators.required, this.matchingPasswords("password", "confirmPassword")])
+      });
+      */
   }
+
 
   showPassword() {
     this.showPass = !this.showPass;
@@ -57,9 +88,27 @@ export class CreateAccountPage {
       this.type2 = 'password';
     }
   }
+  /*
+  matchingPasswords(password1: string, password2: string) {
+    return (group: FormGroup): {[key: string]: any} => {
+      let password = group.controls[password1];
+      let confirmPassword = group.controls[password2];
+  
+      if (password.value !== confirmPassword.value) {
+        return {
+          mismatchedPasswords: true
+        };
+      }
+    }
+  }
+  */
 
   goToLogin(){
     this.navCtrl.pop();
+  }
+
+  goToSuccessPage(){
+    this.navCtrl.push(SuccessPage);
   }
 
   ionViewDidLoad() {
@@ -92,7 +141,37 @@ export class CreateAccountPage {
          }
       }
 
-  
+      /*
+      DB Connection 
 
+      CreateAccount(userInfo) {
+        console.log(userInfo);
+    
+          let user = {
+            firstName: userInfo.firstName,
+            lastName: userInfo.lastName,
+            username: userInfo.email,
+            password: userInfo.password
+          };
+    
+        this.CreateAccountService.createaccount(user).subscribe(
+          data => {
+    
+            // log the success message to the console
+            console.log(data);
+            this.emailError = false;
+    
+            //this.navCtrl.push(SuccessPage);
+            // Not sure why I need to return true, but it doesn't work when I remove it
+            //return true;
+          },
+          error => {
+            this.emailError = true;
+            console.error("");
+            return Observable.throw(error);
+          }
+        );
+      }
 
+*/
 }
