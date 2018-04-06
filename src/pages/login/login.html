@@ -10,19 +10,17 @@
 
   <ion-row class="container2">
       <ion-col class="logoContainer">
-          <button type="button" class="Mask" ion-button icon-only>
-          </button>
+          <!-- <button type="button" class="Mask" ion-button icon-only>
+          </button> -->
       </ion-col>
     </ion-row>
 
     <ion-list>
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value);">
 
-        <h2 class="Login">Login</h2>
-
         <div class="input-container">
           <ion-item class="input-group">
-            <ion-label  class="Field-Label" [ngClass]="{'error': emailError == true }" floating>Email</ion-label>
+            <ion-label  color="danger" class="Field-Label" [ngClass]="{'error': emailError == true }" floating>Email</ion-label>
             <ion-input class="Field-Input Email-Input" [ngClass]="{'error': emailError == true }" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
           <ion-item [hidden]="emailError != true" class="Error-Text">Hmm...We don't have an account for this email.</ion-item>

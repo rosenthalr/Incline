@@ -84,6 +84,16 @@
     letter-spacing: normal;
     text-align: left;
   }
+
+  .item-inner {
+
+    // height: 20px;
+  }
+
+.Field-Input {
+  border-bottom: solid 1px #9b9b9b !important;
+}
+
   .error {
     font-family: Lato;
     font-size: 9px;
@@ -94,7 +104,7 @@
     letter-spacing: normal;
     text-align: left;
     color: $error-red !important;
-  }
+  } 
 
   .Error-Text {
     background: transparent;
@@ -151,6 +161,7 @@
 
   .item-ios.item-block .item-inner, .item-input-has-focus{
     border-bottom: 0px !important;
+    color: blue;
   }
 
   .list-md .item-block .item-inner {
@@ -203,21 +214,25 @@
   }
 
   .Rectangle-3 {
+    // width: 255px;
+    // height: 44px;
+    // opacity: 0.49;
+    border-radius: 0px;
+    // background-color: $light-teal;
     width: 255px;
     height: 44px;
-    opacity: 0.49;
-    border-radius: 10px;
-    background-color: $light-teal;
+    background-color: #eaeaea;
     margin-top:16px;
     margin-bottom:16px;
     transition: all 500ms ease;
-    opacity:.4 !important;
+    // opacity:.4 !important;
   }
 
   .Rectangle-3.active {
     // background-color: rgb(133, 255, 236);
-    background-color: $light-teal;
+    background-color: #0aafed;
     opacity:1 !important;
+    color: white;
   }
 
  .signUp{
@@ -283,7 +298,7 @@
   .container {
     padding:0px !important;
     position:relative;
-    margin-top:58.1px;
+    // margin-top:58.1px;
   }
 
   .container2 {
@@ -296,10 +311,10 @@
   .imgContainer {
     padding:0px !important;
     width: 100%;
-    height: 170.5px;
-    background-image: url('../assets/imgs/login-graphic.png');
+    height: 240px;
+    background-image: url('../assets/imgs/temporary.png');
     background-size: cover;
-    margin-top: 25px;
+    // margin-top: 25px;
   }
 
   .logoContainer {
@@ -319,12 +334,6 @@
   }
 
 
-  .item-md.item-input.input-has-focus .item-inner {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
-  }
-
   .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
     color: $grey !important;
   }
@@ -333,6 +342,19 @@
     color: $error-red !important;
   }
   
+
+
+  .item-md.item-input.input-has-focus .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    color: $black !important;
+  }
+
+
+
+
+
+
   .list-md .item-input.input-has-focus:last-child {
     border-bottom-color: transparent !important;
     box-shadow: none !important;
@@ -342,7 +364,7 @@
   
   .list-md .item-input.input-has-focus:last-child .item-inner {
     box-shadow: none;
-    color: $black !important;
+    color: blue !important;
 
   }
   
@@ -387,3 +409,4 @@
     padding-top: 8px !important;
     padding-bottom: 8px !important;
 }
+
