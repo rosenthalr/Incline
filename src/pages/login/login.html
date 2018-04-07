@@ -3,22 +3,11 @@
   
 
   <ion-row class="container">
-    <ion-col class="imgContainer">
 
-    </ion-col>
   </ion-row>
 
-  <ion-row class="container2">
-      <ion-col class="logoContainer">
-          <button type="button" class="Mask" ion-button icon-only>
-          </button>
-      </ion-col>
-    </ion-row>
-
-    <ion-list>
+    <ion-list class='login-container'>
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value);">
-
-        <h2 class="Login">Login</h2>
 
         <div class="input-container">
           <ion-item class="input-group">
@@ -36,20 +25,23 @@
           <ion-item [hidden]="passwordError != true" class="Error-Text">Hmm...That's not the correct password.</ion-item>
         </div>
 
-        <div>
+        <div class='bottomDiv'>
             <button   class="login-btn Rectangle-3" [ngClass]="{'active': active === true }" 
             [disabled]="isComplete == false" 
             ion-button>LOGIN</button>
-      
-            <div class="Forgot-password">Forgot password?</div>
-            <div class="newUser">
-              <div class="newUser1">Are you a new user? </div> 
-              <div class="newUser2">
-                <a class="signUp" (click)="goToCreateAccountPage()">Sign up for free</a>
+            <div class="bottom-container">
+              <div class="Forgot-password">Forgot password?</div>
+              <div class="newUserContainer">
+                <div class='newUserSub'>
+                  <span class="newUser1">Are you a new user? </span> 
+                  <span class="newUser2" (click)="goToCreateAccountPage()">
+                    Sign up for free
+                  </span>
+                </div>
               </div>
             </div>
-            
         </div>
+
 
         </form>
 
