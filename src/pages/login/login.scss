@@ -85,13 +85,19 @@
     text-align: left;
   }
 
-  .item-inner {
+  // .item-inner {
 
-    // height: 20px;
-  }
+  //   border-bottom-color: red !important;
+  // }
+
+
+.input-wrapper {
+  height: 65px;
+}
 
 .Field-Input {
-  border-bottom: solid 1px #9b9b9b !important;
+  border-bottom: solid 1px transparent !important;
+  padding-bottom: 5px;
 }
 
   .error {
@@ -150,9 +156,9 @@
   }
 
 
-.input-container{
-    height:79px;
-}
+// .input-container{
+//     height:79px;
+// }
   .input-group {
       width:64.2667%;
       margin:0 auto;
@@ -160,10 +166,11 @@
   }
 
   .item-ios.item-block .item-inner, .item-input-has-focus{
-    border-bottom: 0px !important;
-    color: blue;
+    // border-bottom: 0px !important;
+    // color: blue;
   }
 
+  .input-group .item-block .item-md .item-input item-label
   .list-md .item-block .item-inner {
     border-bottom: 0px !important;
 
@@ -222,8 +229,7 @@
     width: 255px;
     height: 44px;
     background-color: #eaeaea;
-    margin-top:16px;
-    margin-bottom:16px;
+    margin-top: 16%;
     transition: all 500ms ease;
     // opacity:.4 !important;
   }
@@ -242,9 +248,9 @@
 
   .Forgot-password {
     width: 373px;
-    height: 10px;
-    margin-bottom:10px;
+    height: auto;
     font-family: Lato;
+    margin-top: 4%;
     font-size: 14px;
     font-weight: bold;
     font-style: normal;
@@ -260,6 +266,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 4%;
   }
 
   .newUser1{
@@ -311,11 +318,13 @@
   .imgContainer {
     padding:0px !important;
     width: 100%;
-    height: 240px;
-    background-image: url('../assets/imgs/temporary.png');
+    height: 280px;
+    margin-bottom: 1px;
+    background-image: url('../assets/imgs/mainBackDrop.png');
     background-size: cover;
     // margin-top: 25px;
   }
+
 
   .logoContainer {
     display:flex;
@@ -324,6 +333,7 @@
     padding: 20px 0px 0px 0px;
     margin-top: 20px;
   }
+
 
   .Mask {
     border-radius: 50%;
@@ -344,69 +354,97 @@
   
 
 
-  .item-md.item-input.input-has-focus .item-inner {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
-  }
+  // .item-md.item-input.input-has-focus .item-inner {
+  //   border-bottom-color: transparent !important;
+  //   box-shadow: none !important;
+  //   color: $black !important;
+  // }
 
 
 
 
 
 
-  .list-md .item-input.input-has-focus:last-child {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
+//   .list-md .item-input.input-has-focus:last-child {
+//     border-bottom-color: transparent !important;
+//     box-shadow: none !important;
+//     color: $black !important;
 
-  }
+//   }
   
-  .list-md .item-input.input-has-focus:last-child .item-inner {
-    box-shadow: none;
-    color: blue !important;
+//   .list-md .item-input.input-has-focus:last-child .item-inner {
+//     box-shadow: none;
+//     color: blue !important;
 
-  }
+//   }
   
-  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
+//   .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+//     border-bottom-color: transparent !important;
+//     box-shadow: none !important;
+//     color: $black !important;
 
-  }
+//   }
   
-  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
+//   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+//     border-bottom-color: transparent !important;
+//     box-shadow: none !important;
+//     color: $black !important;
 
-  }
+//   }
   
-  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
-    box-shadow: none;
-    color: $black !important;
+//   .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
+//     box-shadow: none;
+//     color: $black !important;
 
-  }
+//   }
   
-  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
+//   .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+//     border-bottom-color: transparent !important;
+//     box-shadow: none !important;
+//     color: $black !important;
 
-  }
+//   }
   
-  .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
+//   .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+//     border-bottom-color: transparent !important;
+//     box-shadow: none !important;
+//     color: $black !important;
 
-  }
+//   }
 
 
-  .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input {
+.item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
 }
 
+ion-input.Field-Input.Email-Input.input.input-md.ng-pristine.ng-valid.ng-touched {
+  height: 20px;
+}
+
+// .text-input .text-input-md{
+//   height: 8px;
+// }
+
+// .ion-item.input-group.item.item-block.item-md.item-input.item-label-floating.ng-pristine.ng-valid.ng-touched.input-has-focus.item-input-has-focus {
+//   color: red;
+// }
+
+// .ion-item.input-group.item.item-block.item-ios.item-input.item-label-floating.ng-pristine.ng-valid.ng-touched{
+// color: green;
+// 
+
+// .ion-input :focus{
+//   color: red;
+// }
+
+// ion-input.item-md.item-input.item-input-has-focus.item-inner, item-md.item-input.input-has-focus .item-inner {
+//   border-bottom-color: red !important;
+// }
+
+// ion-item.input-group.item.item-block.item-md.item-input.item-label-floating.ng-pristine.ng-valid.ng-touched.input-has-focus.item-input-has-focus
+// {
+//   border-bottom-color: red !important;
+// }
