@@ -19,6 +19,7 @@ export class LoginService {
   // and then checks to see if an account with those credentials exist
   login(user) {
     let body = JSON.stringify(user);
+    console.log(user);
     return this.http.post('http://localhost:7000/login', body, httpOptions);
   }
 

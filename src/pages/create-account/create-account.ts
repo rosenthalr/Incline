@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators,ValidatorFn,AbstractControl } from '
 import { OnInit } from '@angular/core';
 import { HomePage } from '../home/home';
 import { User } from './user.interface';
+import { RegistrationService} from '../../services/create-account.service';
 import { SuccessPage } from '../success/success';
 
 
@@ -18,6 +19,7 @@ import { SuccessPage } from '../success/success';
 @Component({
   selector: 'page-create-account',
   templateUrl: 'create-account.html',
+  providers: [RegistrationService],
 })
 export class CreateAccountPage implements OnInit {
 
@@ -47,18 +49,16 @@ export class CreateAccountPage implements OnInit {
     }
   
     save(model: User, isValid: boolean) {
-      // call API to save customer
+      this.registrationService.addUser(model)
       console.log(model, isValid);
     }
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private registrationService:RegistrationService,public navCtrl: NavController, public navParams: NavParams) {
   }
-
 
   showPassword() {
     this.showPass = !this.showPass;
-
     if(this.showPass){
       this.type='text';
     } else {
