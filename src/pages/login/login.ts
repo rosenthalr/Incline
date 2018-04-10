@@ -17,10 +17,13 @@ export class LoginPage {
   
   public active: boolean;
   public email: string;
-  public password: string;
+  public password: string; 
   public isComplete: boolean;
   public emailError: boolean;
   public passwordError: boolean;
+
+  public type='password';
+  public showPass=false;
 
 
   constructor(private loginService: LoginService, public navCtrl: NavController) {
@@ -33,6 +36,17 @@ export class LoginPage {
   goToCreateAccountPage(){
     this.navCtrl.push(CreateAccountPage);
 
+}
+
+showPassword() {
+  console.log("in showpassword");
+  this.showPass = !this.showPass;
+
+  if(this.showPass){
+    this.type='text';
+  } else {
+    this.type='password';
+  }
 }
 
   checkIfComplete(userInfo, field) {
