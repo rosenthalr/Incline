@@ -4,6 +4,7 @@ import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
 import { TestPage } from '../test/test';
 import { CreateAccountPage } from '../create-account/create-account';
+import { NameHabitPage} from '../name-habit/name-habit';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -11,7 +12,7 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'page-home',
   templateUrl: 'login.html',
-  providers: [LoginService]
+  providers: [LoginService],
 })
 
 export class LoginPage {
@@ -33,8 +34,10 @@ export class LoginPage {
 
   goToCreateAccountPage(){
     this.navCtrl.push(CreateAccountPage);
-
-}
+  }
+  goToCreateHabitPage(){
+    this.navCtrl.push(NameHabitPage)
+  }
 
   checkIfComplete(userInfo, field) {
 
