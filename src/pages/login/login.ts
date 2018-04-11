@@ -4,6 +4,7 @@ import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
 import { SuccessPage } from '../success/success';
 import { CreateAccountPage } from '../create-account/create-account';
+import { HabitLandingPage } from '../habit-landing/habit-landing';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -33,6 +34,10 @@ export class LoginPage {
   goToCreateAccountPage(){
     this.navCtrl.push(CreateAccountPage);
 
+}
+
+goToHabitLandingPage(){
+  this.navCtrl.push(HabitLandingPage);
 }
 
   checkIfComplete(userInfo, field) {

@@ -38,8 +38,7 @@
 
         <div>
             <button   class="login-btn Rectangle-3" [ngClass]="{'active': active === true }" 
-            [disabled]="isComplete == false" 
-            ion-button>LOGIN</button>
+            [disabled]="isComplete == false" (click)="goToHabitLandingPage()">LOGIN</button>
       
             <div class="Forgot-password">Forgot password?</div>
             <div class="newUser">
