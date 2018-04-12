@@ -21,7 +21,6 @@ export class LoginPage {
   public isComplete: boolean;
   public emailError: boolean;
   public passwordError: boolean;
-
   public type='password';
   public showPass=false;
 
@@ -38,6 +37,7 @@ export class LoginPage {
 
 }
 
+//Unhide and hide password
 showPassword() {
   console.log("in showpassword");
   this.showPass = !this.showPass;
@@ -49,7 +49,8 @@ showPassword() {
   }
 }
 
-  checkIfComplete(userInfo, field) {
+
+checkIfComplete(userInfo, field) {
 
     if(field=='email') {
       this.email = userInfo;
@@ -82,12 +83,14 @@ showPassword() {
         this.passwordError = false;
         this.navCtrl.push(SuccessPage);
         // Not sure why I need to return true, but it doesn't work when I remove it
-        //return true;
+        return true;
       },
       error => {
        const errorMessage = error.error.info.message
         if(errorMessage == 'Wrong Email') {
           this.emailError = true;
+          //Needed to add this below to make sure that both errors don't appear at the same time.
+          this.passwordError = false;
         } else {
           this.passwordError = true;
           this.emailError = false;
