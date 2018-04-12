@@ -6,14 +6,16 @@ import { ComponentsModule } from '../../components/components.module';
 @NgModule({
   declarations: [
     NameHabitPage,
-    NameHabitComponent
+    ComponentsModule,
   ],
   imports: [
-    NameHabitComponent,
     IonicPageModule.forChild(NameHabitPage),
   ],
   exports:[
     NameHabitPage
+  ],
+  entryComponents:[
+    ComponentsModule
   ]
 })
 export class NameHabitPageModule {
