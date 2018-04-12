@@ -1,18 +1,25 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
-import { NavController } from 'ionic-angular';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the CategoriesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
+@IonicPage()
 @Component({
-  selector: 'page-home',
+  selector: 'page-categories',
   templateUrl: 'categories.html',
 })
-
 export class CategoriesPage {
 
- constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CategoriesPage');
+  }
 
 }
