@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
 import { TestPage } from '../pages/test/test';
+import { CategoriesPage } from '../pages/categories/categories';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 
 // Including http module for use on login page
@@ -27,6 +28,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     HomePage,
     LoginPage,
     SuccessPage,
+    CategoriesPage,
     TestPage,
     CreateAccountPage,
     EqualValidator
@@ -43,6 +45,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     HomePage,
     LoginPage,
     SuccessPage,
+    CategoriesPage,
     TestPage,
     CreateAccountPage
   ],
