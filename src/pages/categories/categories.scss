@@ -1,3 +1,26 @@
+@import '../../styles/global';
+
 page-categories {
 
 }
+
+.categories {
+    width: 68%;
+    margin: 0 auto;
+}
+
+.categories-button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-radius: 0px;
+    padding: 0px;
+    height: 2.8em;
+    font-size: 1.6rem;
+    color: $white;
+    background-color: $cerulean;
+    margin: 0.4rem 0.2rem;
+}
+
+
