@@ -5,7 +5,8 @@ import { OnInit } from '@angular/core';
 import { HomePage } from '../home/home';
 import { User } from './user.interface';
 import { SuccessPage } from '../success/success';
-//UNCOMMENT TO MAKE CODE WORK -Reuven
+//import { CreateAccountService } from '../../services/create-account.service';
+import {Observable} from 'rxjs/Observable';
 
 
 
@@ -49,24 +50,30 @@ export class CreateAccountPage implements OnInit {
         confirmPassword: ''
       }
     }
-  
+    //constructor(public navCtrl: NavController, public navParams: NavParams, private CreateAccountService: CreateAccountService) {
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
+        }
+
+
     save(model: User, isValid: boolean) {
       // call API to save customer
       console.log(model, isValid);
-    }
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    /*
-    this.user = new FormGroup({
-      firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      email: new FormControl('', [Validators.required,Validators.email]),
-      //password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      //confirmPassword: new FormControl('', [Validators.required, this.matchingPasswords("password", "confirmPassword")])
-      });
+      /*
+      this.CreateAccountService.createaccount(model).subscribe(
+        data => {
+          console.log(model, isValid);
+          this.navCtrl.push(SuccessPage);
+          // Not sure why I need to return true, but it doesn't work when I remove it
+          //return true;
+          
+        }
+      );
       */
-  }
+    }
+    
+
+
+
 
 
   showPassword() {
@@ -88,20 +95,6 @@ export class CreateAccountPage implements OnInit {
       this.type2 = 'password';
     }
   }
-  /*
-  matchingPasswords(password1: string, password2: string) {
-    return (group: FormGroup): {[key: string]: any} => {
-      let password = group.controls[password1];
-      let confirmPassword = group.controls[password2];
-  
-      if (password.value !== confirmPassword.value) {
-        return {
-          mismatchedPasswords: true
-        };
-      }
-    }
-  }
-  */
 
   goToLogin(){
     this.navCtrl.pop();
@@ -141,37 +134,4 @@ export class CreateAccountPage implements OnInit {
          }
       }
 
-      /*
-      DB Connection 
-
-      CreateAccount(userInfo) {
-        console.log(userInfo);
-    
-          let user = {
-            firstName: userInfo.firstName,
-            lastName: userInfo.lastName,
-            username: userInfo.email,
-            password: userInfo.password
-          };
-    
-        this.CreateAccountService.createaccount(user).subscribe(
-          data => {
-    
-            // log the success message to the console
-            console.log(data);
-            this.emailError = false;
-    
-            //this.navCtrl.push(SuccessPage);
-            // Not sure why I need to return true, but it doesn't work when I remove it
-            //return true;
-          },
-          error => {
-            this.emailError = true;
-            console.error("");
-            return Observable.throw(error);
-          }
-        );
-      }
-
-*/
 }

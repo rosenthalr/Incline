@@ -4,12 +4,23 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 --> 
-<ion-content>
     
-    
+    <!--
         <ion-icon name='arrow-back' id = 'back-button' (click)="goToLogin()"> </ion-icon>
         <h3 class = 'create-account-header'>Create Account</h3>
-      
+
+        <ion-icon name='arrow-back' id = 'back-button' (click)="goToLogin()"> </ion-icon>
+        <h3 class = 'create-account-header'>Create Account</h3>
+    -->
+    <ion-header>
+        <ion-navbar color = "" class = "nav-bar" >
+          <ion-title class = "title">
+            Create Account
+          </ion-title>
+        </ion-navbar>
+      </ion-header>
+
+      <ion-content>
 
     <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
 
@@ -57,7 +68,7 @@
           <!--<pre *ngIf="password.errors" class="margin-20">{{ password.errors | json }}</pre>-->
         </ion-item>
         <ion-item no-lines class = "error" [hidden]="password.valid || (password.pristine && !f.submitted)">
-            Password must be at least 6 characters
+            Password must be at least 6 characters.
         </ion-item>
 
 
@@ -67,12 +78,12 @@
           <ion-input type="{{type2}}" name="confirmPassword" [ngModel]="user.confirmPassword" [ngModelOptions] = "{ updateOn: 'blur' }"
             required validateEqual="password" reverse="false" #confirmPassword="ngModel"> </ion-input>
 
-            <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
-            <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+            <button class = "eye" *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+            <button class = "eye" *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
           <!--<pre *ngIf="confirmPassword.errors" class="margin-20">{{ confirmPassword.errors | json }}</pre>-->
         </ion-item>
         <ion-item no-lines class="error" [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)">
-            Password mismatch
+            Passwords do not match.
         </ion-item>
 
         <!--
