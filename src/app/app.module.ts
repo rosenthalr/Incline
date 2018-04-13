@@ -12,7 +12,7 @@ import { TestPage } from '../pages/test/test';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { CategoriesPageModule } from '../pages/categories/categories.module';
-
+import { ModalPage } from '../pages/modal/modal';
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -28,6 +28,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     LoginPage,
     SuccessPage,
     TestPage,
+    ModalPage,
     CreateAccountPage,
     EqualValidator,
     HabitLandingPage,
@@ -46,6 +47,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     LoginPage,
     SuccessPage,
     TestPage,
+    ModalPage,
     CreateAccountPage,
     HabitLandingPage,
   ],

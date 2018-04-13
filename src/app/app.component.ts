@@ -9,13 +9,14 @@ import { SuccessPage } from '../pages/success/success';
 import { TestPage } from '../pages/test/test';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
+import { ModalPage } from '../pages/modal/modal';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = LoginPage; 
+  rootPage:any = ModalPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

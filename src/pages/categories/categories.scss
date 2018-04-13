@@ -4,10 +4,16 @@ page-categories {
 
 }
 
+.categories-header {
+    height: 140px;
+    background-color: $grey;
+}
+
 .categories {
     width: 68%;
     margin: 0 auto;
     margin-top: 70px;
+    margin-bottom:70px;
 }
 
 .categories-button {
@@ -17,7 +23,7 @@ page-categories {
     width: 100%;
     border-radius: 0px;
     padding: 0px;
-    font-size: 14px;
+    font-size: 15px;
     margin: 0.4rem 0.2rem;
     background-color: $white-two;
     height:44px;
@@ -51,11 +57,17 @@ page-categories {
     width: 20%;
     text-align: left;
     padding-left: 12px;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .categories-button-title {
     color:$brownish-grey;
+}
+
+.categories-back {
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
