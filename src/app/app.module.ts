@@ -12,6 +12,7 @@ import { TestPage } from '../pages/test/test';
 import { CategoriesPage } from '../pages/categories/categories';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
+import { CategoriesPageModule } from '../pages/categories/categories.module';
 
 
 // Including http module for use on login page
@@ -27,7 +28,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     HomePage,
     LoginPage,
     SuccessPage,
-    CategoriesPage,
+    // CategoriesPage,
     TestPage,
     CreateAccountPage,
     EqualValidator,
@@ -36,6 +37,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
   imports: [
     BrowserModule,
     HttpClientModule,
+    CategoriesPageModule,
     FormsModule,
     IonicModule.forRoot(MyApp)
   ],
