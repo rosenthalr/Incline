@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OnInit } from '@angular/core';
 
 /**
  * Generated class for the CategoriesPage page.
@@ -13,13 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-categories',
   templateUrl: 'categories.html',
 })
-export class CategoriesPage {
+export class CategoriesPage implements OnInit {
+  public category: string;
+
+  ngOnInit() {
+    this.category = null;
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CategoriesPage');
+  showCat(){
+    console.log(this.category);
   }
 
 }

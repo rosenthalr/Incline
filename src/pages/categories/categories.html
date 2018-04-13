@@ -12,22 +12,22 @@
   </div>
   <ion-list class='categories'>
 
-    <button type="button" class='categories-button'>
+    <button type="radio" value='Work' name="category" [(ngModel)]="category" class='categories-button'>
         <div class='categories-button-icon-container'><ion-icon name="clock"></ion-icon></div>
         <div class='categories-button-title'>Work</div>
     </button>
 
-    <button type="button" class='categories-button'>
+    <button type="radio" value='Home' name="category" [(ngModel)]="category" class='categories-button'>
         <div class='categories-button-icon-container'><ion-icon name='home'></ion-icon></div>
         <div class='categories-button-title'>Life</div>
     </button>
 
-    <button type="button"  class='categories-button'>
+    <button type="radio" value='Physical Health' name="category" [(ngModel)]="category"  class='categories-button'>
         <div class='categories-button-icon-container'><ion-icon name='football'></ion-icon></div>
         <div class='categories-button-title'>Physical Health</div>
     </button>
 
-    <button type="button" class='categories-button'>
+    <button type="radio" value='Mental Health' name="category" [(ngModel)]="category" class='categories-button'>
         <div class='categories-button-icon-container'><ion-icon name='sunny'></ion-icon></div>
         <div class='categories-button-title'>Mental Health</div>
     </button>

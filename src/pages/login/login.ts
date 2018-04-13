@@ -41,7 +41,6 @@ export class LoginPage {
 
 //Unhide and hide password
 showPassword() {
-  console.log("in showpassword");
   this.showPass = !this.showPass;
 
   if(this.showPass){
@@ -67,10 +66,6 @@ checkIfComplete(userInfo, field) {
        this.active = false;
        this.isComplete = false;
      }
-
-     console.log(this.email);
-     console.log(this.password);
-
   }
 
 
@@ -78,17 +73,13 @@ checkIfComplete(userInfo, field) {
 // Not sure why, but when I tried to combine into one function I received an errorHandler. 
 // I think it had to do with placing the same ngModelChange in two elements
 checkIfEmailEmpty(){
-  console.log('in checkhbjIfEmpsssty');
   if(this.email !== ''){
-    console.log('in second')
     this.emailError = false;
   }
 }
 
 checkIfPasswordEmpty(){
-  console.log('in checkhbjIfEmpsssty');
   if(this.password !== ''){
-    console.log('in second')
     this.passwordError = false;
   }
 }
@@ -97,8 +88,6 @@ checkIfPasswordEmpty(){
 
 
   login(userInfo) {
-    console.log(userInfo);
-
       let user = {
         email: userInfo.email,
         password: userInfo.password
