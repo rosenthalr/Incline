@@ -14,7 +14,7 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
-
+@import "../styles/_colors";
 
 // Shared Variables
 // --------------------------------------------------
@@ -42,11 +42,16 @@ $colors: (
   dark:       #222
 );
 
+$text-input-highlight-color-valid: #dedede;
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
+$text-input-ios-highlight-color-valid: #dedede;
+$text-input-ios-hightlight-color-invalid: red;
+$label-ios-text-color-focused: #0477d6 !important;
+
 
 
 
@@ -54,6 +59,10 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$text-input-md-hightlight-color-valid: #dedede;
+$text-input-md-hightlight-color-invalid: red !important;
+//This changes the color of the input text when clicked on
+$label-md-text-color-focused: #0477d6 !important;
 
 
 
@@ -119,3 +128,5 @@ $colors: (
   font-style: normal;
   src: url('../assets/fonts/Avenir Next/AvenirNextLTPro-Medium.otf');
 }
+
+

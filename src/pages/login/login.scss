@@ -93,11 +93,6 @@
   padding-bottom: 0px;
 }
 
-.item-label-stacked .text-input-md, .item-label-floating .text-input-md{
-  margin-top: 8px !important;
-  margin-bottom: 8px !important;
-}
-
   .error {
     font-family: Lato;
     font-size: 9px;
@@ -108,11 +103,13 @@
     letter-spacing: normal;
     text-align: left;
     color: $error-red !important;
+    border-bottom-color: red !important;
   } 
 
   .Error-Text {
     background: transparent;
     height: 11px;
+    border-bottom: 1px solid transparent;
     font-family: Lato;
     font-size: 9px;
     font-weight: normal;
@@ -127,7 +124,9 @@
     z-index: 5;
     padding-left: 0px;
     margin-top: -12px;
+
   }
+
   .floating {
     font-family: Lato;
     font-size: 9px;
@@ -159,17 +158,7 @@
   }
 
 
-  .input-group .item-block .item-md .item-input item-label
-  .list-md .item-block .item-inner {
-    border-bottom: 0px !important;
 
-  }
-
-
-
-  .Field-Input.Email-Input.error {
-    border-bottom: solid 2px $error-red;
-  }
   .text-input{
     color: $black;
   }
@@ -210,12 +199,12 @@
     width: 255px;
     height: 44px;
     background-color: #eaeaea;
-    margin-top: 16%;
+    margin-top: 21%;
     transition: all 500ms ease;
   }
 
   .Rectangle-3.active {
-    background-color: #097ed5;
+    background-color: #097ed5 !important;
     opacity:1 !important;
     color: white;
   }
@@ -326,42 +315,6 @@
     background-color: $grey;
   }
 
-//Changes the input label color
-.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-    color: $grey;
-  }
-.item-input .label-ios, .item-select .label-ios, .item-datetime .label-ios {
-    color: $grey;
-  }
-
-.label-md.error {
-    color: $error-red !important;
-  }
-  
-
-
-.item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
-}
-
-
-ion-input.Field-Input.Email-Input.input.input-md.ng-pristine.ng-valid.ng-touched {
-  height: 20px;
-}
-
-
-.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
-  border-bottom-color: 1px solid #dedede !important;
-  box-shadow: 0px;
-}
-
-.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
-  border-bottom-color: #dedede !important;
-}
-
 
 //eye icon location
 .item-md.item-label-stacked [item-right], .item-md.item-label-floating [item-right], .item-md.item-label-stacked [item-end], .item-md.item-label-floating [item-end]{
@@ -369,43 +322,21 @@ ion-input.Field-Input.Email-Input.input.input-md.ng-pristine.ng-valid.ng-touched
   top: 15px !important;
   left: 8px;
 }
-
-//eye icon location
 .item-ios.item-label-stacked [item-right], .item-ios.item-label-floating [item-right], .item-ios.item-label-stacked [item-end], .item-ios.item-label-floating [item-end]{
   padding: 0px;
   top: 15px !important;
   left: 8px;
 }
-
 .ion-ios-eye-off-outline:before, .ion-ios-eye-outline:before{
   font-size: 2.2rem;
 }
 
 
-// changes color of input label when clicked on it
-// Need to include both label-md (google's material design) and label-ios(iphone) in order for
-// the styling to show up
-.item-input-has-focus.label-md[stacked], .input-has-focus .label-md[stacked], item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating] {
-  color: $cerulean !important;
-  border-bottom-color: $cerulean;
-}
-
-.item-input-has-focus.label-ios[stacked], .input-has-focus .label-ios[stacked], item-input-has-focus .label-ios[floating], .input-has-focus .label-ios[floating] {
-  color: $cerulean !important;
-  border-bottom-color: $cerulean;
-}
-
-//removing the green underline when the the field is filled out
-.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
-  box-shadow: inset 0 -1px 0 0 transparent !important;
-}
-
-.item-ios.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-ios.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
-  box-shadow: inset 0 -1px 0 0 transparent !important;
-}
 
 //Changes the color of the input's bottom border when the field is clicked on
+//This needs to be here because, by design, ionic doesn't allow IOS on-focus highlight changes
 //Transparent box shadow removes an automatic blue box shadow that appears when clicked
+
 .item-md.item-input.item-input-has-focus.item-inner, .item-md.item-input.input-has-focus .item-inner{
   border-bottom: solid 2px $cerulean;
   box-shadow: inset 0 -1px 0 0 transparent !important;
@@ -417,3 +348,27 @@ ion-input.Field-Input.Email-Input.input.input-md.ng-pristine.ng-valid.ng-touched
 }
 
 
+
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+  border-bottom: 1px transparent !important;
+}
+  
+
+
+
+  //This needs to be added to change the label color on IOS 
+  // .item-input-has-focus .label-ios[floating], .input-has-focus .label-ios[floating], .item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
+  //   color: $cerulean;
+  // }
+
+
+//Makes sure the floating label is grey when not clicked on the input
+.item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
+  color: $grey;
+}
+
+
+.item-ios{
+  color: $grey;
+}
