@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TestPage } from '../test/test';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-home',
@@ -13,7 +14,7 @@ export class SuccessPage {
 
   }
     goToTestPage(){
-      this.navCtrl.push(TestPage);
+      this.navCtrl.push(TabsPage);
 
   }
 
