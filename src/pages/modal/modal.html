@@ -18,5 +18,5 @@
 
 
 <ion-content padding>
-  <page-categories></page-categories>
+  <page-categories (onCategorySelected)="onCategorySelected($event)" [category]="category"></page-categories>
 </ion-content>

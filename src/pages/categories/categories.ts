@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OnInit } from '@angular/core';
-
+import { TestPage } from '../test/test';
 /**
  * Generated class for the CategoriesPage page.
  *
@@ -15,17 +15,24 @@ import { OnInit } from '@angular/core';
   templateUrl: 'categories.html',
 })
 export class CategoriesPage implements OnInit {
-  public category: string;
+  @Input() category: string;
+  @Output() onCategorySelected = new EventEmitter<string>();
+
 
   ngOnInit() {
-    this.category = null;
+    this.category = '';
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
-  showCat(){
-    console.log(this.category);
+  setCategory(category) {
+    this.onCategorySelected.emit(category);
+  }
+
+  goBack() {
+
   }
 
 }

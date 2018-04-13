@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
@@ -13,7 +13,12 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   selector: 'page-modal',
   templateUrl: 'modal.html',
 })
-export class ModalPage {
+export class ModalPage implements OnInit {
+  public category: string;
+
+  ngOnInit() {
+    this.category = '';
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
   }
@@ -23,7 +28,12 @@ export class ModalPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
+    console.log(this);
+  }
+
+  onCategorySelected(category) {
+    this.category = category;
+    console.log(category)
   }
 
 }
