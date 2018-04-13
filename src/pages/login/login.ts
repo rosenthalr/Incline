@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
-import { SuccessPage } from '../success/success';
+import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { CreateAccountPage } from '../create-account/create-account';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -84,9 +84,8 @@ showPassword() {
         this.emailError = false;
         this.passwordError = false;
 
-        // Navigate 
-        this.navCtrl.push(SuccessPage);
-
+        // Navigate to Habit Landing Page
+        this.navCtrl.push(HabitLandingPage);
       },
       error => {
        const errorMessage = error.error.info.message
