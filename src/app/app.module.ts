@@ -9,7 +9,6 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
 import { TestPage } from '../pages/test/test';
-import { CategoriesPage } from '../pages/categories/categories';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { CategoriesPageModule } from '../pages/categories/categories.module';
