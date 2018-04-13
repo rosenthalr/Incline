@@ -4,6 +4,8 @@ import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
 import { SuccessPage } from '../success/success';
 import { CreateAccountPage } from '../create-account/create-account';
+import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -104,7 +106,7 @@ checkIfPasswordEmpty(){
         // log the success message to the console
         this.emailError = false;
         this.passwordError = false;
-        this.navCtrl.push(SuccessPage);
+        this.navCtrl.push(HabitLandingPage);
         // Not sure why I need to return true, but it doesn't work when I remove it
         return true;
       },
