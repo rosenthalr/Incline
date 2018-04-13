@@ -7,20 +7,55 @@ page-categories {
 .categories {
     width: 68%;
     margin: 0 auto;
+    margin-top: 70px;
 }
 
 .categories-button {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     border-radius: 0px;
     padding: 0px;
-    height: 2.8em;
-    font-size: 1.6rem;
-    color: $white;
-    background-color: $cerulean;
+    font-size: 14px;
     margin: 0.4rem 0.2rem;
+    background-color: $white-two;
+    height:44px;
+}
+
+.categories-button:first-child {
+    border: 3px solid $cerulean;
+    color: $cerulean;
+}
+
+.categories-button:nth-child(2) {
+    border: 3px solid $teal;
+    color: $teal;
+}
+
+.categories-button:nth-child(3) {
+    border: 3px solid $orange;
+    color: $orange;
+}
+
+.categories-button:nth-child(4) {
+    border: 3px solid $red;
+    color: $red;
+}
+
+.categories-button + .categories-button {
+    margin-top: 25px;
+}
+
+.categories-button-icon-container {
+    width: 20%;
+    text-align: left;
+    padding-left: 12px;
+    font-size: 20px;
+}
+
+.categories-button-title {
+    color:$brownish-grey;
 }
 
 
