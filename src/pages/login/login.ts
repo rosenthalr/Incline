@@ -75,14 +75,18 @@ showPassword() {
       };
 
     this.loginService.login(user).subscribe(
+      
+      // If a user has entered in valid login credentials, error messages will be removed and 
+      // they'll be redirected to the Habit Landing Page
       data => {
 
-        // log the success message to the console
+        // Remove any error messages that may have appeared on previous login attempts
         this.emailError = false;
         this.passwordError = false;
+
+        // Navigate 
         this.navCtrl.push(SuccessPage);
-        // Not sure why I need to return true, but it doesn't work when I remove it
-        //return true;
+
       },
       error => {
        const errorMessage = error.error.info.message
