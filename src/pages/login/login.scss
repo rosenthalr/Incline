@@ -349,9 +349,10 @@
 
 
 
-  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
-    border-bottom: 1px transparent !important;
-  }
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+  border-bottom: 1px transparent !important;
+}
   
 
 
@@ -362,16 +363,12 @@
   // }
 
 
-
-  .item-ios{
-    color: $grey;
-  }
-
-
-  ///NEW SCSS
-
-
 //Makes sure the floating label is grey when not clicked on the input
-  .item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
-    color: $grey;
-  }
+.item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
+  color: $grey;
+}
+
+
+.item-ios{
+  color: $grey;
+}

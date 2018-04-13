@@ -16,7 +16,7 @@ import 'rxjs/add/operator/map';
 export class LoginPage {
   
   public active: boolean;
-  public email: string;
+  public email: string = '';
   public password: string; 
   public isComplete: boolean;
   public emailError: boolean;
@@ -66,6 +66,29 @@ checkIfComplete(userInfo, field) {
        this.isComplete = false;
      }
   }
+
+
+// removes the error class when field is deleted so that the error message doesn't hang
+// Not sure why, but when I tried to combine into one function I received an errorHandler. 
+// I think it had to do with placing the same ngModelChange in two elements
+checkIfEmailEmpty(){
+  console.log('in checkhbjIfEmpsssty');
+  if(this.email !== ''){
+    console.log('in second')
+    this.emailError = false;
+  }
+}
+
+checkIfPasswordEmpty(){
+  console.log('in checkhbjIfEmpsssty');
+  if(this.password !== ''){
+    console.log('in second')
+    this.passwordError = false;
+  }
+}
+
+
+
 
   login(userInfo) {
     console.log(userInfo);
