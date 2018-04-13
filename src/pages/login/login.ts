@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
-import { HabitLandingPage } from '../habit-landing/habit-landing';
+
+// HabitLandingPage is commented out b/c this branch hasn't been updated with that page yet
+// import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { CreateAccountPage } from '../create-account/create-account';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -84,8 +86,8 @@ showPassword() {
         this.emailError = false;
         this.passwordError = false;
 
-        // Navigate to Habit Landing Page
-        this.navCtrl.push(HabitLandingPage);
+        // Navigate to Habit Landing Page -- commented out below b/c this branch hasn't been updated with the habit landing page yet
+        // this.navCtrl.push(HabitLandingPage);
       },
       error => {
        const errorMessage = error.error.info.message
