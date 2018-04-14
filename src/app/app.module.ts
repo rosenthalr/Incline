@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
-import { TestPage } from '../pages/test/test';
+import { TestPageModule } from '../pages/test/test.module';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { CategoriesPageModule } from '../pages/categories/categories.module';
@@ -26,7 +26,6 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     HomePage,
     LoginPage,
     SuccessPage,
-    TestPage,
     CreateAccountPage,
     EqualValidator,
     HabitLandingPage
@@ -35,6 +34,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     BrowserModule,
     HttpClientModule,
     CategoriesPageModule,
+    TestPageModule,
     FormsModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -44,7 +44,6 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     HomePage,
     LoginPage,
     SuccessPage,
-    TestPage,
     CreateAccountPage,
     HabitLandingPage
   ],

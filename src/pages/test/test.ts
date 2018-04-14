@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -13,13 +13,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-test',
   templateUrl: 'test.html',
 })
-export class TestPage {
+export class TestPage implements OnInit {
+  @Input() category: string;
+  cat: string;
+  
+  ngOnInit() {
+    this.cat = this.category;
+    console.log(this)
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TestPage');
-  }
 
 }

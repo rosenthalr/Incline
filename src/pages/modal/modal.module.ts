@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ModalPage } from './modal';
 import { CategoriesPageModule } from '../categories/categories.module';
+import { TestPageModule } from '../test/test.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { CategoriesPageModule } from '../categories/categories.module';
   ],
   imports: [
     IonicPageModule.forChild(ModalPage),
-    CategoriesPageModule
+    CategoriesPageModule,
+    TestPageModule
   ],
 })
 export class ModalPageModule {}

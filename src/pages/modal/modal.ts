@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { TestPage } from '../test/test';
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
 /**
  * Generated class for the ModalPage page.
  *
@@ -14,29 +15,35 @@ import { TestPage } from '../test/test';
   templateUrl: 'modal.html'
 })
 export class ModalPage implements OnInit {
+  @ViewChild(Slides) slides: Slides;
+
   public category: string;
+  public isCategoriesActive: boolean;
 
   ngOnInit() {
     this.category = '';
+    this.isCategoriesActive = true;
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
   }
 
-  closeModal(){
+  closeModal() {
     this.view.dismiss();
   }
 
   onCategorySelected(category) {
     this.category = category;
-    console.log(category);
-    // Navigate to the next page (hasn't been created yet -- next sprint)
-    this.navCtrl.push(TestPage);
+    this.changeSlide(1);
   }
 
-  // Go back to previous page. If the user is on the first page of the modal, the modal closes
+  changeSlide(slideIndex: number) {
+    this.slides.slideTo(1);
+  }
+
+  // Go back to previous slide
   goBack(){
-    this.navCtrl.pop();
+    this.slides.slidePrev();
   }
 
 }
