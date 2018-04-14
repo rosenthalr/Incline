@@ -1,9 +1,12 @@
 @import '../../styles/global';
 
+.swiper-slide{
+    height:auto !important;
+}
+
 .categories-header {
     height: 180px;
     background-color: $grey;
-    margin-top:-46px;
 }
 
 .categories-header-container {

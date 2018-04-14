@@ -6,14 +6,14 @@
 -->
 <ion-content>
   <ion-buttons class='close-modal'>
-      <button ion-button icon-only class='close-modal-button' (click)="closeModal()">
+      <div icon-only class='close-modal-button' (click)="closeModal()">
         <ion-icon class='close-modal-button-icon' name="close"></ion-icon>
-      </button>
+      </div>
   </ion-buttons>
   
   <ion-slides>
     <page-categories (goBack)="goBack($event)" (onCategorySelected)="onCategorySelected($event)"></page-categories>
-    <page-test [category]='category'></page-test>
+    <page-test [category]="category"></page-test>
   </ion-slides>
 
 </ion-content>

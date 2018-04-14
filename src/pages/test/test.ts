@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -13,13 +13,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-test',
   templateUrl: 'test.html',
 })
-export class TestPage implements OnInit {
+export class TestPage implements OnInit, OnChanges {
   @Input() category: string;
   cat: string;
   
   ngOnInit() {
     this.cat = this.category;
-    console.log(this)
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const category: SimpleChange = changes.category;
+    this.cat = category.currentValue;
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
