@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-
+import { TestPage } from '../test/test';
 /**
  * Generated class for the ModalPage page.
  *
@@ -11,9 +11,14 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 @IonicPage()
 @Component({
   selector: 'page-modal',
-  templateUrl: 'modal.html',
+  templateUrl: 'modal.html'
 })
-export class ModalPage {
+export class ModalPage implements OnInit {
+  public category: string;
+
+  ngOnInit() {
+    this.category = '';
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
   }
@@ -22,8 +27,16 @@ export class ModalPage {
     this.view.dismiss();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
+  onCategorySelected(category) {
+    this.category = category;
+    console.log(category);
+    // Navigate to the next page (hasn't been created yet -- next sprint)
+    this.navCtrl.push(TestPage);
+  }
+
+  // Go back to previous page. If the user is on the first page of the modal, the modal closes
+  goBack(){
+    this.navCtrl.pop();
   }
 
 }
