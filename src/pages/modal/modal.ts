@@ -25,7 +25,6 @@ export class ModalPage implements OnInit {
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
   }
-
   closeModal(){
     this.view.dismiss();
   }
@@ -33,14 +32,12 @@ export class ModalPage implements OnInit {
     this.name = name;
     console.log(this.name);
   }
-
   onCategorySelected(category) {
     this.category = category;
     console.log(category);
     // Navigate to the next page (hasn't been created yet -- next sprint)
     //this.navCtslideNexttPage);
   }
-
   // Go back to previous page. If the user is on the first page of the modal, the modal closes
   goBack(){
     this.slides.slidePrev();
