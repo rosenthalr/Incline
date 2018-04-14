@@ -19,9 +19,12 @@ export class ModalPage implements OnInit {
   @ViewChild('modalSlider')slides:Slides;
   public category: string;
   public name:string; 
+  public page:number=1;
+  public totalPages:number;
   ngOnInit() {
     this.category = '';
     this.name = '';
+    this.page = 1;
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
   }
@@ -37,6 +40,9 @@ export class ModalPage implements OnInit {
     console.log(category);
     // Navigate to the next page (hasn't been created yet -- next sprint)
     //this.navCtslideNexttPage);
+  }
+  getSlideNumber(){
+    this.page = this.slides.getActiveIndex()+1;
   }
   // Go back to previous page. If the user is on the first page of the modal, the modal closes
   goBack(){

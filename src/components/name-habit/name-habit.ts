@@ -18,10 +18,8 @@ export class NameHabitComponent {
 
   setName(name){
     this.onNamePicked.emit(name);
-    console.log(this.habitName);
   }
   emitNextPage(){
     this.nextPage.emit()
-    console.log('clicked')
   }
 }
