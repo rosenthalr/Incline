@@ -1,0 +1,13 @@
+<!-- Generated template for the NameHabitComponent component -->
+<div class='name-habit-header'>
+    <div class='name-habit-header-container'>
+       <div class='name-habit-header-title'>Tell us about the habit you would like to track</div>
+    </div>
+ </div>
+
+<form [formGroup]="nameHabit" >
+  <ion-item class="name-habit">
+    <ion-label floating>Habit Name</ion-label>
+    <ion-input class = "name-habit-input" type="text" formControlName="name"></ion-input>
+  </ion-item>
+</form>

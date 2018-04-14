@@ -3,6 +3,13 @@
 .categories-header {
     height: 180px;
     background-color: $grey;
+    position:absolute;
+    top:0;
+    background:linear-gradient($cerulean,#0aafed)
+}
+
+.categories-header-title {
+    padding-top: 1.2em;
 }
 
 .categories-header-container {
@@ -14,6 +21,7 @@
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
+    text-align: left;
     line-height: 1.18;
     letter-spacing: normal;
     color: $white-two;  
@@ -89,8 +97,5 @@
     color: $cerulean;
 }
 
-.categories-header-title {
-    padding-top: 1.2em;
-}
 
 

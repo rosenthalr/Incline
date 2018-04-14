@@ -106,8 +106,8 @@ checkIfPasswordEmpty(){
           // Navigate to Habit Landing Page
           this.navCtrl.push(HabitLandingPage);
        },
-      error => {
-       const errorMessage = error.error.info.message
+        error => {
+        const errorMessage = error.error.info.message
         if(errorMessage == 'Wrong Email') {
           this.emailError = true;
           //Needed to add this below to make sure that both errors don't appear at the same time.

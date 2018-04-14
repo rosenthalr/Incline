@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController,Slides} from 'ionic-angular';
 import { TestPage } from '../test/test';
+import { ViewChild } from '@angular/core/src/metadata/di';
 /**
  * Generated class for the ModalPage page.
  *
@@ -13,9 +14,10 @@ import { TestPage } from '../test/test';
   selector: 'page-modal',
   templateUrl: 'modal.html'
 })
+
 export class ModalPage implements OnInit {
   public category: string;
-
+  @ViewChild(Slides) slides:Slides
   ngOnInit() {
     this.category = '';
   }
