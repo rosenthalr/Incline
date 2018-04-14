@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { TestPage } from '../test/test';
+import { HabitLandingPage } from '../habit-landing/habit-landing';
 
 @Component({
   selector: 'page-home',
@@ -11,8 +11,8 @@ export class SuccessPage {
   constructor(public navCtrl: NavController) {
 
   }
-    goToTestPage(){
-      this.navCtrl.push(TestPage);
+    goToHabitLandingPage(){
+      this.navCtrl.push(HabitLandingPage);
   }
 
 }

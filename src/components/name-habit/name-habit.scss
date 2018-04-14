@@ -1,3 +1,251 @@
 name-habit {
 
 }
+@import "../../styles/global";
+.background{
+
+}
+h1 {
+  font-family: AvenirNext;
+  font-size: 34px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $black;
+}
+
+h2 {
+  font-family: Lato;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.Button-Text {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $white;
+}
+
+button {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.Input-Field {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $black;
+  
+}
+
+.container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+  width: 100%;
+  background-image:url("../../assets/imgs/Group.png");
+}
+
+.bottomDiv{
+  margin-top: 4em;
+}
+
+input {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.error {
+  font-family: Lato;
+  font-size: 9px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $error-red !important;
+}
+
+.Error-Text {
+  background: transparent;
+  height: 11px;
+  font-family: Lato;
+  font-size: 9px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $error-red !important;
+  margin: 0 auto;
+  z-index: 5;
+  padding-left: 0px;
+  margin-top: -12px;
+}
+
+.Helper-Text {
+  font-family: Lato;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.Floating-Style {
+  font-family: Lato;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $bright-blue;
+}
+
+.floating {
+  font-family: Lato;
+  font-size: 9px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.Rectangle-3 {
+  width: 100%;
+  margin:0 auto;
+  height: 44px;
+  color: $warm-grey;
+  font-weight:normal;
+  font-family:lato;
+  font-size:14px;
+  border-radius:0px;
+  opacity: 1;
+  background-color: $white-three;
+}
+
+.log-in-screen {
+  width: 100%;
+  background-color: $white;
+}
+
+.input-container{
+  height:79px;
+}
+.input-group {
+    padding-left:0px;
+}
+
+.login-container {
+  width:100%;
+  padding:0 60px;
+}
+
+.Field-Label{
+  width: 254px;
+  height: 17px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $brownish-grey;
+}
+
+.input-has-focus {
+  color: $cerulean !important;
+}
+
+.Field-Input {
+  border-bottom: solid 2px $warm-grey-two;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $brownish-grey;
+}
+
+.Field-Input.Email-Input.error {
+  border-bottom: solid 2px $error-red;
+}
+
+.bottom-container{
+  display:flex;
+  width:100%;
+  flex-direction:column;
+}
+
+// CSS to ovveride default ionic styles
+
+.item-md.item-input.item-inner {
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+  }
+
+
+.item-inner {
+  border-bottom: 0px  !important;
+  padding-right: 0px !important;
+}
+
+.item-ios.item-block .item-inner, .item-input-has-focus{
+  border-bottom: 0px  !important;
+
+}
+a[disabled], button[disabled], [ion-button][disabled] {
+  opacity: 1;
+}
+
+.item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+
+}
+
+  

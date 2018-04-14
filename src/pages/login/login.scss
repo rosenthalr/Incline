@@ -23,6 +23,7 @@ h2 {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .Button-Text {
   font-family: Lato;
   font-size: 14px;
@@ -213,6 +214,106 @@ input {
   width:100%;
   flex-direction:column;
 }
+=======
+  h3 {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: left;
+  }
+  input {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+.input-wrapper {
+  height: 65px;
+}
+
+.Field-Input {
+  padding-bottom: 0px;
+}
+
+  .error {
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $error-red !important;
+    border-bottom-color: red !important;
+  } 
+
+  .Error-Text {
+    background: transparent;
+    height: 11px;
+    border-bottom: 1px solid transparent;
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $error-red !important;
+    width: 64.2667%;
+    margin: 0 auto;
+    z-index: 5;
+    padding-left: 0px;
+    margin-top: -12px;
+
+  }
+
+  .floating {
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .Field-Label {
+    width: 241px;
+    height: 15px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .input-group {
+      width:64.2667%;
+      margin:0 auto;
+      padding-left:0px;
+  }
+
+
+
+  .text-input{
+    color: $black;
+  }
+>>>>>>> 07606e62e25e20705bf97646305c81984366a410
 
 .Forgot-password {
     height: 17px;
@@ -224,6 +325,7 @@ input {
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
+<<<<<<< HEAD
     color: $cerulean;
     margin-top: 10px;
     padding: 5px 0px;
@@ -248,6 +350,81 @@ input {
 
   .newUser1{
     display: inline-block;
+=======
+    color: $black;
+    display:block;
+    margin:0 auto;
+  }
+
+  .Login {
+    margin-bottom: 0px;
+    height: 27px;
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $black;
+    margin-top: 35px;
+  }
+
+  .Rectangle-3 {
+    border-radius: 0px;
+    width: 255px;
+    height: 44px;
+    background-color: #eaeaea;
+    margin-top: 21%;
+    transition: all 500ms ease;
+  }
+
+  .Rectangle-3.active {
+    background-color: #097ed5 !important;
+    opacity:1 !important;
+    color: white;
+  }
+
+ .signUp{
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  color: $cerulean;
+ }
+
+  .Forgot-password {
+    height: auto;
+    font-family: Lato;
+    margin-top: 5%;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: $cerulean;
+  }
+
+  .newUser{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4%;
+  }
+
+  .newUser1{
+    height: 17px;
+    padding-right: 10px;
+>>>>>>> 07606e62e25e20705bf97646305c81984366a410
     font-family: Lato;
     font-size: 14px;
     font-weight: normal;
@@ -259,14 +436,20 @@ input {
     color: $dark-grey;
   }
 
+<<<<<<< HEAD
   .newUser2 {
     display: inline-block;
+=======
+  .newUser2{
+    height: 17px;
+>>>>>>> 07606e62e25e20705bf97646305c81984366a410
     font-family: Lato;
     font-size: 14px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
+<<<<<<< HEAD
     letter-spacing: normal;
     text-align: center;
     color: $cerulean;
@@ -357,3 +540,111 @@ a[disabled], button[disabled], [ion-button][disabled] {
 //   color: $black !important;
 
 // }
+=======
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: $dark-grey;
+  }
+
+  .login-graphic {
+    background: $white !important;
+  }
+
+  .container {
+    padding:0px !important;
+    position:relative;
+    background-image: url('../assets/imgs/mainBackDrop.png');
+    background-size: cover;
+    height: auto;
+  }
+
+  .container2 {
+    padding: 0px !important;
+    position: absolute;
+    top: 0px;
+    width:100%;
+  }
+
+  .imgContainer {
+    padding:0px !important;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 1px;
+    
+  }
+
+  .logoContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 0px 0px;
+    margin-top: 20px;
+  }
+
+
+  .Mask {
+    border-radius: 50%;
+    width: 137px;
+    height: 137px;
+    opacity: 0.3;
+    background-color: $grey;
+  }
+
+
+//eye icon location
+.item-md.item-label-stacked [item-right], .item-md.item-label-floating [item-right], .item-md.item-label-stacked [item-end], .item-md.item-label-floating [item-end]{
+  padding: 0px;
+  top: 15px !important;
+  left: 8px;
+}
+.item-ios.item-label-stacked [item-right], .item-ios.item-label-floating [item-right], .item-ios.item-label-stacked [item-end], .item-ios.item-label-floating [item-end]{
+  padding: 0px;
+  top: 15px !important;
+  left: 8px;
+}
+.ion-ios-eye-off-outline:before, .ion-ios-eye-outline:before{
+  font-size: 2.2rem;
+}
+
+
+
+//Changes the color of the input's bottom border when the field is clicked on
+//This needs to be here because, by design, ionic doesn't allow IOS on-focus highlight changes
+//Transparent box shadow removes an automatic blue box shadow that appears when clicked
+
+.item-md.item-input.item-input-has-focus.item-inner, .item-md.item-input.input-has-focus .item-inner{
+  border-bottom: solid 2px $cerulean;
+  box-shadow: inset 0 -1px 0 0 transparent !important;
+}
+
+.item-ios.item-input.item-input-has-focus.item-inner, .item-ios.item-input.input-has-focus .item-inner{
+  border-bottom: solid 2px $cerulean;
+  box-shadow: inset 0 -1px 0 0 transparent !important;
+}
+
+
+
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+  border-bottom: 1px transparent !important;
+}
+  
+
+
+
+  //This needs to be added to change the label color on IOS 
+  // .item-input-has-focus .label-ios[floating], .input-has-focus .label-ios[floating], .item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
+  //   color: $cerulean;
+  // }
+
+
+//Makes sure the floating label is grey when not clicked on the input
+.item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
+  color: $grey;
+}
+
+
+.item-ios{
+  color: $grey;
+}
+>>>>>>> 07606e62e25e20705bf97646305c81984366a410

@@ -1,6 +1,6 @@
 import { Component, ViewChild} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { IonicPage, NavController, NavParams,Slides} from 'ionic-angular';
+
 
 /**
  * Generated class for the NameHabitPage page.
@@ -15,11 +15,16 @@ import {FormBuilder,FormGroup,Validators} from '@angular/forms';
   templateUrl: 'name-habit.html',
 })
 export class NameHabitPage {
-  @ViewChild('habitSlider') habitSlider:any;
-  public page:number;
+  @ViewChild('habitSlider') habitSlider: Slides;
+  public page:any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+    try{
+      this.page = this.habitSlider.getActiveIndex()+1;
+    }catch(e){
+      this.page = 1
+      console.log(e)
+    }
   }
 
   ionViewDidLoad() {
