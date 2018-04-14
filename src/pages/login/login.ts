@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
-import { SuccessPage } from '../success/success';
 import { CreateAccountPage } from '../create-account/create-account';
-// import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
-
+import { HabitLandingPage } from '../habit-landing/habit-landing';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -35,13 +33,14 @@ export class LoginPage {
   }
 
   goToCreateAccountPage(){
+    // Temporarily changing navigation to the Habit Landing Page for testing purposes.
+    // This should be replaced with CreateAccountPage after testing is complete
     this.navCtrl.push(CreateAccountPage);
 
 }
 
 //Unhide and hide password
 showPassword() {
-  console.log("in showpassword");
   this.showPass = !this.showPass;
 
   if(this.showPass){
@@ -74,17 +73,13 @@ checkIfComplete(userInfo, field) {
 // Not sure why, but when I tried to combine into one function I received an errorHandler. 
 // I think it had to do with placing the same ngModelChange in two elements
 checkIfEmailEmpty(){
-  console.log('in checkhbjIfEmpsssty');
   if(this.email !== ''){
-    console.log('in second')
     this.emailError = false;
   }
 }
 
 checkIfPasswordEmpty(){
-  console.log('in checkhbjIfEmpsssty');
   if(this.password !== ''){
-    console.log('in second')
     this.passwordError = false;
   }
 }
@@ -93,23 +88,24 @@ checkIfPasswordEmpty(){
 
 
   login(userInfo) {
-    console.log(userInfo);
-
       let user = {
         email: userInfo.email,
         password: userInfo.password
       };
 
-    this.loginService.login(user).subscribe(
-      data => {
-
-        // log the success message to the console
-        this.emailError = false;
-        this.passwordError = false;
-        this.navCtrl.push(SuccessPage);
-        // Not sure why I need to return true, but it doesn't work when I remove it
-        return true;
-      },
+      this.loginService.login(user).subscribe(
+      
+        // If a user has entered in valid login credentials, error messages will be removed and 
+        // they'll be redirected to the Habit Landing Page
+        data => {
+  
+          // Remove any error messages that may have appeared on previous login attempts
+          this.emailError = false;
+          this.passwordError = false;
+  
+          // Navigate to Habit Landing Page
+          this.navCtrl.push(HabitLandingPage);
+       },
       error => {
        const errorMessage = error.error.info.message
         if(errorMessage == 'Wrong Email') {
