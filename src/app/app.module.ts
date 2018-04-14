@@ -29,7 +29,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     TestPage,
     CreateAccountPage,
     EqualValidator,
-    HabitLandingPage,
+    HabitLandingPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +46,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     SuccessPage,
     TestPage,
     CreateAccountPage,
-    HabitLandingPage,
+    HabitLandingPage
   ],
   providers: [
     StatusBar,

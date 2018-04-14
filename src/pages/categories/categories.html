@@ -7,7 +7,7 @@
 <ion-content>
   <div class='categories-header'>
      <div class='categories-header-container'>
-        Which category does this habit fit best with?
+        <div class='categories-header-title'>Which category does this habit fit best with?</div>
      </div>
   </div>
   <ion-list class='categories'>
@@ -33,7 +33,7 @@
   </ion-list>
 
   <div class='categories-back'>
-    <button ion-button clear class='categories-back-button'>Go Back</button>
+    <button (click)='emitGoBack()' ion-button clear class='categories-back-button'>Go Back</button>
   </div>
   
 </ion-content>

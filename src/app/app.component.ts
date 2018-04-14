@@ -15,7 +15,7 @@ import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = LoginPage; 
+  rootPage:any = HabitLandingPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

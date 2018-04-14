@@ -1,3 +1,16 @@
-page-modal {
+@import '../../styles/global.scss';
 
+.close-modal {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+}
+
+.close-modal-button {
+    background-color:transparent;
+    margin: 0px;
+}
+.close-modal-button-icon {
+    font-size: 40px !important;
+    color: $white-two;
 }
