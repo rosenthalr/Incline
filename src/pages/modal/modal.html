@@ -12,9 +12,9 @@
   </ion-buttons>
   
   <!-- Insert Name Habit Page here -->
-  <ion-slides pager=false>
+  <ion-slides #modalSlider pager=false>
     <ion-slide >
-      <name-habit></name-habit>
+      <name-habit (nextPage)="nextPage($event)" (onNamePicked)="onNamePicked($event)"></name-habit>
     </ion-slide>
     <ion-slide>
       <categories (goBack)="goBack($event)" (onCategorySelected)="onCategorySelected($event)"></categories>

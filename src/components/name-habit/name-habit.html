@@ -5,9 +5,9 @@
     </div>
  </div>
 
-<form [formGroup]="nameHabit" >
-  <ion-item class="name-habit">
-    <ion-label floating>Habit Name</ion-label>
-    <ion-input class = "name-habit-input" type="text" formControlName="name"></ion-input>
-  </ion-item>
-</form>
+
+<ion-item class="name-habit">
+  <ion-label floating>Habit Name</ion-label>
+  <ion-input class = "name-habit-input" type="text" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionBlur)="setName(habitName)" required #name="ngModel"></ion-input>
+</ion-item>
+<button class="Rectangle-3" [ngClass]="{'active':!name.errors?.required}" [disabled]="name.errors?.required" ion-button (click)="emitNextPage()">NEXT</button>

@@ -1,7 +1,8 @@
 @import '../../styles/global';
 
 .categories-header {
-    height: 180px;
+    height: 25%;
+    width:100%;
     background-color: $grey;
     position:absolute;
     top:0;
@@ -33,7 +34,7 @@
 .categories {
     width: 68%;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 25%;
 }
 
 .categories-button {

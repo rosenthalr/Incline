@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component,EventEmitter, Output} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 /**
@@ -12,13 +12,16 @@ import {FormBuilder,FormGroup,Validators} from '@angular/forms';
   templateUrl: 'name-habit.html'
 })
 export class NameHabitComponent {
+  @Output() onNamePicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
+  public habitName: string='';
 
-  public nameHabit: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {
-    this.nameHabit = this.formBuilder.group({
-      name: ['',Validators.required]
-    }) ;
+  setName(name){
+    this.onNamePicked.emit(name);
+    console.log(this.habitName);
   }
-  
+  emitNextPage(){
+    this.nextPage.emit()
+    console.log('clicked')
+  }
 }
