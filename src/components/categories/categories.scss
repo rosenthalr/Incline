@@ -6,9 +6,13 @@
     background-color: $grey;
     position:absolute;
     top:0;
-    background:linear-gradient($cerulean,#0aafed)
+    background:linear-gradient($cerulean,#0aafed);
 }
-
+.categories-sun{
+    position: absolute;
+    left:0;
+    top:0;
+}
 .categories-header-title {
     padding-top: 1.2em;
 }
