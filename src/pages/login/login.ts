@@ -36,7 +36,7 @@ export class LoginPage {
   goToCreateAccountPage(){
     // Temporarily changing navigation to the Habit Landing Page for testing purposes.
     // This should be replaced with CreateAccountPage after testing is complete
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.push(CreateAccountPage);
 
 }
 
@@ -109,7 +109,7 @@ checkIfPasswordEmpty(){
           this.passwordError = false;
   
           // Navigate to Habit Landing Page
-          this.navCtrl.push(HabitLandingPage);
+          this.navCtrl.push(TabsPage);
        },
         error => {
         const errorMessage = error.error.info.message
