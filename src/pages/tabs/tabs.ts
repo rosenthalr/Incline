@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
+import {HabitLandingPage} from '../habit-landing/habit-landing';
+import {DiscoverPage} from '../discover/discover';
+import {HistoryPage} from '../history/history';
+import {MorePage} from '../more/more';
 /**
  * Generated class for the TabsPage tabs.
  *
@@ -15,14 +19,10 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class TabsPage {
 
-<<<<<<< HEAD
-  myHabitsRoot = 'HabitLandingPage'
-=======
-  myHabitsRoot = 'MyHabitsPage';
->>>>>>> b2d67551be296b09b2a0aa4e25a975b5f7e467f3
-  discoverRoot = 'DiscoverPage'
-  historyRoot = 'HistoryPage'
-  moreRoot = 'MorePage'
+  myHabitsRoot = HabitLandingPage
+  discoverRoot = DiscoverPage
+  historyRoot = HistoryPage
+  moreRoot = MorePage
 
 
   constructor(public navCtrl: NavController) {}
