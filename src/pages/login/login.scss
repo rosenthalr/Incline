@@ -198,13 +198,13 @@
     border-radius: 0px;
     width: 255px;
     height: 44px;
-    background-color: #eaeaea;
+    background-color: $white;
     margin-top: 21%;
     transition: all 500ms ease;
   }
 
   .Rectangle-3.active {
-    background-color: #097ed5 !important;
+    background-color: $cerulean !important;
     opacity:1 !important;
     color: white;
   }

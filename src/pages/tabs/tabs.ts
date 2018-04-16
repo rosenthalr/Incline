@@ -15,7 +15,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class TabsPage {
 
-  myHabitsRoot = 'MyHabitsPage'
+  myHabitsRoot = 'MyHabitsPage';
   discoverRoot = 'DiscoverPage'
   historyRoot = 'HistoryPage'
   moreRoot = 'MorePage'
