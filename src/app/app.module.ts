@@ -33,7 +33,10 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     CreateAccountPage,
     EqualValidator,
     HabitLandingPage,
-    TabsPage
+    TabsPage,
+    DiscoverPage,
+    MorePage,
+    HistoryPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,10 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     SuccessPage,
     CreateAccountPage,
     HabitLandingPage,
-    TabsPage
+    TabsPage,
+    DiscoverPage,
+    MorePage,
+    HistoryPage
   ],
   providers: [
     StatusBar,
