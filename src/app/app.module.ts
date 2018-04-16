@@ -11,12 +11,11 @@ import { SuccessPage } from '../pages/success/success';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { TabsPage } from '../pages/tabs/tabs';
-/*
 import { DiscoverPage } from '../pages/discover/discover';
 import { HistoryPage } from '../pages/history/history';
-import { MyHabitsPage } from '../pages/my-habits/my-habits';
+//import { MyHabitsPage } from '../pages/my-habits/my-habits';
 import { MorePage } from '../pages/more/more';
-*/
+
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
