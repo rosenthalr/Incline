@@ -10,7 +10,13 @@ import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
-
+import { TabsPage } from '../pages/tabs/tabs';
+/*
+import { DiscoverPage } from '../pages/discover/discover';
+import { HistoryPage } from '../pages/history/history';
+import { MyHabitsPage } from '../pages/my-habits/my-habits';
+import { MorePage } from '../pages/more/more';
+*/
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -27,7 +33,8 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     SuccessPage,
     CreateAccountPage,
     EqualValidator,
-    HabitLandingPage
+    HabitLandingPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,8 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     LoginPage,
     SuccessPage,
     CreateAccountPage,
-    HabitLandingPage
+    HabitLandingPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

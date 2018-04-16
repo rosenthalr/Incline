@@ -30,13 +30,21 @@ page-create-account {
         background-color: $cerulean;
         opacity:1 !important;
       }
-
+      .eye{
+        font-size: 2.2 rem;
+      }
+      .nav-bar{
+        height: 48px;
+        font-family: Lato;
+      }
+/*
       #back-button{
         font-size: 40px;
         margin-left: 17px;
         margin-top: 5px;
       }
-
+*/
+  
       .error{
         color: #d0021b !important;
         font-size: 12px;
@@ -46,6 +54,8 @@ page-create-account {
         background-color: transparent !important; 
         padding-left:0px;
         margin:0 auto;
+        font-family: Lato;
+        
       }
 
       .input-group {
@@ -55,6 +65,7 @@ page-create-account {
         padding-left:0px;
         color: #696969;
         background-color: transparent !important; 
+        font-family: Lato;
     }
 
     .return{
@@ -66,22 +77,29 @@ page-create-account {
       font-weight: bold;
       font-size: 14px;
     }
-
+/*
     .create-account-header {
         height: 27px;
         font-size: 22px;
         text-align: center !important;
         color: #4a4a4a;
-    }
-
+      }
+*/
 
       .input{
         color: black;
-    }
-    
+        font-family: Lato;
+      }
+
+      .back-button, .toolbar-title {
+         color: #FFF;
+       }
+
+      /*
       ion-content{
         background-image: url('../assets/imgs/Background Graphic 2.png');
         background-size:cover;
     }
+    */
     
 }

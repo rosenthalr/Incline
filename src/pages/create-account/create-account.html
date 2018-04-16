@@ -59,8 +59,8 @@
             <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
     
         </ion-item>
-        <ion-item no-lines class="error" [hidden]="password.valid || (password.pristine && !f.submitted)">
-            Password must be at least 6 characters
+        <ion-item no-lines class = "error" [hidden]="password.valid || (password.pristine && !f.submitted)">
+            Password must be at least 6 characters.
         </ion-item>
 
 
@@ -70,12 +70,12 @@
           <ion-input type="{{type2}}" name="confirmPassword" [ngModel]="user.confirmPassword" [ngModelOptions]="{ updateOn: 'blur' }"
             required validateEqual="password" reverse="false" #confirmPassword="ngModel"> </ion-input>
 
-            <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
-            <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
-        
+            <button class = "eye" *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+            <button class = "eye" *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+          <!--<pre *ngIf="confirmPassword.errors" class="margin-20">{{ confirmPassword.errors | json }}</pre>-->
         </ion-item>
         <ion-item no-lines class="error" [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)">
-            Password mismatch
+            Passwords do not match.
         </ion-item>
 
     
