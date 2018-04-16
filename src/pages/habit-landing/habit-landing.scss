@@ -10,8 +10,14 @@ page-habit-landing {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-flow: wrap
+        flex-flow: nowrap;
     }
+    .habit-landing-habits div {
+        display: block;
+        text-align: center;
+        width: 80%;
+    }
+
     .habit-landing-modal-icon{
         font-size: 2em;
         font-weight: bold;
