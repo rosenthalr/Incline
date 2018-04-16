@@ -46,7 +46,7 @@ page-create-account {
 */
   
       .error{
-        color: #d0021b !important;
+        color: $error-red !important;
         font-size: 12px;
         border-style: none;
         text-align: left;
@@ -63,7 +63,7 @@ page-create-account {
         height: 70px;
         margin:0 auto;
         padding-left:0px;
-        color: #696969;
+        color: $brownish-grey;
         background-color: transparent !important; 
         font-family: Lato;
     }
@@ -92,7 +92,7 @@ page-create-account {
       }
 
       .back-button, .toolbar-title {
-         color: #FFF;
+         color: $white-two;
        }
 
       /*
