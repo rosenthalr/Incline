@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
-import { SuccessPage } from '../success/success';
+import { TestPage } from '../test/test';
 import { CreateAccountPage } from '../create-account/create-account';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'page-home',
   templateUrl: 'login.html',
+  providers: [LoginService]
 })
 
 export class LoginPage {
@@ -37,7 +38,7 @@ export class LoginPage {
 
   checkIfComplete(userInfo, field) {
 
-    if(field == 'email') {
+    if(field=='email') {
       this.email = userInfo;
     } else {
       this.password = userInfo;
@@ -66,7 +67,7 @@ export class LoginPage {
         // log the success message to the console
         this.emailError = false;
         this.passwordError = false;
-        this.navCtrl.push(SuccessPage);
+        this.navCtrl.push(TestPage);
         // Not sure why I need to return true, but it doesn't work when I remove it
         //return true;
       },

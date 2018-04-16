@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators,ValidatorFn,AbstractControl } from '
 import { OnInit } from '@angular/core';
 import { HomePage } from '../home/home';
 import { User } from './user.interface';
+import { RegistrationService} from '../../services/create-account.service';
 import { SuccessPage } from '../success/success';
 //import { CreateAccountService } from '../../services/create-account.service';
 import {Observable} from 'rxjs/Observable';
@@ -21,26 +22,29 @@ import {Observable} from 'rxjs/Observable';
 @Component({
   selector: 'page-create-account',
   templateUrl: 'create-account.html',
+  providers: [RegistrationService],
 })
 export class CreateAccountPage implements OnInit {
 
-  public type = 'password';
-  public type2 = 'password';
-  public showPass = false;
-  public showPass2 = false;
-  public isComplete: boolean;
-  public emailError: boolean;
-  public passwordLengthError: boolean;
-  public passwordMatchError: boolean;
-  public firstName: string;
-  public lastName: string;
-  public email: string;
-  public password1: string;
-  public password2: string;
-  //public user : FormGroup;
-
+  public type='password';
+  public type2='password';
+  public showPass=false;
+  public showPass2=false;
+  public isComplete:boolean;
+  public emailError:boolean;
+  public passwordLengthError:boolean;
+  public passwordMatchError:boolean;
+  public firstName:string;
+  public lastName:string;
+  public email:string;
+  public password1:string;
+  public password2:string;
   public user: User;
   
+
+  constructor(private registrationService:RegistrationService,public navCtrl: NavController, public navParams: NavParams) {
+  }
+
     ngOnInit() {
       this.user = {
         firstName: '',
@@ -51,48 +55,29 @@ export class CreateAccountPage implements OnInit {
       }
     }
     //constructor(public navCtrl: NavController, public navParams: NavParams, private CreateAccountService: CreateAccountService) {
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-        }
 
 
     save(model: User, isValid: boolean) {
-      // call API to save customer
+      this.registrationService.addUser(model)
       console.log(model, isValid);
-      /*
-      this.CreateAccountService.createaccount(model).subscribe(
-        data => {
-          console.log(model, isValid);
-          this.navCtrl.push(SuccessPage);
-          // Not sure why I need to return true, but it doesn't work when I remove it
-          //return true;
-          
-        }
-      );
-      */
     }
-    
-
-
-
-
 
   showPassword() {
     this.showPass = !this.showPass;
-
     if(this.showPass){
-      this.type = 'text';
+      this.type='text';
     } else {
-      this.type = 'password';
+      this.type='password';
     }
   }
 
   showPassword2() {
-    this.showPass2 = !this.showPass2;
+    this.showPass2=!this.showPass2;
 
     if(this.showPass2){
-      this.type2 = 'text';
+      this.type2='text';
     } else {
-      this.type2 = 'password';
+      this.type2='password';
     }
   }
 
@@ -110,19 +95,19 @@ export class CreateAccountPage implements OnInit {
 
   checkIfComplete(userInfo, field) {
     
-        if (field= 'firstName') {
+        if (field='firstName') {
           this.firstName = userInfo;
         }
-        else if (field= 'lastName'){
+        else if (field='lastName'){
           this.lastName = userInfo;
         }
-        else if (field= 'email') {
+        else if (field='email') {
           this.email = userInfo;
         }
-        else if (field= 'password1') {
+        else if (field='password1') {
           this.password1 = userInfo;
         }
-        else if (field= 'password2') {
+        else if (field='password2') {
           this.password2 = userInfo;
         }
     

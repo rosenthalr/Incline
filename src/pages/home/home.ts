@@ -9,7 +9,12 @@ import { CreateAccountPage } from '../create-account/create-account';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {
 
   }
 
+  goToCreateAccount(){
+    this.navCtrl.push(CreateAccountPage);
+  }
+
+}

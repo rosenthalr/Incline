@@ -8,7 +8,6 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'success.html'
 })
 export class SuccessPage {
-  // testPage = TestPage;
 
   constructor(public navCtrl: NavController) {
 
