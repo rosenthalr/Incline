@@ -22,6 +22,7 @@ import {Observable} from 'rxjs/Observable';
 @Component({
   selector: 'page-create-account',
   templateUrl: 'create-account.html',
+  providers:[CreateAccountService],
 })
 export class CreateAccountPage implements OnInit {
 
@@ -41,7 +42,7 @@ export class CreateAccountPage implements OnInit {
   public user: User;
   
 
-  constructor(private createAccountService:CreateAccountService,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public createAccountService:CreateAccountService,public navCtrl: NavController, public navParams: NavParams) {
   }
 
     ngOnInit() {
