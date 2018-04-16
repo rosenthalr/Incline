@@ -58,7 +58,14 @@ export class CreateAccountPage implements OnInit {
 
     save(model: User, isValid: boolean) {
       // call API to save customer
-      console.log(model, isValid);
+      this.createAccountService.createaccount(model).subscribe(
+        data => {
+          console.log(model);
+        },
+        error => {
+          console.error(error);
+        }
+      )
     }
 
   showPassword() {
