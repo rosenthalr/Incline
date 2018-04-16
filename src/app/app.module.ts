@@ -33,7 +33,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{tabsPlacement:'bottom'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
