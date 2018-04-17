@@ -5,14 +5,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
-import { TestPage } from '../pages/test/test';
 import { CreateAccountPage } from '../pages/create-account/create-account';
+import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  // Temporarily changing the rootPage to the categories page for testing purposes
+  rootPage:any = LoginPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

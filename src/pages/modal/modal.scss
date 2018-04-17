@@ -1,0 +1,27 @@
+@import '../../styles/global.scss';
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+}
+
+.close-modal-button {
+    background-color:transparent;
+    margin: 0px;
+}
+.close-modal-button-icon {
+    font-size:  2em;
+    font-weight: bold;
+    color: $white-two;
+}
+page-modal{
+.scroll-content{
+    padding-top:0;
+    margin-top:0!important;
+}
+.bar-buttons,
+.toolbar-title {
+    color: $white-two;
+  }
+}

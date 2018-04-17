@@ -1,0 +1,31 @@
+page-habit-landing {
+    .bar-buttons,
+    .toolbar-title,
+    .habit-landing-modal-button {
+        color: $white-two;
+    }
+    .habit-landing-habits{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: nowrap;
+    }
+    .habit-landing-habits div {
+        display: block;
+        text-align: center;
+        width: 80%;
+    }
+
+    .habit-landing-modal-icon{
+        font-size: 2em;
+        font-weight: bold;
+        color: $white-two;
+    }
+    .toolbar-background {
+        background-image: linear-gradient(to left,$sunset-orange,$sunset-red),;
+    }
+}
+
+

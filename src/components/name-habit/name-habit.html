@@ -1,0 +1,14 @@
+<!-- Generated template for the NameHabitComponent component -->
+<div class="name-habit-header">
+    <div class="name-habit-header-container">
+       <div class="name-habit-header-title">Tell us about the habit you would like to track</div>
+    </div>
+    <img class="name-habit-sun" src="../www/assets/svgs/name-habit.svg" alt="" srcset="">
+ </div>
+
+
+<ion-item class="name-habit">
+  <ion-label floating>Habit Name</ion-label>
+  <ion-input class = "name-habit-input" type="text" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionBlur)="setName(habitName)" required #name="ngModel"></ion-input>
+</ion-item>
+<button class="Rectangle-3" [ngClass]="{'active':!name.errors?.required}" [disabled]="name.errors?.required" ion-button (click)="emitNextPage()">NEXT</button>

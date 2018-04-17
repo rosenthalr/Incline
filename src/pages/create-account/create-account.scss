@@ -1,33 +1,52 @@
 page-create-account {
-
+        .toolbar-title,
+        .create-account-back-button {
+          color: $white-two;
+      }
+      .create-account-back-icon{
+          font-size: 2em;
+          font-weight: bold;
+          color: $white-two;
+      }
+      .toolbar-background {
+          background-image: linear-gradient(to right,$cerulean,#0aafed),;
+      }
       .btn-create {
         width: 255px;
         height: 44px;
         font-size: 14px;
-        color: black;
+        color: white;
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         opacity: 0.49;
-        border-radius: 10px;
-        background-color: #6bddcb;
-        margin-top: 40px;
+        border-radius: 0px;
+        background-color: $cerulean;
+        margin-top: 100px;
       }
 
       .btn-create.active{
-        background-color: #6bddcb;
+        background-color: $cerulean;
         opacity:1 !important;
       }
-
+      .eye{
+        font-size: 2.2 rem;
+      }
+      .nav-bar{
+        height: 48px;
+        font-family: Lato;
+      }
+/*
       #back-button{
         font-size: 40px;
         margin-left: 17px;
         margin-top: 5px;
       }
-
+*/
+  
       .error{
-        color: #d0021b !important;
+        color: $error-red !important;
         font-size: 12px;
         border-style: none;
         text-align: left;
@@ -35,6 +54,8 @@ page-create-account {
         background-color: transparent !important; 
         padding-left:0px;
         margin:0 auto;
+        font-family: Lato;
+        
       }
 
       .input-group {
@@ -42,8 +63,9 @@ page-create-account {
         height: 70px;
         margin:0 auto;
         padding-left:0px;
-        color: #696969;
+        color: $brownish-grey;
         background-color: transparent !important; 
+        font-family: Lato;
     }
 
     .return{
@@ -55,22 +77,29 @@ page-create-account {
       font-weight: bold;
       font-size: 14px;
     }
-
+/*
     .create-account-header {
         height: 27px;
         font-size: 22px;
         text-align: center !important;
         color: #4a4a4a;
-    }
-
+      }
+*/
 
       .input{
         color: black;
-    }
-    
+        font-family: Lato;
+      }
+
+      .back-button, .toolbar-title {
+         color: $white-two;
+       }
+
+      /*
       ion-content{
         background-image: url('../assets/imgs/Background Graphic 2.png');
         background-size:cover;
     }
+    */
     
 }

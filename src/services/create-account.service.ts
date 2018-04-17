@@ -1,4 +1,4 @@
-/*
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/catch';
@@ -12,7 +12,7 @@ const httpOptions = {
 
 @Injectable()
 export class CreateAccountService {
-
+  public apiUrl = 'http://localhost:7000/addUser';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
 
@@ -20,8 +20,7 @@ export class CreateAccountService {
   // and then checks to see if an account with those credentials exist
   createaccount(user) {
     let body = JSON.stringify(user);
-    //return this.http.push('http://localhost:7000/create-account', body, httpOptions);
+    return this.http.post(this.apiUrl, body, httpOptions);
   }
 
 }
-*/

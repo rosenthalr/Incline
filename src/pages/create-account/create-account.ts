@@ -5,6 +5,10 @@ import { OnInit } from '@angular/core';
 import { HomePage } from '../home/home';
 import { User } from './user.interface';
 import { SuccessPage } from '../success/success';
+import { CreateAccountService } from '../../services/create-account.service'
+//import { CreateAccountService } from '../../services/create-account.service';
+import {Observable} from 'rxjs/Observable';
+
 
 
 /**
@@ -18,6 +22,7 @@ import { SuccessPage } from '../success/success';
 @Component({
   selector: 'page-create-account',
   templateUrl: 'create-account.html',
+  providers:[CreateAccountService],
 })
 export class CreateAccountPage implements OnInit {
 
@@ -36,6 +41,10 @@ export class CreateAccountPage implements OnInit {
   public password2:string;
   public user: User;
   
+
+  constructor(public createAccountService:CreateAccountService,public navCtrl: NavController, public navParams: NavParams) {
+  }
+
     ngOnInit() {
       this.user = {
         firstName: '',
@@ -45,16 +54,20 @@ export class CreateAccountPage implements OnInit {
         confirmPassword: ''
       }
     }
-  
+    //constructor(public navCtrl: NavController, public navParams: NavParams, private CreateAccountService: CreateAccountService) {
+
+
     save(model: User, isValid: boolean) {
       // call API to save customer
-      console.log(model, isValid);
+      this.createAccountService.createaccount(model).subscribe(
+        data => {
+          console.log(model);
+        },
+        error => {
+          console.error(error);
+        }
+      )
     }
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
 
   showPassword() {
     this.showPass = !this.showPass;

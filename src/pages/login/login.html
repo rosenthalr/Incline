@@ -10,36 +10,33 @@
 
   <ion-row class="container2">
       <ion-col class="logoContainer">
-          <button type="button" class="Mask" ion-button icon-only>
-          </button>
       </ion-col>
     </ion-row>
 
     <ion-list>
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value);">
 
-        <h2 class="Login">Login</h2>
-
         <div class="input-container">
           <ion-item class="input-group">
-            <ion-label  class="Field-Label" [ngClass]="{'error': emailError == true }" floating>Email</ion-label>
-            <ion-input class="Field-Input Email-Input" [ngClass]="{'error': emailError == true }" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
+            <ion-label class="Field-Label" [ngClass]="{'error': emailError }" floating>Email</ion-label>
+            <ion-input class="Field-Input Email-Input" [ngClass]="{'error': emailError}" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfEmailEmpty($event, 'email')" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
           <ion-item [hidden]="emailError != true" class="Error-Text">Hmm...We don't have an account for this email.</ion-item>
         </div>
 
         <div class="input-container">
           <ion-item class="input-group">
-            <ion-label class="Field-Label" [ngClass]="{'error': passwordError == true }" floating>Password</ion-label>
-            <ion-input class="Field-Input"  [ngClass]="{'error': passwordError == true }" type="password" name="password" [ngModel]="password" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
+            <ion-label class="Field-Label" [ngClass]="{'error': passwordError }" floating>Password</ion-label>
+            <ion-input class="Field-Input"  [ngClass]="{'error': passwordError }" type={{type}} name="password" [ngModel]="password" (ngModelChange)="checkIfPasswordEmpty($event, 'password')" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
+            <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+            <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
           </ion-item>
-          <ion-item [hidden]="passwordError != true" class="Error-Text">Hmm...That's not the correct password.</ion-item>
+          <ion-item [hidden]="!passwordError" class="Error-Text">Hmm...That's not the correct password.</ion-item>
         </div>
 
         <div>
-            <button   class="login-btn Rectangle-3" [ngClass]="{'active': active === true }" 
-            [disabled]="isComplete == false" 
-            ion-button>LOGIN</button>
+            <button   class="login-btn Rectangle-3" [ngClass]="{'active': active }" 
+            [disabled]="!isComplete ">LOGIN</button>
       
             <div class="Forgot-password">Forgot password?</div>
             <div class="newUser">
@@ -55,4 +52,9 @@
 
     </ion-list>
   
-  </ion-content>
+  </ion-content> 
+<!-- 
+  Use ngModelChange. It automatically fires when the ngModel is changed. 
+  This way I can create a function that will check if the fields are empty and everytime
+  they delete a character it will fire. When they delete the final character it will see that it's empty
+  and adjust this.emailerror to false. -->

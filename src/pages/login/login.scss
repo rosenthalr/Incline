@@ -84,6 +84,15 @@
     letter-spacing: normal;
     text-align: left;
   }
+
+.input-wrapper {
+  height: 65px;
+}
+
+.Field-Input {
+  padding-bottom: 0px;
+}
+
   .error {
     font-family: Lato;
     font-size: 9px;
@@ -94,11 +103,13 @@
     letter-spacing: normal;
     text-align: left;
     color: $error-red !important;
-  }
+    border-bottom-color: red !important;
+  } 
 
   .Error-Text {
     background: transparent;
     height: 11px;
+    border-bottom: 1px solid transparent;
     font-family: Lato;
     font-size: 9px;
     font-weight: normal;
@@ -113,7 +124,9 @@
     z-index: 5;
     padding-left: 0px;
     margin-top: -12px;
+
   }
+
   .floating {
     font-family: Lato;
     font-size: 9px;
@@ -136,37 +149,16 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: $grey;
   }
 
-
-.input-container{
-    height:79px;
-}
   .input-group {
       width:64.2667%;
       margin:0 auto;
       padding-left:0px;
   }
 
-  .item-ios.item-block .item-inner, .item-input-has-focus{
-    border-bottom: 0px !important;
-  }
 
-  .list-md .item-block .item-inner {
-    border-bottom: 0px !important;
 
-  }
-
-  .Field-Input {
-    border-bottom: solid 2px $black;
-    color: $black !important;
-
-  }
-
-  .Field-Input.Email-Input.error {
-    border-bottom: solid 2px $error-red;
-  }
   .text-input{
     color: $black;
   }
@@ -203,33 +195,36 @@
   }
 
   .Rectangle-3 {
+    border-radius: 0px;
     width: 255px;
     height: 44px;
-    opacity: 0.49;
-    border-radius: 10px;
-    background-color: $light-teal;
-    margin-top:16px;
-    margin-bottom:16px;
+    background-color: $white;
+    margin-top: 21%;
     transition: all 500ms ease;
-    opacity:.4 !important;
   }
 
   .Rectangle-3.active {
-    // background-color: rgb(133, 255, 236);
-    background-color: $light-teal;
+    background-color: $cerulean !important;
     opacity:1 !important;
+    color: white;
   }
 
  .signUp{
-  text-decoration: underline;
-  width: 140px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  color: $cerulean;
  }
 
   .Forgot-password {
-    width: 373px;
-    height: 10px;
-    margin-bottom:10px;
+    height: auto;
     font-family: Lato;
+    margin-top: 5%;
     font-size: 14px;
     font-weight: bold;
     font-style: normal;
@@ -237,18 +232,19 @@
     line-height: normal;
     letter-spacing: -0.3px;
     text-align: center;
-    color: $dark-grey;
+    color: $cerulean;
   }
 
   .newUser{
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 4%;
   }
 
   .newUser1{
-    width: 126px;
     height: 17px;
     padding-right: 10px;
     font-family: Lato;
@@ -263,7 +259,6 @@
   }
 
   .newUser2{
-    width: 93px;
     height: 17px;
     font-family: Lato;
     font-size: 14px;
@@ -283,7 +278,9 @@
   .container {
     padding:0px !important;
     position:relative;
-    margin-top:58.1px;
+    background-image: url('../assets/imgs/mainBackDrop.png');
+    background-size: cover;
+    height: auto;
   }
 
   .container2 {
@@ -296,10 +293,9 @@
   .imgContainer {
     padding:0px !important;
     width: 100%;
-    height: 170.5px;
-    background-image: url('../assets/imgs/login-graphic.png');
-    background-size: cover;
-    margin-top: 25px;
+    height: 280px;
+    margin-bottom: 1px;
+    
   }
 
   .logoContainer {
@@ -310,6 +306,7 @@
     margin-top: 20px;
   }
 
+
   .Mask {
     border-radius: 50%;
     width: 137px;
@@ -319,71 +316,59 @@
   }
 
 
-  .item-md.item-input.input-has-focus .item-inner {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
-  }
+//eye icon location
+.item-md.item-label-stacked [item-right], .item-md.item-label-floating [item-right], .item-md.item-label-stacked [item-end], .item-md.item-label-floating [item-end]{
+  padding: 0px;
+  top: 15px !important;
+  left: 8px;
+}
+.item-ios.item-label-stacked [item-right], .item-ios.item-label-floating [item-right], .item-ios.item-label-stacked [item-end], .item-ios.item-label-floating [item-end]{
+  padding: 0px;
+  top: 15px !important;
+  left: 8px;
+}
+.ion-ios-eye-off-outline:before, .ion-ios-eye-outline:before{
+  font-size: 2.2rem;
+}
 
-  .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-    color: $grey !important;
-  }
 
-.label-md.error {
-    color: $error-red !important;
-  }
+
+//Changes the color of the input's bottom border when the field is clicked on
+//This needs to be here because, by design, ionic doesn't allow IOS on-focus highlight changes
+//Transparent box shadow removes an automatic blue box shadow that appears when clicked
+
+.item-md.item-input.item-input-has-focus.item-inner, .item-md.item-input.input-has-focus .item-inner{
+  border-bottom: solid 2px $cerulean;
+  box-shadow: inset 0 -1px 0 0 transparent !important;
+}
+
+.item-ios.item-input.item-input-has-focus.item-inner, .item-ios.item-input.input-has-focus .item-inner{
+  border-bottom: solid 2px $cerulean;
+  box-shadow: inset 0 -1px 0 0 transparent !important;
+}
+
+
+
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+  border-bottom: 1px transparent !important;
+}
   
-  .list-md .item-input.input-has-focus:last-child {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
-
-  }
-  
-  .list-md .item-input.input-has-focus:last-child .item-inner {
-    box-shadow: none;
-    color: $black !important;
-
-  }
-  
-  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
-
-  }
-  
-  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
-
-  }
-  
-  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
-    box-shadow: none;
-    color: $black !important;
-
-  }
-  
-  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
-
-  }
-  
-  .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    color: $black !important;
-
-  }
 
 
-  .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+
+  //This needs to be added to change the label color on IOS 
+  // .item-input-has-focus .label-ios[floating], .input-has-focus .label-ios[floating], .item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
+  //   color: $cerulean;
+  // }
+
+
+//Makes sure the floating label is grey when not clicked on the input
+.item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
+  color: $grey;
+}
+
+
+.item-ios{
+  color: $grey;
 }

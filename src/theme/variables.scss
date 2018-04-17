@@ -14,7 +14,7 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
-
+@import "../styles/_colors";
 
 // Shared Variables
 // --------------------------------------------------
@@ -22,7 +22,11 @@ $app-direction: ltr;
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
+$toolbar-ios-title-text-color: #FFF;
+$toolbar-text-align: center;
+$toolbar-font-family: Lato;
+$tabs-ios-tab-icon-color-active:  #ff5200;
+$tabs-ios-tab-text-color-active: #ff5200;
 
 
 
@@ -39,14 +43,19 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
 );
 
+$text-input-highlight-color-valid: #dedede;
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
+$text-input-ios-highlight-color-valid: #dedede;
+$text-input-ios-hightlight-color-invalid: red;
+$label-ios-text-color-focused: #0477d6 !important;
+
 
 
 
@@ -54,6 +63,10 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$text-input-md-hightlight-color-valid: #dedede;
+$text-input-md-hightlight-color-invalid: red !important;
+//This changes the color of the input text when clicked on
+$label-md-text-color-focused: #0477d6 !important;
 
 
 
@@ -113,6 +126,11 @@ $colors: (
   src: url('../assets/fonts/Lato/Lato-Regular.ttf');
 }
 
-// h1 {
-//   font-family: 'Open Sans' !important;
-// }
+
+@font-face {
+  font-family: 'Avenir Next_Medium';
+  font-style: normal;
+  src: url('../assets/fonts/Avenir Next/AvenirNextLTPro-Medium.otf');
+}
+
+

@@ -1,29 +1,42 @@
 
 .contentBackground{
-    background-image: url('../assets/imgs/successBackground.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+    height: 100%
 }
 
+.backgroundImage{
+    background-image: url('../assets/imgs/mainBackDrop.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 41%;
+    background-position: center;
+    background-size: cover;
+}
+
+.scroll-content{
+    padding: 0px !important;
+}
 .youDidIt {
-    font-family: 'Avenir Next_Bold';
-    font-size: 36px;
+    font-family: 'Avenir Next_Medium';
+    font-size: 34px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
-    color: #1ea09f;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: black;
+    margin-top: 10% !important;
 }
 
 .successMessage{
     font-family: 'Lato';
     font-size: 22px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 8%;
+    margin-bottom: 12%;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: normal;
+    line-height: 1.18;
     letter-spacing: normal;
     text-align: center;
     color: #4a4a4a;
@@ -37,12 +50,11 @@
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
-    color: #ffffff;
-    background-color: #6addcb;
-    border-radius: 10px;
+    color: $white-two;
+    background-color: $cerulean;
+    border-radius: 0px;
 }
 
 .content {
     position: relative;
-    padding-top: 63%;
 }
