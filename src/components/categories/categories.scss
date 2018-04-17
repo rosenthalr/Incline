@@ -9,9 +9,10 @@
     background:linear-gradient($cerulean,$baby-blue);
 }
 .categories-sun{
+    background-image: url('../www/assets/svgs/categories.svg');
     position: absolute;
-    left:0;
-    top:0;
+    left: -3px;
+    top: -3px;
 }
 .categories-header-title {
     padding-top: 1.2em;

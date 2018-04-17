@@ -97,6 +97,10 @@ checkIfPasswordEmpty(){
       if(this.email == "test" && this.password == "test"){
         this.navCtrl.push(TabsPage);
       }
+      //Adding this to test on simulator because email input is automatically set to capitalize
+      if(this.email == "Test" && this.password == "test"){
+        this.navCtrl.push(TabsPage);
+      }
 
       this.loginService.login(user).subscribe(
       
