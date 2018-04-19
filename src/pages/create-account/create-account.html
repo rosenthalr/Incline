@@ -53,14 +53,14 @@
             <ion-label floating class="label">Password</ion-label>
 
             <ion-input type="{{type}}" name="password" [ngModel]="user.password" [ngModelOptions] = "{ updateOn: 'blur' }"
-            required validateEqual="confirmPassword" minlength="6" reverse="true" #password="ngModel"></ion-input>
+            required validateEqual="confirmPassword" minlength="8" reverse="true" #password="ngModel"></ion-input>
 
             <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
             <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
     
         </ion-item>
         <ion-item no-lines class = "error" [hidden]="password.valid || (password.pristine && !f.submitted)">
-            Password must be at least 6 characters.
+            Password must be at least 8 characters.
         </ion-item>
 
 
