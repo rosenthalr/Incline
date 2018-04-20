@@ -1,19 +1,10 @@
 <ion-content>
-
-  
-
-  <ion-row class="container">
-    <ion-col class="imgContainer">
-
-    </ion-col>
+    
+  <ion-row class="header">
+    <ion-img class="imgContainer" alt="app logo" src="../assets/imgs/mainBackDrop.png"></ion-img>
   </ion-row>
 
-  <ion-row class="container2">
-      <ion-col class="logoContainer">
-      </ion-col>
-    </ion-row>
-
-    <ion-list>
+  <ion-list class="login-main">
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value);">
 
         <div class="input-container">
@@ -51,7 +42,6 @@
         </form>
 
     </ion-list>
-  
   </ion-content> 
 <!-- 
   Use ngModelChange. It automatically fires when the ngModel is changed. 
