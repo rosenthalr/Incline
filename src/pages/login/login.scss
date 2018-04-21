@@ -93,10 +93,6 @@ input {
   padding-bottom: 0px;
 }
 
-.input-has-focus {
-
-}
-
 .input-error:not(.input-has-focus) > .item-inner {
   border-bottom: 2px solid $error-red !important;
 }
