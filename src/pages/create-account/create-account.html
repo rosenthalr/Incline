@@ -42,7 +42,7 @@
             <ion-label floating class="label">Email</ion-label>
 
           <ion-input class="input" type="email"  name="email" [ngModel]="user.email" [ngModelOptions]="{ updateOn: 'blur' }"
-            required  #email="ngModel"  ng-model-options="{ updateOn: 'blur' }" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"> </ion-input>
+            required  #email="ngModel"  ng-model-options="{ updateOn: 'blur' }" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[com]+$"> </ion-input>
             
         </ion-item>
         <ion-item no-lines class="error" [hidden]="email.valid || (email.pristine && !f.submitted)" >
