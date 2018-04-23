@@ -14,7 +14,7 @@
       </ion-navbar>
     </ion-header>
   <!-- Insert Name Habit Page here -->
-<ion-content>
+<ion-content no-bounce>
   <ion-slides (ionSlideDidChange)="getSlideNumber()"#modalSlider pager=false>
     <ion-slide >
       <name-habit (nextPage)="nextPage($event)" (onNamePicked)="onNamePicked($event)"></name-habit>
