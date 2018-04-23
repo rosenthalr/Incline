@@ -23,6 +23,11 @@ page-habit-landing {
         font-weight: bold;
         color: $white-two;
     }
+
+    .arorw-to-add-button-icon{
+        transform: rotate(110deg);
+    }
+
     .toolbar-background {
         background-image: linear-gradient(to left,$sunset-orange,$sunset-red),;
     }
