@@ -105,6 +105,9 @@ checkIfPasswordEmpty(){
           this.emailError = false;
           this.passwordError = false;
   
+          // Remove header image
+
+
           // Navigate to Habit Landing Page
           this.navCtrl.push(TabsPage);
        },
