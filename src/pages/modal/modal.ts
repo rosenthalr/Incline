@@ -18,13 +18,17 @@ import { Slides } from 'ionic-angular/components/slides/slides';
 export class ModalPage implements OnInit {
   @ViewChild('modalSlider')slides:Slides;
   public category: string;
-  public name:string; 
+  public name:string;
   public page:number=1;
   public totalPages:number;
   ngOnInit() {
     this.category = '';
     this.name = '';
     this.page = 1;
+  }
+  ngAfterViewInit() {
+    // child is set
+    this.slides.lockSwipes(true);
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
   }
@@ -46,9 +50,13 @@ export class ModalPage implements OnInit {
   }
   // Go back to previous page. If the user is on the first page of the modal, the modal closes
   goBack(){
+    this.slides.lockSwipes(false);
     this.slides.slidePrev();
+    this.slides.lockSwipes(true);
   }
   nextPage(){
+    this.slides.lockSwipes(false);
     this.slides.slideNext();
+    this.slides.lockSwipes(true);
   }
 }
