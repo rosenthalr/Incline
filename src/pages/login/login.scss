@@ -93,10 +93,6 @@ input {
   padding-bottom: 0px;
 }
 
-.input-has-focus {
-
-}
-
 .input-error:not(.input-has-focus) > .item-inner {
   border-bottom: 2px solid $error-red !important;
 }
@@ -285,20 +281,15 @@ color: $cerulean;
   background: $white !important;
 }
 
-.header {
-  position: fixed;
+#header {
+  position: absolute;
   top: 0px;
-  right: 0px;
-  width: 100%;
-  height: 280px;
-}
-
-.imgContainer {
-  padding: 0px;
+  left: 0px;
   width: 100%;
   min-width: 378px;
-  margin-bottom: 0px;
-  display: block;
+  min-height: 280px;
+  background-image: url('../assets/imgs/mainBackDrop.png');
+  background-size: cover;
 }
 
 .Mask {
