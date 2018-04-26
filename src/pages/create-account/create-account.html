@@ -3,7 +3,7 @@
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
---> 
+-->
 <ion-header no-border>
         <ion-navbar hideBackButton>
           <ion-buttons>
@@ -23,7 +23,7 @@
             required minlength="2" #firstName="ngModel"> </ion-input>
 
         </ion-item>
-        <ion-item no-lines class="error" [hidden]="firstName.valid || (firstName.pristine && !f.submitted)" >
+        <ion-item no-lines class="error-text" [ngClass]="{hiding:(firstName.valid || firstName.pristine),show:!(firstName.valid || firstName.pristine)}" >
             First Name is required.
         </ion-item>
 
@@ -31,21 +31,21 @@
             <ion-label floating class="label">Last Name</ion-label>
             <ion-input type="text"  name="lastName" [ngModel]="user.lastName" [ngModelOptions] = "{ updateOn: 'blur' }"
               required minlength="2" #lastName="ngModel"> </ion-input>
-           
+
           </ion-item>
-          <ion-item no-lines class="error" [hidden]="lastName.valid || (lastName.pristine && !f.submitted)">
+          <ion-item no-lines class="error-text" [ngClass]="{hiding:(lastName.valid || lastName.pristine),show:!(lastName.valid || lastName.pristine)}">
             Last Name is required.
         </ion-item>
-    
+
 
         <ion-item class="input-group">
             <ion-label floating class="label">Email</ion-label>
 
           <ion-input class="input" type="email"  name="email" [ngModel]="user.email" [ngModelOptions]="{ updateOn: 'blur' }"
             required  #email="ngModel"  ng-model-options="{ updateOn: 'blur' }" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[com]+$"> </ion-input>
-            
+
         </ion-item>
-        <ion-item no-lines class="error" [hidden]="email.valid || (email.pristine && !f.submitted)" >
+        <ion-item no-lines class="error-text" [ngClass]="{hiding:(email.valid || email.pristine),show:!(email.valid || email.pristine)}" >
             Hmm...This email seems invalid.
         </ion-item>
 
@@ -57,9 +57,9 @@
 
             <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
             <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
-    
+
         </ion-item>
-        <ion-item no-lines class = "error" [hidden]="password.valid || (password.pristine && !f.submitted)">
+        <ion-item no-lines class = "error-text" [ngClass]="hiding:(password.valid || password.pristine),show:!(password.valid || password.pristine)">
             Password must be at least 8 characters.
         </ion-item>
 
@@ -74,16 +74,16 @@
             <button class = "eye" *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
           <!--<pre *ngIf="confirmPassword.errors" class="margin-20">{{ confirmPassword.errors | json }}</pre>-->
         </ion-item>
-        <ion-item no-lines class="error" [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)">
+        <ion-item no-lines class="error-text" [ngClass]="hiding:(confirmPassword.valid || confirmPassword.pristine),show:!(confirmPassword.valid || confirmPassword.pristine)">
             Passwords do not match.
         </ion-item>
 
-    
-        <button class="btn-create" [ngClass]="{'active': firstName.valid && lastName.valid && email.valid && password.valid && confirmPassword.valid }" 
-        [disabled]="firstName.invalid || lastName.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" (click)="goToSuccessPage();" ion-button> CREATE</button>
-        
 
-      
+        <button class="btn-create" [ngClass]="{'active': firstName.valid && lastName.valid && email.valid && password.valid && confirmPassword.valid }"
+        [disabled]="firstName.invalid || lastName.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" (click)="goToSuccessPage();" ion-button> CREATE</button>
+
+
+
       </form>
 
 </ion-content>

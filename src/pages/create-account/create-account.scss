@@ -1,3 +1,5 @@
+@import '../../styles/global.scss';
+
 page-create-account {
         .toolbar-title,
         .create-account-back-button {
@@ -44,28 +46,36 @@ page-create-account {
         margin-top: 5px;
       }
 */
-  
-      .error{
-        color: $error-red !important;
+
+      .error-text{
         font-size: 12px;
         border-style: none;
         text-align: left;
         width: 64%;
-        background-color: transparent !important; 
+        background-color: transparent !important;
         padding-left:0px;
         margin:0 auto;
         font-family: Lato;
         margin-top: -12px;
         margin-bottom: -25px;
+        &.hiding{
+          color:white !important;
+        }
+        &.show{
+          color:$error-red !important;
+        }
+      }
+      .input-wrapper{
+        height:auto;
       }
 
       .input-group {
         width:64.2667%;
         height: 70px;
-        margin:0 auto;
+        margin:10px auto;
         padding-left:0px;
         color: $brownish-grey;
-        background-color: transparent !important; 
+        background-color: transparent !important;
         font-family: Lato;
     }
 
@@ -102,5 +112,5 @@ page-create-account {
         background-size:cover;
     }
     */
-    
+
 }
