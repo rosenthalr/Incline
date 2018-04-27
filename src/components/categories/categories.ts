@@ -20,7 +20,8 @@ export class CategoriesComponent {
 
   }
 
-  setCategory(category) {
+  setCategory(category, evt) {
+    console.log(evt);
     this.onCategorySelected.emit(category);
   }
 

@@ -12,25 +12,26 @@
         <img class="categories-sun" src="../www/assets/svgs/categories.svg" alt="" srcset=""> 
      </div>
     <ion-list class="categories">
-      <button (click)="setCategory('Work')" type="button" value="Work" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="clock"></ion-icon></div>
-          <div class="categories-button-title">Work</div>
+      <button (click)="setCategory('Productivity', $event)" type="button" value="Productivity" class="categories-button">
+          <div class="categories-button-icon-container"><ion-icon name="time"></ion-icon></div>
+          <div class="categories-button-title">Productivity</div>
+      </button>
+
+      <button (click)="setCategory('Mental Wellness', $event)" type="button" value="Mental Wellness" class="categories-button">
+        <div class="categories-button-icon-container"><ion-icon name="sunny"></ion-icon></div>
+        <div class="categories-button-title">Mental Wellness</div>
       </button>
   
-      <button (click)="setCategory('Life')" type="button" value="Life" class="categories-button">
+      <button (click)="setCategory('Physical Health', $event)" type="button" value="Physical Health" class="categories-button">
+        <div class="categories-button-icon-container"><ion-icon name="flame"></ion-icon></div>
+        <div class="categories-button-title">Physical Health</div>
+      </button>
+
+      <button (click)="setCategory('The Basics', $event)" type="button" value="The Basics" class="categories-button">
           <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
-          <div class="categories-button-title">Life</div>
+          <div class="categories-button-title">The Basics</div>
       </button>
-  
-      <button (click)="setCategory('Physical Health')" type="button" value="Physical Health" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="football"></ion-icon></div>
-          <div class="categories-button-title">Physical Health</div>
-      </button>
-  
-      <button (click)="setCategory('Mental Health')" type="button" value="Mental Health" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="sunny"></ion-icon></div>
-          <div class="categories-button-title">Mental Health</div>
-      </button>
+
     </ion-list>
   
     <div class="categories-back">

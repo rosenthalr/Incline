@@ -37,11 +37,9 @@ export class ModalPage implements OnInit {
   }
   onNamePicked(name){
     this.name = name;
-    console.log(this.name);
   }
   onCategorySelected(category) {
     this.category = category;
-    console.log(category);
     // Navigate to the next page (hasn't been created yet -- next sprint)
     //this.navCtslideNexttPage);
   }
