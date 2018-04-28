@@ -8,13 +8,17 @@ import { SuccessPage } from '../pages/success/success';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { TabsPage } from '../pages/tabs/tabs';
+import { WorkHabitsPage } from '../pages/work-habits/work-habits';
+import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
+import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
+import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = LoginPage; 
+  rootPage:any = MentalHabitsPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
