@@ -8,7 +8,7 @@
         <ion-navbar hideBackButton>
           <ion-buttons>
             <button  ion-button class="create-account-back-button" (click)="goToLogin()">
-                <ion-icon class="create-account-back-icon" name="arrow-back"></ion-icon>
+                <ion-icon icon class="create-account-back-icon" name="arrow-back"></ion-icon>
             </button>
           </ion-buttons>
             <ion-title>Create Account</ion-title>
@@ -59,7 +59,7 @@
             <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
 
         </ion-item>
-        <ion-item no-lines class = "error-text" [ngClass]="hiding:(password.valid || password.pristine),show:!(password.valid || password.pristine)">
+        <ion-item no-lines class = "error-text" [ngClass]="{hiding:(password.valid || password.pristine),show:!(password.valid || password.pristine)}">
             Password must be at least 8 characters.
         </ion-item>
 
@@ -74,7 +74,7 @@
             <button class = "eye" *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
           <!--<pre *ngIf="confirmPassword.errors" class="margin-20">{{ confirmPassword.errors | json }}</pre>-->
         </ion-item>
-        <ion-item no-lines class="error-text" [ngClass]="hiding:(confirmPassword.valid || confirmPassword.pristine),show:!(confirmPassword.valid || confirmPassword.pristine)">
+        <ion-item no-lines class="error-text" [ngClass]="{hiding:(confirmPassword.valid || confirmPassword.pristine),show:!(confirmPassword.valid || confirmPassword.pristine)}">
             Passwords do not match.
         </ion-item>
 

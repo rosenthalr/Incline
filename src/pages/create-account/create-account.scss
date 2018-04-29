@@ -8,10 +8,10 @@ page-create-account {
       .create-account-back-icon{
           font-size: 2em;
           font-weight: bold;
-          color: $white-two;
+          color: $white-two !important;
       }
       .toolbar-background {
-          background-image: linear-gradient(to right,$cerulean,#0aafed),;
+          background-color: $cerulean;
       }
       .btn-create {
         width: 255px;
