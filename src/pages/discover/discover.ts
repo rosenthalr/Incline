@@ -21,5 +21,17 @@ export class DiscoverPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DiscoverPage');
   }
+  goToPhysicalHealth(){
+    this.navCtrl.push(PhysicalHealthPage);
+  }
+  goToMentalWellness(){
+    this.navCtrl.push(MentalWellnesPage);
+  }
+  goToBasics(){
+    this.navCtrl.push(BackToBasicsPage);
+  }
+  goToProductivity(){
+    this.navCtrl.push(ProductivityPage);
+  }
 
 }
