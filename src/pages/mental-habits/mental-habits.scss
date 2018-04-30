@@ -13,12 +13,13 @@ page-mental-habits {
     //     flex-flow: nowrap;
     // }
     .icons{
-        font-size: 31px;
+        font-size: 30px;
         padding-right: 13px;
         width: 40px;
+        color: #00b39f;
     }
     .habitItem{
-        height: auto;
+        height: 60px;
         margin: 30px 24px 30px 26px;
         // padding-top: 15px;
         display: flex;
@@ -54,10 +55,12 @@ page-mental-habits {
         letter-spacing: normal;
         text-align: left;
         color: #00b39f;
-        padding-left: 19px;
+        margin-left: 19px !important;
+        margin-bottom: 25px !important;
         padding: 0px 0px;
         height: auto;
         margin: 0px;
+        background-color: transparent;
     }
 
     .habit{
@@ -87,6 +90,7 @@ page-mental-habits {
         background-image: url('../assets/imgs/bedroom.png');
         height: 140px;
         background-color: rgba(0, 179, 159, 0.5);
+        background-position: center; 
     }
    
     .descriptionContainer{

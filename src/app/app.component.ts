@@ -18,7 +18,7 @@ import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = MentalHabitsPage; 
+  rootPage:any = WorkHabitsPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

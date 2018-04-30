@@ -50,7 +50,20 @@ export const workHabits = [
       "description": "Distract your mind from those daily stresses.",
       "reminder": 7,
       icon: "bookmarks"
-    }
+    },
+    //These are placeholder habits below to show scrolling on the mentalHabits page
+    {
+        "habit": "Meditate",
+        "description": "Take some time to focus on you.",
+        "reminder": 7,
+        icon: "ios-search"
+      },
+      {
+        "habit": "Go to sleep without a device",
+        "description": "Unplug and unwind.",
+        "reminder": 9,
+        icon: "phone-portrait"
+      }
     
   ]
 
