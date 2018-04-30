@@ -119,6 +119,7 @@
 }
 .categories-button.inactive {
     background-color: $white-three;
+    border: 2px solid $white-three;
 }
 
 .categories-button.inactive > .categories-button-icon-container {

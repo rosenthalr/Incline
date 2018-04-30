@@ -12,26 +12,26 @@
         <img class="categories-sun" src="../www/assets/svgs/categories.svg" alt="" srcset=""> 
      </div>
     <ion-list class="categories">
-      <button (click)="setCategory('Productivity', $event)" type="button" value="Productivity" class="categories-button">
+        
+      <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Productivity'}" value="Productivity" (click)="setCategory('Productivity')" type="button" class="categories-button">
           <div class="categories-button-icon-container"><ion-icon name="time"></ion-icon></div>
           <div class="categories-button-title">Productivity</div>
       </button>
 
-      <button (click)="setCategory('Mental Wellness', $event)" type="button" value="Mental Wellness" class="categories-button">
-        <div class="categories-button-icon-container"><ion-icon name="sunny"></ion-icon></div>
-        <div class="categories-button-title">Mental Wellness</div>
-      </button>
-  
-      <button (click)="setCategory('Physical Health', $event)" type="button" value="Physical Health" class="categories-button">
+      <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Mental Wellness'}" value="Mental Wellness" (click)="setCategory('Mental Wellness')" type="button" class="categories-button">
+          <div class="categories-button-icon-container"><ion-icon name="sunny"></ion-icon></div>
+          <div class="categories-button-title">Mental Wellness</div>
+      </button> 
+
+      <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Physical Health'}" value="Physical Health" (click)="setCategory('Physical Health')" type="button" class="categories-button">
         <div class="categories-button-icon-container"><ion-icon name="flame"></ion-icon></div>
         <div class="categories-button-title">Physical Health</div>
       </button>
 
-      <button (click)="setCategory('The Basics', $event)" type="button" value="The Basics" class="categories-button">
+      <button [ngClass]="{'inactive': categorySelected && categorySelected!=='The Basics'}" value="The Basics" (click)="setCategory('The Basics')" type="button" class="categories-button">
           <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
           <div class="categories-button-title">The Basics</div>
       </button>
-
     </ion-list>
   
     <div class="categories-back">

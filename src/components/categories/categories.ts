@@ -12,17 +12,18 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'categories.html',
 })
 export class CategoriesComponent {
-
   @Output() onCategorySelected = new EventEmitter<string>();
   @Output() goBack = new EventEmitter<any>();
+  @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
+  categorySelected: boolean = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
   }
 
-  setCategory(category, evt) {
-    console.log(evt);
-    this.onCategorySelected.emit(category);
+  setCategory(categorySelected) { 
+    this.categorySelected = categorySelected;
+    this.onCategorySelected.emit(categorySelected);
+    setTimeout(()=>{this.nextPage.emit()},100);
   }
 
   emitGoBack() {
