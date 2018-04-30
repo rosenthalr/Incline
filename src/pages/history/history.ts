@@ -13,11 +13,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-history',
   templateUrl: 'history.html',
 })
+
 export class HistoryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  public current: number = 1;
+  public max : number = 21;
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
   }
