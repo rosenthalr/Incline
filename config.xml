@@ -3,7 +3,11 @@
     <name>goals-mobile</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+<<<<<<< HEAD
     <content original-src="index.html" src="http://10.231.25.70:8100" />
+=======
+    <content original-src="index.html" src="http://10.0.0.105:8100" />
+>>>>>>> ae9b0d1722d63967af33a8915187cc76f0905aa4
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
