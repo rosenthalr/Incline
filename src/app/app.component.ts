@@ -8,6 +8,7 @@ import { SuccessPage } from '../pages/success/success';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DiscoverPage } from '../pages/discover/discover';
 
 @Component({
   templateUrl: 'app.html'
