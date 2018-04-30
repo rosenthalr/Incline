@@ -93,6 +93,9 @@ checkIfPasswordEmpty(){
       // Test successful login without connection to DB
       if(this.email.toUpperCase()==='TEST' && this.password.toUpperCase()==='TEST'){
         this.navCtrl.push(TabsPage);
+        
+        // Prevent the function from finishing, so an error isn't thrown
+        return true;
       }
 
       this.loginService.login(user).subscribe(
@@ -104,9 +107,6 @@ checkIfPasswordEmpty(){
           // Remove any error messages that may have appeared on previous login attempts
           this.emailError = false;
           this.passwordError = false;
-  
-          // Remove header image
-
 
           // Navigate to Habit Landing Page
           this.navCtrl.push(TabsPage);

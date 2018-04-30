@@ -9,7 +9,6 @@
     background:linear-gradient($cerulean,$baby-blue);
 }
 .categories-sun{
-    background-image: url('../www/assets/svgs/categories.svg');
     position: absolute;
     left: 0px;
     top: 0px;
@@ -30,7 +29,7 @@
     text-align: left;
     line-height: 1.18;
     letter-spacing: normal;
-    color: $white-two;  
+    color: $white-two;
     height:100%;
     background-color: transparent;
     padding:0px 60px;

@@ -1,9 +1,12 @@
 @import "../../styles/global.scss";
 
+.Error-Text.show{
+  color:white;
+}
 /* Text styles */
 .h1-bold {
   font-family: Lato;
-  font-size: 36px;  
+  font-size: 36px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -107,7 +110,7 @@ input {
   letter-spacing: normal;
   text-align: left;
   color: $error-red !important;
-} 
+}
 
 .Error-Text {
   background: transparent;
@@ -121,7 +124,7 @@ input {
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
-  color: $error-red !important;
+  color: $error-red;
   width: 64.2667%;
   margin: 0 auto;
   z-index: 5;
@@ -205,7 +208,7 @@ input {
   width: 255px;
   height: 44px;
   background-color: $white;
-  margin-top: 21%;
+  margin-top: 10%;
   transition: all 500ms ease;
 }
 
@@ -338,11 +341,11 @@ color: $cerulean;
 .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
   border-bottom: 1px transparent !important;
 }
-  
 
 
 
-  //This needs to be added to change the label color on IOS 
+
+  //This needs to be added to change the label color on IOS
   // .item-input-has-focus .label-ios[floating], .input-has-focus .label-ios[floating], .item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
   //   color: $cerulean;
   // }
