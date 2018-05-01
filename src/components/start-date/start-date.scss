@@ -1,3 +1,55 @@
-start-date {
+@import '../../styles/global';
 
+.start-date-header {
+    height: 25%;
+    width: 100%;
+    background-color: $grey;
+    position:absolute;
+    top:0;
+    height: 186px;
+    background:linear-gradient($cerulean,$baby-blue);
 }
+.start-date-sun {
+    background-image: url('../www/assets/svgs/categories.svg');
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.start-date-header-title {
+    padding-top: 1.2em;
+}
+
+.start-date-header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+    line-height: 1.18;
+    letter-spacing: normal;
+    color: $white-two;  
+    height:100%;
+    background-color: transparent;
+    padding:0px 60px;
+}
+
+.start-date-container {
+    width: 100%;
+    margin-top: 170px;
+}
+.start-date {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 68%;
+}
+.start-date-input-group, .start-date-target {
+    display:flex;
+    width:100%;
+}
+
+

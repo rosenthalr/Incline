@@ -1,27 +1,18 @@
 import { Component,EventEmitter, Output} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
- * Generated class for the StartDateComponent component.
+ * Generated class for the ReminderComponent component.
  *
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
  */
 @Component({
-  selector: 'start-date',
-  templateUrl: 'start-date.html'
+  selector: 'reminder',
+  templateUrl: 'reminder.html'
 })
-export class StartDateComponent {
+export class ReminderComponent {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
-  startDate: Date;
-  targetDate: string = "none";
-
-  emitGoBack() {
-    this.goBack.emit();
-  }
-
-  emitNextPage() {
-    this.nextPage.emit();
-  }
 
 }

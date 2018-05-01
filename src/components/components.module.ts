@@ -3,19 +3,19 @@ import { IonicPageModule } from 'ionic-angular';
 import { NameHabitComponent } from './name-habit/name-habit';
 import { CategoriesComponent } from './categories/categories';
 import { StartDateComponent } from './start-date/start-date';
-import { ReminderTimeComponent } from './reminder-time/reminder-time';
+import { ReminderComponent } from './reminder/reminder';
 
 @NgModule({
 	declarations: [NameHabitComponent,
     CategoriesComponent,
     StartDateComponent,
-    ReminderTimeComponent,
+    ReminderComponent,
     ],
 	imports: [IonicPageModule],
 	exports: [NameHabitComponent,
     CategoriesComponent,
     StartDateComponent,
-    ReminderTimeComponent,
+    ReminderComponent,
     ]
 })
 export class ComponentsModule {}
