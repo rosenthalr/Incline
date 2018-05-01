@@ -6,7 +6,12 @@
 -->
 <ion-nav [root]="mentalHabitRoot"></ion-nav>
 <ion-header no-border class="navbar">
-  <ion-navbar>
+    <ion-navbar hideBackButton>
+        <ion-buttons>
+            <button  ion-button class="create-account-back-button" (click)="goToDiscover()">
+                <ion-icon class="create-account-back-icon" name="arrow-back"></ion-icon>
+            </button>
+          </ion-buttons>
       <ion-title>Mental Wellness</ion-title>
   </ion-navbar>
   <div class="imgContainer" src="../www/assets/imgs/bedroom.png"></div>

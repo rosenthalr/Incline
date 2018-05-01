@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { basicHabits } from '../../app/data/habits';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the BasicHabitsPage page.
  *
@@ -22,6 +23,10 @@ export class BasicHabitsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BasicHabitsPage');
+  }
+
+  goToDiscover(){
+    this.navCtrl.pop();
   }
 
 }

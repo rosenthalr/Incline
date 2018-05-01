@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { physicalHabits } from '../../app/data/habits';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the PhysicalHabitsPage page.
  *
@@ -22,6 +23,10 @@ export class PhysicalHabitsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PhysicalHabitsPage');
+  }
+
+  goToDiscover(){
+    this.navCtrl.pop();
   }
 
 }

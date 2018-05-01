@@ -1,14 +1,14 @@
-<ion-content>
+<ion-content no-bounce>
     
-  <ion-row class="header">
-    <ion-img class="imgContainer" alt="app logo" src="../assets/imgs/mainBackDrop.png"></ion-img>
+  <ion-row id="header">
+    <!-- <ion-img class="imgContainer" alt="app logo" src="../../assets/imgs/mainBackDrop.png"></ion-img> -->
   </ion-row>
 
-  <ion-list class="login-main">
+    <ion-list class="login-main">
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value);">
 
         <div class="input-container">
-          <ion-item class="input-group">
+          <ion-item class="input-group" [ngClass]="{'input-error': emailError }">
             <ion-label class="Field-Label" [ngClass]="{'error': emailError }" floating>Email</ion-label>
             <ion-input class="Field-Input Email-Input" [ngClass]="{'error': emailError}" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfEmailEmpty($event, 'email')" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
@@ -16,9 +16,9 @@
         </div>
 
         <div class="input-container">
-          <ion-item class="input-group">
+          <ion-item class="input-group" [ngClass]="{'input-error': passwordError }" >
             <ion-label class="Field-Label" [ngClass]="{'error': passwordError }" floating>Password</ion-label>
-            <ion-input class="Field-Input"  [ngClass]="{'error': passwordError }" type={{type}} name="password" [ngModel]="password" (ngModelChange)="checkIfPasswordEmpty($event, 'password')" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
+            <ion-input class="Field-Input" [ngClass]="{'error': passwordError }" type={{type}} name="password" [ngModel]="password" (ngModelChange)="checkIfPasswordEmpty($event, 'password')" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
             <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
             <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
           </ion-item>

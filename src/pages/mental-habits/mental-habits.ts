@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { mentalHabits } from '../../app/data/habits';
 import { PhysicalHabitsPage } from '../physical-habits/physical-habits';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the MentalHabitsPage page.
  *
@@ -29,6 +30,9 @@ export class MentalHabitsPage {
     // Temporarily changing navigation to the Habit Landing Page for testing purposes.
     // This should be replaced with CreateAccountPage after testing is complete
     this.navCtrl.push(PhysicalHabitsPage);
-  }
 
+  }
+  goToDiscover(){
+    this.navCtrl.pop();
+  }
 }

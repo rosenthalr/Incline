@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { workHabits } from '../../app/data/habits';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the WorkHabitsPage page.
  *
@@ -22,6 +23,10 @@ export class WorkHabitsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WorkHabitsPage');
+  }
+
+  goToDiscover(){
+    this.navCtrl.pop();
   }
 
 }
