@@ -57,8 +57,6 @@
 .start-date-container > .item-ios {
     padding-left:0;
 }
-.start-date-input-group > .item-inner .input-has-focus {
-    border-bottom: 2px solid #0477d6 !important;
+.list-ios > .input-has-focus.start-date-input-group.item-block:last-child, .list-ios > .input-has-focus.start-date-input-group.item-wrapper:last-child .item-block{
+    border-bottom: 2px solid $cerulean !important;
 }
-
-
