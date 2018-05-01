@@ -1,0 +1,117 @@
+page-physical-habits {
+    .bar-buttons,
+    .toolbar-title,
+    .habit-landing-modal-button {
+        color: $white-two;
+    }
+    // .habit-landing-habits{
+    //     height: 100%;
+    //     width: 100%;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     flex-flow: nowrap;
+    // }
+    .icons{
+        font-size: 30px;
+        padding-right: 13px;
+        width: 40px;
+        color: #ff9e00;
+    }
+    .habitItem{
+        height: 60px;
+        margin: 30px 24px 30px 26px;
+        // padding-top: 15px;
+        display: flex;
+        flex-direction: row;
+        // padding-left: 68px;
+        // padding-right: 24px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .habitTitle{
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.1px;
+        text-align: left;
+        color: #4a4a4a;
+        width: 230px;
+        padding-bottom: 0px;
+        margin-bottom: 3px;
+    }
+
+    .addButton{
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: black;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ff9e00;
+        margin-left: 19px !important;
+        margin-bottom: 25px !important;
+        padding: 0px 0px;
+        height: auto;
+        margin: 0px;
+        background-color: transparent;
+    }
+
+    .habit{
+        width: 230px;
+        height: auto;
+    }
+
+    .habitDescription{
+        font-family: Lato;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.1px;
+        text-align: left;
+        color: #9b9b9b;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .toolbar-background {
+        background-color: #ff9e00;
+    }
+   
+    .imgContainer {
+        background-image: url('../assets/imgs/weights.png');
+        height: 140px;
+        background-color: rgba(255, 158, 0, 0.57);
+        background-repeat: no-repeat;
+        background-position: center; 
+    }
+   
+    .descriptionContainer{
+        height: 85px;
+        border-bottom: solid 1px rgba(151,151,151,.28);
+        padding: 15px 33px 15px 33px;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: -0.3px;
+        text-align: left;
+        color: #333333;
+    }
+
+    .create-account-back-icon{
+        font-size: 2em;
+        font-weight: bold;
+        color: $white-two;
+    }
+}
