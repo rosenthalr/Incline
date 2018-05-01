@@ -7,11 +7,16 @@
 <ion-list class="start-date-container">
     <ion-item class="start-date-input-group">
       <ion-label class="start-date-label" floating>Start Date</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY" name="startDate" (keyup)="setTargetDate()" [(ngModel)]="startDate" value=""></ion-datetime>
+      <ion-datetime
+        displayFormat="MM/DD/YYYY"
+        name="startDate"
+        [(ngModel)]="startDate"
+        (ngModelChange)="setTargetDate()" 
+        ></ion-datetime>
     </ion-item>
     <div class="start-date-target">
         <div class="target-date-label">Target Success Date</div>
-        <div class="target-date-value" *ngIf="targetDate"> {{targetDate | date:'fullDate'}} </div>
+        <div class="target-date-value" *ngIf="startDate"> {{targetDate | date:'fullDate'}} </div>
     </div>
 </ion-list>
 <div class="start-date-back">

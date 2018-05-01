@@ -1,5 +1,6 @@
 import { Component,EventEmitter, Output} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as moment from 'moment';
 /**
  * Generated class for the StartDateComponent component.
  *
@@ -14,12 +15,10 @@ export class StartDateComponent {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
   startDate: Date;
-  targetDate: Date;
+  targetDate: moment.Moment;
 
   setTargetDate() {
-    this.targetDate = this.startDate;
-    console.log(this.targetDate);
-    console.log(this.startDate);
+    this.targetDate = moment(this.startDate).add(21,'days');
   }
 
   emitGoBack() {
