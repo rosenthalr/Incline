@@ -40,17 +40,25 @@
 .start-date-container {
     width: 68%;
     margin:0 auto;
-    margin-top: -170px;
 }
 
 .start-date-input-group, .start-date-target {
-    background-color: transparent;
+    border-top-color: transparent !important;
 }
 .start-date-back {
     display:flex;
     justify-content: center;
     align-items: center;
     margin-top: 4em;
+}
+.start-date-label.label-ios{
+    margin:0;
+}
+.start-date-container > .item-ios {
+    padding-left:0;
+}
+.start-date-input-group > .item-inner .input-has-focus {
+    border-bottom: 2px solid #0477d6 !important;
 }
 
 
