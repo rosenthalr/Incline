@@ -14,7 +14,13 @@ export class StartDateComponent {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
   startDate: Date;
-  targetDate: string = "none";
+  targetDate: Date;
+
+  setTargetDate() {
+    this.targetDate = this.startDate;
+    console.log(this.targetDate);
+    console.log(this.startDate);
+  }
 
   emitGoBack() {
     this.goBack.emit();
