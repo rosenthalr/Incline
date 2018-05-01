@@ -55,6 +55,18 @@ export const workHabits = [
     {
         "habit": "Meditate",
         "description": "Take some time to focus on you.",
+        "reminder": "07:00 AM",
+        icon: "ios-search"
+      },
+      {
+        "habit": "Go to sleep without a device",
+        "description": "Unplug and unwind.",
+        "reminder": 9,
+        icon: "phone-portrait"
+      },
+      {
+        "habit": "Meditate",
+        "description": "Take some time to focus on you.",
         "reminder": 7,
         icon: "ios-search"
       },
@@ -64,6 +76,7 @@ export const workHabits = [
         "reminder": 9,
         icon: "phone-portrait"
       }
+    
     
   ]
 
