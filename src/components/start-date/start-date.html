@@ -5,14 +5,15 @@
   <img class="start-date-sun" src="../www/assets/svgs/categories.svg" alt="" srcset=""> 
 </div>
 <ion-list class="start-date-container">
-  <div class="start-date">
-    <div class="target-date-input-group">
+    <ion-item class="start-date-input-group">
       <ion-label>Start Date</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY" name="startDate" [(ngModel)]="startDate"></ion-datetime>
-    </div>
-    <div class="target-date-target">
+    </ion-item>
+    <!-- <div class="start-date-target">
         <div class="target-date-label">Target Success Date</div>
-        <!-- <div class="target-date-value"> {{ targetDate }} </div> -->
-    </div>
-  </div>
+        <div class="target-date-value"> {{ targetDate }} </div>
+    </div> -->
 </ion-list>
+<div class="start-date-back">
+  <button (click)="emitGoBack()" ion-button clear class="start-back-button">Go Back</button>
+</div>
