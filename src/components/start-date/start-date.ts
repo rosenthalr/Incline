@@ -14,11 +14,16 @@ import * as moment from 'moment';
 export class StartDateComponent {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
-  startDate: Date;
+  startDate: string;
   targetDate: moment.Moment;
 
+  constructor() {
+    this.startDate = moment().day(2).toISOString();
+    this.targetDate = moment().add(22,'days');
+  }
+
   setTargetDate() {
-    this.targetDate = moment(this.startDate).add(21,'days');
+    this.targetDate = moment(this.startDate).add(22,'days');
   }
 
   emitGoBack() {

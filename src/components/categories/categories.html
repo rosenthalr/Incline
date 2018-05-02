@@ -11,29 +11,30 @@
         </div>
         <img class="categories-sun" src="../www/assets/svgs/categories.svg" alt="" srcset=""> 
      </div>
-    <ion-list class="categories">
-        
-      <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Productivity'}" value="Productivity" (click)="setCategory('Productivity')" type="button" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="time"></ion-icon></div>
-          <div class="categories-button-title">Productivity</div>
-      </button>
+     <div class="categories-body">
+        <ion-list class="categories">
+            
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Productivity'}" value="Productivity" (click)="setCategory('Productivity')" type="button" class="categories-button">
+            <div class="categories-button-icon-container"><ion-icon name="time"></ion-icon></div>
+            <div class="categories-button-title">Productivity</div>
+        </button>
 
-      <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Mental Wellness'}" value="Mental Wellness" (click)="setCategory('Mental Wellness')" type="button" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="sunny"></ion-icon></div>
-          <div class="categories-button-title">Mental Wellness</div>
-      </button> 
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Mental Wellness'}" value="Mental Wellness" (click)="setCategory('Mental Wellness')" type="button" class="categories-button">
+            <div class="categories-button-icon-container"><ion-icon name="sunny"></ion-icon></div>
+            <div class="categories-button-title">Mental Wellness</div>
+        </button> 
 
-      <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Physical Health'}" value="Physical Health" (click)="setCategory('Physical Health')" type="button" class="categories-button">
-        <div class="categories-button-icon-container"><ion-icon name="flame"></ion-icon></div>
-        <div class="categories-button-title">Physical Health</div>
-      </button>
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Physical Health'}" value="Physical Health" (click)="setCategory('Physical Health')" type="button" class="categories-button">
+            <div class="categories-button-icon-container"><ion-icon name="flame"></ion-icon></div>
+            <div class="categories-button-title">Physical Health</div>
+        </button>
 
-      <button [ngClass]="{'inactive': categorySelected && categorySelected!=='The Basics'}" value="The Basics" (click)="setCategory('The Basics')" type="button" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
-          <div class="categories-button-title">The Basics</div>
-      </button>
-    </ion-list>
-  
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='The Basics'}" value="The Basics" (click)="setCategory('The Basics')" type="button" class="categories-button">
+            <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
+            <div class="categories-button-title">The Basics</div>
+        </button>
+        </ion-list>
+    </div>
     <div class="categories-back">
       <button (click)="emitGoBack()" ion-button clear class="categories-back-button">Go Back</button>
     </div>

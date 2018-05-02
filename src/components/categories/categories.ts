@@ -18,8 +18,10 @@ export class CategoriesComponent {
 
   setCategory(categorySelected) { 
     this.categorySelected = categorySelected;
-    this.onCategorySelected.emit(categorySelected);
-    this.nextPage.emit();
+    setTimeout(()=>{
+      this.onCategorySelected.emit(categorySelected);
+      this.nextPage.emit();
+    },140);
   }
 
   emitGoBack() {
