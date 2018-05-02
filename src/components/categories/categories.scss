@@ -16,7 +16,7 @@
     top: 0px;
 }
 .categories-header-title {
-    padding-top: 1.2em;
+    padding-top: 2em;
 }
 
 .categories-header-container {
@@ -39,8 +39,10 @@
 
 .categories {
     width: 68%;
-    margin:0 auto;
-    padding-top: 50px;
+    margin: 0 auto;
+    padding-top: 60px;
+    // padding-right: 72px;
+    // padding-left: 72px;
 }
 
 .categories-button {
@@ -108,7 +110,7 @@
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 20vh;
+    height: 15vh;
 }
 
 .categories-back-button {
