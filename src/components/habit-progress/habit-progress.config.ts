@@ -1,7 +1,6 @@
-
 import {Injectable} from '@angular/core';
 
-export interface HabitCircleDefaults {
+export interface HabitProgressDefaults {
   radius?: number;
   animation?: string;
   animationDelay?: number;
@@ -13,26 +12,30 @@ export interface HabitCircleDefaults {
   clockwise?: boolean;
   semicircle?: boolean;
   rounded?: boolean;
+  max?:number;
+  current?: number;
 }
 
 @Injectable()
-export class HabitCircleConfig {
-  private _options: HabitCircleDefaults = {
+export class HabitProgressConfig {
+  private _options: HabitProgressDefaults = {
     radius: 125,
     animation: 'easeOutCubic',
     animationDelay: null,
     duration: 500,
     stroke: 15,
-    color: '#45CCCE',
+    color: '#0477d6',
     background: '#EAEAEA',
     responsive: false,
     clockwise: true,
     semicircle: false,
-    rounded: true
+    rounded: true,
+    max: 21,
+    current:1,
   };
 
   /** Configures the defaults. */
-  setDefaults(config: HabitCircleDefaults): HabitCircleDefaults {
+  setDefaults(config: HabitProgressDefaults): HabitProgressDefaults {
     return Object.assign(this._options, config);
   }
 

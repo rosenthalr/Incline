@@ -4,7 +4,7 @@ import {DOCUMENT} from '@angular/platform-browser';
 const DEGREE_IN_RADIANS: number = Math.PI / 180;
 
 @Injectable()
-export class HabitCircleService {
+export class HabitProgressService {
   private _base: HTMLBaseElement;
   private _hasPerf: boolean;
   public supportsSvg: boolean;

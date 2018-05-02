@@ -21,6 +21,10 @@
     </ion-slide>
     <ion-slide>
       <categories (goBack)="goBack($event)" (onCategorySelected)="onCategorySelected($event)"></categories>
+      <button ion-button (click)=nextPage()> Next </button>
+    </ion-slide>
+    <ion-slide>
+      <habit-progress [current]="2" [max]="21"></habit-progress>
     </ion-slide>
   </ion-slides>
 </ion-content>

@@ -1,31 +1,28 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { NameHabitComponent } from './name-habit/name-habit';
 import { CategoriesComponent } from './categories/categories';
-import { HabitCircleComponent } from './habit-circle/habit-circle';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 import { CommonModule } from '@angular/common';
-import { HabitCircleService } from './habit-circle/habit-circle.service';
-import { HabitCircleConfig } from './habit-circle/habit-circle.config';
-import { HabitCircleEase } from './habit-circle/habit-circle.ease';
-
+import { HabitProgressComponent } from './habit-progress/habit-progress';
+import { HabitProgressConfig } from './habit-progress/habit-progress.config';
+import { HabitProgressEase } from './habit-progress/habit-progress.ease';
+import { HabitProgressService } from './habit-progress/habit-progress.service';
+import { NameHabitComponent } from './name-habit/name-habit';
 @NgModule({
 	declarations: [
-    NameHabitComponent,
-    CategoriesComponent,
-    HabitCircleComponent,
+      CategoriesComponent,
+      HabitProgressComponent,
+      NameHabitComponent
     ],
 	imports: [IonicPageModule,CommonModule],
 	exports: [
-    NameHabitComponent,
     CategoriesComponent,
-    HabitCircleComponent,
+    HabitProgressComponent,
+    NameHabitComponent
     ],
     providers:[
-      HabitCircleService,
-      HabitCircleConfig,
-      HabitCircleEase
-    ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+      HabitProgressConfig,
+      HabitProgressEase,
+      HabitProgressService
+    ]
 })
 export class ComponentsModule {}

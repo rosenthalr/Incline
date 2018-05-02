@@ -1,6 +1,6 @@
 import { Component,EventEmitter, Output} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+
 /**
  * Generated class for the NameHabitComponent component.
  *

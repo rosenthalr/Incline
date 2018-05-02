@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, FabContainer } from 'ionic-angular';
 
 /**
  * Generated class for the HistoryPage page.
@@ -18,10 +18,19 @@ export class HistoryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  public current: number = 1;
-  public max : number = 21;
+  current: number = 1;
+  max: number = 21;
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
   }
+  openFab($event,fab:FabContainer){
+    fab.toggleList();
+    console.log(fab._events);
+    console.log(fab._listsActive);
+  }
 
+  closeFab($event,fab:FabContainer){
+    fab.close();
+    console.log(fab._listsActive);
+  }
 }
