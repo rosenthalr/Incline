@@ -21,9 +21,9 @@ export class StartDateComponent {
   hasChanged: boolean = false;
 
   constructor() {
-    this.startDate = moment().day(2).toISOString();
-    this.min = moment().day(2).toISOString();
-    this.max = moment(this.min).add(5, 'years').toISOString();
+    this.min =  moment().add(1, 'days').toISOString();
+    this.max = moment().add(5, 'years').toISOString();
+    this.startDate = moment().add(1,"days").toISOString();
     this.targetDate = moment(this.startDate).add(21,'days').toISOString();
   }
 
