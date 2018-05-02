@@ -1,4 +1,4 @@
-import { Component,EventEmitter, Output} from '@angular/core';
+import { Component,EventEmitter, Output, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
 
@@ -12,7 +12,7 @@ import * as moment from 'moment';
   selector: 'reminder',
   templateUrl: 'reminder.html'
 })
-export class ReminderComponent {
+export class ReminderComponent implements OnInit {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
   reminderTime: string;
@@ -20,7 +20,7 @@ export class ReminderComponent {
   max: string;
   hasChanged: boolean = false;
 
-  constructor() {
+  ngOnInit() {
     this.reminderTime = "08:00:00.000Z";
   }
 

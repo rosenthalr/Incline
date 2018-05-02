@@ -1,4 +1,4 @@
-import { Component,EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
 /**
@@ -11,7 +11,7 @@ import * as moment from 'moment';
   selector: 'start-date',
   templateUrl: 'start-date.html'
 })
-export class StartDateComponent {
+export class StartDateComponent implements OnInit {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
   startDate: string;
@@ -20,7 +20,7 @@ export class StartDateComponent {
   max: string;
   hasChanged: boolean = false;
 
-  constructor() {
+  ngOnInit() {
     this.min =  moment().add(1, 'days').toISOString();
     this.max = moment().add(5, 'years').toISOString();
     this.startDate = moment().add(1,"days").toISOString();
