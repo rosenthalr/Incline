@@ -13,12 +13,11 @@
         <ion-title>Step {{page}} of 4</ion-title>
       </ion-navbar>
     </ion-header>
-  <!-- Insert Name Habit Page here -->
 <ion-content no-bounce>
   <ion-slides (ionSlideDidChange)="getSlideNumber()"#modalSlider pager=false>
-    <!-- <ion-slide >
+    <ion-slide >
       <name-habit (nextPage)="nextPage($event)" (onNamePicked)="onNamePicked($event)"></name-habit>
-    </ion-slide> -->
+    </ion-slide>
     <ion-slide>
       <categories (nextPage)="nextPage($event)" (goBack)="goBack($event)" (onCategorySelected)="onCategorySelected($event)"></categories>
     </ion-slide>
