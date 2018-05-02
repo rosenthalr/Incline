@@ -18,13 +18,13 @@
             ></ion-datetime>
         </ion-item>
         <div *ngIf="!hasChanged" class="reminder-target">
-            We will track your habit over the next 21 days and provide you with reminders along the way!
+            Select a time that you would like to be reminded to complete this habit.
         </div>
     </ion-list>
   </div>
   <div class="reminder-next">
       <button (click)="emitNextPage()" ion-button clear class="reminder-next-button Rectangle-4">
-        <span class="ACTIVE-BUTTON">FINISH</span>
+        <span class="ACTIVE-BUTTON">START TRACKING</span>
       </button>
   </div>
   <div class="reminder-back">
