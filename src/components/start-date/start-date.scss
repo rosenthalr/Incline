@@ -42,7 +42,7 @@
 .start-date-container {
     width: 68%;
     margin:0 auto;
-    padding-top: 50px;
+    padding-top: 90px;
 }
 
 .start-date-input-group, .start-date-target {
@@ -72,7 +72,7 @@
     text-align: left;
     margin-top:46px;
 }
-.target-date-value{
+.target-date-value {
     height: 151px;
     font-family: Lato;
     font-size: 16px;
@@ -82,17 +82,21 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
+    color: $cerulean;
+}
+.target-date-value.active {
     color: $teal;
 }
+
 .datetime-text{
     font-family: Lato;
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
+    // font-stretch: normal;
+    // line-height: normal;
     letter-spacing: normal;
-    text-align: left;
+    // text-align: left;
     color: $black;
 }
 .picker-ios .picker-button, .picker-ios .picker-button.activated{
@@ -104,9 +108,9 @@
     font-weight: normal !important;
     font-style: normal;
     font-stretch: normal;
-    line-height: normal;
+    // line-height: normal;
     letter-spacing: normal;
-    text-align: left;
+    // text-align: left;
     color: $black-two !important;
 }
 .target-date-label{
@@ -132,3 +136,28 @@
 .start-date-input-group.input-has-focus {
     border-bottom: 2px solid $cerulean;
 }
+.start-date-next{
+    margin-bottom: 0px;
+    margin-top: 24px;
+}
+.Rectangle-4 {
+    width: 255px;
+    height: 44px;
+    background-color: $deep-blue-sea;
+  }
+  .ACTIVE-BUTTON {
+    width: 255px;
+    height: 17px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $white-two;
+  }
+  .date-value {
+      padding-top:2px;
+  }
