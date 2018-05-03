@@ -21,7 +21,9 @@ export class TestDashboardPage {
     this.max = 22;
 
   }
-
+  increment(num: number){
+    this.current += num;
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TestDashboardPage');

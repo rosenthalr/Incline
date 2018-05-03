@@ -10,8 +10,7 @@ import { ComponentsModule } from '../../components/components.module'
     IonicPageModule.forChild(TabsPage),
     ComponentsModule
   ],
-  entryComponents: [
-    ComponentsModule
+  entryComponents:[
   ]
 })
 export class TabsPageModule {}

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormControl, FormGroup, Validators,ValidatorFn,AbstractControl } from '@angular/forms';
 import { OnInit } from '@angular/core';
-import { HomePage } from '../home/home';
 import { User } from './user.interface';
 import { SuccessPage } from '../success/success';
 import { CreateAccountService } from '../../services/create-account.service'
@@ -40,7 +39,7 @@ export class CreateAccountPage implements OnInit {
   public password1:string;
   public password2:string;
   public user: User;
-  
+
 
   constructor(public createAccountService:CreateAccountService,public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -102,7 +101,7 @@ export class CreateAccountPage implements OnInit {
   }
 
   checkIfComplete(userInfo, field) {
-    
+
         if (field='firstName') {
           this.firstName = userInfo;
         }
@@ -118,7 +117,7 @@ export class CreateAccountPage implements OnInit {
         else if (field='password2') {
           this.password2 = userInfo;
         }
-    
+
         if(this.firstName && this.lastName && this.email && this.password1 && this.password2) {
            this.isComplete = true;
         }

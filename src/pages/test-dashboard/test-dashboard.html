@@ -14,5 +14,5 @@
 
 
 <ion-content padding>
-  <habit-progress [current]="current" [max]="max"></habit-progress>
+  <habit-progress (click)="increment(1)" (press)="increment(-3)" [current]="current" [max]="max"></habit-progress>
 </ion-content>
