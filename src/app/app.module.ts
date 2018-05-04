@@ -15,7 +15,7 @@ import { DiscoverPage } from '../pages/discover/discover';
 import { HistoryPage } from '../pages/history/history';
 //import { MyHabitsPage } from '../pages/my-habits/my-habits';
 import { MorePage } from '../pages/more/more';
-
+import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +36,8 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     TabsPage,
     DiscoverPage,
     MorePage,
-    HistoryPage
+    HistoryPage,
+    AddPresetHabitPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     TabsPage,
     DiscoverPage,
     MorePage,
-    HistoryPage
+    HistoryPage,
+    AddPresetHabitPage
   ],
   providers: [
     StatusBar,
