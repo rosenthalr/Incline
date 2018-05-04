@@ -12,6 +12,8 @@ import { WorkHabitsPage } from '../pages/work-habits/work-habits';
 import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
 import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
+//test page below...delete this if you're in Develop branch and it's still here
+import { TestCreateHabitPage } from '../pages/test-create-habit/test-create-habit';
 
 @Component({
   templateUrl: 'app.html'

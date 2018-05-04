@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { physicalHabits } from '../../app/data/habits';
 import { TabsPage } from '../tabs/tabs';
+//test page below...delete this if you're in Develop branch and it's still here
+import { TestCreateHabitPage } from '../test-create-habit/test-create-habit';
 /**
  * Generated class for the PhysicalHabitsPage page.
  *
@@ -27,6 +29,16 @@ export class PhysicalHabitsPage {
 
   goToDiscover(){
     this.navCtrl.pop();
+  }
+
+  goToCreateHabit(physicalHabit){
+    //testing to see if habit name logs on click
+    console.log(physicalHabit.habit);
+    this.navCtrl.push(TestCreateHabitPage, {
+      'habit': physicalHabit.habit,
+      'reminder': physicalHabit.reminder
+    });
+
   }
 
 }
