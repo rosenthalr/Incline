@@ -14,12 +14,13 @@ import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 //test page below...delete this if you're in Develop branch and it's still here
 import { TestCreateHabitPage } from '../pages/test-create-habit/test-create-habit';
+import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // Temporarily changing the rootPage to the categories page for testing purposes
+  // Temporarily changing the rootPage to the add preset habit page for testing purposes
   rootPage:any = LoginPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

@@ -4,6 +4,7 @@ import { basicHabits } from '../../app/data/habits';
 import { TabsPage } from '../tabs/tabs';
 //test page below...delete this if you're in Develop branch and it's still here
 import { TestCreateHabitPage } from '../test-create-habit/test-create-habit';
+import { AddPresetHabitPage } from '../add-preset-habit/add-preset-habit';
 /**
  * Generated class for the BasicHabitsPage page.
  *
@@ -31,10 +32,10 @@ export class BasicHabitsPage {
     this.navCtrl.pop();
   }
 
-  goToCreateHabit(basicHabit){
+  goToPresetHabit(basicHabit){
     //testing to see if habit name logs on click
     console.log(basicHabit.habit);
-    this.navCtrl.push(TestCreateHabitPage, {
+    this.navCtrl.push(AddPresetHabitPage, {
       'habit': basicHabit.habit,
       'reminder': basicHabit.reminder
     });

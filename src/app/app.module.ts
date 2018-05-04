@@ -21,6 +21,7 @@ import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 //test page below...delete this if you're in Develop branch and it's still here
 import { TestCreateHabitPage } from '../pages/test-create-habit/test-create-habit';
+import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -46,7 +47,8 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
-    TestCreateHabitPage
+    TestCreateHabitPage,
+    AddPresetHabitPage
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,8 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
-    TestCreateHabitPage
+    TestCreateHabitPage,
+    AddPresetHabitPage
   ],
   providers: [
     StatusBar,
