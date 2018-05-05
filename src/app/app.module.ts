@@ -45,15 +45,12 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     DiscoverPage,
     MorePage,
     HistoryPage,
-<<<<<<< HEAD
     WorkHabitsPage,
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
+    AddPresetHabitPage,
     TestCreateHabitPage
-=======
-    AddPresetHabitPage
->>>>>>> 9265f72928a90280c794f883d78cd5e05792795a
   ],
   imports: [
     BrowserModule,
@@ -73,15 +70,12 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     DiscoverPage,
     MorePage,
     HistoryPage,
-<<<<<<< HEAD
     WorkHabitsPage,
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
+    AddPresetHabitPage,
     TestCreateHabitPage
-=======
-    AddPresetHabitPage
->>>>>>> 9265f72928a90280c794f883d78cd5e05792795a
   ],
   providers: [
     StatusBar,
