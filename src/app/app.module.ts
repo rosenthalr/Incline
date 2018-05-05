@@ -15,7 +15,15 @@ import { DiscoverPage } from '../pages/discover/discover';
 import { HistoryPage } from '../pages/history/history';
 //import { MyHabitsPage } from '../pages/my-habits/my-habits';
 import { MorePage } from '../pages/more/more';
+import { WorkHabitsPage } from '../pages/work-habits/work-habits';
+import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
+import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
+import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
+
+//test page below...delete this if you're in Develop branch and it's still here
+import { TestCreateHabitPage } from '../pages/test-create-habit/test-create-habit';
+
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -37,7 +45,15 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     DiscoverPage,
     MorePage,
     HistoryPage,
+<<<<<<< HEAD
+    WorkHabitsPage,
+    MentalHabitsPage,
+    PhysicalHabitsPage,
+    BasicHabitsPage,
+    TestCreateHabitPage
+=======
     AddPresetHabitPage
+>>>>>>> 9265f72928a90280c794f883d78cd5e05792795a
   ],
   imports: [
     BrowserModule,
@@ -57,7 +73,15 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     DiscoverPage,
     MorePage,
     HistoryPage,
+<<<<<<< HEAD
+    WorkHabitsPage,
+    MentalHabitsPage,
+    PhysicalHabitsPage,
+    BasicHabitsPage,
+    TestCreateHabitPage
+=======
     AddPresetHabitPage
+>>>>>>> 9265f72928a90280c794f883d78cd5e05792795a
   ],
   providers: [
     StatusBar,

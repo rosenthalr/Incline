@@ -3,7 +3,6 @@ import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
 import { CreateAccountPage } from '../create-account/create-account';
-import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { TabsPage } from '../tabs/tabs';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -34,11 +33,8 @@ export class LoginPage {
   }
 
   goToCreateAccountPage(){
-    // Temporarily changing navigation to the Habit Landing Page for testing purposes.
-    // This should be replaced with CreateAccountPage after testing is complete
     this.navCtrl.push(CreateAccountPage);
-
-}
+  }
 
 //Unhide and hide password
 showPassword() {
@@ -94,12 +90,12 @@ checkIfPasswordEmpty(){
         password: userInfo.password
       };
 
-      if(this.email == "test" && this.password == "test"){
+      // Test successful login without connection to DB
+      if(this.email.toUpperCase()==='TEST' && this.password.toUpperCase()==='TEST'){
         this.navCtrl.push(TabsPage);
-      }
-      //Adding this to test on simulator because email input is automatically set to capitalize
-      if(this.email == "Test" && this.password == "test"){
-        this.navCtrl.push(TabsPage);
+        
+        // Prevent the function from finishing, so an error isn't thrown
+        return true;
       }
 
       this.loginService.login(user).subscribe(
@@ -111,12 +107,13 @@ checkIfPasswordEmpty(){
           // Remove any error messages that may have appeared on previous login attempts
           this.emailError = false;
           this.passwordError = false;
-  
+
           // Navigate to Habit Landing Page
           this.navCtrl.push(TabsPage);
        },
         error => {
         const errorMessage = error.error.info.message
+
         if(errorMessage == 'Wrong Email') {
           this.emailError = true;
           //Needed to add this below to make sure that both errors don't appear at the same time.

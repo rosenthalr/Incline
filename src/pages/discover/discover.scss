@@ -1,5 +1,117 @@
 page-discover {
     .title{
-        background: linear-gradient(300deg, #ff8c2e, #fe6011);
+        background: #0477d6;
     }
+
+    .habit-landing-modal-button {
+        color: $white-two;
+    }
+    .habit-landing-modal-icon{
+        font-size: 2em;
+        font-weight: bold;
+        color: $white-two;
+    }
+
+    .description{
+        width: 87%;
+        height: 84px;
+        font-family: Lato;
+        font-size: 14px;
+        letter-spacing: 0.1px;
+        margin-left: 26px;
+        margin-top: 17px;
+        text-align: left;
+        color: #4c4c4c;
+    }
+    .discover-button{
+        width: 87%;
+        height: 84px;
+        margin-top: 15px;
+        margin-left: 25px;
+        //background-color: #ff5200;   
+        display: flex;   
+        position: relative;  
+    }
+
+    .categories-button-icon-container {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 11px;
+        width: 21px;
+        height: 21px;
+        font-size: 16px;
+        float: bottom;
+        color: white;
+    }
+    .categories-button-title {
+        position: absolute;
+        bottom: 0;
+        margin-left: 37px;
+        margin-bottom: 11px;
+        font-family: Lato;
+        float: bottom;
+        color:white;
+        font-size: 22px;
+    }
+
+    .prod-image{
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        width: 89px;
+        height: 58px;
+        border: 0;
+    }
+
+    .mental-image{
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        width: 76px;
+        height: 74px;
+        border: 0;
+    }
+
+    .physical-image{
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        width: 33px;
+        height: 72px;
+        border: 0;
+    }
+
+    .basics-image{
+        position: absolute;
+        top: 2px;
+        right: 0px;
+        width: 86px;
+        height: 82px;
+        border: 0;
+    }
+/*
+    .mental-button{
+        width: 326px;
+        height: 84px;
+        margin-top: 13px;
+        margin-left: 25px;
+        background-color: #00b39f;       
+    }
+*/
+    .discover-button:first-child {
+        background-color: #ff5200;   
+    }
+    
+    .discover-button:nth-child(2) {
+        background-color: #00b39f;
+    }
+    
+    .discover-button:nth-child(3) {
+        background-color: #ff9e00;
+    }
+    
+    .discover-button:nth-child(4) {
+        background-color: #59a9e4;
+    }
+    
 }
