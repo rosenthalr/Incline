@@ -23,7 +23,7 @@ import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = DiscoverPage; 
+  rootPage:any = LoginPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
