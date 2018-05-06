@@ -22,6 +22,7 @@ export class ReminderComponent implements OnInit {
 
   ngOnInit() {
     this.reminderTime = "08:00:00.000Z";
+    
   }
 
   setReminderTime() {
