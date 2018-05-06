@@ -22,8 +22,8 @@ import { TestCreateHabitPage } from '../pages/test-create-habit/test-create-habi
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // Temporarily changing the rootPage to the add preset habit page for testing purposes
-  rootPage:any = DiscoverPage; 
+  // Temporarily changing the rootPage to the categories page for testing purposes
+  rootPage:any = HabitLandingPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
