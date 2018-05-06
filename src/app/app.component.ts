@@ -22,8 +22,8 @@ import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // Temporarily changing the rootPage to the add preset habit page for testing purposes
-  rootPage:any = LoginPage; 
+  // Temporarily changing the rootPage to the categories page for testing purposes
+  rootPage:any = DiscoverPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

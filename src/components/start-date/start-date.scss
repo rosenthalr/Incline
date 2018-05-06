@@ -1,0 +1,180 @@
+@import '../../styles/global';
+
+.start-date-header {
+    height: 25%;
+    width: 100%;
+    background-color: $grey;
+    position:absolute;
+    top:0;
+    height: 186px;
+    background:linear-gradient($cerulean,$baby-blue);
+}
+.start-date-sun {
+    // background-image: url('../www/assets/svgs/categories.svg');
+    position: absolute;
+    right: -24px;
+    top: -72px;
+}
+.start-date-header-title {
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: left;
+    color: $white-two;
+    height: 100px;
+}
+
+.start-date-header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+    line-height: 1.18;
+    letter-spacing: normal;
+    color: $white-two;  
+    height: 100%;
+    background-color: transparent;
+    padding: 0px 60px;  
+}
+.start-date-body{
+    height: calc(100vh - 28vh - 186px);
+}
+.start-date-container {
+    width: 68%;
+    margin:0 auto;
+    padding-top: 90px;
+    // padding-left: 72px;
+    // padding-right: 72px;
+}
+
+.start-date-input-group, .start-date-target {
+    border-top-color: transparent !important;
+}
+.start-date-back {
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 20vh;
+}
+.start-date-back-button{
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $cerulean;
+}
+.start-date-target {
+    text-align: left;
+    margin-top:34px;
+}
+.target-date-value {
+    height: 151px;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $cerulean;
+}
+.target-date-value.active {
+    color: $teal;
+}
+
+.datetime-text{
+    font-family: Lato;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: $black;
+}
+
+.picker-ios .picker-opt{
+    font-family: AvenirNext !important;
+    font-weight: normal !important;
+    font-style: normal;
+    // font-stretch: normal;
+    // letter-spacing: normal;
+    color: $black-two !important;
+}
+.picker-toolbar{
+    background-color: #fafaf8 !important;
+    box-shadow: inset 0 0.5px 0 0 #e1e0e0 !important;
+    border-bottom:0 !important;
+    font-family: HelveticaNeue;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $bright-blue;
+}
+.target-date-label{
+    font-size: 14px;
+    font-weight: normal;
+    color: $brownish-grey;
+}
+.start-date-label.label-ios{
+    margin:0;
+    font-family: Lato;
+    font-size: 15px;
+    color: $brownish-grey;
+}
+.start-date-container > .item-ios {
+    padding-left:0;
+}
+.list-ios .item-block .item-inner {
+    border-bottom: 0;
+}
+.start-date-input-group{
+    border-bottom: 2px solid $grey;
+}
+.start-date-input-group.input-has-focus {
+    border-bottom: 2px solid $cerulean;
+}
+.start-date-next{
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+.Rectangle-4 {
+    width: 255px;
+    height: 44px;
+    background-color: $deep-blue-sea;
+    border-radius: 0;
+  }
+  .ACTIVE-BUTTON {
+    width: 255px;
+    height: 17px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $white-two;
+  }
+  .date-value {
+      padding-top:2px;
+  }

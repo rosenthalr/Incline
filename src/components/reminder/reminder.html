@@ -1,0 +1,33 @@
+<div class="reminder-header">
+    <div class="reminder-header-container">
+        <div class="reminder-header-title">Let us help you succeed by reminding you daily!</div>
+    </div>
+    <img class="reminder-sun" src="../../assets/svgs/reminder.svg" alt="" srcset=""> 
+  </div>
+  <div class="reminder-body">
+    <ion-list class="reminder-container">
+        <ion-item class="reminder-input-group">
+          <ion-label class="reminder-label" floating>Reminder Time</ion-label>
+          <ion-datetime
+            class="date-value"
+            displayFormat="h:mm A"
+            pickerFormat="h mm A"
+            name="reminderTime"
+            [(ngModel)]="reminderTime"
+            (ngModelChange)="setReminderTime()"
+            ></ion-datetime>
+        </ion-item>
+        <div *ngIf="!hasChanged" class="reminder-target">
+            Select a time that you would like to be reminded to complete this habit.
+        </div>
+    </ion-list>
+  </div>
+  <div class="reminder-next">
+      <button (click)="emitNextPage()" ion-button clear class="reminder-next-button Rectangle-4">
+        <span class="ACTIVE-BUTTON">START TRACKING</span>
+      </button>
+  </div>
+  <div class="reminder-back">
+      <button (click)="emitGoBack()" ion-button clear class="reminder-back-button">Go Back</button>
+  </div>
+  
