@@ -23,7 +23,7 @@ import { TestCreateHabitPage } from '../pages/test-create-habit/test-create-habi
 })
 export class MyApp {
   // Temporarily changing the rootPage to the add preset habit page for testing purposes
-  rootPage:any = LoginPage; 
+  rootPage:any = DiscoverPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

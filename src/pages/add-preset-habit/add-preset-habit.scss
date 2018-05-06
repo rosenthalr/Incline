@@ -5,7 +5,15 @@ page-add-preset-habit {
         text-align: center;
     }
 
-    .toolbar-background {
-        background-color: $tealish;
+    //.toolbar-background {}
+
+    .confirm {
+        color: $white-two;
+        font-family: Lato;
+        text-align: center;
+        background-color: #097ed5;
+        width: 255px;
+        height: 44px;
     }
+
 }

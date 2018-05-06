@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { workHabits } from '../../app/data/habits';
 import { TabsPage } from '../tabs/tabs';
-//test page below...delete this if you're in Develop branch and it's still here
-import { TestCreateHabitPage } from '../test-create-habit/test-create-habit';
+import { AddPresetHabitPage } from '../add-preset-habit/add-preset-habit';
+
 /**
  * Generated class for the WorkHabitsPage page.
  *
@@ -32,11 +32,10 @@ export class WorkHabitsPage {
   }
 
   goToCreateHabit(workHabit){
-    //testing to see if habit name logs on click
-    console.log(workHabit.habit);
-    this.navCtrl.push(TestCreateHabitPage, {
+    this.navCtrl.push(AddPresetHabitPage, {
       'habit': workHabit.habit,
-      'reminder': workHabit.reminder
+      'reminder': workHabit.reminder,
+      'currentColor': workHabit.currentColor
     });
 
   }
