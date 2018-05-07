@@ -1,0 +1,51 @@
+<!--
+  Generated template for the Reset page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+--> 
+<ion-content>
+  
+        <ion-icon name="arrow-back" id="back-button" (click)="goToLogin()"> </ion-icon>
+      <h3 class="create-account-header">Reset</h3>
+      
+      
+<form #f="ngForm" novalidate (ngSubmit)="reset(f.value, f.valid)">            
+  
+    <ion-item class="input-group">
+          <ion-label floating class="label">Password</ion-label>
+
+          <ion-input type="{{type}}" name="password" [ngModel]="user.password" [ngModelOptions] = "{ updateOn: 'blur' }"
+          required minlength="6" reverse="true" #password="ngModel"></ion-input>
+
+          <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+          <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+  
+      </ion-item>
+      <ion-item no-lines class="error" [hidden]="password.valid || (password.pristine && !f.submitted)">
+          Password must be at least 6 characters
+      </ion-item>
+
+
+      <ion-item class="input-group">
+        <ion-label floating class="label">Confirm Password</ion-label>
+
+        <ion-input type="{{type2}}" name="confirmPassword" [ngModel]="user.confirmPassword" [ngModelOptions]="{ updateOn: 'blur' }"
+            required validateEqual="user.password" reverse="false" #confirmPassword="ngModel"> </ion-input>
+
+          <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+          <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+      
+      </ion-item>
+      <ion-item no-lines class="error" [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)">
+            Password mismatch
+        </ion-item>
+      <div>
+          <button class="btn-create" [ngClass]="{'active': password.valid && confirmPassword.valid }" 
+          [disabled]="password.invalid || confirmPassword.invalid"  type="submit" (click)="reset();" ion-button> Reset</button>
+      </div>
+</form>
+
+</ion-content>
+
+

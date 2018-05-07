@@ -15,6 +15,7 @@ import { DiscoverPage } from '../pages/discover/discover';
 import { HistoryPage } from '../pages/history/history';
 //import { MyHabitsPage } from '../pages/my-habits/my-habits';
 import { MorePage } from '../pages/more/more';
+import { ForgotPage } from '../pages/forgot/forgot';
 import { WorkHabitsPage } from '../pages/work-habits/work-habits';
 import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
 import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
@@ -29,6 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
 // Import LoginService that is used to get users from db
 import { LoginService } from "../services/login.service";
 import { EqualValidator } from '../pages/create-account/equal-validator.directive';
+import { ForgotService } from '../services/forgot.service';
+import { LogoutService } from '../services/logout.service';
+import { ResetService } from '../services/reset.service';
+import { MoreResetService } from '../services/morereset.service';
 
 @NgModule({ 
   declarations: [
@@ -43,6 +48,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     DiscoverPage,
     MorePage,
     HistoryPage,
+    ForgotPage,
     WorkHabitsPage,
     MentalHabitsPage,
     PhysicalHabitsPage,
@@ -67,6 +73,7 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     DiscoverPage,
     MorePage,
     HistoryPage,
+    ForgotPage,
     WorkHabitsPage,
     MentalHabitsPage,
     PhysicalHabitsPage,
@@ -77,6 +84,10 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     StatusBar,
     LoginService,
     SplashScreen,
+    ForgotService,
+    LogoutService,
+    ResetService,
+    MoreResetService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
