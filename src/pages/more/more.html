@@ -5,15 +5,53 @@
   Ionic pages and navigation.
 -->
 
-<ion-header>
+<ion-header no-border>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-title class="title">More</ion-title>
   </ion-navbar>
-
+    <div class="Reset-Password">Reset Password</div>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+                  <form #f="ngForm" novalidate>
+      
+      <div class="input-container">
+          <ion-item class="input-group">
+            <ion-label class="Field-Label" [ngClass]="{'error': passwordError }" floating>Password</ion-label>
+            <ion-input class="Field-Input"  [ngClass]="{'error': passwordError }" type={{type}} name="password" [ngModel]="user.password" (ngModelChange)="checkIfPasswordEmpty($event, 'password')" (ngModelChange)="checkIfComplete($event, 'password')"  value=""></ion-input>
+            <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+            <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+          </ion-item>
+          <ion-item [hidden]="!passwordError" class="Error-Text">Hmm...That's not the correct password.</ion-item>
+          </div>
+
+
+      <ion-item class="input-group">
+        <ion-label floating class="Field-Label">New Password</ion-label>
+                <ion-input class="Field-Input" type="{{type2}}" name="password2" [ngModel]="user.password2" (ngModelChange)="checkIfComplete($event, 'password2')"  value=""
+                    required minlength="8" reverse="true" #password2="ngModel"></ion-input>
+                <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+                <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+      </ion-item>
+
+      <ion-item class="input-group">
+          <ion-label floating class="Field-label">Confirm New Password</ion-label>
+
+                <ion-input class="Field-Input"  type="{{type3}}" name="password3" [ngModel]="user.password3" (ngModelChange)="checkIfComplete($event, 'password3')"  value=""
+          required validateEqual="password2" minlength="8" reverse="true" #password3="ngModel"></ion-input>
+
+          <button *ngIf="!showPass3" ion-button clear color="dark" type="button" item-right (click)="showPassword3()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+            <button *ngIf="showPass3" ion-button clear color="dark" type="button" item-right (click)="showPassword3()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+    
+      </ion-item>
+        <button class="btn-reset" type="submit" (click)="reset();" ion-button> CHANGE PASSWORD</button>
+      </form>
+
+      <button class="btn-logout" type="submit" (click)="logout();" ion-button> LOG OUT</button>
+
 
 </ion-content>
+    

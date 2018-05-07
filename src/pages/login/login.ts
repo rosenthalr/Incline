@@ -7,6 +7,7 @@ import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { TabsPage } from '../tabs/tabs';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { ForgotPage } from '../forgot/forgot';
 
 
 @Component({
@@ -38,6 +39,10 @@ export class LoginPage {
     // This should be replaced with CreateAccountPage after testing is complete
     this.navCtrl.push(CreateAccountPage);
 
+}
+
+goToForgotPage(){
+  this.navCtrl.push(ForgotPage);
 }
 
 //Unhide and hide password

@@ -15,6 +15,7 @@ import { DiscoverPage } from '../pages/discover/discover';
 import { HistoryPage } from '../pages/history/history';
 //import { MyHabitsPage } from '../pages/my-habits/my-habits';
 import { MorePage } from '../pages/more/more';
+import { ForgotPage } from '../pages/forgot/forgot';
 
 
 // Including http module for use on login page
@@ -23,6 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
 // Import LoginService that is used to get users from db
 import { LoginService } from "../services/login.service";
 import { EqualValidator } from '../pages/create-account/equal-validator.directive';
+import { ForgotService } from '../services/forgot.service';
+import { LogoutService } from '../services/logout.service';
+import { ResetService } from '../services/reset.service';
+import { MoreResetService } from '../services/morereset.service';
 
 @NgModule({ 
   declarations: [
@@ -36,7 +41,8 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     TabsPage,
     DiscoverPage,
     MorePage,
-    HistoryPage
+    HistoryPage,
+    ForgotPage
   ],
   imports: [
     BrowserModule,
@@ -55,12 +61,17 @@ import { EqualValidator } from '../pages/create-account/equal-validator.directiv
     TabsPage,
     DiscoverPage,
     MorePage,
-    HistoryPage
+    HistoryPage,
+    ForgotPage
   ],
   providers: [
     StatusBar,
     LoginService,
     SplashScreen,
+    ForgotService,
+    LogoutService,
+    ResetService,
+    MoreResetService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

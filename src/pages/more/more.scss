@@ -1,5 +1,130 @@
 page-more {
-    .title{
-        background: linear-gradient(300deg, $sunset-orange, $sunset-red);
+    .toolbar-title{
+        text-align: center;
     }
+    .nav-bar{
+      height: 48px;
+      font-family: Lato;
+    }
+    //title
+    .Reset-Password {
+        width: 153px;
+        height: 26px;
+        object-fit: contain;
+        font-family: Lato;
+        font-size: 22px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.18;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4a4a4a;
+        margin-top: 28px;
+        margin-bottom: 16px;
+        margin-left: 61px; 
+      }
+  .toolbar-background {
+      background-image: linear-gradient(to right,$cerulean,#0aafed),;
+  }
+  .btn-create.active{
+    background-color: $cerulean;
+    opacity:1 !important;
+  }
+  .eye{
+    font-size: 2.2 rem;
+  }
+  .error{
+    color: $error-red !important;
+    font-size: 12px;
+    border-style: none;
+    text-align: left;
+    width: 64%;
+    background-color: transparent !important; 
+    padding-left:0px;
+    margin:0 auto;
+    font-family: Lato;
+    
+  }
+  .input-group {
+    width:255px;
+    margin:0 auto;
+    margin-bottom: 41px;
+    color: $brownish-grey;
+    background-color: transparent !important; 
+    font-family: Lato;
+}
+  .input{
+    color: black;
+    font-family: Lato;
+  }
+  .back-button, .toolbar-title {
+    color: $white-two;
+  }
+
+
+  .return{
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .return-link{
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .btn-reset {
+    width: 255px;
+    height: 44px;
+    font-size: 14px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0.49;
+    border-radius: 0px;
+    background-color: $cerulean;
+    margin-top: 0px;
+    margin-bottom: 24px;
+  }
+  .btn-logout {
+    width: 255px;
+    height: 44px;
+    font-size: 14px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 0px;
+    background-color: $cerulean;
+  }
+  $action-sheet-ios-button-destructive-text-color: black; 
+  .action-sheets-logout {
+    .LogoutButton {
+      color: black;
+    }
+  }
+/*
+.create-account-header {
+    height: 27px;
+    font-size: 22px;
+    text-align: center !important;
+    color: #4a4a4a;
+  }
+*/
+  /*
+  ion-content{
+    background-image: url('../assets/imgs/Background Graphic 2.png');
+    background-size:cover;
+}
+*/
+
+/*
+  #back-button{
+    font-size: 40px;
+    margin-left: 17px;
+    margin-top: 5px;
+  }
+*/
 }
