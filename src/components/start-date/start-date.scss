@@ -118,11 +118,7 @@
     font-family: HelveticaNeue;
     font-size: 15px;
     font-weight: 500;
-    font-style: normal;
-    // font-stretch: normal;
-    // line-height: normal;
-    // letter-spacing: normal;
-    // text-align: left;
+    font-style: normal; 
     color: $bright-blue;
 }
 .target-date-label{
@@ -144,10 +140,10 @@
     border-bottom: 0;
 }
 .start-date-input-group{
-    border-bottom: 1px solid $grey;
+    border-bottom: 2px solid $grey;
 }
 .start-date-input-group.input-has-focus {
-    border-bottom: 1px solid $cerulean;
+    border-bottom: 2px solid $cerulean;
 }
 .start-date-next{
     margin-bottom: 0px;

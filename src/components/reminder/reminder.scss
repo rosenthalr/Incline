@@ -52,7 +52,7 @@
 .reminder-container {
     width: 68%;
     margin:0 auto;
-    padding-top: 90px;
+    padding-top: 96px;
 }
 
 .reminder-input-group, .reminder-target {
@@ -152,9 +152,14 @@
     text-align: center;
     color: $white-two;
   }
-  .date-value {
-      padding-top:2px;
-  }
   ion-backdrop{
       opacity: 0 !important;
   }
+.date-value {
+    padding-top: 4px;
+    padding-bottom: 4px !important;
+    font-size: 14px !important;
+}
+.reminder-label{
+  margin-top: 20px !important;
+}
