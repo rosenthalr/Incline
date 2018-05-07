@@ -15,6 +15,7 @@ import * as moment from 'moment';
 export class ReminderComponent implements OnInit {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
+  @Output() goToHabitLandingPage: EventEmitter<any> = new EventEmitter<any>();
   reminderTime: string;
   min: string;
   max: string;
@@ -33,7 +34,7 @@ export class ReminderComponent implements OnInit {
     this.goBack.emit();
   }
 
-  emitNextPage() {
-    this.nextPage.emit();
+  emitGoToHabitLandingPage() {
+    this.goToHabitLandingPage.emit();
   }
 }

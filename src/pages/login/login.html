@@ -29,8 +29,8 @@
         <div>
             <button   class="login-btn Rectangle-3" [ngClass]="{'active': active }"
             [disabled]="!isComplete ">LOGIN</button>
-
-            <div class="Forgot-password">Forgot password?</div>
+      
+            <div class="Forgot-password" (click)="goToForgotPage()">Forgot password?</div>
             <div class="newUser">
               <div class="newUser1">Are you a new user? </div>
               <div class="newUser2">
