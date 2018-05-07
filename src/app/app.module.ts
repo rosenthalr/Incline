@@ -48,15 +48,12 @@ import { MoreResetService } from '../services/morereset.service';
     DiscoverPage,
     MorePage,
     HistoryPage,
-<<<<<<< HEAD
-    ForgotPage
-=======
+    ForgotPage,
     WorkHabitsPage,
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
     AddPresetHabitPage
->>>>>>> ed9544cd767b1f42263cb7f52e652cc16f0b0ec3
   ],
   imports: [
     BrowserModule,
@@ -76,15 +73,12 @@ import { MoreResetService } from '../services/morereset.service';
     DiscoverPage,
     MorePage,
     HistoryPage,
-<<<<<<< HEAD
-    ForgotPage
-=======
+    ForgotPage,
     WorkHabitsPage,
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
     AddPresetHabitPage
->>>>>>> ed9544cd767b1f42263cb7f52e652cc16f0b0ec3
   ],
   providers: [
     StatusBar,
