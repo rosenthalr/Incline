@@ -21,14 +21,14 @@ export class StartDateComponent implements OnInit {
   hasChanged: boolean = false;
 
   ngOnInit() {
-    this.min =  moment().add(1, 'days').toISOString();
-    this.max = moment().add(5, 'years').toISOString();
-    this.startDate = moment().add(1,"days").toISOString();
-    this.targetDate = moment(this.startDate).add(21,'days').toISOString();
+    this.min =  moment().add(1, 'days').toISOString(true);
+    this.max = moment().add(1, 'years').toISOString(true);
+    this.startDate = moment().add(1,"days").toISOString(true);
+    this.targetDate = moment(this.startDate).add(21,'days').toISOString(true);
   }
 
   setTargetDate() {
-    this.targetDate = moment(this.startDate).add(21,'days').toISOString();
+    this.targetDate = moment(this.startDate).add(21,'days').toISOString(true);
     this.hasChanged = true;
   }
 
@@ -38,6 +38,7 @@ export class StartDateComponent implements OnInit {
 
   emitNextPage() {
     this.nextPage.emit();
+  
   }
 
 }

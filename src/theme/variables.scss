@@ -25,8 +25,8 @@ $app-direction: ltr;
 $toolbar-ios-title-text-color: #FFF;
 $toolbar-text-align: center;
 $toolbar-font-family: Lato;
-$tabs-ios-tab-icon-color-active:  #ff5200;
-$tabs-ios-tab-text-color-active: #ff5200;
+$tabs-ios-tab-icon-color-active:  #0477d6;;
+$tabs-ios-tab-text-color-active: #0477d6;;
 
 
 
@@ -39,12 +39,37 @@ $tabs-ios-tab-text-color-active: #ff5200;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222,
+  primary:        #488aff,
+  secondary:      #32db64,
+  danger:         #f53d3d,
+  light:          #f4f4f4,
+  dark:           #222,
+  dark-sky-blue:  #59a9e4,
+  baby-blue:      #0aafed,
+  cerulean:       #0477d6,
+  light-teal:     #6bddcb,
+  tealish:        #1ea09f,
+  teal:           #32cdb5,
+  orange:         #ff6a00,
+  sunset-orange:  #ffb400,
+  sunset-red :    #ff0000,
+  error-red:      #d0021b,
+  red:            #ff5200,
+  pink:           #fc355f,
+  black:          #000000,
+  grey:           #999999,
+  white:          #fafafa,
+  white-two:      #ffffff,
+  light-aqua:     #85ffec,
+  dark-grey:      #4a4a4a,
+  brownish-grey:  #6c6c6c,
+  yellow-productivity: #ff9e00
 );
+
+//work-habits =  #ff5200 - red
+    //mental-habits = tealish
+    //physical-wellness =  #ff9e00 - yellow-productivity
+    //basic-habits = #59a9e4 - dark-sky-blue
 
 $text-input-highlight-color-valid: #dedede;
 
@@ -125,6 +150,12 @@ $label-md-text-color-focused: #0477d6 !important;
   font-style: normal;
   src: url('../assets/fonts/Lato/Lato-Regular.ttf');
 }
+
+// @font-face {
+//   font-family: 'Lato';
+//   font-style: bold;
+//   src: url('../assets/fonts/Lato/Lato-Bold.ttf');
+// }
 
 
 @font-face {

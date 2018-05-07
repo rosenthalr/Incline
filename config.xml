@@ -3,7 +3,11 @@
     <name>goals-mobile</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://10.18.19.53:8100" />
+
+    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.1.22:8100" />
+    <content original-src="index.html" src="http://10.231.25.70:8100" />
+
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -86,10 +90,20 @@
     <allow-navigation href="http://10.0.0.105:8101" />
     <allow-navigation href="http://10.18.19.63:8100" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.2.0" />
+<<<<<<< HEAD
     <allow-navigation href="http://192.168.1.20:8101" />
     <allow-navigation href="http://192.168.1.20:8100" />
     <allow-navigation href="http://192.168.1.22:8100" />
+<<<<<<< HEAD
     <allow-navigation href="http://10.18.19.53:8100" />
+=======
+=======
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
+    <plugin name="cordova-plugin-screen-orientation" spec="~3.0.1" />
+    <allow-navigation href="http://172.20.10.4:8100" />
+    <allow-navigation href="http://10.231.25.70:8100" />
+>>>>>>> 9127301488dd01b77173a20c7226208182b224f2
+>>>>>>> e52ac604b2cea2d7dd1cd1014776349876be5751
     <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="^7.0.0" />
 </widget>
