@@ -1,0 +1,42 @@
+<!--
+  Generated template for the AddPresetHabitPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "{{currentColor}}">
+    <ion-title>Form a Habit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="preset-habit-info">
+    <ion-item class="preset-habit">
+      <ion-label class="label" floating>I want to</ion-label>
+      <ion-input class="preset-input" type="text" [(ngModel)]="habit" value="{{habit}}"
+        required maxlength="20"> </ion-input>
+  </ion-item>
+
+    <ion-item>
+      <ion-label class = "label" floating>Start Date</ion-label>
+      <ion-datetime [min]="minDateOfPicker" [max]="maxDateOfPicker" displayFormat="MMMM DD, YYYY" pickerFormat="DDD D MMM YYYY" [(ngModel)]="startDate" (ngModelChange)="setDate(startDate)"></ion-datetime>  
+    </ion-item>
+
+  <ion-item>
+      <ion-label class = "label" floating>Target Date</ion-label>
+      <ion-datetime disabled displayFormat="MMMM DD, YYYY" pickerFormat="DDD D MMM YYYY" [(ngModel)]="target"></ion-datetime>
+  </ion-item> 
+  
+    <ion-item> 
+      <ion-label class = "label" floating>Reminder</ion-label>
+      <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm A" [(ngModel)]="reminder"></ion-datetime> 
+    </ion-item>
+  </div>
+
+ <button class="confirm" (click)="goToHabitLandingPage()">Confirm</button>
+
+</ion-content>

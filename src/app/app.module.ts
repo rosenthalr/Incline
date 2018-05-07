@@ -16,6 +16,12 @@ import { HistoryPage } from '../pages/history/history';
 //import { MyHabitsPage } from '../pages/my-habits/my-habits';
 import { MorePage } from '../pages/more/more';
 import { ForgotPage } from '../pages/forgot/forgot';
+import { WorkHabitsPage } from '../pages/work-habits/work-habits';
+import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
+import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
+import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
+import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
+
 
 
 // Including http module for use on login page
@@ -42,7 +48,15 @@ import { MoreResetService } from '../services/morereset.service';
     DiscoverPage,
     MorePage,
     HistoryPage,
+<<<<<<< HEAD
     ForgotPage
+=======
+    WorkHabitsPage,
+    MentalHabitsPage,
+    PhysicalHabitsPage,
+    BasicHabitsPage,
+    AddPresetHabitPage
+>>>>>>> ed9544cd767b1f42263cb7f52e652cc16f0b0ec3
   ],
   imports: [
     BrowserModule,
@@ -62,7 +76,15 @@ import { MoreResetService } from '../services/morereset.service';
     DiscoverPage,
     MorePage,
     HistoryPage,
+<<<<<<< HEAD
     ForgotPage
+=======
+    WorkHabitsPage,
+    MentalHabitsPage,
+    PhysicalHabitsPage,
+    BasicHabitsPage,
+    AddPresetHabitPage
+>>>>>>> ed9544cd767b1f42263cb7f52e652cc16f0b0ec3
   ],
   providers: [
     StatusBar,
@@ -76,3 +98,4 @@ import { MoreResetService } from '../services/morereset.service';
   ]
 })
 export class AppModule {}
+ 

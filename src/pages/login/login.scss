@@ -1,89 +1,89 @@
 @import "../../styles/global.scss";
 
-  /* Text styles */
-  .h1-bold {
-    font-family: Lato;
-    font-size: 36px;  
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
-  h1 {
-    font-family: Lato;
-    font-size: 36px;
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: $black;
-  }
-  h2 {
-    font-family: Lato;
-    font-size: 22px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
-  .h3-linked {
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.3px;
-    text-align: left;
-    color: $cerulean;
-  }
-  h3 {
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.3px;
-    text-align: left;
-  }
-  button {
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
+/* Text styles */
+.h1-bold {
+  font-family: Lato;
+  font-size: 36px;  
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+h1 {
+  font-family: Lato;
+  font-size: 36px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $black;
+}
+h2 {
+  font-family: Lato;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+.h3-linked {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: $cerulean;
+}
+h3 {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+}
+button {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
 
-  h3 {
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.3px;
-    text-align: left;
-  }
-  input {
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
+h3 {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+}
+input {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
 
 .input-wrapper {
   height: 65px;
@@ -93,234 +93,223 @@
   padding-bottom: 0px;
 }
 
-  .error {
-    font-family: Lato;
-    font-size: 9px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: $error-red !important;
-    border-bottom-color: red !important;
-  } 
+.input-error:not(.input-has-focus) > .item-inner {
+  border-bottom: 2px solid $error-red !important;
+}
 
-  .Error-Text {
-    background: transparent;
-    height: 11px;
-    border-bottom: 1px solid transparent;
-    font-family: Lato;
-    font-size: 9px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: $error-red !important;
-    width: 64.2667%;
-    margin: 0 auto;
-    z-index: 5;
-    padding-left: 0px;
-    margin-top: -12px;
+.error {
+  font-family: Lato;
+  font-size: 9px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $error-red !important;
+} 
 
-  }
+.Error-Text {
+  background: transparent;
+  height: 11px;
+  border-bottom: 1px solid transparent;
+  font-family: Lato;
+  font-size: 9px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $error-red !important;
+  width: 64.2667%;
+  margin: 0 auto;
+  z-index: 5;
+  padding-left: 0px;
+  margin-top: -12px;
+}
 
-  .floating {
-    font-family: Lato;
-    font-size: 9px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
+.floating {
+  font-family: Lato;
+  font-size: 9px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
 
-  .Field-Label {
-    width: 241px;
-    height: 15px;
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
+.Field-Label {
+  width: 241px;
+  height: 15px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
 
-  .input-group {
-      width:64.2667%;
-      margin:0 auto;
-      padding-left:0px;
-  }
+.input-group {
+  width:64.2667%;
+  margin:0 auto;
+  padding-left:0px;
+}
 
+.text-input{
+  color: $black;
+}
 
-
-  .text-input{
-    color: $black;
-  }
-
-  .login-btn{
-    width: 255px;
-    height: 44px;
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: $black;
-    display:block;
-    margin:0 auto;
-  }
-
-  .login-main {
-    position: absolute;
-    top: 270px;
-    width: 100%;
-  }
-
-  .Login {
-    margin-bottom: 0px;
-    height: 27px;
-    font-family: Lato;
-    font-size: 22px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: $black;
-    margin-top: 35px;
-  }
-
-  .Rectangle-3 {
-    border-radius: 0px;
-    width: 255px;
-    height: 44px;
-    background-color: $white;
-    margin-top: 21%;
-    transition: all 500ms ease;
-  }
-
-  .Rectangle-3.active {
-    background-color: $cerulean !important;
-    opacity:1 !important;
-    color: white;
-  }
-
- .signUp{
-  text-decoration: none;
-  white-space: nowrap;
+.login-btn{
+  width: 255px;
+  height: 44px;
   font-family: Lato;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $black;
+  display:block;
+  margin:0 auto;
+}
+
+.login-main {
+  position: absolute;
+  top: 282px;;
+  width: 100%;
+}
+
+.Login {
+  margin-bottom: 0px;
+  height: 27px;
+  font-family: Lato;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $black;
+  margin-top: 35px;
+}
+
+.Rectangle-3 {
+  border-radius: 0px;
+  width: 255px;
+  height: 44px;
+  background-color: $white;
+  margin-top: 21%;
+  transition: all 500ms ease;
+}
+
+.Rectangle-3.active {
+  background-color: $cerulean !important;
+  opacity:1 !important;
+  color: white;
+}
+
+.signUp{
+text-decoration: none;
+white-space: nowrap;
+font-family: Lato;
+font-size: 14px;
+font-weight: bold;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+color: $cerulean;
+}
+
+.Forgot-password {
+  height: auto;
+  font-family: Lato;
+  margin-top: 5%;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: center;
   color: $cerulean;
- }
+}
 
-  .Forgot-password {
-    height: auto;
-    font-family: Lato;
-    margin-top: 5%;
-    font-size: 14px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.3px;
-    text-align: center;
-    color: $cerulean;
-  }
+.newUser{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 4%;
+}
 
-  .newUser{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 4%;
-  }
+.newUser1{
+  height: 17px;
+  padding-right: 10px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: $dark-grey;
+}
 
-  .newUser1{
-    height: 17px;
-    padding-right: 10px;
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.3px;
-    text-align: left;
-    color: $dark-grey;
-  }
+.newUser2{
+  height: 17px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: $dark-grey;
+}
 
-  .newUser2{
-    height: 17px;
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.3px;
-    text-align: left;
-    color: $dark-grey;
-  }
+.login-graphic {
+  background: $white !important;
+}
 
-  .login-graphic {
-    background: $white !important;
-  }
+#header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  min-width: 378px;
+  min-height: 280px;
+  background-image: url('../assets/imgs/mainBackDrop.png');
+  background-size: cover;
+}
 
-  .container {
-    padding:0px !important;
-    position:relative;
-    background-image: url('../assets/imgs/mainBackDrop.png');
-    background-size: cover;
-    height: auto;
-  }
-
-  .imgContainer {
-    padding:0px !important;
-    width: 100%;
-    height: 280px;
-    margin-bottom: 1px;
-  }
-
-  .logoContainer {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0px 0px 0px;
-    margin-top: 20px;
-  }
-
-
-  .Mask {
-    border-radius: 50%;
-    width: 137px;
-    height: 137px;
-    opacity: 0.3;
-    background-color: $grey;
-  }
+.Mask {
+  border-radius: 50%;
+  width: 137px;
+  height: 137px;
+  opacity: 0.3;
+  background-color: $grey;
+}
 
 
 //eye icon location
-.item-md.item-label-stacked [item-right], .item-md.item-label-floating [item-right], .item-md.item-label-stacked [item-end], .item-md.item-label-floating [item-end]{
+.Field-Label.item-md.item-label-stacked [item-right], .Field-Label.item-md.item-label-floating [item-right],
+.Field-Label.item-md.item-label-stacked [item-end], .Field-Label.item-md.item-label-floating [item-end]{
   padding: 0px;
   top: 15px !important;
   left: 8px;
 }
-.item-ios.item-label-stacked [item-right], .item-ios.item-label-floating [item-right], .item-ios.item-label-stacked [item-end], .item-ios.item-label-floating [item-end]{
+.Field-Label.item-ios.item-label-stacked [item-right], .Field-Label.item-ios.item-label-floating [item-right],
+.Field-Label.item-ios.item-label-stacked [item-end], .Field-Label.item-ios.item-label-floating [item-end]{
   padding: 0px;
   top: 15px !important;
   left: 8px;
@@ -340,7 +329,8 @@
   box-shadow: inset 0 -1px 0 0 transparent !important;
 }
 
-.item-ios.item-input.item-input-has-focus.item-inner, .item-ios.item-input.input-has-focus .item-inner{
+.item-ios.item-input.item-input-has-focus.item-inner, 
+.item-ios.item-input.input-has-focus .item-inner{
   border-bottom: solid 2px $cerulean;
   box-shadow: inset 0 -1px 0 0 transparent !important;
 }
@@ -348,21 +338,13 @@
 
 
 
-.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
   border-bottom: 1px transparent !important;
 }
-  
-
-
-
-  //This needs to be added to change the label color on IOS 
-  // .item-input-has-focus .label-ios[floating], .input-has-focus .label-ios[floating], .item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
-  //   color: $cerulean;
-  // }
-
 
 //Makes sure the floating label is grey when not clicked on the input
-.item-input-has-value .label-ios[floating], .input-has-value .label-ios[floating]{
+.Field-Label.item-input-has-value .label-ios[floating], .Field-Label.input-has-value .label-ios[floating]{
   color: $grey;
 }
 
