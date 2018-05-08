@@ -1,5 +1,5 @@
 export interface More {
     password: string;
-    passwordtwo: string;
-    passwordthree: string;
+    password2: string;
+    password3: string;
 }

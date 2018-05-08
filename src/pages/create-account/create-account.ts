@@ -119,9 +119,9 @@ export class CreateAccountPage implements OnInit {
           this.password2 = userInfo;
         }
     
-        if(this.firstName && this.lastName && this.email && this.password1 && this.password2) {
-           this.isComplete = true;
-        }
+            if(this.firstName && this.lastName && this.email && this.password1 && this.password2) {
+              this.isComplete = true;
+            }
          else {
            this.isComplete = false;
          }

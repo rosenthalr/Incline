@@ -94,6 +94,7 @@ checkIfPasswordEmpty(){
 
 
   login(userInfo) {
+
       let user = {
         email: userInfo.email,
         password: userInfo.password
@@ -116,7 +117,7 @@ checkIfPasswordEmpty(){
           // Remove any error messages that may have appeared on previous login attempts
           this.emailError = false;
           this.passwordError = false;
-  
+          localStorage.setItem("test", userInfo.password);          
           // Navigate to Habit Landing Page
           this.navCtrl.push(TabsPage);
        },

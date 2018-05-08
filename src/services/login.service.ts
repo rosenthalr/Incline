@@ -3,12 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-// This specifies what the client expects to recieve back (json)
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-
-
 @Injectable()
 export class LoginService {
 
@@ -18,8 +12,7 @@ export class LoginService {
   // This function takes the user's login input values as a parameter (username and password)
   // and then checks to see if an account with those credentials exist
   login(user) {
-    let body = JSON.stringify(user);
-    return this.http.post('http://localhost:7000/login', body, httpOptions);
+    return this.http.post<any>('http://localhost:7000/login', user, { withCredentials: true });
   }
 
 }
