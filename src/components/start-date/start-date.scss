@@ -51,9 +51,7 @@
 .start-date-container {
     width: 68%;
     margin:0 auto;
-    padding-top: 90px;
-    // padding-left: 72px;
-    // padding-right: 72px;
+    padding-top: 106px;
 }
 
 .start-date-input-group, .start-date-target {
@@ -66,7 +64,7 @@
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 20vh;
+    height: 18vh;
 }
 .start-date-back-button{
     font-family: Lato;
@@ -81,7 +79,7 @@
 }
 .start-date-target {
     text-align: left;
-    margin-top:34px;
+    margin-top: 40px;
 }
 .target-date-value {
     height: 151px;
@@ -93,10 +91,10 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: $cerulean;
+    color: $dark-teal;
 }
 .target-date-value.active {
-    color: $teal;
+    color: $cerulean;
 }
 
 .datetime-text{
@@ -111,23 +109,34 @@
     font-family: AvenirNext !important;
     font-weight: normal !important;
     font-style: normal;
-    // font-stretch: normal;
-    // letter-spacing: normal;
     color: $black-two !important;
 }
-.picker-toolbar{
+.picker-toolbar {
     background-color: #fafaf8 !important;
-    box-shadow: inset 0 0.5px 0 0 #e1e0e0 !important;
     border-bottom:0 !important;
     font-family: HelveticaNeue;
     font-size: 15px;
     font-weight: 500;
+    font-style: normal; 
+    color: $bright-blue;
+    box-shadow: inset 0 0.5px 0 0 #e1e0e0 !important;
+}
+.picker-ios .picker-wrapper {
+    border-top: 0;
+}
+.picker-opts {
+    max-width: 50px !important;
+}
+.picker-ios .picker-button, .picker-ios .picker-button.activated {
+    color: $bright-blue;
+    font-family: HelveticaNeue;
+    font-size: 15px;
+    font-weight: 500 !important;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: $bright-blue;
 }
 .target-date-label{
     font-size: 14px;
@@ -140,6 +149,7 @@
     font-size: 15px;
     color: $brownish-grey;
 }
+
 .start-date-container > .item-ios {
     padding-left:0;
 }
@@ -154,7 +164,8 @@
 }
 .start-date-next{
     margin-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 60px;
+    padding-top:10px
 }
 .Rectangle-4 {
     width: 255px;
@@ -176,5 +187,10 @@
     color: $white-two;
   }
   .date-value {
-      padding-top:2px;
+      padding-top: 4px;
+      padding-bottom: 4px !important;
+      font-size: 14px !important;
   }
+  .start-date-label{
+    margin-top: 20px !important;
+}

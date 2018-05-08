@@ -52,7 +52,7 @@
 .reminder-container {
     width: 68%;
     margin:0 auto;
-    padding-top: 90px;
+    padding-top: 106px;
 }
 
 .reminder-input-group, .reminder-target {
@@ -65,7 +65,7 @@
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 20vh;
+    height: 18vh;
 }
 .reminder-back-button{
     font-family: Lato;
@@ -131,7 +131,8 @@
 }
 .reminder-next{
     margin-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 60px;
+    padding-top:10px
 }
 .Rectangle-4 {
     width: 255px;
@@ -152,9 +153,14 @@
     text-align: center;
     color: $white-two;
   }
-  .date-value {
-      padding-top:2px;
-  }
   ion-backdrop{
       opacity: 0 !important;
   }
+.date-value {
+    padding-top: 4px;
+    padding-bottom: 4px !important;
+    font-size: 14px !important;
+}
+.reminder-label{
+  margin-top: 20px !important;
+}
