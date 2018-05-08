@@ -14,9 +14,9 @@
      <div class="categories-body">
         <ion-list class="categories">
             
-        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Work'}" value="Work" (click)="setCategory('Work')" type="button" class="categories-button">
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Productivity'}" value="Productivity" (click)="setCategory('Productivity')" type="button" class="categories-button">
             <div class="categories-button-icon-container"><ion-icon name="time"></ion-icon></div>
-            <div class="categories-button-title">Work</div>
+            <div class="categories-button-title">Productivity</div>
         </button>
 
         <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Mental Wellness'}" value="Mental Wellness" (click)="setCategory('Mental Wellness')" type="button" class="categories-button">
@@ -29,9 +29,9 @@
             <div class="categories-button-title">Physical Health</div>
         </button>
 
-        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Life'}" value="Life" (click)="setCategory('Life')" type="button" class="categories-button">
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='The Basics'}" value="The Basics" (click)="setCategory('The Basics')" type="button" class="categories-button">
             <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
-            <div class="categories-button-title">Life</div>
+            <div class="categories-button-title">The Basics</div>
         </button>
         </ion-list>
     </div>
