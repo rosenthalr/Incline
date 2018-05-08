@@ -21,11 +21,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-<<<<<<< HEAD
   rootPage:any = LoginPage; 
-=======
-  rootPage:any = LoginPage;
->>>>>>> d1f62f18b61de0a71551be840b679d4e61d470ab
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation) {
     platform.ready().then(() => {
