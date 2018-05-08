@@ -1,0 +1,36 @@
+<div class="start-date-header">
+  <div class="start-date-header-container">
+      <div class="start-date-header-title">Your target success date will be set 21 days from tomorrow.</div>
+  </div>
+  <!-- <img class="start-date-sun" src="../www/assets/svgs/categories.svg" alt="" srcset="">  -->
+    <img class="start-date-sun" src="assets/svgs/oval-3.svg" alt="" srcset=""> 
+</div>
+<div class="start-date-body">
+  <ion-list class="start-date-container">
+      <ion-item class="start-date-input-group">
+        <ion-label class="start-date-label" floating>Start Date</ion-label>
+        <ion-datetime
+          class="date-value"
+          displayFormat="DDDD, MMMM D, YYYY"
+          pickerFormat="DDD, MMMM D, YYYY"
+          [min]="min"
+          [max]="max"
+          name="startDate"
+          [(ngModel)]="startDate"
+          (ngModelChange)="setTargetDate()"
+          ></ion-datetime>
+      </ion-item>
+      <div class="start-date-target">
+          <div class="target-date-label">Target Success Date</div>
+          <div class="target-date-value" [ngClass]="{'active': hasChanged}"> {{targetDate | date:'fullDate'}} </div>
+      </div>
+  </ion-list>
+</div>
+<div class="start-date-next">
+    <button (click)="emitNextPage()" ion-button clear class="start-date-next-button Rectangle-4">
+      <span class="ACTIVE-BUTTON">NEXT</span>
+    </button>
+</div>
+<div class="start-date-back">
+    <button (click)="emitGoBack()" ion-button clear class="start-date-back-button">Go Back</button>
+</div>
