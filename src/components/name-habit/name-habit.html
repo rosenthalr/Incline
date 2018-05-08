@@ -6,9 +6,12 @@
     <img class="name-habit-sun" src="assets/svgs/name-habit.svg" alt="" srcset="">
  </div>
 
-
-<ion-item class="name-habit">
-  <ion-label floating>Habit Name</ion-label>
-  <ion-input class = "name-habit-input" type="text" maxlength="20" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionBlur)="setName(habitName)" required #name="ngModel"></ion-input>
-</ion-item>
+ <div class="name-habit-body">
+  <ion-list class="name-habit-container">
+    <ion-item class="name-habit-input-group">
+      <ion-label floating>Habit Name</ion-label>
+      <ion-input class = "name-habit-input" type="text" maxlength="20" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionBlur)="setName(habitName)" required #name="ngModel"></ion-input>
+    </ion-item>
+  </ion-list>
+</div>
 <button class="Rectangle-3" [ngClass]="{'active':!name.errors?.required}" [disabled]="name.errors?.required" ion-button (click)="emitNextPage()">NEXT</button>
