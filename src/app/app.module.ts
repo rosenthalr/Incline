@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { ScreenOrientation } from '@ionic-native/screen-orientation'
 import { FormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +14,7 @@ import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DiscoverPage } from '../pages/discover/discover';
 import { HistoryPage } from '../pages/history/history';
+
 //import { MyHabitsPage } from '../pages/my-habits/my-habits';
 import { MorePage } from '../pages/more/more';
 import { ForgotPage } from '../pages/forgot/forgot';
@@ -35,7 +37,7 @@ import { LogoutService } from '../services/logout.service';
 import { ResetService } from '../services/reset.service';
 import { MoreResetService } from '../services/morereset.service';
 
-@NgModule({ 
+@NgModule({
   declarations: [
     MyApp,
     HomePage,
@@ -84,6 +86,8 @@ import { MoreResetService } from '../services/morereset.service';
     StatusBar,
     LoginService,
     SplashScreen,
+    StatusBar,
+    ScreenOrientation,
     ForgotService,
     LogoutService,
     ResetService,

@@ -13,6 +13,7 @@ import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
 import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
  
 @Component({
@@ -20,14 +21,19 @@ import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = LoginPage; 
+  rootPage:any = LoginPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      
-      statusBar.styleDefault();
+      if(platform.is('ios')){
+        statusBar.overlaysWebView(true);
+        statusBar.styleLightContent();
+        statusBar.backgroundColorByName('white');
+        screenOrientation.lock(screenOrientation.ORIENTATIONS.PORTRAIT);
+      }
+
       splashScreen.hide();
     });
   }

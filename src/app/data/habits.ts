@@ -9,7 +9,7 @@ export const workHabits = [
     {
       "habit": "Visualize your next day",
       "description": "A surefire was to keep uncertainty at bay!",
-      "reminder": 9,
+      "reminder": 21,
       "currentColor": "red",
       icon: "clipboard"
     },
@@ -23,7 +23,7 @@ export const workHabits = [
     {
       "habit": "Check off your to-do list",
       "description": "Those tasks aren't going to check off themselves",
-      "reminder": 7,
+      "reminder": 19,
       "currentColor": "red",
       icon: "hand"
     }
@@ -103,14 +103,14 @@ export const workHabits = [
     {
       "habit": "Do 30 minutes of exercise",
       "description": "No matter how slow you go, you're still lapping everyone on the couch.",
-      "reminder": 9,
+      "reminder": 6,
       "currentColor": "yellow-productivity",
       icon: "flash"
     },
     {
       "habit": "Stretch for 20 minutes",
       "description": "Keep those muscles flexible, strong, and healthy for the road ahead.",
-      "reminder": 9,
+      "reminder": 7,
       "currentColor": "yellow-productivity",
       icon: "move"
     },
@@ -136,14 +136,14 @@ export const workHabits = [
     {
       "habit": "Read the news",
       "description": "#BlessThePress",
-      "reminder": 9,
+      "reminder": 8,
       "currentColor": "dark-sky-blue",
       icon: "glasses"
     },
     {
       "habit": "Make your bed",
       "description": "Accomplish that first task and set yourself up for success.",
-      "reminder": 9,
+      "reminder": 7,
       "currentColor": "dark-sky-blue",
       icon: "checkmark"
     },
