@@ -3,11 +3,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { OnInit } from '@angular/core';
 import { User } from '../create-account/user.interface';
+import { More } from './morereset.interface';
 import { SuccessPage } from '../success/success';
 import { LoginPage } from '../login/login';
-import { LogoutService} from '../../services/logout.service';
+import { LogoutService } from '../../services/logout.service';
 import { MoreResetService } from '../../services/morereset.service';
 import { ActionSheetController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
+import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
+import { Form } from 'ionic-angular/util/form';
+import { Toast } from 'ionic-angular/components/toast/toast';
 
 /**
  * Generated class for the MorePage page.
@@ -22,148 +27,198 @@ import { ActionSheetController } from 'ionic-angular';
 @Component({
   selector: 'page-more',
   templateUrl: 'more.html',
+  providers: [MoreResetService]
 })
 export class MorePage implements OnInit {
-  
-  public type='password';
-  public type2='password';
-  public type3='password';
-  public showPass=false;
-  public showPass2=false;
-  public showPass3=false;
-  public isComplete: boolean;
-  public emailError: boolean;
-  public passwordLengthError:boolean;
-  public passwordMatchError:boolean;
-  public password:string;
-  public password2:string;
-  public password3:string;
-  public active: boolean;
-  public passwordError: boolean;
-  public user: any;
 
-  constructor(public moreResetService: MoreResetService, public actionSheetCtrl: ActionSheetController, private logoutService: LogoutService, public navCtrl: NavController, public navParams: NavParams) {
-    this.active = false;
+  public type = 'password';
+  public type2 = 'password';
+  public type3 = 'password';
+  public showPass = false;
+  public showPass2 = false;
+  public showPass3 = false;
+  public isComplete: boolean;
+  public passwordLengthError: boolean;
+  public passwordMatchError: boolean;
+  public password: string;
+  public password2: string;
+  public password3: string;
+  public passwordError: boolean;
+  public confirmError: boolean;
+  public confirmComplete: boolean;
+  public more: More;
+  public active: boolean;
+  public f: FormGroup;
+  
+
+  constructor(private toastCtrl: ToastController, private moreResetService: MoreResetService, private actionSheetCtrl: ActionSheetController,
+    private logoutService: LogoutService, private navCtrl: NavController, private navParams: NavParams) {
     this.isComplete = false;
-    this.emailError = false;
     this.passwordError = false;
+    this.active = false;
+    this.confirmError = false; 
+    this.confirmComplete=false;
   }
   ngOnInit() {
-    this.user = {
+    this.more = {
       password: '',
       password2: '',
-      password3:'',
+      password3: '',
     }
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MorePage');
+    console.log('pw   '+localStorage.getItem("test") +localStorage.getItem("test").length)
+    console.log('passwordError   '+ this.passwordError )
   }
   showPassword() {
     this.showPass = !this.showPass;
 
-    if(this.showPass){
-      this.type='text';
+    if (this.showPass) {
+      this.type = 'text';
     } else {
-      this.type='password';
+      this.type = 'password';
     }
   }
 
   showPassword2() {
-    this.showPass2=!this.showPass2;
+    this.showPass2 = !this.showPass2;
 
-    if(this.showPass2){
-      this.type2='text';
+    if (this.showPass2) {
+      this.type2 = 'text';
     } else {
-      this.type2='password';
+      this.type2 = 'password';
     }
   }
   showPassword3() {
-    this.showPass3=!this.showPass3;
+    this.showPass3 = !this.showPass3;
 
-    if(this.showPass3){
-      this.type3='text';
+    if (this.showPass3) {
+      this.type3 = 'text';
     } else {
-      this.type3='password';
+      this.type3 = 'password';
     }
   }
 
-  checkIfPasswordEmpty(){
-    if(this.password !== ''){
+  checkIfPasswordEmpty() {
+    if (this.password == '') {
       this.passwordError = false;
     }
   }
-  goToSuccessPage(){
+  goToSuccessPage() {
     this.navCtrl.push(SuccessPage);
   }
 
   checkIfComplete(userInfo, field) {
-    
-        if(field='password') {
-          this.user.password = userInfo;
-          }
-          else if (field='password2') {
-            this.user.password2 = userInfo;
-          }
-          else if (field='password3') {
-            this.user.password3 = userInfo;
-          }
-          if(this.user.password && this.user.password2 && this.user.password3) {
-            this.isComplete = true;
-         }
-        else {
-          this.isComplete=false;
+
+    if (field=='password') {
+      this.password = userInfo;
+      this.isComplete=true;
+    } else if (field == 'password2') {
+      this.password2= userInfo;
+    }
+    else if (field =='password3'){
+      this.password3 = userInfo;
+      this.confirmComplete=true;
+    }
+  
+  }
+  checkIfConfirm(userInfo, field) { 
+  if(this.confirmComplete=true){
+    // console.log(' password 3 ' + this.password3 )
+    // console.log(' password 2    ' + this.password2)
+    // console.log(this.confirmError)
+    if(this.password3.length > this.password2.length-1){
+        console.log(this.active);
+      if (this.password2!==this.password3) {
+        this.confirmError=true;
+        this.active=false;
+      }else {
+        this.confirmError=false;
+        this.active = true;
+      }
+    }
+    }
+  }
+
+  checkIfCorrect(userInfo, field) { 
+    if(this.isComplete=true){
+      if(this.password.length > localStorage.getItem("test").length-1){
+        // console.log('isComplete:   ' + this.isComplete)
+        // console.log('passwordError:    ' + this.passwordError + '     pw ----- '+ this.password + '  l  '+ this.password.length)
+        if(this.password!==localStorage.getItem("test")){
+          this.passwordError = true;      
+            if(field=='password') {
+              this.password = userInfo;
+            } 
+          } else
+          {
+            this.passwordError = false;
+            this.active = false;
+          } 
+        } 
         }
       }
-  
-      logout(user){
-        let actionSheet = this.actionSheetCtrl.create({
-          title: 'Are you sure you want to log out?',
-          cssClass: 'action-sheets-logout',
-          buttons: [
-            {
-              text: 'Log Out',
-              cssClass: 'LogoutButton',
-              handler: () => {
-                this.logoutService.logout(user).subscribe(
-                  data => {          
-                    console.log('Logged Out');
-                    this.navCtrl.parent.parent.setRoot(LoginPage);
-                    this.navCtrl.popToRoot();
-                  },
-                  error => {
-                    const errorMessage = error.error.info.message;
-                    console.log(errorMessage);
-                  })
-                }
-              },
-            {
-              text: 'Cancel',
-              role: 'cancel',
-              cssClass: 'LogoutCancelButton',
-              handler: () => {
-                // this is where cancel code goes
-                console.log('Cancelled');
-              }
-            }
-          ]
-        });
-        actionSheet.present();
-      }
 
-      reset(userInfo) {
-        let user = {
-          password: userInfo.password,
-          password2: userInfo.password2,
-          password3: userInfo.password3
-        };
-        console.log(user);
-        this.moreResetService.resetUser(user).subscribe(
-          data => {
-            console.log(user);
-          },
-          error => {
-            console.error(error);
+      
+    
+  logout(user) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Are you sure you want to log out?',
+      cssClass: 'action-sheets-logout',
+      buttons: [
+        {
+          text: 'Log Out',
+          cssClass: 'LogoutButton',
+          handler: () => {
+            this.logoutService.logout(user).subscribe(
+              data => {
+                console.log('Logged Out');
+                this.navCtrl.parent.parent.setRoot(LoginPage);
+                localStorage.clear();
+                this.navCtrl.popToRoot();
+              },
+              error => {
+                const errorMessage = error.error.info.message;
+                console.log(errorMessage);
+              })
           }
-        )
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'LogoutCancelButton',
+          handler: () => {
+            // this is where cancel code goes
+            console.log('Cancelled');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  reset(userInfo: More) {
+    let user = {
+      password: userInfo.password,
+      password2: userInfo.password2,
+      password3: userInfo.password3
+    };
+
+    this.moreResetService.resetuser(user).subscribe(
+      data => {
+        let toast = this.toastCtrl.create({
+          message: 'Your password has been updated!',
+          duration: 4000,
+          position: 'top',
+          cssClass: 'toast-reset'
+        });
+        toast.present();
+        this.navCtrl.push(MorePage);
+      },
+      error => {
+        console.error(error);
       }
+    )
+  }
 }

@@ -15,5 +15,54 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+$action-sheet-ios-button-destructive-text-color: black; 
+.action-sheets-logout {
+  .LogoutButton {
+    height: 24px;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #000000;
+    color: var(--black); 
+    overflow: visible;
+  }
+  .LogoutCancelButton {
+    width: 65px;
+    height: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #007aff;
+    background: #f9f9f9;
+  }
+}
+.toast-container {
+  height: 56px;
+  border-radius: 3px;
+  background-color: #d8d8d8;
+  box-shadow: 0 2px 4px 0 rgba(199, 199, 199, 0.5);
 
+}
+.toast-message {
+  background: #d8d8d8;
+  text-align: center;
+  font-family: AvenirNext;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: black !important;
   
+}
+
+
