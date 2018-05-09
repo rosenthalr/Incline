@@ -10,49 +10,65 @@
   <ion-navbar hideBackButton>
     <ion-title class="title">More</ion-title>
   </ion-navbar>
-    <div class="Reset-Password">Reset Password</div>
+  <div class="Reset-Password">Reset Password</div>
 </ion-header>
 
 
 <ion-content>
 
-      <form #r="ngForm" (ngSubmit)="reset(r.value, r.valid);" novalidate>
-      
-      <div class="input-container">
-          <ion-item class="input-group">
-            <ion-label class="Field-Label" floating>Confirm Password</ion-label>
-          <ion-input class="Field-Input"  [ngClass]="{'error': passwordError }" type={{type}} name="password" [ngModel]="more.password" (ngModelChange)="checkIfComplete($event, 'password')" (ngModelChange)="checkIfCorrect($event, 'password')" (ngModelChange)="checkIfPasswordEmpty($event, 'password')" value=""></ion-input>
-          <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>  
-            <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
-            </ion-item>
-          <ion-item [hidden]="!passwordError" class="Error-Text">Hmm...That's not the correct password.</ion-item>
-          </div>
-  
+  <form #r="ngForm" (ngSubmit)="reset(r.value, r.valid);" novalidate>
 
-      <ion-item class="input-group">
-        <ion-label floating class="Field-Label">New Password</ion-label>
-                    <ion-input class="Field-Input" type="{{type2}}" name="password2" [ngModel]="more.password2" (ngModelChange)="checkIfComplete($event, 'password2')" value=""
-                    required minlength="8" reverse="true" #password2="ngModel"></ion-input>
-                <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
-                <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
-      </ion-item>
     <div class="input-container">
-      <ion-item class="input-group">
-          <ion-label floating class="Field-Label">Confirm New Password</ion-label>
+      <ion-item class="input-group" [ngClass]="{'input-error': passwordError }">>
+        <ion-label class="Field-Label" [ngClass]="{'error': passwordError }" floating>Confirm Password</ion-label>
+        <ion-input class="Field-Input" [ngClass]="{'error': passwordError }" type={{type}} name="password" [ngModel]="more.password"
+          (ngModelChange)="checkIfComplete($event, 'password')" (ngModelChange)="checkIfCorrect($event, 'password')" (ngModelChange)="checkIfPasswordEmpty($event, 'password')"
+          value=""></ion-input>
+        <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
+          <ion-icon name="ios-eye-off-outline"></ion-icon>
+        </button>
+        <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
+          <ion-icon name="ios-eye-outline"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item [ngClass]="{show:!passwordError}" class="Error-Text">Hmm...That's not the correct password.</ion-item>
+    </div>
 
-                <ion-input class="Field-Input"  [ngClass]="{'errortwo': confirmError }" type="{{type3}}" name="password3" [ngModel]="more.password3" (ngModelChange)="checkIfComplete($event, 'password3')" (ngModelChange)="checkIfConfirm($event, 'password3')"  value=""
+
+    <ion-item class="input-group">
+      <ion-label floating class="Field-Label">New Password</ion-label>
+      <ion-input class="Field-Input" type="{{type2}}" name="password2" [ngModel]="more.password2" (ngModelChange)="checkIfComplete($event, 'password2')"
+        value="" required minlength="8" reverse="true" #password2="ngModel"></ion-input>
+      <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
+        <ion-icon name="ios-eye-off-outline"></ion-icon>
+      </button>
+      <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
+        <ion-icon name="ios-eye-outline"></ion-icon>
+      </button>
+    </ion-item>
+    
+    
+    <div class="input-container">
+      <ion-item class="input-group" [ngClass]="{'input-error': confirmError }">
+        <ion-label floating class="Field-Label" [ngClass]="{'error': confirmError }">Confirm New Password</ion-label>
+
+        <ion-input class="Field-Input" [ngClass]="{'error': confirmError }" type="{{type3}}" name="password3" [ngModel]="more.password3"
+          (ngModelChange)="checkIfComplete($event, 'password3')" (ngModelChange)="checkIfConfirm($event, 'password3')" value=""
           required minlength="8" reverse="true" #password3="ngModel"></ion-input>
 
-          <button *ngIf="!showPass3" ion-button clear color="dark" type="button" item-right (click)="showPassword3()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
-            <button *ngIf="showPass3" ion-button clear color="dark" type="button" item-right (click)="showPassword3()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
-    </ion-item>
-          <ion-item [hidden]="!confirmError" class="Error-Text">Hmm...Those passwords don't match!</ion-item>
+        <button *ngIf="!showPass3" ion-button clear color="dark" type="button" item-right (click)="showPassword3()">
+          <ion-icon name="ios-eye-off-outline"></ion-icon>
+        </button>
+        <button *ngIf="showPass3" ion-button clear color="dark" type="button" item-right (click)="showPassword3()">
+          <ion-icon name="ios-eye-outline"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item [hidden]="!confirmError" class="Error-Text">Hmm...Those passwords don't match!</ion-item>
     </div>
-              <button class="btn-reset" [disabled]="!active" type="submit" ion-button> CHANGE PASSWORD</button>
-      </form>
+    <button class="btn-reset" [disabled]="{'reset-active': !confirmError }" type="submit" ion-button> CHANGE PASSWORD</button>
+  </form>
 
-      <button class="btn-logout" type="submit" (click)="logout();" ion-button> LOG OUT</button>
-  
+  <button class="btn-logout" type="submit" (click)="logout();" ion-button> LOG OUT</button>
+
 
 </ion-content>
-        
