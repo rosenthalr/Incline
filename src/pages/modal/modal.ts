@@ -40,6 +40,7 @@ export class ModalPage implements OnInit {
   }
   onCategorySelected(category) {
     this.category = category;
+    localStorage.setItem("category", category);              
     // Navigate to the next page (hasn't been created yet -- next sprint)
     //this.navCtslideNexttPage);
   }

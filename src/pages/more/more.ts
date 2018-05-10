@@ -68,7 +68,7 @@ export class MorePage implements OnInit {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MorePage');
-    console.log('pw   '+localStorage.getItem("test") +localStorage.getItem("test").length)
+    console.log('pw   '+localStorage.getItem("pw") +localStorage.getItem("pw").length)
     console.log('passwordError   '+ this.passwordError )
   }
   showPassword() {
@@ -143,10 +143,10 @@ export class MorePage implements OnInit {
 
   checkIfCorrect(userInfo, field) { 
     if(this.isComplete=true){
-      if(this.password.length > localStorage.getItem("test").length-1){
+      if(this.password.length > localStorage.getItem("pw").length-1){
         // console.log('isComplete:   ' + this.isComplete)
         // console.log('passwordError:    ' + this.passwordError + '     pw ----- '+ this.password + '  l  '+ this.password.length)
-        if(this.password!==localStorage.getItem("test")){
+        if(this.password!==localStorage.getItem("pw")){
           this.passwordError = true;      
             if(field=='password') {
               this.password = userInfo;

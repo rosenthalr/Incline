@@ -1,6 +1,8 @@
 import { Component,EventEmitter, Output, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
+import { HabitPostService } from '../../services/habitpost.service';
+
 
 /**
  * Generated class for the ReminderComponent component.
@@ -21,6 +23,8 @@ export class ReminderComponent implements OnInit {
   max: string;
   hasChanged: boolean = false;
 
+  constructor(private habitPostService: HabitPostService){}
+
   ngOnInit() {
     this.reminderTime = "08:00:00.000Z";
     
@@ -35,6 +39,26 @@ export class ReminderComponent implements OnInit {
   }
 
   emitGoToHabitLandingPage() {
-    this.goToHabitLandingPage.emit();
+    console.log(this.reminderTime);
+    console.log(moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate());
+    let habit = {
+      title: localStorage.getItem("basichabit"),
+      created: Date.now(),
+      startdate: localStorage.getItem("basicstartdate"),
+      targetend: localStorage.getItem("basictargetdate"),
+      reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
+      streakcounter: 1,    
+      updatedAt: Date.now(),
+    };
+
+    this.habitPostService.habitpost(habit).subscribe(
+      data => {
+        console.log(habit);
+        this.goToHabitLandingPage.emit();
+         },
+      error => {
+        console.error(error);
+      })
+    
   }
 }

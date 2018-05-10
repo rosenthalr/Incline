@@ -38,6 +38,10 @@ export class StartDateComponent implements OnInit {
 
   emitNextPage() {
     this.nextPage.emit();
+    console.log("this is to check execution");
+    localStorage.setItem("basicstartdate", this.startDate);
+    localStorage.setItem("basictargetdate", this.targetDate);
+    console.log('startdate: '+  this.startDate + '    targetdate : '+ this.targetDate); //if I don't log the output, it doesn't save to local storage/post to the service for some reason
   
   }
 
