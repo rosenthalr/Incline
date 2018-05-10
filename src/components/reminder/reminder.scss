@@ -120,9 +120,7 @@
 .reminder-container > .item-ios {
     padding-left:0;
 }
-.list-ios .item-block .item-inner {
-    border-bottom: 0;
-}
+
 .reminder-input-group{
     border-bottom: 2px solid $grey;
 }
@@ -160,6 +158,7 @@
     padding-top: 4px;
     padding-bottom: 4px !important;
     font-size: 14px !important;
+    color: black;
 }
 .reminder-label{
   margin-top: 20px !important;

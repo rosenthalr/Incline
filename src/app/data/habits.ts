@@ -58,37 +58,7 @@ export const workHabits = [
       "reminder": 19,
       "currentColor": "tealish",
       icon: "bookmarks"
-    },
-    //These are placeholder habits below to show scrolling on the mentalHabits page
-    {
-        "habit": "Meditate",
-        "description": "Take some time to focus on you.",
-        "reminder": 7,
-        "currentColor": "tealish",
-        icon: "ios-search"
-      },
-      {
-        "habit": "Go to sleep without a device",
-        "description": "Unplug and unwind.",
-        "reminder": 9,
-        "currentColor": "tealish",
-        icon: "phone-portrait"
-      },
-      {
-        "habit": "Meditate",
-        "description": "Take some time to focus on you.",
-        "reminder": 7,
-        "currentColor": "tealish",
-        icon: "ios-search"
-      },
-      {
-        "habit": "Go to sleep without a device",
-        "description": "Unplug and unwind.",
-        "reminder": 9,
-        "currentColor": "tealish",
-        icon: "phone-portrait"
-      }
-    
+    }    
     
   ]
 
