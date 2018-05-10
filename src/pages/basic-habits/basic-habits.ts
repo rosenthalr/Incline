@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { basicHabits } from '../../app/data/habits';
 import { TabsPage } from '../tabs/tabs';
 import { AddPresetHabitPage } from '../add-preset-habit/add-preset-habit';
+import { HabitPostService } from '../../services/habitpost.service';
 /**
  * Generated class for the BasicHabitsPage page.
  *
@@ -14,12 +15,13 @@ import { AddPresetHabitPage } from '../add-preset-habit/add-preset-habit';
 @Component({
   selector: 'page-basic-habits',
   templateUrl: 'basic-habits.html',
+  providers: [HabitPostService],
 })
 export class BasicHabitsPage {
 
   basicHabits: Array<any> = basicHabits;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private habitPostService: HabitPostService, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -36,7 +38,7 @@ export class BasicHabitsPage {
       'reminder': basicHabit.reminder,
       'currentColor': basicHabit.currentColor
     });
-
+    
   }
 
 }

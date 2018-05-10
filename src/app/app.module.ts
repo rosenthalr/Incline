@@ -29,13 +29,14 @@ import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
 
-// Import LoginService that is used to get users from db
+// Import Services
 import { LoginService } from "../services/login.service";
 import { EqualValidator } from '../pages/create-account/equal-validator.directive';
 import { ForgotService } from '../services/forgot.service';
 import { LogoutService } from '../services/logout.service';
 import { ResetService } from '../services/reset.service';
 import { MoreResetService } from '../services/morereset.service';
+import { HabitPostService } from '../services/habitpost.service';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { MoreResetService } from '../services/morereset.service';
     LogoutService,
     ResetService,
     MoreResetService,
+    HabitPostService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
