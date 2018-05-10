@@ -304,22 +304,25 @@ color: $cerulean;
 }
 
 
-//eye icon location
-.Field-Label.item-md.item-label-stacked [item-right], .Field-Label.item-md.item-label-floating [item-right],
-.Field-Label.item-md.item-label-stacked [item-end], .Field-Label.item-md.item-label-floating [item-end]{
-  padding: 0px;
-  top: 15px !important;
-  left: 8px;
-}
-.Field-Label.item-ios.item-label-stacked [item-right], .Field-Label.item-ios.item-label-floating [item-right],
-.Field-Label.item-ios.item-label-stacked [item-end], .Field-Label.item-ios.item-label-floating [item-end]{
-  padding: 0px;
-  top: 15px !important;
-  left: 8px;
-}
+//eye icon location and size
 .ion-ios-eye-off-outline:before, .ion-ios-eye-outline:before{
   font-size: 2.2rem;
 }
+
+.item-ios.item-label-floating [item-right]
+{
+  padding: 0px;
+  top: 15px !important;
+  left: 8px;
+}
+.item-md.item-label-floating [item-right]
+{
+  padding: 0px;
+  top: 15px !important;
+  left: 8px;
+}
+
+
 
 
 
