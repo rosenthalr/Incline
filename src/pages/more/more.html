@@ -34,18 +34,20 @@
       <ion-item [ngClass]="{show:!passwordError}" class="Error-Text">Hmm...That's not the correct password.</ion-item>
     </div>
 
-
-    <ion-item class="input-group">
-      <ion-label floating class="Field-Label">New Password</ion-label>
-      <ion-input class="Field-Input" type="{{type2}}" name="password2" [ngModel]="more.password2" (ngModelChange)="checkIfComplete($event, 'password2')"
+    <div class="input-container">
+  <ion-item class="input-group" [ngClass]="{'input-error': sameError }">
+        <ion-label floating class="Field-Label" [ngClass]="{'error': sameError }">New Password</ion-label>
+    <ion-input class="Field-Input" type="{{type2}}" [ngClass]="{'error': sameError }" name="password2" [ngModel]="more.password2" (ngModelChange)="checkIfComplete($event, 'password2')" (ngModelChange)="checkIfSame($event, 'password2')"
         value="" required minlength="8" reverse="true" #password2="ngModel"></ion-input>
       <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
-        <ion-icon name="ios-eye-off-outline"></ion-icon>
+      <ion-icon name="ios-eye-off-outline"></ion-icon>
       </button>
       <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
         <ion-icon name="ios-eye-outline"></ion-icon>
       </button>
-    </ion-item>
+        </ion-item>
+      <ion-item [hidden]="!sameError" class="Error-Text">Hmm...That's your current password!</ion-item>
+    </div>
     
     
     <div class="input-container">
