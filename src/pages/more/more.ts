@@ -123,11 +123,9 @@ export class MorePage implements OnInit {
     }
   
   }
+  
   checkIfConfirm(userInfo, field) { 
   if(this.confirmComplete=true){
-    // console.log(' password 3 ' + this.password3 )
-    // console.log(' password 2    ' + this.password2)
-    // console.log(this.confirmError)
     if(this.password3.length > this.password2.length-1){
         console.log(this.active);
       if (this.password2!==this.password3) {

@@ -65,7 +65,7 @@
       </ion-item>
       <ion-item [hidden]="!confirmError" class="Error-Text">Hmm...Those passwords don't match!</ion-item>
     </div>
-    <button class="btn-reset" type="submit" ion-button> CHANGE PASSWORD</button>
+    <button class="btn-reset" type="submit" [ngClass]="{'buttonActive': active }" ion-button> CHANGE PASSWORD</button>
   </form>
 
   <button class="btn-logout" type="submit" (click)="logout();" ion-button> LOG OUT</button>
