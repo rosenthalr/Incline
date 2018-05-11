@@ -209,7 +209,7 @@ export class MorePage implements OnInit {
       data => {
         let toast = this.toastCtrl.create({
           message: 'Your password has been updated!',
-          duration: 4000,
+          duration: 40000000,
           position: 'top',
           cssClass: 'toast-reset'
         });

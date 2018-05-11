@@ -44,12 +44,20 @@ $action-sheet-ios-button-destructive-text-color: black;
     background: #f9f9f9;
   }
 }
+.action-sheet-ios .action-sheet-group:last-child {
+  margin-bottom: 0px;
+}
 .toast-container {
   height: 56px;
   border-radius: 3px;
-  background-color: #d8d8d8;
+  background:transparent;
   box-shadow: 0 2px 4px 0 rgba(199, 199, 199, 0.5);
-
+  align-content: center;
+  padding-top: 10px;
+  position: fixed;
+  width: 89.6%;
+  top: 40px;
+  left: 5%;
 }
 .toast-message {
   background: #d8d8d8;
@@ -62,6 +70,7 @@ $action-sheet-ios-button-destructive-text-color: black;
   line-height: normal;
   letter-spacing: normal;
   color: black !important;
+  align-content: center;
   
 }
 
