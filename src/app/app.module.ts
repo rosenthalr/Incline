@@ -23,7 +23,8 @@ import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
 import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
-
+import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
+ 
 
 
 // Including http module for use on login page
@@ -56,7 +57,8 @@ import { HabitPostService } from '../services/habitpost.service';
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
-    AddPresetHabitPage
+    AddPresetHabitPage,
+    TrackingReminderPage
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,8 @@ import { HabitPostService } from '../services/habitpost.service';
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
-    AddPresetHabitPage
+    AddPresetHabitPage,
+    TrackingReminderPage
   ],
   providers: [
     StatusBar,
