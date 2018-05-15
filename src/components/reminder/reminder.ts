@@ -2,7 +2,7 @@ import { Component,EventEmitter, Output, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
 import { HabitPostService } from '../../services/habitpost.service';
-
+import { TabsPage } from '../../pages/tabs/tabs';
 
 /**
  * Generated class for the ReminderComponent component.
@@ -17,7 +17,7 @@ import { HabitPostService } from '../../services/habitpost.service';
 export class ReminderComponent implements OnInit {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
-  @Output() goToHabitLandingPage: EventEmitter<any> = new EventEmitter<any>();
+  @Output() goToTabsPage: EventEmitter<any> = new EventEmitter<any>();
   reminderTime: string;
   min: string;
   max: string;
@@ -38,7 +38,7 @@ export class ReminderComponent implements OnInit {
     this.goBack.emit();
   }
 
-  emitGoToHabitLandingPage() {
+  emitGoToTabsPage() {
     console.log(this.reminderTime);
     console.log(moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate());
     let habit = {
@@ -54,7 +54,7 @@ export class ReminderComponent implements OnInit {
     this.habitPostService.habitpost(habit).subscribe(
       data => {
         console.log(habit);
-        this.goToHabitLandingPage.emit();
+        this.goToTabsPage.emit();
          },
       error => {
         console.error(error);

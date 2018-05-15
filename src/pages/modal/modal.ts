@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import { Slides } from 'ionic-angular/components/slides/slides';
 import { HabitLandingPage } from '../habit-landing/habit-landing';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the ModalPage page.
  *
@@ -59,8 +60,8 @@ export class ModalPage implements OnInit {
     this.slides.lockSwipes(true);
   }
 
-  goToHabitLandingPage(){
-    this.navCtrl.push(HabitLandingPage);
+  goToTabsPage(){ 
+    this.navCtrl.push(TabsPage);
   }
 
 

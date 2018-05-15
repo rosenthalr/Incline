@@ -25,7 +25,7 @@ export class HabitLandingPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HabitLandingPage');
+    console.log('ionViewDidLoad TabsPage');
   }
 
 }
