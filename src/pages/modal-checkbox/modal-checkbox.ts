@@ -23,8 +23,8 @@ checkedHabits: Array<any> = checkedHabits;
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
   }
 
-  updateHabitState() {
-    console.log('habit one new state:' + this.habitBox);
+  updateHabitState(habit) {
+    console.log('habit one new state:' + habit.habitBox);
   }
 
 

@@ -19,7 +19,7 @@
         <ion-list class="confirmHabit" *ngFor="let checkedHabit of checkedHabits">
           <ion-item>
             <ion-label class="habitText">{{ checkedHabit.habit }}</ion-label>  <!--dynamically add class to change box color-->
-            <ion-checkbox [(ngModel)]="habitBox" (ionChange)="updateHabitState()"></ion-checkbox>
+            <ion-checkbox class="checkedHabit.color" [(ngModel)]="checkedHabit.habitBox" (ionChange)="updateHabitState(checkedHabit)"></ion-checkbox>
           </ion-item>
         </ion-list>
       </div>
