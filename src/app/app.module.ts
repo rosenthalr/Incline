@@ -20,21 +20,16 @@ import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
 import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
-
+import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 
 
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
 
-<<<<<<< HEAD
+// Import Components
+import {ComponentsModule} from '../components/components.module'
 
-// Import LoginService that is used to get users from db
-import { LoginService } from "../services/login.service";
-import { EqualValidator } from '../pages/create-account/equal-validator.directive';
-import { ComponentsModule } from '../components/components.module';
-import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
-=======
 // Import Services
 import { LoginService } from "../services/login.service";
 import { EqualValidator } from '../pages/create-account/equal-validator.directive';
@@ -43,7 +38,6 @@ import { LogoutService } from '../services/logout.service';
 import { ResetService } from '../services/reset.service';
 import { MoreResetService } from '../services/morereset.service';
 import { HabitPostService } from '../services/habitpost.service';
->>>>>>> 2c8f3dfa98d4e321282b355a2d47503641c57d2e
 
 @NgModule({
   declarations: [
@@ -57,23 +51,20 @@ import { HabitPostService } from '../services/habitpost.service';
     DiscoverPage,
     MorePage,
     HistoryPage,
-<<<<<<< HEAD
-    TestDashboardPage
-=======
+    TestDashboardPage,
     ForgotPage,
     WorkHabitsPage,
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
     AddPresetHabitPage
->>>>>>> 2c8f3dfa98d4e321282b355a2d47503641c57d2e
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     IonicModule.forRoot(MyApp,{tabsPlacement:'bottom'}),
-    ComponentsModule
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -86,16 +77,13 @@ import { HabitPostService } from '../services/habitpost.service';
     DiscoverPage,
     MorePage,
     HistoryPage,
-<<<<<<< HEAD
     TestDashboardPage,
-=======
     ForgotPage,
     WorkHabitsPage,
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
-    AddPresetHabitPage
->>>>>>> 2c8f3dfa98d4e321282b355a2d47503641c57d2e
+    AddPresetHabitPage,
   ],
   providers: [
     StatusBar,
@@ -112,4 +100,3 @@ import { HabitPostService } from '../services/habitpost.service';
   ]
 })
 export class AppModule {}
- 

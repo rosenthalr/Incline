@@ -15,7 +15,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content no-bounce>
-  <div class="habit-landing-habits">
+  <div class="habit-landing-habits" ngIf>
     <div class="add-button">
       <h2>
           Click the <b>Add Button  </b> <ion-icon class="arorw-to-add-button-icon" name="undo"></ion-icon>
@@ -27,6 +27,9 @@
 
       </div>
   </div>
+  <ion-grid *ngFor="let habit of habits">
+
+  </ion-grid>
 </ion-content>
 <ion-footer>
 </ion-footer>

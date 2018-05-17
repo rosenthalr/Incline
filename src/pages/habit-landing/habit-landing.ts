@@ -14,7 +14,7 @@ import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angu
   templateUrl: 'habit-landing.html',
 })
 export class HabitLandingPage {
-
+  habits: Array<any>;
   constructor(public navCtrl: NavController, private modal: ModalController, public navParams: NavParams) {
   }
 
