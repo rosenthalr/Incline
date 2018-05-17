@@ -12,6 +12,7 @@ import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angu
 @Component({
   selector: 'page-habit-landing',
   templateUrl: 'habit-landing.html',
+  
 })
 export class HabitLandingPage {
 
@@ -27,5 +28,6 @@ export class HabitLandingPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
   }
+  
 
 }

@@ -6,6 +6,8 @@ import {DiscoverPage} from '../discover/discover';
 import {HistoryPage} from '../history/history';
 import {MorePage} from '../more/more';
 import { MentalHabitsPage } from '../mental-habits/mental-habits';
+import { HabitGetService } from '../../services/habitget.service';
+
 /**
  * Generated class for the TabsPage tabs.
  *
@@ -16,7 +18,8 @@ import { MentalHabitsPage } from '../mental-habits/mental-habits';
 @IonicPage()
 @Component({
   selector: 'page-tabs',
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  providers: [HabitGetService]
 })
 export class TabsPage {
 
@@ -27,6 +30,17 @@ export class TabsPage {
   mentalHabitRoot = MentalHabitsPage
 
 
-  constructor(public navCtrl: NavController) {}
+  constructor(private habitGetService: HabitGetService, public navCtrl: NavController) {}
 
+  getUserHabits() {
+    
+        this.habitGetService.habitget()
+        .subscribe((data: Response) => {
+            console.log(data);
+          },
+          error => {
+            console.error(error);
+          }
+        )
+      }
 }
