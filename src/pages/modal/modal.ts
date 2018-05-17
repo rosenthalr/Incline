@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import { Slides } from 'ionic-angular/components/slides/slides';
-
+import { HabitLandingPage } from '../habit-landing/habit-landing';
 /**
  * Generated class for the ModalPage page.
  *
@@ -37,11 +37,10 @@ export class ModalPage implements OnInit {
   }
   onNamePicked(name){
     this.name = name;
-    console.log(this.name);
   }
   onCategorySelected(category) {
     this.category = category;
-    console.log(category);
+    localStorage.setItem("category", category);              
     // Navigate to the next page (hasn't been created yet -- next sprint)
     //this.navCtslideNexttPage);
   }
@@ -59,4 +58,10 @@ export class ModalPage implements OnInit {
     this.slides.slideNext();
     this.slides.lockSwipes(true);
   }
+
+  goToHabitLandingPage(){
+    this.navCtrl.push(HabitLandingPage);
+  }
+
+
 }

@@ -6,6 +6,7 @@ import { CreateAccountPage } from '../create-account/create-account';
 import { TabsPage } from '../tabs/tabs';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { ForgotPage } from '../forgot/forgot';
 
 
 @Component({
@@ -35,6 +36,10 @@ export class LoginPage {
   goToCreateAccountPage(){
     this.navCtrl.push(CreateAccountPage);
   }
+
+goToForgotPage(){
+  this.navCtrl.push(ForgotPage);
+}
 
 //Unhide and hide password
 showPassword() {
@@ -85,6 +90,7 @@ checkIfPasswordEmpty(){
 
 
   login(userInfo) {
+
       let user = {
         email: userInfo.email,
         password: userInfo.password
@@ -107,7 +113,7 @@ checkIfPasswordEmpty(){
           // Remove any error messages that may have appeared on previous login attempts
           this.emailError = false;
           this.passwordError = false;
-
+          localStorage.setItem("pw", userInfo.password);          
           // Navigate to Habit Landing Page
           this.navCtrl.push(TabsPage);
        },

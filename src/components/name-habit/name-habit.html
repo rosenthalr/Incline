@@ -3,12 +3,24 @@
     <div class="name-habit-header-container">
        <div class="name-habit-header-title">Tell us about the habit you would like to track</div>
     </div>
-    <img class="name-habit-sun" src="../assets/svgs/name-habit.svg" alt="" srcset="">
+    <img class="name-habit-sun" src="assets/svgs/name-habit.svg" alt="" srcset="">
  </div>
 
+<<<<<<< HEAD
 
 <ion-item class="name-habit">
   <ion-label floating>Habit Name</ion-label>
   <ion-input class = "name-habit-input" type="text" maxlength="20" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionBlur)="setName(habitName)" required #name="ngModel"></ion-input>
 </ion-item>
 <button class="Rectangle-3" [ngClass]="{'active':!name.errors?.required}" [disabled]="name.errors" ion-button (click)="emitNextPage()">NEXT</button>
+=======
+ <div class="name-habit-body">
+  <ion-list class="name-habit-container">
+    <ion-item class="name-habit-input-group">
+      <ion-label floating>Habit Name</ion-label>
+      <ion-input class = "name-habit-input" type="text" maxlength="20" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionBlur)="setName(habitName)" required #name="ngModel"></ion-input>
+    </ion-item>
+  </ion-list>
+</div>
+<button class="Rectangle-3" [ngClass]="{'active':!name.errors?.required}" [disabled]="name.errors?.required" ion-button (click)="emitNextPage()">NEXT</button>
+>>>>>>> 2c8f3dfa98d4e321282b355a2d47503641c57d2e

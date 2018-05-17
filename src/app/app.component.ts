@@ -2,21 +2,35 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+<<<<<<< HEAD
 import { IonicPageModule } from 'ionic-angular';
+=======
+>>>>>>> 2c8f3dfa98d4e321282b355a2d47503641c57d2e
 import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DiscoverPage } from '../pages/discover/discover';
+import { WorkHabitsPage } from '../pages/work-habits/work-habits';
+import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
+import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
+import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
+import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 
+ 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
+<<<<<<< HEAD
   rootPage:any = TestDashboardPage;
+=======
+  rootPage:any = LoginPage; 
+>>>>>>> 2c8f3dfa98d4e321282b355a2d47503641c57d2e
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation) {
     platform.ready().then(() => {

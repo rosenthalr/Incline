@@ -21,5 +21,7 @@ export class NameHabitComponent {
   }
   emitNextPage(){
     this.nextPage.emit()
+    localStorage.setItem("basichabit", this.habitName);
+    console.log(this.habitName);
   }
 }
