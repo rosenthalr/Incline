@@ -90,6 +90,11 @@ export class TrackingReminderPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TrackingReminderPage');
+    console.log("Test Step 1");
+    // replace with the openCheckBoxModal()
+    setTimeout(function() {
+        console.log("Test Step 2");
+    }, 5000);
   }
 
 }

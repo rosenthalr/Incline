@@ -5,12 +5,12 @@
   Ionic pages and navigation.
 -->
 
-<ion-content padding>
+<ion-content class="overlay">
 
-    <button class="exit" (click)="closeModal()">X</button>
 
-  <div class="checkBox">
+  <div class="mainContent">
 
+    <ion-icon ios="ios-close" md="md-close" (click)="closeModal()" class="exit"></ion-icon>
       <div class="lastChance">Hmmm...</div>
 
       <div class="confirmHabitsText">Looks like you didn't confirm habits yesterday. Tap the habits that you completed.</div>
@@ -19,9 +19,10 @@
         <ion-list class="confirmHabit" *ngFor="let checkedHabit of checkedHabits">
           <ion-item>
             <ion-label class="habitText">{{ checkedHabit.habit }}</ion-label>  <!--dynamically add class to change box color-->
-            <ion-checkbox class="checkedHabit.color" [(ngModel)]="checkedHabit.habitBox" (ionChange)="updateHabitState(checkedHabit)"></ion-checkbox>
+            <ion-checkbox color = "red" [(ngModel)]="checkedHabit.habitBox" (ionChange)="updateHabitState(checkedHabit)"></ion-checkbox>
           </ion-item>
         </ion-list>
+      
       </div>
 
     <!--change to go to habit landing page-->
