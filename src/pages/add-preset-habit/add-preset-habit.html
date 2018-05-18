@@ -27,30 +27,30 @@
     <div class="preset-start">
     <ion-item>
       <ion-label class="label" floating>Start Date</ion-label>
-      <ion-datetime 
-      class="date-time-value" [min]="minDateOfPicker" [max]="maxDateOfPicker" 
-      displayFormat="MMMM DD, YYYY" pickerFormat="DDD D MMM YYYY" 
+      <ion-datetime
+      class="date-time-value" [min]="minDateOfPicker" [max]="maxDateOfPicker"
+      displayFormat="MMMM DD, YYYY" pickerFormat="DDD D MMM YYYY"
       [(ngModel)]="startDate" (ngModelChange)="setDate(startDate)">
-      </ion-datetime>  
+      </ion-datetime>
     </ion-item>
     </div>
 
     <div class="preset-target">
     <ion-item>
       <ion-label class="label" floating>Target Date</ion-label>
-      <ion-datetime disabled 
-      class="date-time-value" displayFormat="MMMM DD, YYYY" pickerFormat="DDD D MMM YYYY" 
+      <ion-datetime disabled
+      class="date-time-value" displayFormat="MMMM DD, YYYY" pickerFormat="DDD D MMM YYYY"
       [(ngModel)]="target">
       </ion-datetime>
-    </ion-item> 
+    </ion-item>
     </div>
 
     <div class="preset-reminder">
-    <ion-item> 
+    <ion-item>
       <ion-label class="label" floating>Reminder</ion-label>
-      <ion-datetime 
+      <ion-datetime
       class = "date-time-value" displayFormat="hh:mm A" pickerFormat="hh mm A" [(ngModel)]="reminder">
-      </ion-datetime> 
+      </ion-datetime>
     </ion-item>
    </div>
 

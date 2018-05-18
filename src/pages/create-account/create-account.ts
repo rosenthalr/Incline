@@ -33,8 +33,8 @@ export class CreateAccountPage implements OnInit {
   public emailError:boolean;
   public passwordLengthError:boolean;
   public passwordMatchError:boolean;
-  public firstName:string;
-  public lastName:string;
+  public firstname:string;
+  public lastname:string;
   public email:string;
   public password1:string;
   public password2:string;
@@ -46,8 +46,8 @@ export class CreateAccountPage implements OnInit {
 
     ngOnInit() {
       this.user = {
-        firstName: '',
-        lastName: '',
+        firstname: '',
+        lastname: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -102,11 +102,11 @@ export class CreateAccountPage implements OnInit {
 
   checkIfComplete(userInfo, field) {
 
-        if (field='firstName') {
-          this.firstName = userInfo;
+        if (field='firstname') {
+          this.firstname = userInfo;
         }
-        else if (field='lastName'){
-          this.lastName = userInfo;
+        else if (field='lastname'){
+          this.lastname = userInfo;
         }
         else if (field='email') {
           this.email = userInfo;
@@ -117,7 +117,7 @@ export class CreateAccountPage implements OnInit {
         else if (field='password2') {
           this.password2 = userInfo;
         }
-            if(this.firstName && this.lastName && this.email && this.password1 && this.password2) {
+            if(this.firstname && this.lastname && this.email && this.password1 && this.password2) {
               this.isComplete = true;
             }
          else {

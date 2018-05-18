@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
+import { TestDashboardPage } from '../test-dashboard/test-dashboard';
 
 /**
  * Generated class for the HabitLandingPage page.
@@ -18,6 +19,9 @@ export class HabitLandingPage {
   constructor(public navCtrl: NavController, private modal: ModalController, public navParams: NavParams) {
   }
 
+  createNewPage(){
+    this.navCtrl.push(TestDashboardPage);
+  }
   openModal() {
     const myModal = this.modal.create('ModalPage');
 
@@ -26,6 +30,7 @@ export class HabitLandingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HabitLandingPage');
+
   }
 
 }

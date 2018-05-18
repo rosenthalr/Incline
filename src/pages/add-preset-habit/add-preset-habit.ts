@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { HabitPostService } from '../../services/habitpost.service';
 import { Habit } from './habit.interface';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the AddPresetHabitPage page.
@@ -23,10 +24,10 @@ export class AddPresetHabitPage {
   private minDateOfPicker: String;
   private maxDateOfPicker: String;
   private target: String;
-  habit
-  reminder
-  currentColor
-  
+  habit;
+  reminder;
+  currentColor;
+
 
   constructor(private habitPostService: HabitPostService, public navCtrl: NavController, public navParams: NavParams) {
    this.habit = this.navParams.get('habit');
@@ -42,35 +43,24 @@ export class AddPresetHabitPage {
   setDate(startDate){
     this.target = moment(startDate).add(21, 'days').startOf("day").toISOString(true);
     var reminderMoment = moment(this.reminder as moment.MomentInput);
-    this.reminder = moment(startDate).hours(reminderMoment.hours()).minutes(reminderMoment.minutes()).toISOString(true);  
+    this.reminder = moment(startDate).hours(reminderMoment.hours()).minutes(reminderMoment.minutes()).toISOString(true);
   }
 
   goToHabitLandingPage(){
-    // let t = JSON.stringify(this.target);
-    // let r = this.reminder; 
-    // localStorage.setItem("reminder", r);          
-    // localStorage.setItem("target", JSON.parse(t));
-    // localStorage.setItem("habittitle", this.habit);
-    // localStorage.setItem("currentColor", this.currentColor);   //habit category?
-    
-    // console.log(" reminder  :  " +this.reminder + "    type:   "+ this.reminder.type);
-    // console.log("  target  :    "+this.target + "    JSON :   "+ localStorage.getItem('target') + "   string  :"+JSON.stringify(this.target));
-    // console.log(" habit title:   "+this.habit);
-    
     let habit = {
       title: this.habit,
       created: Date.now(),
       startdate: this.startDate,
       targetend: this.target,
       reminder: this.reminder,
-      streakcounter: 1,    
+      streakcounter: 1,
       updatedAt: Date.now(),
     };
 
     this.habitPostService.habitpost(habit).subscribe(
       data => {
         console.log(habit);
-        this.navCtrl.push(HabitLandingPage);
+        this.navCtrl.parent.select(0);
          },
       error => {
         console.error(error);

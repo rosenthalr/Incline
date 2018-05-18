@@ -13,6 +13,24 @@
 </ion-header>
 
 
-<ion-content padding>
-  <habit-progress (click)="increment(1)" (press)="increment(-3)" [current]="current" [max]="max"></habit-progress>
+<ion-content class = "background" padding>
+    <div class="flex-grid">
+
+
+
+        <div class="habit">
+            <div class = "habit-title"> Get 8 Hours of Sleep </div>
+
+            <div class = "circle">
+            <habit-progress class="circle2" (click)="incrementHabit2(1)" (dblclick)="incrementHabit2(-3)" [current]="current2" [max]="max"></habit-progress>
+            </div>
+
+            <div class="details">
+                <a> Details </a>
+                <ion-icon class = "details-icon" name="expand"></ion-icon>
+            </div>
+        </div>
+
+
+      </div>
 </ion-content>

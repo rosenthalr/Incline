@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CategoriesComponent } from './categories/categories';
 import { CommonModule } from '@angular/common';
@@ -35,4 +36,4 @@ import { ReminderComponent } from './reminder/reminder';
       ReminderComponent,
     ]
 })
-export class ComponentsModule {}
+export class ComponentsModule  {}

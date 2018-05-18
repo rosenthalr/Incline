@@ -22,17 +22,15 @@ page-more {
         color: #4a4a4a;
         margin-top: 28px;
         margin-bottom: 16px;
-        margin-left: 61px; 
+        margin-left: 61px;
       }
-  .toolbar-background {
-      background-image: linear-gradient(to right,$cerulean,#0aafed),;
-  }
+
 
   .Field-Input {
     padding-bottom: 0px;
   }
-  
-  
+
+
   .eye{
     font-size: 2.2 rem;
   }
@@ -50,13 +48,13 @@ page-more {
   .input-error:not(.input-has-focus) > .item-inner {
     border-bottom: 2px solid $error-red !important;
   }
-  
+
   .input-group {
     width:255px;
     margin:0 auto;
     margin-bottom: 41px;
     color: $brownish-grey;
-    background-color: transparent !important; 
+    background-color: transparent !important;
     font-family: Lato;
 }
   .input{
@@ -72,7 +70,7 @@ page-more {
   .back-button, .toolbar-title {
     color: $white-two;
   }
- 
+
   .return{
     text-align: center;
     font-size: 14px;
@@ -96,7 +94,7 @@ page-more {
     color: var(--warm-grey);
     margin-top: 38px;
     margin-bottom: 24px;
-    background-color: $white-three    
+    background-color: $white-three
   }
   // .reset-active:{
   //   background-color: $cerulean;
@@ -113,8 +111,8 @@ page-more {
     border-radius: 0px;
     background-color: $cerulean;
   }
-  
-  
+
+
   .Error-Text {
     background: transparent;
     height: 11px;
@@ -188,14 +186,14 @@ page-more {
   box-shadow: inset 0 -1px 0 0 transparent !important;
 }
 
-.item-ios.item-input.item-input-has-focus.item-inner, 
+.item-ios.item-input.item-input-has-focus.item-inner,
 .item-ios.item-input.input-has-focus .item-inner{
   border-bottom: solid 2px $cerulean;
   box-shadow: inset 0 -1px 0 0 transparent !important;
 }
 
 
-.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
 .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
   border-bottom: 1px transparent !important;
 }

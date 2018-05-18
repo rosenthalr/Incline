@@ -19,17 +19,17 @@ export interface HabitProgressDefaults {
 @Injectable()
 export class HabitProgressConfig {
   private _options: HabitProgressDefaults = {
-    radius: 125,
+    radius: 150,
     animation: 'easeOutCubic',
     animationDelay: null,
-    duration: 500,
+    duration: 800,
     stroke: 15,
     color: '#0477d6',
     background: '#EAEAEA',
     responsive: false,
     clockwise: true,
     semicircle: false,
-    rounded: true,
+    rounded: false,
     max: 21,
     current:1,
   };
