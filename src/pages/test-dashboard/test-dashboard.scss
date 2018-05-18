@@ -1,3 +1,70 @@
 page-test-dashboard {
+    .flex-grid {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 100%
+      }
+      .habit {
+        width: 163px;
+        height: 251px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        margin-left: 12px;
+        margin-right: 12px;
+        flex-basis: 43.5%;
+        background-color: white;
+      }
+      .background{
+          background-color: #E0E0E0;	
+          
+      }
 
+      .circle{
+          margin-top: -10px;
+          width: 135px;
+          height: 135px;
+          display: block;
+          margin: auto;
+          background-image: "../assets/icon/check icon.png"
+      }
+
+      .circle4{
+        svg {
+            circle { 
+                fill: white;
+                //background-image: "assets/icon/check icon.png"
+            }
+        }
+    }
+      
+
+      habit-progress {
+          svg {
+              circle{ 
+                  fill:#59a9e4;
+              }
+          }
+      }
+
+      .habit-title{
+        font-family: Lato;
+        height: 54px;
+        font-size: 22px;
+        color: #4a4a4a;
+        text-align: center;
+      }
+      .details{
+        color: #0477d6;
+        font-family: Lato;
+        font-size: 14px;
+        text-align: right;
+        margin-top: 15px;
+      }
+
+      .details-icon{
+        font-size: 14px;
+        margin-left: 5px;
+        margin-right: 11px;
+      }
 }

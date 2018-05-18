@@ -6,11 +6,12 @@ import {
   NgZone,
   EventEmitter,
   ViewChild,
-  Renderer,
+  Renderer
 } from '@angular/core';
 import { HabitProgressService } from './habit-progress.service';
 import { HabitProgressConfig } from './habit-progress.config';
 import { HabitProgressEase } from './habit-progress.ease'
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 /**
  * Generated class for the HabitProgressComponent component.
  *
@@ -23,6 +24,18 @@ import { HabitProgressEase } from './habit-progress.ease'
   providers: [HabitProgressConfig,HabitProgressEase,HabitProgressService]
 })
 export class HabitProgressComponent implements OnChanges{
+    @ViewChild("Habit1")
+    Habit1: HabitProgressComponent;
+
+    @ViewChild("Habit2")
+    Habit2: HabitProgressComponent;
+
+    @ViewChild("Habit3")
+    Habit3: HabitProgressComponent;
+
+    @ViewChild("Habit4")
+    Habit4: HabitProgressComponent;
+
     private _lastAnimationId: number = 0;
     @ViewChild('path')         _path;
     @Input() current:          number = this._defaults.get('current');
@@ -46,8 +59,8 @@ export class HabitProgressComponent implements OnChanges{
       private _easing: HabitProgressEase,
       private _ngZone: NgZone,
       private _renderer: Renderer
-    ) {}
-
+    ) {
+    }
     /** Animates a change in the current value. */
     private _animateChange(from: number, to: number): void {
       if (typeof from !== 'number') {

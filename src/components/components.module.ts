@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CategoriesComponent } from './categories/categories';
 import { CommonModule } from '@angular/common';
@@ -25,4 +26,4 @@ import { NameHabitComponent } from './name-habit/name-habit';
       HabitProgressService
     ]
 })
-export class ComponentsModule {}
+export class ComponentsModule  {}
