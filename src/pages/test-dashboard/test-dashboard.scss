@@ -1,5 +1,6 @@
 page-test-dashboard {
-    .flex-grid {
+    
+        .flex-grid {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -26,13 +27,24 @@ page-test-dashboard {
           height: 135px;
           display: block;
           margin: auto;
+          fill: white;
           background-image: "../assets/icon/check icon.png"
       }
+
+      .circle1{
+        svg {
+            circle { 
+                transition: 2s linear !important;
+                transform: rotateY(0deg);
+                //background-image: "assets/icon/check icon.png"
+            }
+        }
+    }
 
       .circle4{
         svg {
             circle { 
-                fill: white;
+                //fill: white;
                 //background-image: "assets/icon/check icon.png"
             }
         }
