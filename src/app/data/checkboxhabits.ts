@@ -6,14 +6,14 @@ export const checkedHabits = [
     },
     {
       "habit": "Get 8 hours of sleep",
-      "currentColor": "tealish"
+      "currentColor": "sunset-orange"
     },
     {
       "habit": "Do 30 minutes of exercise",
-      "currentColor": "yellow-productivity"
+      "currentColor": "sunset-orange"
     },
     {
       "habit": "Eat breakfast",
-      "currentColor": "dark-sky-blue"
+      "currentColor": "sunset-orange"
     }
   ]

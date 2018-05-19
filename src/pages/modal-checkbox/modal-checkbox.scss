@@ -110,4 +110,23 @@ page-modal-checkbox {
     .input-wrapper{
         height: auto;
     }
+
+    .list-ios > .item-block:first-child {
+        border-top: 0px;
+    }
+      
+    .list-ios > .item-block:last-child,
+    .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom: 0px;
+    }
+
+    .checkbox-ios .checkbox-icon{
+        border-radius: 0px;
+    }
+
+    .checkbox-ios .checkbox-checked .checkbox-inner{
+        height: 18px;
+        width: 8px;
+        top: 0px;
+    }
 }

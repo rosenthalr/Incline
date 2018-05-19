@@ -21,7 +21,7 @@ import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-remind
 })
 export class MyApp {
   // Temporarily changing the rootPage for testing purposes
-  rootPage:any = TrackingReminderPage; 
+  rootPage:any = TabsPage; 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation) {
     platform.ready().then(() => {

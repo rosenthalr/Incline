@@ -15,16 +15,18 @@ import { TrackingReminderPage } from '../tracking-reminder/tracking-reminder';
   templateUrl: 'modal-checkbox.html',
 })
 export class ModalCheckboxPage {
-
+currentColor
 habitBox: boolean;
 
 checkedHabits: Array<any> = checkedHabits;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
+    this.currentColor = this.navParams.get('currentColor');
   }
 
   updateHabitState(habit) {
     console.log('habit one new state:' + habit.habitBox);
+    console.log(habit.currentColor);
   }
 
 
@@ -38,7 +40,8 @@ checkedHabits: Array<any> = checkedHabits;
 
   ionViewDidLoad() {
    const data = this.navParams.get('data');
-   console.log(data);
+   console.log(checkedHabits);
+  //  console.log(data);
     console.log('ionViewDidLoad ModalCheckboxPage');
   }
 

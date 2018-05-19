@@ -24,6 +24,7 @@ export class TrackingReminderPage {
 
   openCheckboxModal() {
 
+    console.log("in open");
     const myModalOptions: ModalOptions = {
       enableBackdropDismiss: false,
       showBackdrop: false
@@ -91,10 +92,9 @@ export class TrackingReminderPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TrackingReminderPage');
     console.log("Test Step 1");
-    // replace with the openCheckBoxModal()
-    setTimeout(function() {
-        console.log("Test Step 2");
-    }, 5000);
+    // this.openCheckboxModal();
+    this.showCheckbox();
+   
   }
 
 }

@@ -66,8 +66,9 @@ export class AddPresetHabitPage {
       streakcounter: 1,    
       updatedAt: Date.now(),
     };
-
+console.log("here");
     this.habitPostService.habitpost(habit).subscribe(
+      
       data => {
         console.log(habit);
         this.navCtrl.push(HabitLandingPage);
