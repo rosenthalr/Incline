@@ -26,21 +26,25 @@ checkedHabits: Array<any> = checkedHabits;
 
   constructor(private habitGetService: HabitGetService, public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
     this.currentColor = this.navParams.get('currentColor');
+    this.getUserHabits();
   }
 
+  // checkUserHabits(){
+  //   const now = 
+  // }
 
-    getUserHabits(){
-      this.habitGetService.habitget()
-      .subscribe(
-        data=>{
-          this.habits = data;
-          console.log(data)
-        },
-        error =>{
-          console.error(error)
-        }
-      )
-    }
+  getUserHabits(){
+    this.habitGetService.habitget()
+    .subscribe(
+      data=>{
+        this.habits = data;
+        console.log(data)
+      },
+      error =>{
+        console.error(error)
+      }
+    )
+  }
 
   updateHabitState(habit) {
     console.log('habit one new state:' + habit.habitBox);
