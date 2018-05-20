@@ -41,7 +41,7 @@ export class HabitLandingPage {
       }
     )
   }
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad HabitLandingPage');
     this.loadHabits()
   }
