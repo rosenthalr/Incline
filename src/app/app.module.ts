@@ -38,6 +38,7 @@ import { LogoutService } from '../services/logout.service';
 import { ResetService } from '../services/reset.service';
 import { MoreResetService } from '../services/morereset.service';
 import { HabitPostService } from '../services/habitpost.service';
+import { HabitGetService } from '../services/habitget.service';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { HabitPostService } from '../services/habitpost.service';
     ResetService,
     MoreResetService,
     HabitPostService,
+    HabitGetService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

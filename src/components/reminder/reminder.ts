@@ -27,7 +27,7 @@ export class ReminderComponent implements OnInit {
 
   ngOnInit() {
     this.reminderTime = "08:00:00.000Z";
-    
+
   }
 
   setReminderTime() {
@@ -44,10 +44,8 @@ export class ReminderComponent implements OnInit {
     let habit = {
       title: localStorage.getItem("basichabit"),
       created: Date.now(),
-      startdate: localStorage.getItem("basicstartdate"),
-      targetend: localStorage.getItem("basictargetdate"),
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
-      streakcounter: 1,    
+      streakcounter: 1,
       updatedAt: Date.now(),
     };
 
@@ -59,6 +57,6 @@ export class ReminderComponent implements OnInit {
       error => {
         console.error(error);
       })
-    
+
   }
 }

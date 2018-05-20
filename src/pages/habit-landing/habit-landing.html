@@ -15,7 +15,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content no-bounce>
-  <div class="habit-landing-habits" ngIf="!showHabits">
+  <div class="habit-landing-habits" *ngIf="!habits?.length">
     <div class="add-button">
       <h2>
           Click the <b>Add Button  </b> <ion-icon class="arorw-to-add-button-icon" name="undo"></ion-icon>
@@ -29,8 +29,19 @@
   </div>
   <ion-grid>
     <ion-row>
-      <ion-col col-6 ngFor="habit in habits">
+      <ion-col col-6 *ngFor=" let habit of habits">
+          <div class="habit">
+              <div class = "habit-title">{{habit.title}}</div>
 
+              <div class = "circle">
+                <habit-progress class="circle" [current]="1"></habit-progress>
+              </div>
+
+              <div class="details">
+                  <a> Details </a>
+                  <ion-icon class = "details-icon" name="expand"></ion-icon>
+              </div>
+          </div>
       </ion-col>
     </ion-row>
   </ion-grid>

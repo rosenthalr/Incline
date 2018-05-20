@@ -50,11 +50,11 @@ export class AddPresetHabitPage {
     let habit = {
       title: this.habit,
       created: Date.now(),
-      startdate: this.startDate,
-      targetend: this.target,
+      startDate: this.startDate,
+      targeteEnd: this.target,
       reminder: this.reminder,
-      streakcounter: 1,
-      updatedAt: Date.now(),
+      streakCounter: 1,
+      habitCategory: this.currentColor
     };
 
     this.habitPostService.habitpost(habit).subscribe(
