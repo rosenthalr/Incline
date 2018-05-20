@@ -20,6 +20,7 @@ import { HabitGetService } from '../../services/habitget.service';
 export class ModalCheckboxPage {
 currentColor
 habitBox: boolean;
+habits: Array<any>;
 
 checkedHabits: Array<any> = checkedHabits;
 
@@ -27,19 +28,19 @@ checkedHabits: Array<any> = checkedHabits;
     this.currentColor = this.navParams.get('currentColor');
   }
 
-  getUserHabits() {
-    
+
+    getUserHabits(){
       this.habitGetService.habitget()
-      .subscribe((data: Response) => {
-        console.log(data);
-       },
-      error => {
-         console.error(error);
+      .subscribe(
+        data=>{
+          this.habits = data;
+          console.log(data)
+        },
+        error =>{
+          console.error(error)
         }
       )
     }
-
-
 
   updateHabitState(habit) {
     console.log('habit one new state:' + habit.habitBox);

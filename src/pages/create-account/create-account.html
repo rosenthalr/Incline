@@ -19,21 +19,21 @@
 
         <ion-item class="input-group">
           <ion-label floating class="label">First Name</ion-label>
-          <ion-input type="text" name="firstName" [ngModel]="user.firstName" [ngModelOptions]="{ updateOn: 'blur' }"
-            required minlength="2" #firstName="ngModel"> </ion-input>
+          <ion-input type="text" name="firstname" [ngModel]="user.firstname" [ngModelOptions]="{ updateOn: 'blur' }"
+            required minlength="2" #firstname="ngModel"> </ion-input>
 
         </ion-item>
-        <ion-item no-lines class="error-text" [ngClass]="{hiding:(firstName.valid || firstName.pristine),show:!(firstName.valid || firstName.pristine)}" >
+        <ion-item no-lines class="error-text" [ngClass]="{hiding:(firstname.valid || firstname.pristine),show:!(firstname.valid || firstname.pristine)}" >
             First Name is required.
         </ion-item>
 
         <ion-item class="input-group">
             <ion-label floating class="label">Last Name</ion-label>
-            <ion-input type="text"  name="lastName" [ngModel]="user.lastName" [ngModelOptions] = "{ updateOn: 'blur' }"
-              required minlength="2" #lastName="ngModel"> </ion-input>
+            <ion-input type="text"  name="lastname" [ngModel]="user.lastname" [ngModelOptions] = "{ updateOn: 'blur' }"
+              required minlength="2" #lastname="ngModel"> </ion-input>
 
           </ion-item>
-          <ion-item no-lines class="error-text" [ngClass]="{hiding:(lastName.valid || lastName.pristine),show:!(lastName.valid || lastName.pristine)}">
+          <ion-item no-lines class="error-text" [ngClass]="{hiding:(lastname.valid || lastname.pristine),show:!(lastname.valid || lastname.pristine)}">
             Last Name is required.
         </ion-item>
 
@@ -79,8 +79,8 @@
         </ion-item>
 
 
-        <button class="btn-create" [ngClass]="{'active': firstName.valid && lastName.valid && email.valid && password.valid && confirmPassword.valid }"
-        [disabled]="firstName.invalid || lastName.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" (click)="goToSuccessPage();" ion-button> CREATE</button>
+        <button class="btn-create" [ngClass]="{'active': firstname.valid && lastname.valid && email.valid && password.valid && confirmPassword.valid }"
+        [disabled]="firstname.invalid || lastname.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" (click)="goToSuccessPage();" ion-button> CREATE</button>
 
 
 

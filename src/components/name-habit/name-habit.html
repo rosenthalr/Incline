@@ -10,7 +10,7 @@
   <ion-list class="name-habit-container">
     <ion-item class="name-habit-input-group">
       <ion-label floating>Habit Name</ion-label>
-      <ion-input class = "name-habit-input" type="text" maxlength="20" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionBlur)="setName(habitName)" required #name="ngModel"></ion-input>
+      <ion-input class = "name-habit-input" type="text" maxlength="20" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionChange)="setName(habitName)" required #name="ngModel"></ion-input>
     </ion-item>
   </ion-list>
 </div>

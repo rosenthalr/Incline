@@ -4,7 +4,6 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-nav [root]="myHabitsRoot"></ion-nav>
 <ion-header no-border>
   <ion-navbar hideBackButton>
     <ion-buttons end>
@@ -16,17 +15,36 @@
   </ion-navbar>
 </ion-header>
 <ion-content no-bounce>
-  <div class="habit-landing-habits">
+  <div class="habit-landing-habits" *ngIf="!habits?.length">
     <div class="add-button">
       <h2>
           Click the <b>Add Button  </b> <ion-icon class="arorw-to-add-button-icon" name="undo"></ion-icon>
       </h2>
-      
+
       <p>
           to create your first habit to begin tracking towards your goals!
       </p>
+
       </div>
   </div>
-  </ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor=" let habit of habits">
+          <div class="habit">
+              <div class = "habit-title">{{habit.title}}</div>
+
+              <div class = "circle">
+                <habit-progress class="circle" [current]="1"></habit-progress>
+              </div>
+
+              <div class="details">
+                  <a> Details </a>
+                  <ion-icon class = "details-icon" name="expand"></ion-icon>
+              </div>
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
 <ion-footer>
 </ion-footer>

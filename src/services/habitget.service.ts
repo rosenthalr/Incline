@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HabitGetService {
 
-  public apiUrl = 'http://localhost:7000/byuser';
+  public apiUrl = 'http://localhost:7000/habitaction';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
 

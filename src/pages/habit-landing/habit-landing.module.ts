@@ -4,6 +4,8 @@ import { HabitLandingPage } from './habit-landing';
 import { ComponentsModule } from '../../components/components.module'
 import { TabsPageModule} from '../tabs/tabs.module'
 import { TabsPage } from '../tabs/tabs';
+import { HabitGetService } from '../../services/habitget.service';
+
 @NgModule({
   declarations: [
     HabitLandingPage,
@@ -14,5 +16,8 @@ import { TabsPage } from '../tabs/tabs';
     ComponentsModule,
     TabsPageModule
   ],
+  providers:[
+    HabitGetService
+  ]
 })
 export class HabitLandingPageModule {}

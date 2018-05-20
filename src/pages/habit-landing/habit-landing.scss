@@ -27,7 +27,30 @@ page-habit-landing {
     .arorw-to-add-button-icon{
         transform: rotate(110deg);
     }
-
+    .habit {
+      width: 163px;
+      height: 251px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      margin-left: 12px;
+      margin-right: 12px;
+      flex-basis: 43.5%;
+      background-color: white;
+    }
+    .habit-title{
+      font-family: Lato;
+      height: 54px;
+      font-size: 22px;
+      color: #4a4a4a;
+      text-align: center;
+    }
+    .details{
+      color: #0477d6;
+      font-family: Lato;
+      font-size: 14px;
+      text-align: right;
+      margin-top: 15px;
+    }
     .toolbar-background {
         background-color:  #0477d6;
     }

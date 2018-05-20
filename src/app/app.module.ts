@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { ScreenOrientation } from '@ionic-native/screen-orientation'
 import { FormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
 import { CreateAccountPage } from '../pages/create-account/create-account';
@@ -14,8 +13,6 @@ import { HabitLandingPage } from '../pages/habit-landing/habit-landing';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DiscoverPage } from '../pages/discover/discover';
 import { HistoryPage } from '../pages/history/history';
-
-//import { MyHabitsPage } from '../pages/my-habits/my-habits';
 import { MorePage } from '../pages/more/more';
 import { ForgotPage } from '../pages/forgot/forgot';
 import { WorkHabitsPage } from '../pages/work-habits/work-habits';
@@ -24,11 +21,15 @@ import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
- 
+import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
+
 
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
+
+// Import Components
+import {ComponentsModule} from '../components/components.module'
 
 // Import Services
 import { LoginService } from "../services/login.service";
@@ -43,7 +44,6 @@ import { HabitGetService } from '../services/habitget.service';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
     LoginPage,
     SuccessPage,
     CreateAccountPage,
@@ -53,6 +53,7 @@ import { HabitGetService } from '../services/habitget.service';
     DiscoverPage,
     MorePage,
     HistoryPage,
+    TestDashboardPage,
     ForgotPage,
     WorkHabitsPage,
     MentalHabitsPage,
@@ -65,12 +66,12 @@ import { HabitGetService } from '../services/habitget.service';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    IonicModule.forRoot(MyApp,{tabsPlacement:'bottom'})
+    IonicModule.forRoot(MyApp,{tabsPlacement:'bottom'}),
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     LoginPage,
     SuccessPage,
     CreateAccountPage,
@@ -79,6 +80,7 @@ import { HabitGetService } from '../services/habitget.service';
     DiscoverPage,
     MorePage,
     HistoryPage,
+    TestDashboardPage,
     ForgotPage,
     WorkHabitsPage,
     MentalHabitsPage,
@@ -103,4 +105,3 @@ import { HabitGetService } from '../services/habitget.service';
   ]
 })
 export class AppModule {}
- 

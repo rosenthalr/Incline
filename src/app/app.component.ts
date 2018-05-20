@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { IonicPageModule } from 'ionic-angular';
 import { LoginPage } from '../pages/login/login';
 import { SuccessPage } from '../pages/success/success';
 import { CreateAccountPage } from '../pages/create-account/create-account';
@@ -14,14 +15,15 @@ import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 
- 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // Temporarily changing the rootPage for testing purposes
-  rootPage:any = TabsPage; 
+  // Temporarily changing the rootPage to the categories page for testing purposes
+  rootPage:any = DiscoverPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation) {
     platform.ready().then(() => {

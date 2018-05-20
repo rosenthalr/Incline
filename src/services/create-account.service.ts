@@ -20,7 +20,7 @@ export class CreateAccountService {
   // and then checks to see if an account with those credentials exist
   createaccount(user) {
     let body = JSON.stringify(user);
+    console.log(body);
     return this.http.post(this.apiUrl, body, httpOptions);
   }
-
 }
