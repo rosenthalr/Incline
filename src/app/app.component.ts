@@ -14,7 +14,7 @@ import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
+
  
 @Component({
   templateUrl: 'app.html'

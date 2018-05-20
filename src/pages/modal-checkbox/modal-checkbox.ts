@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { checkedHabits } from '../../app/data/checkboxhabits';
 import { TrackingReminderPage } from '../tracking-reminder/tracking-reminder';
+import { HabitGetService } from '../../services/habitget.service';
+
 /**
  * Generated class for the ModalCheckboxPage page.
  *
@@ -13,6 +15,7 @@ import { TrackingReminderPage } from '../tracking-reminder/tracking-reminder';
 @Component({
   selector: 'page-modal-checkbox',
   templateUrl: 'modal-checkbox.html',
+  providers: [HabitGetService]
 })
 export class ModalCheckboxPage {
 currentColor
@@ -20,9 +23,23 @@ habitBox: boolean;
 
 checkedHabits: Array<any> = checkedHabits;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
+  constructor(private habitGetService: HabitGetService, public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
     this.currentColor = this.navParams.get('currentColor');
   }
+
+  getUserHabits() {
+    
+      this.habitGetService.habitget()
+      .subscribe((data: Response) => {
+        console.log(data);
+       },
+      error => {
+         console.error(error);
+        }
+      )
+    }
+
+
 
   updateHabitState(habit) {
     console.log('habit one new state:' + habit.habitBox);
