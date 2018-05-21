@@ -45,8 +45,8 @@ export class ReminderComponent implements OnInit {
       title: localStorage.getItem("basichabit"),
       created: Date.now(),
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
-      streakcounter: 1,
-      updatedAt: Date.now(),
+      streakcounter: 0,
+      habitCategory: localStorage.getItem('habitCategory')
     };
 
     this.habitPostService.habitpost(habit).subscribe(

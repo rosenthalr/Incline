@@ -4,6 +4,7 @@ export const workHabits = [
       "description": "The early bird gets the worm",
       "reminder": 7,
       "currentColor": "red",
+      "habitCategory":"Productivity",
       icon: "alarm"
     },
     {
@@ -11,6 +12,7 @@ export const workHabits = [
       "description": "A surefire was to keep uncertainty at bay!",
       "reminder": 21,
       "currentColor": "red",
+      "habitCategory":"Productivity",
       icon: "clipboard"
     },
     {
@@ -18,6 +20,7 @@ export const workHabits = [
       "description": "Create some structure, discipline, and focus in your life",
       "reminder": 9,
       "currentColor": "red",
+      "habitCategory":"Productivity",
       icon: "mail"
     },
     {
@@ -25,9 +28,10 @@ export const workHabits = [
       "description": "Those tasks aren't going to check off themselves",
       "reminder": 19,
       "currentColor": "red",
+      "habitCategory":"Productivity",
       icon: "hand"
     }
-    
+
   ]
 
   export const mentalHabits = [
@@ -36,6 +40,7 @@ export const workHabits = [
       "description": "Take some time to focus on you.",
       "reminder": 7,
       "currentColor": "tealish",
+      "habitCategory":"Mental Wellness",
       icon: "ios-search"
     },
     {
@@ -43,6 +48,7 @@ export const workHabits = [
       "description": "Unplug and unwind.",
       "reminder": 21,
       "currentColor": "tealish",
+      "habitCategory":"Mental Wellness",
       icon: "phone-portrait"
     },
     {
@@ -50,6 +56,7 @@ export const workHabits = [
       "description": "Kick back and drift into dream world.",
       "reminder": 21,
       "currentColor": "tealish",
+      "habitCategory":"Mental Wellness",
       icon: "moon"
     },
     {
@@ -57,9 +64,10 @@ export const workHabits = [
       "description": "Distract your mind from those daily stresses.",
       "reminder": 19,
       "currentColor": "tealish",
+      "habitCategory":"Mental Wellness",
       icon: "bookmarks"
-    }    
-    
+    }
+
   ]
 
   export const physicalHabits = [
@@ -68,6 +76,7 @@ export const workHabits = [
       "description": "Motivate, hydrate feel great.",
       "reminder": 7,
       "currentColor": "yellow-productivity",
+      "habitCategory":"Physical Health",
       icon: "water"
     },
     {
@@ -75,6 +84,7 @@ export const workHabits = [
       "description": "No matter how slow you go, you're still lapping everyone on the couch.",
       "reminder": 6,
       "currentColor": "yellow-productivity",
+      "habitCategory":"Physical Health",
       icon: "flash"
     },
     {
@@ -82,6 +92,7 @@ export const workHabits = [
       "description": "Keep those muscles flexible, strong, and healthy for the road ahead.",
       "reminder": 7,
       "currentColor": "yellow-productivity",
+      "habitCategory":"Physical Health",
       icon: "move"
     },
     {
@@ -89,11 +100,12 @@ export const workHabits = [
       "description": "Healthy is not a size, it's a lifestyle.",
       "reminder": 19,
       "currentColor": "yellow-productivity",
+      "habitCategory":"Physical Health",
       icon: "pizza"
     }
-    
+
   ]
- 
+
 
   export const basicHabits = [
     {
@@ -101,6 +113,7 @@ export const workHabits = [
       "description": "give yourself the fuel to start firing on all cylinders.",
       "reminder": 7,
       "currentColor": "dark-sky-blue",
+      "habitCategory":"The Basics",
       icon: "pizza"
     },
     {
@@ -108,6 +121,7 @@ export const workHabits = [
       "description": "#BlessThePress",
       "reminder": 8,
       "currentColor": "dark-sky-blue",
+      "habitCategory":"The Basics",
       icon: "glasses"
     },
     {
@@ -115,6 +129,7 @@ export const workHabits = [
       "description": "Accomplish that first task and set yourself up for success.",
       "reminder": 7,
       "currentColor": "dark-sky-blue",
+      "habitCategory":"The Basics",
       icon: "checkmark"
     },
     {
@@ -122,7 +137,8 @@ export const workHabits = [
       "description": "Your insurance policy to getting the nutrients you need.",
       "reminder": 7,
       "currentColor": "dark-sky-blue",
+      "habitCategory":"The Basics",
       icon: "medkit"
     }
-    
+
   ]

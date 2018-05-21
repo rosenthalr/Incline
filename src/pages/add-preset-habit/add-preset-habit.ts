@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
 import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { HabitPostService } from '../../services/habitpost.service';
-import { Habit } from './habit.interface';
+import { Habit } from './habit.interface'
 import { TabsPage } from '../tabs/tabs';
 
 /**
@@ -26,7 +26,8 @@ export class AddPresetHabitPage {
   private target: String;
   habit;
   reminder;
-  currentColor;
+  currentColor:string;
+  habitCategory:string;
 
 
   constructor(private habitPostService: HabitPostService, public navCtrl: NavController, public navParams: NavParams) {
@@ -38,6 +39,8 @@ export class AddPresetHabitPage {
    this.reminder = moment().hours(this.navParams.get('reminder')).minutes(0).seconds(0).toISOString(true);
    this.habit = this.navParams.get('habit');
    this.currentColor = this.navParams.get('currentColor');
+   this.habitCategory = this.navParams.get('habitCategory');
+
   }
 
   setDate(startDate){
@@ -53,13 +56,14 @@ export class AddPresetHabitPage {
       startDate: this.startDate,
       targeteEnd: this.target,
       reminder: this.reminder,
-      streakCounter: 1,
-      habitCategory: this.currentColor
+      streakCounter: 0,
+      habitCategory: this.habitCategory
     };
 
     this.habitPostService.habitpost(habit).subscribe(
       data => {
-        console.log(habit);
+        this.navCtrl.pop();
+        this.navCtrl.pop();
         this.navCtrl.parent.select(0);
          },
       error => {

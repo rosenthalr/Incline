@@ -1,5 +1,3 @@
-import{ User } from '../create-account/user.interface';
-
 export interface Habit {
     title: string,
     habitBy: string,  //user._id

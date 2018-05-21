@@ -30,18 +30,20 @@
   <ion-grid>
     <ion-row>
       <ion-col col-6 *ngFor=" let habit of habits">
-          <div class="habit">
-              <div class = "habit-title">{{habit.title}}</div>
-
+          <ion-card class="habit" [ngClass]="{checked:habit.checked}" >
+              <ion-card-title class = "habit-title">{{habit.title}}</ion-card-title>
               <div class = "circle">
-                <habit-progress class="circle" [current]="1"></habit-progress>
+                <habit-progress
+                  [ngClass]="setHabitClass(habit.habitCategory)"
+                  (click)="increment(habit)"
+                  class="circle"
+                  [current]="habit.streakCounter">
+                </habit-progress>
               </div>
-
               <div class="details">
-                  <a> Details </a>
-                  <ion-icon class = "details-icon" name="expand"></ion-icon>
+                  <ion-icon class = "details-icon" (click)="goToHabitDetails(habit)"name="expand"></ion-icon>
               </div>
-          </div>
+          </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>

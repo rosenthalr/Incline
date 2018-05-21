@@ -16,8 +16,9 @@ export class CategoriesComponent {
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
   categorySelected: boolean = false;
 
-  setCategory(categorySelected) { 
+  setCategory(categorySelected) {
     this.categorySelected = categorySelected;
+    localStorage.setItem("habitCategory",categorySelected);
     setTimeout(()=>{
       this.onCategorySelected.emit(categorySelected);
       this.nextPage.emit();

@@ -2,7 +2,6 @@
 <div class="progress-wrapper">
    <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="_viewBox">
     <circle
-      fill="none"
       [attr.cx]="radius"
       [attr.cy]="radius"
       [attr.r]="radius - stroke / 2"
@@ -13,9 +12,33 @@
       #path
       fill="none"
       [style.stroke-width]="stroke"
-      [style.stroke]="resolveColor(color)"
       [style.stroke-linecap]="rounded ? 'round' : '' "
       [attr.transform]="getPathTransform()"></path>
-    <text x="50%" y="50%" color="white" text-anchor="middle" dy="0.5em">{{current}} Days</text>
+    <text x="50%" y="50%" color="white" text-anchor="middle">
+      <tspan class ="habit-progress-count" x="50%">{{current}}</tspan>
+      <tspan font-weight="bold" class ="habit-progress-days" x="50%" dy="1em">{{current!==1?"Days":"Day"}}</tspan>
+    </text>
+    <circle
+    fill="none"
+    [attr.cx]="radius"
+    [attr.cy]="radius"
+    [attr.r]="radius-stroke/2"
+    >
+
+    </circle>
+    <svg version="1.1"
+     x="50px" y="40px"
+     width="200px" height="200px"
+     viewBox="0 0 100 100"
+     enable-background="new 0 0 100 100" >
+      <polyline
+      class="check"
+      fill="none"
+      stroke="#006837"
+      stroke-width="15"
+      stroke-miterlimit="20"
+      points="15,60 40,80 85,20"
+      scale ="1.5"/>
+    </svg>
   </svg>
 </div>

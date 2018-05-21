@@ -1,3 +1,5 @@
+@import "../../styles/_colors.scss";
+
 page-habit-landing {
     .bar-buttons,
     .toolbar-title,
@@ -29,11 +31,9 @@ page-habit-landing {
     }
     .habit {
       width: 163px;
-      height: 251px;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      margin-left: 12px;
-      margin-right: 12px;
+      height: auto;
+      margin: 15px, 12px, 5px,12px;
+      padding: 10px;
       flex-basis: 43.5%;
       background-color: white;
     }
@@ -49,10 +49,46 @@ page-habit-landing {
       font-family: Lato;
       font-size: 14px;
       text-align: right;
-      margin-top: 15px;
+    }
+    .details-icon{
+      font-size: 27px;
+      margin-right: 5px;
+      font-weight: bold;
+    }
+    .checked{
+      .check{
+        stroke-opacity: 0.5;
+      }
+      circle{
+        fill: none ;
+      }
+    }
+    .check{
+      transition: stroke-opacity 0.6s;
+      stroke-opacity: 0;
     }
     .toolbar-background {
         background-color:  #0477d6;
+    }
+    .productivity{
+      path,polyline{
+        stroke:$productivity;
+      }
+    }
+    .mental{
+      path,polyline{
+        stroke:$mental;
+      }
+    }
+    .basic{
+      path,polyline{
+        stroke:$basic;
+      }
+    }
+    .physical{
+      path,polyline{
+        stroke:$physical
+      }
     }
 }
 

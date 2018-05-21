@@ -27,13 +27,6 @@ export class MentalHabitsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MentalHabitsPage');
   }
-
-  goToPhysicalHabitsPage(){
-    // Temporarily changing navigation to the Habit Landing Page for testing purposes.
-    // This should be replaced with CreateAccountPage after testing is complete
-    this.navCtrl.push(PhysicalHabitsPage);
-
-  }
   goToDiscover(){
     this.navCtrl.pop();
   }
@@ -42,7 +35,8 @@ export class MentalHabitsPage {
     this.navCtrl.push(AddPresetHabitPage, {
       'habit': mentalHabit.habit,
       'reminder': mentalHabit.reminder,
-      'currentColor': mentalHabit.currentColor
+      'currentColor': mentalHabit.currentColor,
+      'habitCategory':mentalHabit.habitCategory,
     });
 
   }
