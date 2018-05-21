@@ -46,6 +46,7 @@ export class ReminderComponent implements OnInit {
       created: Date.now(),
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
       streakcounter: 1,
+      habitCategory: localStorage.getItem("categorySelected"),
       updatedAt: Date.now(),
     };
 

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 import { checkedHabits } from '../../app/data/checkboxhabits';
 import { TrackingReminderPage } from '../tracking-reminder/tracking-reminder';
 import { HabitGetService } from '../../services/habitget.service';
+import * as moment from 'moment';
 
 /**
  * Generated class for the ModalCheckboxPage page.
@@ -27,10 +28,13 @@ checkedHabits: Array<any> = checkedHabits;
   constructor(private habitGetService: HabitGetService, public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
     this.currentColor = this.navParams.get('currentColor');
     this.getUserHabits();
+    // this.checkUserHabits();
   }
 
   // checkUserHabits(){
-  //   const now = 
+  //   const now = moment();
+  //   console.log(now);
+  //   const updatedAt = this.habits.title;
   // }
 
   getUserHabits(){

@@ -37,16 +37,10 @@
                     <ion-label class="habitText">{{ habit.title }}</ion-label>            
                     <ion-checkbox color ="{{currentColor}}" ></ion-checkbox>
                   </ion-item>
-                  <ion-item>
-                    <ion-label >{{ habit.startDate }}</ion-label>            
-                  </ion-item>
-                  
                 </ion-list>
               
               </div>
-      <div class ="test-button">
-        <button class="btn-test" type="submit" (click)="getUserHabits();" ion-button> Get User Habits</button>
-    </div>    
+      
     <!--change to go to habit landing page-->
     <button class="confirmButton" (click)="goToTrackingReminderPage()">Confirm</button>
 
