@@ -129,4 +129,42 @@ page-modal-checkbox {
         width: 8px;
         top: 0px;
     }
-}
+
+    .productivity{
+        .checkbox-ios .checkbox-checked .checkbox-inner{
+            height: 18px;
+            width: 8px;
+            top: 0px;
+            background-color: $productivity;
+        
+        }
+        }
+      
+      .mental{
+        .checkbox-ios .checkbox-checked .checkbox-inner{
+            height: 18px;
+            width: 8px;
+            top: 0px;
+             background-color: $mental;
+      }
+    }
+      .basic{
+        .checkbox-ios .checkbox-checked .checkbox-inner{
+            height: 18px;
+            width: 8px;
+            top: 0px;
+        background-color: $basic;
+        }
+    }
+      
+      .physical{
+        .checkbox-ios .checkbox-checked .checkbox-inner{
+            height: 18px;
+            width: 8px;
+            top: 0px;
+          background-color: $physical
+        }
+    }
+
+
+    }

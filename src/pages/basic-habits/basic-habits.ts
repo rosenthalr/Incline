@@ -36,9 +36,10 @@ export class BasicHabitsPage {
     this.navCtrl.push(AddPresetHabitPage, {
       'habit': basicHabit.habit,
       'reminder': basicHabit.reminder,
-      'currentColor': basicHabit.currentColor
+      'currentColor': basicHabit.currentColor,
+      'habitCategory':basicHabit.habitCategory
     });
-    
+
   }
 
 }

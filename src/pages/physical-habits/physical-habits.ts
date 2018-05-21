@@ -35,7 +35,8 @@ export class PhysicalHabitsPage {
     this.navCtrl.push(AddPresetHabitPage, {
       'habit': physicalHabit.habit,
       'reminder': physicalHabit.reminder,
-      'currentColor': physicalHabit.currentColor
+      'currentColor': physicalHabit.currentColor,
+      'habitCategory': physicalHabit.habitCategory
     });
 
   }

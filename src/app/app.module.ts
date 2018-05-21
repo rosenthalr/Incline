@@ -22,7 +22,7 @@ import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
-
+import { HabitDetailsPage } from '../pages/habit-details/habit-details';
 
 
 // Including http module for use on login page
@@ -40,6 +40,7 @@ import { ResetService } from '../services/reset.service';
 import { MoreResetService } from '../services/morereset.service';
 import { HabitPostService } from '../services/habitpost.service';
 import { HabitGetService } from '../services/habitget.service';
+import { HabitPutService } from '../services/habitput.service';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { HabitGetService } from '../services/habitget.service';
     CreateAccountPage,
     EqualValidator,
     HabitLandingPage,
+    HabitDetailsPage,
     TabsPage,
     DiscoverPage,
     MorePage,
@@ -76,6 +78,7 @@ import { HabitGetService } from '../services/habitget.service';
     SuccessPage,
     CreateAccountPage,
     HabitLandingPage,
+    HabitDetailsPage,
     TabsPage,
     DiscoverPage,
     MorePage,
@@ -101,7 +104,9 @@ import { HabitGetService } from '../services/habitget.service';
     MoreResetService,
     HabitPostService,
     HabitGetService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    HabitPutService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+
   ]
 })
 export class AppModule {}

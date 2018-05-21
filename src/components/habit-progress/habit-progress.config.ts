@@ -26,7 +26,7 @@ export class HabitProgressConfig {
     stroke: 15,
     color: '#0477d6',
     background: '#EAEAEA',
-    responsive: false,
+    responsive: true,
     clockwise: true,
     semicircle: false,
     rounded: false,

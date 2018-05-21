@@ -9,7 +9,7 @@ import { AddPresetHabitPage } from '../add-preset-habit/add-preset-habit';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
- 
+
 @IonicPage()
 @Component({
   selector: 'page-work-habits',
@@ -34,7 +34,8 @@ export class WorkHabitsPage {
     this.navCtrl.push(AddPresetHabitPage, {
       'habit': workHabit.habit,
       'reminder': workHabit.reminder,
-      'currentColor': workHabit.currentColor
+      'currentColor': workHabit.currentColor,
+      'habitCategory': workHabit.habitCategory
     });
 
   }
