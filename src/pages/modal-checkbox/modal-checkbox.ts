@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController, ModalOptions } from 'ionic-angular';
 import { checkedHabits } from '../../app/data/checkboxhabits';
 import { TrackingReminderPage } from '../tracking-reminder/tracking-reminder';
 import { HabitGetService } from '../../services/habitget.service';
@@ -20,22 +20,22 @@ import * as moment from 'moment';
 })
 export class ModalCheckboxPage {
 currentColor
-habitBox: boolean;
 habits: Array<any>;
-// public habitBox=false;
+public habitBox =false;
 now
+Arr: Array<any>;
 
 checkedHabits: Array<any> = checkedHabits;
 
-  constructor(private habitGetService: HabitGetService, public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
+  constructor(private habitGetService: HabitGetService, public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private modal: ModalController) {
     this.currentColor = this.navParams.get('currentColor');
     this.getUserHabits();
   }
 
-  // checkUserHabits(){
-  //   const now = moment();
-  //   console.log(now);
-  //   const updatedAt = this.habits.title;
+
+  // changeState(habit){
+  //   console.log("habit.habitBox below");
+  //   console.log(habit.habitBox);
   // }
 
   getUserHabits(){
@@ -43,13 +43,17 @@ checkedHabits: Array<any> = checkedHabits;
     .subscribe(
       data=>{
         this.habits = data;
+        console.log("this.habits below");
         console.log(data)
       },
       error =>{
         console.error(error)
       }
     )
+    console.log("this.habits below");
+    console.log(this.habits)
   }
+
 
 
   // if (habit.habitbox == true){
@@ -70,8 +74,7 @@ checkedHabits: Array<any> = checkedHabits;
   }
 
   updateHabitState(habit) {
-    console.log('habit one new state:' + habit.habitBox);
-    console.log(habit.currentColor);
+    console.log(habit.habitBox);
   }
 
   checkDate(){
@@ -99,31 +102,45 @@ checkedHabits: Array<any> = checkedHabits;
 
             return diff >= 0;
 
-          //  Arr = habit.forgotCheckin.split(/T/);
-          //  Arr2 = Arr[0].split(/-/);
-          //  updatedYear = Arr2[0]
-          //  updatedMonth = Arr2[1];
-          //  updatedDay = Arr2[2];
-          //  console.log('day');
-          //  console.log(updatedDay);
-          //  todaysDay = moment().date();
-          //  console.log('now');
-          //  console.log(todaysDay);
+     
       
           })
           console.log(Arr + "this is the array");
-          // this.habits = data;
-          // // console.log(data)
-          // let date1 = date1.setHours(0,0,0,0);
-          // let value = date1-date2;
-          // return Math.round(value/(1000*3600*2)
+         
         },
         error =>{
           console.error(error)
         }
       )
    }
-  //  === new Date(new Date().setHours(0,0,0,0)).toISOString()
+
+   openResetModal() {
+    
+        console.log("in open");
+        const myModalOptions: ModalOptions = {
+          enableBackdropDismiss: false,
+          showBackdrop: false
+        };
+    
+        const myData = {
+          habit: 'habit',
+          category: 'color'
+        };
+    
+        const resetModal = this.modal.create('ResetStreakModalPage', { data: myData}, myModalOptions);
+    
+        resetModal.present();
+    
+        resetModal.onDidDismiss((data) => {
+          console.log("I have dismissed");
+          console.log(data);
+        });
+    
+        resetModal.onWillDismiss((data) => {
+          console.log("I'm about to dismiss");
+          console.log(data);
+        });
+      }
 
 
   closeModal(){
@@ -132,6 +149,7 @@ checkedHabits: Array<any> = checkedHabits;
     };
 
     this.view.dismiss(tracked);
+    this.openResetModal();
   }
 
   ionViewDidLoad() {
@@ -140,13 +158,14 @@ checkedHabits: Array<any> = checkedHabits;
   //  console.log(data);
     console.log('ionViewDidLoad ModalCheckboxPage');
     console.log('checkDate');
-this.checkDate();
+    this.checkDate();
   }
 
   goToTrackingReminderPage(habit) {
     // if (habit.habitBox = true)
-    this.navCtrl.push(TrackingReminderPage);
+    // this.navCtrl.push(TrackingReminderPage);
     // console.log(habit.habitbox);
+    this.closeModal();
   }
 
 }

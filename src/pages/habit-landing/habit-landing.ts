@@ -143,13 +143,10 @@ checkDate(){
               var diff = a.diff(b, 'days');
               console.log(diff);
     
-              return diff >= 0;
-
-
-    
+              return diff === 1;
           
               })
-              console.log(Arr);
+              console.log(this.lateHabits);
          
             },
             error =>{
@@ -166,14 +163,17 @@ checkDate(){
     console.log(this.lateHabits);
     console.log('lateHabits above');
     console.log(length);
+    // this.checkDate();
     this.openCheckboxModal();
-    // if(this.lateHabits.length > 0){
-    //   console.log("more than 0");
-    //   // this.openCheckboxModal();
-    // }
-    // else {
-    //   console.log('error with length');
-    // }
     
-  }
+  //   if(this.lateHabits.length > 0){
+  //     console.log("more than 0");
+  //     this.openCheckboxModal();
+  //   }
+  //   else {
+  //     console.log('error with length');
+  //   }
+    
+  // }
+}
 }
