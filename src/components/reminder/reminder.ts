@@ -49,6 +49,7 @@ export class ReminderComponent implements OnInit {
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
       streakcounter: 1,    
       updatedAt: Date.now(),
+      activehabit: true,
     };
 
     this.habitPostService.habitpost(habit).subscribe(
