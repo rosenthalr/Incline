@@ -132,7 +132,7 @@ page-modal-checkbox {
     }
 
     .productivity{
-        .checkbox-ios .checkbox-checked .checkbox-inner{
+        &.checkbox-ios .checkbox-checked .checkbox-inner{
             height: 18px;
             width: 8px;
             top: 0px;
@@ -142,7 +142,7 @@ page-modal-checkbox {
         }
 
       .mental{
-        .checkbox-ios .checkbox-checked .checkbox-inner{
+        &.checkbox-ios .checkbox-checked .checkbox-inner{
             height: 18px;
             width: 8px;
             top: 0px;
@@ -150,7 +150,7 @@ page-modal-checkbox {
       }
     }
       .basic{
-        .checkbox-ios .checkbox-checked .checkbox-inner{
+        &.checkbox-ios .checkbox-checked .checkbox-inner{
             height: 18px;
             width: 8px;
             top: 0px;
@@ -159,7 +159,7 @@ page-modal-checkbox {
     }
 
       .physical{
-        .checkbox-ios .checkbox-checked .checkbox-inner{
+        &.checkbox-ios .checkbox-checked .checkbox-inner{
             height: 18px;
             width: 8px;
             top: 0px;

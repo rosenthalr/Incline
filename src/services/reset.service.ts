@@ -12,7 +12,7 @@ const httpOptions = {
 @Injectable()
 export class ResetService {
 
-  public apiUrl = 'http://localhost:7000/moreReset';
+  public apiUrl = 'https://ec2-35-168-103-149.compute-1.amazonaws.com/moreReset';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
 

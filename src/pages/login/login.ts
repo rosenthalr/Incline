@@ -15,10 +15,10 @@ import { ForgotPage } from '../forgot/forgot';
 })
 
 export class LoginPage {
-  
+
   public active: boolean;
   public email: string = '';
-  public password: string; 
+  public password: string;
   public isComplete: boolean;
   public emailError: boolean;
   public passwordError: boolean;
@@ -72,7 +72,7 @@ checkIfComplete(userInfo, field) {
 
 
 // removes the error class when field is deleted so that the error message doesn't hang
-// Not sure why, but when I tried to combine into one function I received an errorHandler. 
+// Not sure why, but when I tried to combine into one function I received an errorHandler.
 // I think it had to do with placing the same ngModelChange in two elements
 checkIfEmailEmpty(){
   if(this.email !== ''){
@@ -99,26 +99,27 @@ checkIfPasswordEmpty(){
       // Test successful login without connection to DB
       if(this.email.toUpperCase()==='TEST' && this.password.toUpperCase()==='TEST'){
         this.navCtrl.push(TabsPage);
-        
+
         // Prevent the function from finishing, so an error isn't thrown
         return true;
       }
 
       this.loginService.login(user).subscribe(
-      
-        // If a user has entered in valid login credentials, error messages will be removed and 
+
+        // If a user has entered in valid login credentials, error messages will be removed and
         // they'll be redirected to the Habit Landing Page
         data => {
-  
+
           // Remove any error messages that may have appeared on previous login attempts
           this.emailError = false;
           this.passwordError = false;
-          localStorage.setItem("pw", userInfo.password);          
+          localStorage.setItem("pw", userInfo.password);
           // Navigate to Habit Landing Page
           this.navCtrl.push(TabsPage);
        },
         error => {
-        const errorMessage = error.error.info.message
+          console.error(error);
+          const errorMessage = error.error.info.message
 
         if(errorMessage == 'Wrong Email') {
           this.emailError = true;
