@@ -24,6 +24,9 @@ import {
   ModalCheckboxPage
 } from '../modal-checkbox/modal-checkbox';
 import {
+  ResetStreakModalPage
+} from '../reset-streak-modal/reset-streak-modal';
+import {
   trigger,
   state,
   animate,
@@ -57,7 +60,7 @@ export class HabitLandingPage {
   testCheckboxOpen: boolean;
   testCheckboxResult: string;
   lateHabits: Array < any > ;
-
+  resetHabits: Array <any>;
 
 
   constructor(private habitGetService: HabitGetService,
@@ -81,8 +84,9 @@ export class HabitLandingPage {
   }
 
   loadHabits() {
-    return this.habitGetService.habitget().subscribe(
-      data => {
+    let today = moment()
+     this.habitGetService.habitget().subscribe(
+      (data) => {
         data.map(x => {
           x.checked = x.updatedAt === new Date(new Date().setHours(0,0,0,0)).toISOString();
         });
@@ -90,21 +94,24 @@ export class HabitLandingPage {
         console.log(this.habits);
 
         this.lateHabits = this.habits.filter(habit => {
-          var today = moment();
           var habitUpdatedAt = moment(habit.updatedAt).toISOString(true);
           var diff = today.diff(habitUpdatedAt, 'days');
-          console.log(diff);
-          return diff > 1;
+          return diff === 2;
+        })
+
+        this.resetHabits = this.habits.filter(habit =>{
+          return today.diff(habit.updatedAt,'days') > 2
         })
         console.log("Late Habits: ");
         console.log(this.lateHabits);
       },
-      error => {
+      (error) => {
         console.error(error)
       },
       () => {
         console.log("Loaded Habits");
         this.openCheckboxModal(this.lateHabits);
+
       }
     )
   }
@@ -160,6 +167,7 @@ export class HabitLandingPage {
 
   openCheckboxModal(habits) {
     if(habits.length<1){
+      this.openResetModal(this.resetHabits);
       return
     }else{
       const myModalOptions: ModalOptions = {
@@ -172,30 +180,27 @@ export class HabitLandingPage {
       checkboxModal.present();
       checkboxModal.onDidDismiss(() => {
         console.log("I have dismissed");
+        this.openResetModal(this.resetHabits);
       });
     }
   }
 
-  openResetModal() {
-    console.log("in open");
-    const myModalOptions: ModalOptions = {
-      enableBackdropDismiss: false,
-      showBackdrop: false
-    };
-    const myData = {
-      habit: 'habit',
-      category: 'color'
-    };
-    const resetModal = this.modal.create('ResetStreakModalPage', { data: myData}, myModalOptions);
-    resetModal.present();
-    resetModal.onDidDismiss((data) => {
-      console.log("I have dismissed");
-      console.log(data);
-    });
-    resetModal.onWillDismiss((data) => {
-      console.log("I'm about to dismiss");
-      console.log(data);
-    });
+  openResetModal(habits) {
+    if(habits.length<1){
+      return
+    }else{
+      const myModalOptions: ModalOptions = {
+        enableBackdropDismiss: false,
+        showBackdrop: false
+      };
+      const resetModal = this.modal.create(ResetStreakModalPage, {
+         data: habits
+        }, myModalOptions);
+      resetModal.present();
+      resetModal.onDidDismiss((data) => {
+        console.log("I have dismissed");
+      });
+    }
   }
   ionViewDidEnter() {
     this.loadHabits();

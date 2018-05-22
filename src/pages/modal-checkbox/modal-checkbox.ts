@@ -40,11 +40,10 @@ export class ModalCheckboxPage {
     habits.map(habit=>{
       if(habit.habitBox){
         habit.streakCounter += 1;
-        habit.updatedAt = today.toDate();
+        habit.updatedAt = today.subtract(1,'days').toDate();
         this.habitPutService.habitput(habit).subscribe(
           data => {
             console.log(data);
-            habit.checked = true
             habit.updatedAt = habit.updatedAt.toISOString();
           },
           error => {

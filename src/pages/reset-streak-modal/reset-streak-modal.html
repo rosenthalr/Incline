@@ -6,15 +6,15 @@
 -->
 
 <ion-content class="overlay">
-  
-  
+
+
     <!-- <div class="mainContent">
-  
+
       <ion-icon ios="ios-close" md="md-close" (click)="closeModal()" class="exit"></ion-icon>
         <div class="lastChance">Hmmm...</div>
-  
+
         <div class="confirmHabitsText">Looks like you didn't confirm habits yesterday. Tap the habits that you completed.</div>
-  
+
         <div>
           <ion-list class="confirmHabit" *ngFor="let checkedHabit of checkedHabits">
             <ion-item>
@@ -22,22 +22,21 @@
               <!-- <ion-checkbox color ="{{currentColor}}" [(ngModel)]="checkedHabit.habitBox" (ionChange)="updateHabitState(checkedHabit)"></ion-checkbox>
             </ion-item>
           </ion-list>
-        
-        </div> --> 
+
+        </div> -->
         <div class="mainContent">
-          
+
               <ion-icon ios="ios-close" md="md-close" (click)="closeModal()" class="exit"></ion-icon>
                 <div class="lastChance">Uh oh!</div>
-          
-                <div class="confirmHabitsText">It has been more than 2 days since you’ve confirmed your habits. Your streaks have ended. 
+
+                <div class="confirmHabitsText">It has been more than 2 days since you’ve confirmed your habits. Your streaks have ended.
                   <br>
                   <br>
                   Time to get back on track!
                 </div>
-          
+
       <!--change to go to habit landing page-->
-      <button class="confirmButton" (click)="goToTrackingReminderPage()">Start Tracking</button>
-  
+      <button class="confirmButton" (click)="closeModal()">Start Tracking</button>
+
     </div>
   </ion-content>
-  

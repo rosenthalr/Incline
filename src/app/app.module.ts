@@ -45,6 +45,7 @@ import { HabitPostService } from '../services/habitpost.service';
 import { HabitGetService } from '../services/habitget.service';
 import { HabitPutService } from '../services/habitput.service';
 import { ModalCheckboxPage } from '../pages/modal-checkbox/modal-checkbox';
+import { ResetStreakModalPage } from '../pages/reset-streak-modal/reset-streak-modal';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ModalCheckboxPage } from '../pages/modal-checkbox/modal-checkbox';
     BasicHabitsPage,
     AddPresetHabitPage,
     TrackingReminderPage,
-    ModalCheckboxPage
+    ModalCheckboxPage,
+    ResetStreakModalPage
   ],
   imports: [
     BrowserModule,
@@ -97,7 +99,8 @@ import { ModalCheckboxPage } from '../pages/modal-checkbox/modal-checkbox';
     BasicHabitsPage,
     AddPresetHabitPage,
     TrackingReminderPage,
-    ModalCheckboxPage
+    ModalCheckboxPage,
+    ResetStreakModalPage
   ],
   providers: [
     StatusBar,
