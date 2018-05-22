@@ -4,6 +4,7 @@ import { WorkHabitsPage } from '../work-habits/work-habits';
 import { MentalHabitsPage } from '../mental-habits/mental-habits';
 import { PhysicalHabitsPage } from '../physical-habits/physical-habits';
 import { BasicHabitsPage } from '../basic-habits/basic-habits';
+import { TrackingReminderPage } from '../tracking-reminder/tracking-reminder';
 
 /**
  * Generated class for the DiscoverPage page.
@@ -37,10 +38,8 @@ export class DiscoverPage {
   goToProductivity(){
     this.navCtrl.push(WorkHabitsPage);
   }
-
   openModal() {
     const myModal = this.modal.create('ModalPage');
-
     myModal.present();
   }
 

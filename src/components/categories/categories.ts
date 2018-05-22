@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 /**
  * Generated class for the CategoriesPage page.
  *
@@ -18,11 +19,19 @@ export class CategoriesComponent {
 
   setCategory(categorySelected) {
     this.categorySelected = categorySelected;
-    localStorage.setItem("habitCategory",categorySelected);
+    localStorage.setItem("habitCategory", categorySelected);
     setTimeout(()=>{
       this.onCategorySelected.emit(categorySelected);
       this.nextPage.emit();
     },140);
+    console.log(categorySelected);
+  }
+
+ 
+
+  
+  ngOnInit() {
+   
   }
 
   emitGoBack() {

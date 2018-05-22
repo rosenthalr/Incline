@@ -52,15 +52,17 @@ export class AddPresetHabitPage {
   goToHabitLandingPage(){
     let habit = {
       title: this.habit,
-      created: Date.now(),
+      created: moment(),
       startDate: this.startDate,
       targeteEnd: this.target,
       reminder: this.reminder,
       streakCounter: 0,
+      updatedAt: moment(),
       habitCategory: this.habitCategory
     };
-
+console.log("here");
     this.habitPostService.habitpost(habit).subscribe(
+      
       data => {
         this.navCtrl.pop();
         this.navCtrl.pop();

@@ -1,0 +1,26 @@
+<!--
+  Generated template for the ModalCheckboxPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+  <div class="mainContent">
+    <ion-icon ios="ios-close" md="md-close" (click)="closeModal()" class="exit"></ion-icon>
+    <h1 class="lastChance">Hmmm...</h1>
+    <div class="confirmHabitsText">Looks like you didn't confirm habits yesterday. Tap the habits that you completed.</div>
+    <div>
+      <ion-list class="confirmHabit" *ngFor="let habit of habits">
+        <ion-item>
+          <ion-label class="habitText">{{ habit.title }}</ion-label>
+          <ion-checkbox  [(ngModel)]="habit.habitBox" (ionChange)="updateHabitState(habit)" [ngClass]="setHabitClass(habit.habitCategory)"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!--change to go to habit landing page-->
+    <button class="confirmButton" (click)="goToTrackingReminderPage(habits)">Confirm</button>
+
+  </div>
+</ion-content>

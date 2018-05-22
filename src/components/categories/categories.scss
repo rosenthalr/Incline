@@ -134,4 +134,17 @@
 }
 
 
+.categories-button-test {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-radius: 0px;
+    padding: 0px;
+    font-size: 15px;
+    margin: 0.4rem 0.2rem;
+    background-color: $white-two;
+    height:44px;
+    color: black;
+}
 

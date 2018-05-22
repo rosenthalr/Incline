@@ -20,6 +20,7 @@ import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
 import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
+import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 import { HabitDetailsPage } from '../pages/habit-details/habit-details';
 
@@ -43,6 +44,7 @@ import { MoreResetService } from '../services/morereset.service';
 import { HabitPostService } from '../services/habitpost.service';
 import { HabitGetService } from '../services/habitget.service';
 import { HabitPutService } from '../services/habitput.service';
+import { ModalCheckboxPage } from '../pages/modal-checkbox/modal-checkbox';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { HabitPutService } from '../services/habitput.service';
     MentalHabitsPage,
     PhysicalHabitsPage,
     BasicHabitsPage,
-    AddPresetHabitPage
+    AddPresetHabitPage,
+    TrackingReminderPage,
+    ModalCheckboxPage
   ],
   imports: [
     BrowserModule,
@@ -92,6 +96,8 @@ import { HabitPutService } from '../services/habitput.service';
     PhysicalHabitsPage,
     BasicHabitsPage,
     AddPresetHabitPage,
+    TrackingReminderPage,
+    ModalCheckboxPage
   ],
   providers: [
     StatusBar,
