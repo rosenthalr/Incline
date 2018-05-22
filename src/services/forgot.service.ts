@@ -20,10 +20,6 @@ export class ForgotService {
   forgotUser(user) {
    // var apiString = 'https://ec2-35-168-103-149.compute-1.amazonaws.com/forgot';
     let body = JSON.stringify(user);
-<<<<<<< HEAD
-    return this.http.post('http://ec2-35-168-103-149.compute-1.amazonaws.com/forgot', body, httpOptions);
-=======
     return this.http.post('https://ec2-35-168-103-149.compute-1.amazonaws.com/forgot', body, httpOptions);
->>>>>>> 1d41e1c7a970cb9bd160550c7594738cc2f84cb5
   }
 }
