@@ -43,11 +43,10 @@ export class ReminderComponent implements OnInit {
     console.log(moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate());
     let habit = {
       title: localStorage.getItem("basichabit"),
-      created: moment(),
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
-      updatedAt: moment(),
-      streakcounter: 0,
-      habitCategory: localStorage.getItem('habitCategory')
+      streakCounter: 0,
+      habitCategory: localStorage.getItem('habitCategory'),
+      activehabit: true,
     };
 
     this.habitPostService.habitpost(habit).subscribe(

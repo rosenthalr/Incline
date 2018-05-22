@@ -70,7 +70,7 @@ export class MorePage implements OnInit {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MorePage');
-    console.log('pw   ' + localStorage.getItem("pw") + localStorage.getItem("pw").length)
+    // console.log('pw   ' + localStorage.getItem("pw") + localStorage.getItem("pw").length)
     console.log('passwordError   ' + this.passwordError)
   }
   showPassword() {
