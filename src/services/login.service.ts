@@ -14,5 +14,4 @@ export class LoginService {
   login(user) {
     return this.http.post<any>('https://ec2-35-168-103-149.compute-1.amazonaws.com/login', user, { withCredentials: true });
   }
-//http://localhost:7000/login
 }
