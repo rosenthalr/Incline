@@ -12,6 +12,13 @@ import { HabitProgressService } from './habit-progress.service';
 import { HabitProgressConfig } from './habit-progress.config';
 import { HabitProgressEase } from './habit-progress.ease'
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 /**
  * Generated class for the HabitProgressComponent component.
  *
@@ -21,21 +28,9 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 @Component({
   selector: 'habit-progress',
   templateUrl: 'habit-progress.html',
-  providers: [HabitProgressConfig,HabitProgressEase,HabitProgressService]
+  providers: [HabitProgressConfig,HabitProgressEase,HabitProgressService],
 })
 export class HabitProgressComponent implements OnChanges{
-    @ViewChild("Habit1")
-    Habit1: HabitProgressComponent;
-
-    @ViewChild("Habit2")
-    Habit2: HabitProgressComponent;
-
-    @ViewChild("Habit3")
-    Habit3: HabitProgressComponent;
-
-    @ViewChild("Habit4")
-    Habit4: HabitProgressComponent;
-
     private _lastAnimationId: number = 0;
     @ViewChild('path')         _path;
     @Input() current:          number = this._defaults.get('current');
@@ -51,6 +46,7 @@ export class HabitProgressComponent implements OnChanges{
     @Input() clockwise:        boolean = this._defaults.get('clockwise');
     @Input() semicircle:       boolean = this._defaults.get('semicircle');
     @Input() rounded:          boolean = this._defaults.get('rounded');
+    @Input() checked:          boolean
     @Output() onRender:        EventEmitter<number> = new EventEmitter();
 
     constructor(

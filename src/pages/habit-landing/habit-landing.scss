@@ -55,12 +55,22 @@ page-habit-landing {
       margin-right: 5px;
       font-weight: bold;
     }
+    .circle{
+      text{
+        stroke:$white-two;
+        fill:$white-two;
+      };
+    }
     .checked{
       .check{
         stroke-opacity: 0.5;
       }
       circle{
-        fill: none ;
+        fill: none !important;
+      }
+      text{
+        stroke:$dark-grey;
+        fill:$dark-grey;
       }
     }
     .check{
@@ -74,21 +84,35 @@ page-habit-landing {
       path,polyline{
         stroke:$productivity;
       }
+      circle{
+        fill:$productivity-fill;
+      }
+
     }
     .mental{
       path,polyline{
         stroke:$mental;
+      }
+      circle{
+        fill:$mental-fill;
       }
     }
     .basic{
       path,polyline{
         stroke:$basic;
       }
+      circle{
+        fill:$basic-fill;
+      }
     }
     .physical{
       path,polyline{
         stroke:$physical
       }
+      circle{
+        fill:$physical-fill;
+      }
+
     }
 }
 

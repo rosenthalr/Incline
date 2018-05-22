@@ -27,6 +27,9 @@ import { HabitDetailsPage } from '../pages/habit-details/habit-details';
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
 
+// Including Browser Animations module for animations
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // Import Components
 import {ComponentsModule} from '../components/components.module'
 
@@ -64,6 +67,7 @@ import { HabitPutService } from '../services/habitput.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     IonicModule.forRoot(MyApp,{tabsPlacement:'bottom'}),

@@ -13,18 +13,14 @@
       fill="none"
       [style.stroke-width]="stroke"
       [style.stroke-linecap]="rounded ? 'round' : '' "
-      [attr.transform]="getPathTransform()"></path>
+      [attr.transform]="getPathTransform()">
+    </path>
+
     <text x="50%" y="50%" color="white" text-anchor="middle">
       <tspan class ="habit-progress-count" x="50%">{{current}}</tspan>
       <tspan font-weight="bold" class ="habit-progress-days" x="50%" dy="1em">{{current!==1?"Days":"Day"}}</tspan>
     </text>
-    <circle
-    fill="none"
-    [attr.cx]="radius"
-    [attr.cy]="radius"
-    [attr.r]="radius-stroke/2"
-    >
-
+    <circle class="success-circle">
     </circle>
     <svg version="1.1"
      x="50px" y="40px"
