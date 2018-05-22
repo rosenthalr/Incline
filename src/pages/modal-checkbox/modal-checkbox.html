@@ -35,7 +35,7 @@
                 <ion-list class="confirmHabit" *ngFor="let habit of habits">
                   <ion-item>
                     <ion-label class="habitText">{{ habit.title }}</ion-label>            
-                    <ion-checkbox color="$basic" [ngClass]="setHabitClass(habit.habitCategory)" ></ion-checkbox>
+                    <ion-checkbox color="$basic" [(ngModel)]="habit.habitBox" (ionChange)="updateHabitState(habit)" [ngClass]="setHabitClass(habit.habitCategory)" ></ion-checkbox>
                   </ion-item>
                 </ion-list>
               

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ModalController, NavParams, ModalOptions } from 'ionic-angular';
 import { TestDashboardPage } from '../test-dashboard/test-dashboard';
 import { HabitGetService } from '../../services/habitget.service';
 import { HabitPutService } from '../../services/habitput.service';
 import { HabitDetailsPage } from '../habit-details/habit-details';
+import * as moment from 'moment';
 /**
  * Generated class for the HabitLandingPage page.
  *
@@ -21,6 +22,12 @@ import { HabitDetailsPage } from '../habit-details/habit-details';
 
 export class HabitLandingPage {
   habits: Array<any>;
+  testCheckboxOpen: boolean;
+  testCheckboxResult: string;
+  lateHabits : Array<any>;
+
+  
+
   constructor(private habitGetService: HabitGetService,
     public habitPutService:HabitPutService,
     public navCtrl: NavController,
@@ -41,6 +48,7 @@ export class HabitLandingPage {
     const habitDetailsPage = this.modal.create(HabitDetailsPage,habit)
     habitDetailsPage.present();
   }
+
   loadHabits(){
     this.habitGetService.habitget().subscribe(
       data=>{
@@ -82,8 +90,90 @@ export class HabitLandingPage {
       })
     }
   }
+
+  openCheckboxModal() {
+    
+        console.log("in open");
+        const myModalOptions: ModalOptions = {
+          enableBackdropDismiss: false,
+          showBackdrop: false
+        };
+    
+        const myData = {
+          habit: 'habit',
+          category: 'color'
+        };
+    
+        const checkboxModal = this.modal.create('ModalCheckboxPage', { data: myData}, myModalOptions);
+    
+        checkboxModal.present();
+    
+        checkboxModal.onDidDismiss((data) => {
+          console.log("I have dismissed");
+          console.log(data);
+        });
+    
+        checkboxModal.onWillDismiss((data) => {
+          console.log("I'm about to dismiss");
+          console.log(data);
+        });
+      }
+    
+    
+checkDate(){
+      let Arr: Array<any>;
+      let Arr2: Array<any>;
+      let updatedDay: number;
+      let updatedMonth: number;
+      let updatedYear: number;
+      let todaysDay: any;
+        
+        
+      this.habitGetService.habitget().subscribe(
+          data=>{
+            this.lateHabits=data.filter(habit=>{
+              habit.forgotCheckin = habit.updatedAt;
+              console.log(habit.forgotCheckin);
+    
+              var a = moment();
+              console.log('a then b');
+              console.log(a);
+              var b = moment(habit.updatedAt).toISOString(true);
+              console.log(b);
+              var diff = a.diff(b, 'days');
+              console.log(diff);
+    
+              return diff >= 0;
+
+
+    
+          
+              })
+              console.log(Arr);
+         
+            },
+            error =>{
+              console.error(error)
+            }
+          )
+       }
+    
+
   ionViewDidEnter() {
     console.log('ionViewDidLoad HabitLandingPage');
-    this.loadHabits()
+    this.loadHabits();
+    
+    console.log(this.lateHabits);
+    console.log('lateHabits above');
+    console.log(length);
+    this.openCheckboxModal();
+    // if(this.lateHabits.length > 0){
+    //   console.log("more than 0");
+    //   // this.openCheckboxModal();
+    // }
+    // else {
+    //   console.log('error with length');
+    // }
+    
   }
 }

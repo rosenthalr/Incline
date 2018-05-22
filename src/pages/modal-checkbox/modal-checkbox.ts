@@ -22,6 +22,7 @@ export class ModalCheckboxPage {
 currentColor
 habitBox: boolean;
 habits: Array<any>;
+// public habitBox=false;
 now
 
 checkedHabits: Array<any> = checkedHabits;
@@ -50,6 +51,13 @@ checkedHabits: Array<any> = checkedHabits;
     )
   }
 
+
+  // if (habit.habitbox == true){
+  //   increment habit streak, updatedAt
+  // }
+  // else{
+  //   set streak to zero, updatedAt
+  // }
 
   setHabitClass(habitCategory:string){
     let classes = {
@@ -89,7 +97,7 @@ checkedHabits: Array<any> = checkedHabits;
             var diff = a.diff(b, 'days');
             console.log(diff);
 
-            return diff>=0;
+            return diff >= 0;
 
           //  Arr = habit.forgotCheckin.split(/T/);
           //  Arr2 = Arr[0].split(/-/);
@@ -103,7 +111,7 @@ checkedHabits: Array<any> = checkedHabits;
           //  console.log(todaysDay);
       
           })
-          console.log(Arr);
+          console.log(Arr + "this is the array");
           // this.habits = data;
           // // console.log(data)
           // let date1 = date1.setHours(0,0,0,0);
@@ -135,8 +143,10 @@ checkedHabits: Array<any> = checkedHabits;
 this.checkDate();
   }
 
-  goToTrackingReminderPage() {
+  goToTrackingReminderPage(habit) {
+    // if (habit.habitBox = true)
     this.navCtrl.push(TrackingReminderPage);
+    // console.log(habit.habitbox);
   }
 
 }
