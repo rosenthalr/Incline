@@ -14,12 +14,12 @@ export class ForgotService {
 
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
-  
+
   // This function takes the user's login input values as a parameter (username and password)
   // and then checks to see if an account with those credentials exist
   forgotUser(user) {
    // var apiString = 'https://ec2-35-168-103-149.compute-1.amazonaws.com/forgot';
     let body = JSON.stringify(user);
-    return this.http.post('http://localhost:7000/forgot', body, httpOptions);
+    return this.http.post('https://ec2-35-168-103-149.compute-1.amazonaws.com/forgot', body, httpOptions);
   }
 }
