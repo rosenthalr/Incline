@@ -26,7 +26,7 @@ import { ReminderComponent } from './reminder/reminder';
     HabitProgressComponent,
     NameHabitComponent,
     StartDateComponent,
-    ReminderComponent
+    ReminderComponent,
     ],
     providers:[
       HabitProgressConfig,

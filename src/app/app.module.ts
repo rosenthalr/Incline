@@ -23,7 +23,7 @@ import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 import { HabitDetailsPage } from '../pages/habit-details/habit-details';
-
+import { HabitCompletePage } from '../pages/habit-complete/habit-complete';
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -69,7 +69,8 @@ import { ResetStreakModalPage } from '../pages/reset-streak-modal/reset-streak-m
     AddPresetHabitPage,
     TrackingReminderPage,
     ModalCheckboxPage,
-    ResetStreakModalPage
+    ResetStreakModalPage,
+    HabitCompletePage
   ],
   imports: [
     BrowserModule,
@@ -100,7 +101,8 @@ import { ResetStreakModalPage } from '../pages/reset-streak-modal/reset-streak-m
     AddPresetHabitPage,
     TrackingReminderPage,
     ModalCheckboxPage,
-    ResetStreakModalPage
+    ResetStreakModalPage,
+    HabitCompletePage
   ],
   providers: [
     StatusBar,

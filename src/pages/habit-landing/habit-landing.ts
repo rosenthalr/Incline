@@ -27,6 +27,9 @@ import {
   ResetStreakModalPage
 } from '../reset-streak-modal/reset-streak-modal';
 import {
+  HabitCompletePage
+} from '../habit-complete/habit-complete';
+import {
   trigger,
   state,
   animate,
@@ -134,6 +137,7 @@ export class HabitLandingPage {
       } else {
         habit.streakCounter -= 1;
         habit.updatedAt = today.subtract(1,'day').toDate();
+
         this.habitPutService.habitput(habit).subscribe(
           data => {
             console.log(habit.updatedAt)
@@ -147,9 +151,14 @@ export class HabitLandingPage {
     } else {
       habit.streakCounter += 1;
       habit.updatedAt = today.toDate();
+      console.log(habit.streakCounter);
+      if(habit.streakCounter === 21) {
+        console.log('habit')
+        let habitCompleteModal = this.modal.create(HabitCompletePage);
+        habitCompleteModal.present();
+      }
       this.habitPutService.habitput(habit).subscribe(
         data => {
-          console.log(data);
           habit.checked = true;
           habit.updatedAt = habit.updatedAt.toISOString();
         },

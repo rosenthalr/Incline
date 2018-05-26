@@ -16,6 +16,7 @@ import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
+import { HabitCompletePage } from '../pages/habit-complete/habit-complete';
 
 
 @Component({
@@ -23,7 +24,7 @@ import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = HabitLandingPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation) {
     platform.ready().then(() => {
