@@ -12,11 +12,7 @@ const httpOptions = {
 
 @Injectable()
 export class CreateAccountService {
-<<<<<<< HEAD
-  public apiUrl = 'http://ec2-35-168-103-149.compute-1.amazonaws.com/addUser';
-=======
-  public apiUrl = 'https://ec2-35-168-103-149.compute-1.amazonaws.com/addUser';
->>>>>>> 1d41e1c7a970cb9bd160550c7594738cc2f84cb5
+  public apiUrl = 'http://localhost:7000/addUser';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
 

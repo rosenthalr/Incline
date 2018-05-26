@@ -23,7 +23,7 @@ import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = LoginPage;
+  rootPage:any = HabitLandingPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation) {
     platform.ready().then(() => {
