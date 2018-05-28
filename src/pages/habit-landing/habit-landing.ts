@@ -158,8 +158,22 @@ export class HabitLandingPage {
           enableBackdropDismiss: false,
           showBackdrop: false
         };
-        let habitCompleteModal = this.modal.create(HabitCompletePage, myModalOptions);
-        habitCompleteModal.present();
+        let habitCompleteModal = this.modal.create(HabitCompletePage, { habit }, myModalOptions);
+          habitCompleteModal.present();
+          habitCompleteModal.onDidDismiss((habit, action) => {
+            if(action === 'delete') {
+              let deletedHabit = habit._id;
+
+              // After a habit is deleted, remove it from the habits array
+              this.habits = this.habits.filter((habit) => {
+                return habit._id !== deletedHabit;
+              });
+            } 
+            else {
+              // If a user would like to keep tracking a habit, even after 21 days...
+
+            }
+        });
       }
 
 
@@ -172,16 +186,6 @@ export class HabitLandingPage {
           console.error(error)
         })
     }
-  }
-
-  // Temp for styling -- delete after testing
-  showModal(){
-    const myModalOptions: ModalOptions = {
-      enableBackdropDismiss: true,
-      showBackdrop: true
-    };
-    let habitCompleteModal = this.modal.create(HabitCompletePage, myModalOptions);
-    habitCompleteModal.present();
   }
 
   animationStarted(habit) {

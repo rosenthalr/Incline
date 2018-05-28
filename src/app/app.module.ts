@@ -46,6 +46,7 @@ import { HabitGetService } from '../services/habitget.service';
 import { HabitPutService } from '../services/habitput.service';
 import { ModalCheckboxPage } from '../pages/modal-checkbox/modal-checkbox';
 import { ResetStreakModalPage } from '../pages/reset-streak-modal/reset-streak-modal';
+import { DeleteHabitService } from '../services/delete-habit.service';
 
 @NgModule({
   declarations: [
@@ -118,7 +119,7 @@ import { ResetStreakModalPage } from '../pages/reset-streak-modal/reset-streak-m
     HabitGetService,
     HabitPutService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-
+    DeleteHabitService,
   ]
 })
 export class AppModule {}
