@@ -15,6 +15,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 export class HabitCompletePage {
 
   constructor(public viewCtrl: ViewController) {
+    
   }
 
   dismiss() {

@@ -177,8 +177,8 @@ export class HabitLandingPage {
   // Temp for styling -- delete after testing
   showModal(){
     const myModalOptions: ModalOptions = {
-      enableBackdropDismiss: false,
-      showBackdrop: false
+      enableBackdropDismiss: true,
+      showBackdrop: true
     };
     let habitCompleteModal = this.modal.create(HabitCompletePage, myModalOptions);
     habitCompleteModal.present();
