@@ -151,12 +151,18 @@ export class HabitLandingPage {
     } else {
       habit.streakCounter += 1;
       habit.updatedAt = today.toDate();
-      console.log(habit.streakCounter);
+
+      // If habit streak is 21 days, show congratulations modal
       if(habit.streakCounter === 21) {
-        console.log('habit')
-        let habitCompleteModal = this.modal.create(HabitCompletePage);
+        const myModalOptions: ModalOptions = {
+          enableBackdropDismiss: false,
+          showBackdrop: false
+        };
+        let habitCompleteModal = this.modal.create(HabitCompletePage, myModalOptions);
         habitCompleteModal.present();
       }
+
+
       this.habitPutService.habitput(habit).subscribe(
         data => {
           habit.checked = true;
@@ -167,6 +173,17 @@ export class HabitLandingPage {
         })
     }
   }
+
+  // Temp for styling -- delete after testing
+  showModal(){
+    const myModalOptions: ModalOptions = {
+      enableBackdropDismiss: false,
+      showBackdrop: false
+    };
+    let habitCompleteModal = this.modal.create(HabitCompletePage, myModalOptions);
+    habitCompleteModal.present();
+  }
+
   animationStarted(habit) {
     habit.animating = true;
   }
