@@ -34,6 +34,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Import Components
 import {ComponentsModule} from '../components/components.module'
 
+// Import Local Notifications
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 // Import Services
 import { LoginService } from "../services/login.service";
 import { EqualValidator } from '../pages/create-account/equal-validator.directive';
@@ -118,6 +121,7 @@ import { DeleteHabitService } from '../services/delete-habit.service';
     HabitPostService,
     HabitGetService,
     HabitPutService,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DeleteHabitService,
   ]
