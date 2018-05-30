@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-import { ScreenOrientation } from '@ionic-native/screen-orientation'
 import { FormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
@@ -42,10 +40,15 @@ import { LogoutService } from '../services/logout.service';
 import { ResetService } from '../services/reset.service';
 import { MoreResetService } from '../services/morereset.service';
 import { HabitPostService } from '../services/habitpost.service';
-import { HabitGetService } from '../services/habitget.service';
 import { HabitPutService } from '../services/habitput.service';
+import { HabitGetService } from '../services/habitget.service';
+import { HabitDeleteService } from '../services/habitdelete.service';
 import { ModalCheckboxPage } from '../pages/modal-checkbox/modal-checkbox';
 import { ResetStreakModalPage } from '../pages/reset-streak-modal/reset-streak-modal';
+import { StatusBar } from '@ionic-native/status-bar';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { LocalNotifications } from '@ionic-native/local-notifications'
+
 
 @NgModule({
   declarations: [
@@ -108,12 +111,14 @@ import { ResetStreakModalPage } from '../pages/reset-streak-modal/reset-streak-m
     SplashScreen,
     StatusBar,
     ScreenOrientation,
+    LocalNotifications,
     ForgotService,
     LogoutService,
     ResetService,
     MoreResetService,
     HabitPostService,
     HabitGetService,
+    HabitDeleteService,
     HabitPutService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
 

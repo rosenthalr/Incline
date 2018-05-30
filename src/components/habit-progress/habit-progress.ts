@@ -12,13 +12,6 @@ import { HabitProgressService } from './habit-progress.service';
 import { HabitProgressConfig } from './habit-progress.config';
 import { HabitProgressEase } from './habit-progress.ease'
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
 /**
  * Generated class for the HabitProgressComponent component.
  *

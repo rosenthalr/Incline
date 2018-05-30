@@ -92,7 +92,7 @@ checkIfPasswordEmpty(){
   login(userInfo) {
 
       let user = {
-        email: userInfo.email,
+        email: userInfo.email.toLowerCase(),
         password: userInfo.password
       };
 

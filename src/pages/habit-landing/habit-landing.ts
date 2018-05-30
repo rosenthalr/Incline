@@ -18,6 +18,9 @@ import {
   HabitPutService
 } from '../../services/habitput.service';
 import {
+  HabitDeleteService
+} from '../../services/habitdelete.service';
+import {
   HabitDetailsPage
 } from '../habit-details/habit-details';
 import {
@@ -47,6 +50,7 @@ import * as moment from 'moment';
   providers: [
     HabitGetService,
     HabitPutService,
+    HabitDeleteService,
   ],
   animations: [
     trigger('checked', [
@@ -61,7 +65,7 @@ export class HabitLandingPage {
   testCheckboxResult: string;
   lateHabits: Array < any > ;
   resetHabits: Array <any>;
-
+  animating: boolean;
 
   constructor(private habitGetService: HabitGetService,
     public habitPutService: HabitPutService,
@@ -158,12 +162,12 @@ export class HabitLandingPage {
         })
     }
   }
-  animationStarted(habit) {
-    habit.animating = true;
+
+  animationTrigger(habit) {
+    habit.animating = habit.animating ? false : true;
+    this.animating = this.animating ? false : true;
   }
-  animationEnded(habit) {
-    habit.animating = false
-  }
+
 
   openCheckboxModal(habits) {
     if(habits.length<1){

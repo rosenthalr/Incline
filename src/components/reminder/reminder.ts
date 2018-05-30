@@ -39,9 +39,10 @@ export class ReminderComponent implements OnInit {
   }
 
   emitGoToHabitLandingPage() {
-    console.log(this.reminderTime);
-    console.log(moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate());
+    let today = moment().startOf('day').toDate();
     let habit = {
+      updatedAt: today,
+      startDate: today,
       title: localStorage.getItem("basichabit"),
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
       streakCounter: 0,
