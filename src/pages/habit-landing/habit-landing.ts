@@ -140,7 +140,6 @@ export class HabitLandingPage {
 
         this.habitPutService.habitput(habit).subscribe(
           data => {
-            console.log(habit.updatedAt)
             habit.checked = false;
             habit.updatedAt = habit.updatedAt.toISOString();
           },
@@ -161,6 +160,8 @@ export class HabitLandingPage {
         let habitCompleteModal = this.modal.create(HabitCompletePage, { habit }, myModalOptions);
           habitCompleteModal.present();
           habitCompleteModal.onDidDismiss((habit, action) => {
+
+            // Instead of delete, will need to update to be archived 
             if(action === 'delete') {
               let deletedHabit = habit._id;
 
