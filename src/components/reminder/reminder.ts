@@ -65,6 +65,7 @@ export class ReminderComponent implements OnInit {
             every: 'minute'
           };
           this.notifications.schedule(notification);
+          
         });
       
         this.goToHabitLandingPage.emit();

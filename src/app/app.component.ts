@@ -17,13 +17,14 @@ import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 import { HabitCompletePage } from '../pages/habit-complete/habit-complete';
+import { HabitRenewPage } from '../pages/habit-renew/habit-renew';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   // Temporarily changing the rootPage to the TabsPage for testing purposes
-  rootPage:any = LoginPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation: ScreenOrientation) {
     platform.ready().then(() => {
@@ -35,7 +36,6 @@ export class MyApp {
         statusBar.backgroundColorByName('white');
         screenOrientation.lock(screenOrientation.ORIENTATIONS.PORTRAIT);
       }
-
       splashScreen.hide();
     });
   }

@@ -17,7 +17,7 @@ export class HabitRenewPage {
   habit: object;
 
   constructor(public viewCtrl: ViewController, private deleteHabitService: DeleteHabitService) {
-    this.habit = this.viewCtrl.data.habit;
+    this.habit = this.viewCtrl.data.expiredHabit;
   }
 
   keepTracking() {

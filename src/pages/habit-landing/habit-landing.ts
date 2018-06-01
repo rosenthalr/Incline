@@ -30,6 +30,9 @@ import {
   HabitCompletePage
 } from '../habit-complete/habit-complete';
 import {
+  HabitRenewPage
+} from '../habit-renew/habit-renew';
+import {
   trigger,
   state,
   animate,
@@ -59,12 +62,12 @@ import * as moment from 'moment';
 })
 
 export class HabitLandingPage {
-  habits: Array < any > ;
+  habits: Array <any> ;
   testCheckboxOpen: boolean;
   testCheckboxResult: string;
-  lateHabits: Array < any > ;
+  lateHabits: Array <any> ;
   resetHabits: Array <any>;
-
+  expiredHabits: Array <object>;
 
   constructor(private habitGetService: HabitGetService,
     public habitPutService: HabitPutService,
@@ -87,7 +90,7 @@ export class HabitLandingPage {
   }
 
   loadHabits() {
-    let today = moment()
+    let today = moment();
      this.habitGetService.habitget().subscribe(
       (data) => {
         data.map(x => {
@@ -100,21 +103,37 @@ export class HabitLandingPage {
           var habitUpdatedAt = moment(habit.updatedAt).toISOString(true);
           var diff = today.diff(habitUpdatedAt, 'days');
           return diff === 2;
-        })
+        });
+
+        this.expiredHabits = this.habits.filter(habit => {
+          return today.diff(moment(habit.startDate),'days') === 21;
+        });
+
+        // If there are late habits, wait before showing the 21 Day Progress Notice pop-up (if applicable)
+        if(this.lateHabits.length === 0) { 
+          let expiredHabit = this.expiredHabits.pop();
+          console.log(expiredHabit);  
+          let HabitRenewModal = this.modal.create(HabitRenewPage, { 
+              expiredHabit
+          });
+          HabitRenewModal.present();
+        } else { // If there are no late habits, then it is safe to show the 21 Day Progress Notice pop-up
+
+        }
+
+        
+
 
         this.resetHabits = this.habits.filter(habit =>{
           return today.diff(habit.updatedAt,'days') > 2
-        })
-        console.log("Late Habits: ");
-        console.log(this.lateHabits);
+        });
+
       },
       (error) => {
         console.error(error)
       },
       () => {
-        console.log("Loaded Habits");
         this.openCheckboxModal(this.lateHabits);
-
       }
     )
   }
