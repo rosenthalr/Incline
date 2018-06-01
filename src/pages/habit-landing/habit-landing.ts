@@ -237,3 +237,10 @@ export class HabitLandingPage {
     console.log('ionViewDidLoad HabitLandingPage');
   }
 }
+
+//add to checkboxModal Dismiss(habit){
+  //habit.map(habit =>
+//if (habit.startdate-today)/21 === 0)
+//open habit-renew modal
+//}
+//basically seeing if there is time passed divisible by 21 for any following sprints
