@@ -1,0 +1,25 @@
+<!--
+  Generated template for the HabitRenewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+    <main>
+      <div class="almost">Almost there</div>
+      <div class="main-text">  <!-- needs to have the variable of total days done in backend-->
+        It's been 21 days! You logged your habit {{habit.title}} {{habit.totaldaysdone}} days out of 21.
+      </div>
+      <div>
+        Do you want to continue tracking this habit?
+      </div>
+    </main>
+    <footer>
+      <div class="button-container">
+        <button class="button" ion-button full (click)="deleteHabit()">Delete</button>
+        <button class="button" ion-button full (click)="keepTracking()">Get Back on Track</button>
+      </div>
+    </footer>
+  </div>
+</ion-content>
