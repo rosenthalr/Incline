@@ -67,9 +67,14 @@ export class ReminderComponent implements OnInit {
 
     this.habitPostService.habitpost(habit).subscribe(
       data => {
+
+        
         // Create notification here
         this.platform.ready().then(() => {
+          console.log(data);
+
           var now = new Date().getTime();
+
           let notification = {
             id: data._id,
             title: 'Alert for ' + data.title,
