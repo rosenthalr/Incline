@@ -70,7 +70,6 @@ export class ReminderComponent implements OnInit {
         // Create notification here
         this.platform.ready().then(() => {
           var now = new Date().getTime();
-          // var  _5_sec_from_now = new Date(now + 5*1000)
           let notification = {
             id: data._id,
             title: 'Alert for ' + data.title,
