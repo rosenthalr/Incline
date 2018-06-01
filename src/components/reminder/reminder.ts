@@ -40,22 +40,6 @@ export class ReminderComponent implements OnInit {
 
   emitGoToHabitLandingPage() {
 
-      // this.platform.ready().then(() => {
-      //     var now = new Date().getTime();
-      //     var  _5_sec_from_now = new Date(now + 5*1000);
-    
-      //     let notification = {
-      //       id: 4,
-      //       title: 'new notification in reminder.ts',
-      //       text: 'This is a repeating notificaiton',
-      //       firstAt: now,
-      //       every: 'minute'
-      //     };
-  
-      //   this.notifications.schedule(notification);
-
-      //   });
-
     let habit = {
       title: localStorage.getItem("basichabit"),
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
@@ -63,12 +47,10 @@ export class ReminderComponent implements OnInit {
       habitCategory: localStorage.getItem('habitCategory'),
       activehabit: true,
     };
-          
-
+        
     this.habitPostService.habitpost(habit).subscribe(
       data => {
 
-        
         // Create notification here
         this.platform.ready().then(() => {
           console.log(data);
