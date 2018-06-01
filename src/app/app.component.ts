@@ -24,7 +24,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = TabsPage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, private notifications: LocalNotifications, splashScreen: SplashScreen,screenOrientation: ScreenOrientation) {
     platform.ready().then(() => {
