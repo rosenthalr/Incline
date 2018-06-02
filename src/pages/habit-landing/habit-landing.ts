@@ -138,7 +138,7 @@ export class HabitLandingPage {
     let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
     habitRenewModal.present();
     habitRenewModal.onDidDismiss(() => {
-      if(this.expiredHabits.length > 0){
+      if(this.expiredHabits.length > 0) {
         this.showRenewHabitModal();
       }
     });
