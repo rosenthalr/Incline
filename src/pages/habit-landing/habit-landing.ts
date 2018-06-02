@@ -110,15 +110,10 @@ export class HabitLandingPage {
         });
 
         // If there are late habits, wait before showing the 21 Day Progress Notice pop-up (if applicable)
-        if(this.lateHabits.length === 0) { 
-          let expiredHabit = this.expiredHabits.pop();
-          console.log(expiredHabit);  
-          let HabitRenewModal = this.modal.create(HabitRenewPage, { 
-              expiredHabit
-          });
-          HabitRenewModal.present();
-        } else { // If there are no late habits, then it is safe to show the 21 Day Progress Notice pop-up
+        if(this.lateHabits.length > 0) {
 
+        } else { // If there are no late habits, then it is safe to show the 21 Day Progress Notice pop-up
+          this.showRenewHabitModal();
         }
 
         
@@ -136,6 +131,17 @@ export class HabitLandingPage {
         this.openCheckboxModal(this.lateHabits);
       }
     )
+  }
+
+  showRenewHabitModal():void {
+    let expiredHabit = this.expiredHabits.pop();
+    let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
+    habitRenewModal.present();
+    habitRenewModal.onDidDismiss(() => {
+      if(this.expiredHabits.length > 0){
+        this.showRenewHabitModal();
+      }
+    });
   }
 
   setHabitClass(habitCategory: string) {
@@ -180,7 +186,7 @@ export class HabitLandingPage {
           habitCompleteModal.present();
           habitCompleteModal.onDidDismiss((habit, action) => {
 
-            // Instead of delete, will need to update to be archived 
+            // Instead of delete, will need to upd ate to be archived 
             if(action === 'delete') {
               let deletedHabit = habit._id;
 
