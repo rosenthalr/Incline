@@ -18,6 +18,7 @@ export class HabitRenewPage {
 
   constructor(public viewCtrl: ViewController, private deleteHabitService: DeleteHabitService) {
     this.habit = this.viewCtrl.data.expiredHabit;
+    console.log(this.viewCtrl);
   }
 
   keepTracking() {
@@ -27,13 +28,10 @@ export class HabitRenewPage {
   deleteHabit() {
     this.deleteHabitService.deleteHabit(this.habit).subscribe( (res) => {
       this.viewCtrl.dismiss(this.habit, 'delete');
-    },(err) => {
+      }, (err) => {
       this.viewCtrl.dismiss(this.habit, 'delete');
-    }
-  );
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HabitRenewPage');
+      }
+    );
   }
   
 }

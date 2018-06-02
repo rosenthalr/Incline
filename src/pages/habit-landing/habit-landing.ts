@@ -68,6 +68,7 @@ export class HabitLandingPage {
   lateHabits: Array <any> ;
   resetHabits: Array <any>;
   expiredHabits: Array <object>;
+  completedHabits: Array <object>;
 
   constructor(private habitGetService: HabitGetService,
     public habitPutService: HabitPutService,
@@ -98,7 +99,6 @@ export class HabitLandingPage {
         });
         this.habits = data;
         console.log(this.habits);
-
         this.lateHabits = this.habits.filter(habit => {
           var habitUpdatedAt = moment(habit.updatedAt).toISOString(true);
           var diff = today.diff(habitUpdatedAt, 'days');
@@ -106,18 +106,15 @@ export class HabitLandingPage {
         });
 
         this.expiredHabits = this.habits.filter(habit => {
-          return today.diff(moment(habit.startDate),'days') === 21;
+          return (today.diff(moment(habit.targetEnd),'days') === 0) && habit.streakCounter !== 21 
+          && (today.isSame(moment(habit.updatedAt),'days'));
         });
 
-        // If there are late habits, wait before showing the 21 Day Progress Notice pop-up (if applicable)
-        if(this.lateHabits.length > 0) {
-
-        } else { // If there are no late habits, then it is safe to show the 21 Day Progress Notice pop-up
+        // If there are no late habits, then it is safe to show the 21 Day Progress Notice pop-up (if applicable)
+        // If this is not the case, we'll wait until the other pop-ups are shown
+        if(this.lateHabits.length === 0 && this.expiredHabits.length > 0) {
           this.showRenewHabitModal();
         }
-
-        
-
 
         this.resetHabits = this.habits.filter(habit =>{
           return today.diff(habit.updatedAt,'days') > 2
@@ -133,15 +130,93 @@ export class HabitLandingPage {
     )
   }
 
-  showRenewHabitModal():void {
-    let expiredHabit = this.expiredHabits.pop();
-    let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
-    habitRenewModal.present();
-    habitRenewModal.onDidDismiss(() => {
-      if(this.expiredHabits.length > 0) {
-        this.showRenewHabitModal();
+  showRenewHabitModal(habit: object = undefined):void {
+    if(!habit) {
+      let expiredHabit = this.expiredHabits.pop();
+      let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
+      habitRenewModal.present();
+      habitRenewModal.onDidDismiss((habit, action) => {
+      // Instead of delete, will need to update to be archived 
+      if(action === 'delete') {
+        let deletedHabit = habit._id;
+
+        // After a habit is deleted, remove it from the habits array
+        this.habits = this.habits.filter((habit) => {
+          return habit._id !== deletedHabit;
+        });
       }
-    });
+        if(this.expiredHabits.length > 0) {
+            this.showRenewHabitModal();
+        } 
+      });
+    } else {
+      let expiredHabit = habit;
+      let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
+      habitRenewModal.present();
+      habitRenewModal.onDidDismiss((habit, action) => {
+        // Instead of delete, will need to update to be archived 
+        if(action === 'delete') {
+          let deletedHabit = habit._id;
+  
+          // After a habit is deleted, remove it from the habits array
+          this.habits = this.habits.filter((habit) => {
+            return habit._id !== deletedHabit;
+          });
+        } else {
+          habit.targetEnd = moment().add(21,'days').toISOString();
+          this.habitPutService.habitput(habit).subscribe();
+        }
+      });
+    }
+  }
+
+  showHabitCompleteModal(habit: object = undefined):void {
+    const myModalOptions: ModalOptions = {
+      enableBackdropDismiss: false,
+      showBackdrop: false
+    };
+    if(habit) {
+      let habitCompleteModal = this.modal.create(HabitCompletePage, { habit }, myModalOptions);
+        habitCompleteModal.present();
+        habitCompleteModal.onDidDismiss((habit, action) => {
+          // Instead of delete, will need to update to be archived 
+          if(action === 'delete') {
+            let deletedHabit = habit._id;
+
+            // After a habit is deleted, remove it from the habits array
+            this.habits = this.habits.filter((habit) => {
+              return habit._id !== deletedHabit;
+            });
+          } else {
+            habit.targetEnd = moment().add(21,'days').toISOString();
+            this.habitPutService.habitput(habit).subscribe();
+          }
+      });
+    } else {
+      let habit = this.completedHabits.pop();
+      let habitCompleteModal = this.modal.create(HabitCompletePage, { habit }, myModalOptions);
+        habitCompleteModal.present();
+        habitCompleteModal.onDidDismiss((habit, action) => {
+
+          // Instead of delete, will need to update to be archived 
+          if(action === 'delete') {
+            let deletedHabit = habit._id;
+
+            // After a habit is deleted, remove it from the habits array
+            this.habits = this.habits.filter((habit) => {
+              return habit._id !== deletedHabit;
+            });
+          } else {
+            habit.targetEnd = moment().add(21,'days').toISOString();
+            this.habitPutService.habitput(habit).subscribe();
+          }
+          if(this.completedHabits.length > 0) {
+            this.showHabitCompleteModal();
+          } else if (this.expiredHabits.length > 0) {
+            this.showRenewHabitModal();
+          }
+      });
+    } 
   }
 
   setHabitClass(habitCategory: string) {
@@ -176,32 +251,13 @@ export class HabitLandingPage {
       habit.streakCounter += 1;
       habit.updatedAt = today.toDate();
 
-      // If habit streak is 21 days, show congratulations modal
       if(habit.streakCounter === 21) {
-        const myModalOptions: ModalOptions = {
-          enableBackdropDismiss: false,
-          showBackdrop: false
-        };
-        let habitCompleteModal = this.modal.create(HabitCompletePage, { habit }, myModalOptions);
-          habitCompleteModal.present();
-          habitCompleteModal.onDidDismiss((habit, action) => {
-
-            // Instead of delete, will need to upd ate to be archived 
-            if(action === 'delete') {
-              let deletedHabit = habit._id;
-
-              // After a habit is deleted, remove it from the habits array
-              this.habits = this.habits.filter((habit) => {
-                return habit._id !== deletedHabit;
-              });
-            } 
-            else {
-              // If a user would like to keep tracking a habit, even after 21 days...
-
-            }
-        });
+        this.showHabitCompleteModal(habit);
+      } else if(habit.streakCounter !== 21 
+        && (today.isSame(moment(habit.updatedAt),'days'))
+        && (today.isSame(moment(habit.targetEnd),'days'))) {
+        this.showRenewHabitModal(habit);
       }
-
 
       this.habitPutService.habitput(habit).subscribe(
         data => {
@@ -210,7 +266,7 @@ export class HabitLandingPage {
         },
         error => {
           console.error(error)
-        })
+        });
     }
   }
 
@@ -222,10 +278,7 @@ export class HabitLandingPage {
   }
 
   openCheckboxModal(habits) {
-    if(habits.length<1){
-      this.openResetModal(this.resetHabits);
-      return
-    }else{
+    if(habits.length >= 1){
       const myModalOptions: ModalOptions = {
         enableBackdropDismiss: false,
         showBackdrop: false
@@ -235,16 +288,35 @@ export class HabitLandingPage {
       }, myModalOptions);
       checkboxModal.present();
       checkboxModal.onDidDismiss(() => {
-        console.log("I have dismissed");
         this.openResetModal(this.resetHabits);
+
+        // If there was expired habits when we intially loaded the page, then make another call to 
+        // the db to ensure that this is still the case b/c may have changed after user completed the other pop-ups
+        if(this.expiredHabits.length > 0) {
+          this.habitGetService.habitget().subscribe((habits) => {
+            this.expiredHabits = habits.filter(habit => {
+              return (moment().diff(moment(habit.targetEnd),'days') === 0) 
+              && habit.streakCounter !== 21 
+              && (moment(habit.updatedAt).diff(moment(),'days') === 0);
+            });
+            this.completedHabits = habits.filter(habit => {
+              return habit.streakCounter === 21;
+            });
+            if (this.completedHabits.length > 0) {
+              this.showHabitCompleteModal();
+            } else {
+              this.showRenewHabitModal();
+            }
+          });
+        }
       });
     }
   }
 
   openResetModal(habits) {
-    if(habits.length<1){
+    if(habits.length < 1) {
       return
-    }else{
+    } else {
       const myModalOptions: ModalOptions = {
         enableBackdropDismiss: false,
         showBackdrop: false
@@ -253,20 +325,10 @@ export class HabitLandingPage {
          data: habits
         }, myModalOptions);
       resetModal.present();
-      resetModal.onDidDismiss((data) => {
-        console.log("I have dismissed");
-      });
+      resetModal.onDidDismiss((data) => {});
     }
   }
   ionViewDidEnter() {
     this.loadHabits();
-    console.log('ionViewDidLoad HabitLandingPage');
   }
 }
-
-//add to checkboxModal Dismiss(habit){
-  //habit.map(habit =>
-//if (habit.startdate-today)/21 === 0)
-//open habit-renew modal
-//}
-//basically seeing if there is time passed divisible by 21 for any following sprints

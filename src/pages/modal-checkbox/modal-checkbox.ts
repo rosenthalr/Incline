@@ -79,7 +79,7 @@ export class ModalCheckboxPage {
   }
 
   goToTrackingReminderPage(habits) {
-    this.updateCheckedHabits(habits)
+    this.updateCheckedHabits(habits);
     this.closeModal();
   }
 
