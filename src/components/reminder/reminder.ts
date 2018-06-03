@@ -2,8 +2,9 @@ import { Component,EventEmitter, Output, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
 import { HabitPostService } from '../../services/habitpost.service';
-
-
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Platform } from 'ionic-angular';
+import { stagger } from '@angular/animations/src/animation_metadata';
 /**
  * Generated class for the ReminderComponent component.
  *
@@ -23,7 +24,7 @@ export class ReminderComponent implements OnInit {
   max: string;
   hasChanged: boolean = false;
 
-  constructor(private habitPostService: HabitPostService){}
+  constructor(private habitPostService: HabitPostService, private platform: Platform, private notifications: LocalNotifications){}
 
   ngOnInit() {
     this.reminderTime = "08:00:00.000Z";
@@ -39,8 +40,23 @@ export class ReminderComponent implements OnInit {
   }
 
   emitGoToHabitLandingPage() {
-    console.log(this.reminderTime);
-    console.log(moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate());
+
+      // this.platform.ready().then(() => {
+      //     var now = new Date().getTime();
+      //     var  _5_sec_from_now = new Date(now + 5*1000);
+    
+      //     let notification = {
+      //       id: 4,
+      //       title: 'new notification in reminder.ts',
+      //       text: 'This is a repeating notificaiton',
+      //       firstAt: now,
+      //       every: 'minute'
+      //     };
+  
+      //   this.notifications.schedule(notification);
+
+      //   });
+
     let habit = {
       title: localStorage.getItem("basichabit"),
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
@@ -48,13 +64,38 @@ export class ReminderComponent implements OnInit {
       habitCategory: localStorage.getItem('habitCategory'),
       activehabit: true,
     };
+          
 
     this.habitPostService.habitpost(habit).subscribe(
       data => {
-        console.log('habit item below');
-        console.log(habit);
+
+        var startDate = data.startDate;
+        var reminder = data.reminder;
+        var reminderHour = moment(reminder).get('hour');
+        var reminderMinute = moment(reminder).get('minute');
+
+        // Create notification here
+        this.platform.ready().then(() => {
+          console.log(data);
+
+          var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+          console.log(startDate + ": this is startDate");
+          console.log(firstReminder + ": this is firstReminder");
+
+          let notification = {
+            id: data._id,
+            title: 'Alert for ' + data.title,
+            text: 'This is an alert for ' + data.title,
+            firstAt: firstReminder,
+            every: 'minute'
+          };
+
+          console.log(notification + ": notification");
+          this.notifications.schedule(notification);
+        });
+      
         this.goToHabitLandingPage.emit();
-         },
+      },
       error => {
         console.error(error);
       })

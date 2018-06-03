@@ -23,7 +23,7 @@ export class StartDateComponent implements OnInit {
   ngOnInit() {
     this.min =  moment().add(1, 'days').toISOString(true);
     this.max = moment().add(1, 'years').toISOString(true);
-    this.startDate = moment().add(1,"days").toISOString(true);
+    this.startDate = moment(this.startDate).add(1,"days").toISOString(true);
     this.targetDate = moment(this.startDate).add(21,'days').toISOString(true);
   }
 
