@@ -24,6 +24,7 @@ import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-remind
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 import { HabitDetailsPage } from '../pages/habit-details/habit-details';
 import { HabitCompletePage } from '../pages/habit-complete/habit-complete';
+import { HabitRenewPage } from '../pages/habit-renew/habit-renew';
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -74,7 +75,8 @@ import { DeleteHabitService } from '../services/delete-habit.service';
     TrackingReminderPage,
     ModalCheckboxPage,
     ResetStreakModalPage,
-    HabitCompletePage
+    HabitCompletePage,
+    HabitRenewPage,
   ],
   imports: [
     BrowserModule,
@@ -106,7 +108,8 @@ import { DeleteHabitService } from '../services/delete-habit.service';
     TrackingReminderPage,
     ModalCheckboxPage,
     ResetStreakModalPage,
-    HabitCompletePage
+    HabitCompletePage,
+    HabitRenewPage,
   ],
   providers: [
     StatusBar,

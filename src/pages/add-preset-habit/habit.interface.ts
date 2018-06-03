@@ -10,5 +10,7 @@ export interface Habit {
     streakCounter: number,
     updatedAt: Date,
     customReminder: Date,
+    //totaldaysdone: number,
+    //longeststreakCounter: number,
 
 }

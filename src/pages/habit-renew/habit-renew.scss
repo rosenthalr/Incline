@@ -1,0 +1,56 @@
+page-habit-renew {
+    .almost {
+        height: 8%;
+        font-family: AvenirNext;
+        font-size: 32px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: $black;
+        margin-bottom: 4.5%;
+    }
+    .main-text {
+        width: 74%;
+        height: 17%;
+        font-family: Lato;
+        font-size: 20px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.18;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4a4a4a;
+    }
+    main {
+        margin-left: 10.5%;
+        margin-bottom: 80px;
+    }
+    footer {
+        width: 100%;
+        .button-container {
+            display: block;
+            margin: 0 auto;
+            width: 72.6%;
+        }
+        button.button {
+            height: 44px;
+            background-color: #097ed5;
+            font-family: Lato;
+            font-size: 14px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: $white-two;
+        }
+        button:first-child {
+            margin-bottom: 3%;
+        }
+    }
+}
