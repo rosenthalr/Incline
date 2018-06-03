@@ -64,10 +64,11 @@ export class HabitLandingPage {
   testCheckboxOpen: boolean;
   testCheckboxResult: string;
   lateHabits: Array < any > ;
-  resetHabits: Array <any>;
+  resetHabits: Array < any > ;
   animating: boolean;
 
   constructor(private habitGetService: HabitGetService,
+    public habitDeleteService: HabitDeleteService,
     public habitPutService: HabitPutService,
     public navCtrl: NavController,
     private modal: ModalController,
@@ -89,10 +90,10 @@ export class HabitLandingPage {
 
   loadHabits() {
     let today = moment()
-     this.habitGetService.habitget().subscribe(
+    this.habitGetService.habitget().subscribe(
       (data) => {
         data.map(x => {
-          x.checked = x.updatedAt === new Date(new Date().setHours(0,0,0,0)).toISOString();
+          x.checked = x.updatedAt === new Date(new Date().setHours(0, 0, 0, 0)).toISOString();
         });
         this.habits = data;
         console.log(this.habits);
@@ -103,8 +104,8 @@ export class HabitLandingPage {
           return diff === 2;
         })
 
-        this.resetHabits = this.habits.filter(habit =>{
-          return today.diff(habit.updatedAt,'days') > 2
+        this.resetHabits = this.habits.filter(habit => {
+          return today.diff(habit.updatedAt, 'days') > 2
         })
         console.log("Late Habits: ");
         console.log(this.lateHabits);
@@ -137,7 +138,8 @@ export class HabitLandingPage {
         return
       } else {
         habit.streakCounter -= 1;
-        habit.updatedAt = today.subtract(1,'day').toDate();
+        habit.updateCounter -= 1;
+        habit.updatedAt = today.subtract(1, 'day').toDate();
         this.habitPutService.habitput(habit).subscribe(
           data => {
             console.log(habit.updatedAt)
@@ -150,6 +152,8 @@ export class HabitLandingPage {
       }
     } else {
       habit.streakCounter += 1;
+      habit.updateCounter += 1;
+      habit.longestStreakCounter = habit.longestStreakCounter < habit.streakCounter ? habit.streakCounter : habit.longestStreakCounter;
       habit.updatedAt = today.toDate();
       this.habitPutService.habitput(habit).subscribe(
         data => {
@@ -162,7 +166,28 @@ export class HabitLandingPage {
         })
     }
   }
-
+  setReminderTime(habit){
+    this.habitPutService.habitput(habit).subscribe(
+      data=>{
+        console.log(data);
+      },
+      error=>{
+        console.error(error);
+      }
+    )
+  }
+  deleteHabit(habit){
+    this.habitDeleteService.habitdelete(habit).subscribe(
+      data =>{
+        habit.animating = false;
+        this.animating = false;
+        setTimeout(this.loadHabits(),1000);
+      },
+      error =>{
+        console.error(error);
+      }
+    )
+  }
   animationTrigger(habit) {
     habit.animating = habit.animating ? false : true;
     this.animating = this.animating ? false : true;
@@ -170,10 +195,10 @@ export class HabitLandingPage {
 
 
   openCheckboxModal(habits) {
-    if(habits.length<1){
+    if (habits.length < 1) {
       this.openResetModal(this.resetHabits);
       return
-    }else{
+    } else {
       const myModalOptions: ModalOptions = {
         enableBackdropDismiss: false,
         showBackdrop: false
@@ -190,16 +215,16 @@ export class HabitLandingPage {
   }
 
   openResetModal(habits) {
-    if(habits.length<1){
+    if (habits.length < 1) {
       return
-    }else{
+    } else {
       const myModalOptions: ModalOptions = {
         enableBackdropDismiss: false,
         showBackdrop: false
       };
       const resetModal = this.modal.create(ResetStreakModalPage, {
-         data: habits
-        }, myModalOptions);
+        data: habits
+      }, myModalOptions);
       resetModal.present();
       resetModal.onDidDismiss((data) => {
         console.log("I have dismissed");
