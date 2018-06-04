@@ -76,8 +76,9 @@ goToHabitLandingPage(){
       var reminder = data.reminder;
       var reminderHour = moment(reminder).get('hour');
       var reminderMinute = moment(reminder).get('minute');
+      var now = moment();
 
-      this.platform.ready().then(() => {
+    this.platform.ready().then(() => {
       console.log(data);
 
       var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
@@ -85,14 +86,24 @@ goToHabitLandingPage(){
       console.log(firstReminder + ": this is firstReminder");
 
       let notification = {
-        id: data._id,
+        // id: data._id,
         title: 'Alert for ' + data.title,
         text: 'This is an alert for ' + data.title,
-        firstAt: firstReminder,
-        every: 'day'
+        firstAt: now,
+        every: 'minute'
       };
       console.log(notification + ": notification");
       this.notifications.schedule(notification);
+
+      //Setting the 21 days notification
+
+      let reminderNotification = {
+        id: data._id,
+        title: '21 day alert for ' + data.title,
+        text: 'This is your 21st day tracking this habit: ' + data.title,
+        firstAt: data.targetEnd,
+      };
+      this.notifications.schedule(reminderNotification);
             
       });
 

@@ -105,4 +105,5 @@
     <engine name="ios" spec="~4.5.4" />
     <allow-navigation href="http://10.13.229.81:8100" />
     <allow-navigation href="http://10.0.0.94:8100" />
+    <allow-navigation href="http://10.10.188.154:8101" />
 </widget>
