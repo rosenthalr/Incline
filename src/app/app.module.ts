@@ -21,6 +21,7 @@ import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 import { HabitDetailsPage } from '../pages/habit-details/habit-details';
+import { SplashPage } from '../pages/splash/splash';
 
 
 // Including http module for use on login page
@@ -72,7 +73,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications'
     AddPresetHabitPage,
     TrackingReminderPage,
     ModalCheckboxPage,
-    ResetStreakModalPage
+    ResetStreakModalPage,
+    SplashPage
   ],
   imports: [
     BrowserModule,
@@ -103,7 +105,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications'
     AddPresetHabitPage,
     TrackingReminderPage,
     ModalCheckboxPage,
-    ResetStreakModalPage
+    ResetStreakModalPage,
+    SplashPage
   ],
   providers: [
     StatusBar,
