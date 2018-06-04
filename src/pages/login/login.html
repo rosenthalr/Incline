@@ -9,7 +9,7 @@
 
         <div class="input-container">
           <ion-item class="input-group" [ngClass]="{'input-error': emailError }">
-            <ion-label class="Field-Label" [ngClass]="{'error': emailError }" floating>TEST</ion-label>
+            <ion-label class="Field-Label" [ngClass]="{'error': emailError }" floating>Email</ion-label>
             <ion-input class="Field-Input Email-Input" [ngClass]="{'error': emailError}" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfEmailEmpty($event, 'email')" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
           </ion-item>
           <ion-item [ngClass]="{show:!emailError,error:emailError}" class="Error-Text">Hmm...We don't have an account for this email.</ion-item>

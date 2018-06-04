@@ -72,7 +72,7 @@ export class ReminderComponent implements OnInit {
             firstAt: firstReminder,
             every: 'minute'
           };
-
+//Need to add logic in here that disable a daily reminder
           console.log(notification + ": notification");
           this.notifications.schedule(notification);
           
