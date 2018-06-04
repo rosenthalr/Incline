@@ -23,8 +23,8 @@ import { HabitRenewPage } from '../pages/habit-renew/habit-renew';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // Temporarily changing the rootPage to the TabsPage for testing purposes
-  rootPage:any = TabsPage;
+  // Temporarily changing the rootPage to the categories page for testing purposes
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation: ScreenOrientation) {
     platform.ready().then(() => {

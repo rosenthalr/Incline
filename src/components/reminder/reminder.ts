@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { HabitPostService } from '../../services/habitpost.service';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Platform } from 'ionic-angular';
+import { stagger } from '@angular/animations/src/animation_metadata';
 /**
  * Generated class for the ReminderComponent component.
  *
@@ -51,19 +52,28 @@ export class ReminderComponent implements OnInit {
     this.habitPostService.habitpost(habit).subscribe(
       data => {
 
+        var startDate = data.startDate;
+        var reminder = data.reminder;
+        var reminderHour = moment(reminder).get('hour');
+        var reminderMinute = moment(reminder).get('minute');
+
         // Create notification here
         this.platform.ready().then(() => {
           console.log(data);
 
-          var now = new Date().getTime();
+          var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+          console.log(startDate + ": this is startDate");
+          console.log(firstReminder + ": this is firstReminder");
 
           let notification = {
             id: data._id,
             title: 'Alert for ' + data.title,
             text: 'This is an alert for ' + data.title,
-            firstAt: now,
+            firstAt: firstReminder,
             every: 'minute'
           };
+
+          console.log(notification + ": notification");
           this.notifications.schedule(notification);
           
         });
