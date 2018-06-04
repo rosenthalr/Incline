@@ -5,6 +5,8 @@ import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { HabitPostService } from '../../services/habitpost.service';
 import { Habit } from './habit.interface'
 import { TabsPage } from '../tabs/tabs';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Platform } from 'ionic-angular';
 
 /**
  * Generated class for the AddPresetHabitPage page.
@@ -23,14 +25,14 @@ export class AddPresetHabitPage {
   private startDate: String;
   private minDateOfPicker: String;
   private maxDateOfPicker: String;
-  private target: String;
+  target: string;
   habit;
   reminder;
   currentColor:string;
   habitCategory:string;
 
 
-  constructor(private habitPostService: HabitPostService, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private habitPostService: HabitPostService, public navCtrl: NavController, public navParams: NavParams, private platform: Platform, private notifications: LocalNotifications) {
    this.habit = this.navParams.get('habit');
    this.startDate= moment().add(1, 'days').startOf("day").toISOString(true);
    this.minDateOfPicker= moment().add(1, 'days').startOf("day").toISOString(true);
@@ -43,34 +45,61 @@ export class AddPresetHabitPage {
 
   }
 
-  setDate(startDate){
-    this.target = moment(startDate).add(21, 'days').startOf("day").toISOString(true);
+  setDate(startDate, target){
+    this.target = moment(startDate).add(22, 'days').startOf("day").toISOString(true);
     var reminderMoment = moment(this.reminder as moment.MomentInput);
     this.reminder = moment(startDate).hours(reminderMoment.hours()).minutes(reminderMoment.minutes()).toISOString(true);
+    localStorage.setItem("targetdate", this.target);
   }
 
-  goToHabitLandingPage(){
-    let habit = {
-      title: this.habit,
-      startDate: this.startDate,
-      targeteEnd: this.target,
-      reminder: this.reminder,
-      streakCounter: 0,
-      habitCategory: this.habitCategory,
-      activehabit: true,
-    };
-console.log("here");
-    this.habitPostService.habitpost(habit).subscribe(
 
-      data => {
-        this.navCtrl.pop();
-        this.navCtrl.pop();
-        this.navCtrl.parent.select(0);
-         },
-      error => {
-        console.error(error);
-      })
-  }
+goToHabitLandingPage(){
+  let habit = {
+    title: this.habit,
+    startDate: this.startDate,
+    targetEnd: localStorage.getItem("targetdate"),
+    reminder: this.reminder,
+    streakCounter: 0,
+    habitCategory: this.habitCategory,
+    activehabit: true,
+  };
+
+  this.habitPostService.habitpost(habit).subscribe(
+    data => {
+      this.navCtrl.pop();
+      this.navCtrl.pop();
+      this.navCtrl.parent.select(0);
+
+      //Set notification below
+
+      var startDate = data.startDate;
+      var reminder = data.reminder;
+      var reminderHour = moment(reminder).get('hour');
+      var reminderMinute = moment(reminder).get('minute');
+
+      this.platform.ready().then(() => {
+      console.log(data);
+
+      var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+      console.log(startDate + ": this is startDate");
+      console.log(firstReminder + ": this is firstReminder");
+
+      let notification = {
+        id: data._id,
+        title: 'Alert for ' + data.title,
+        text: 'This is an alert for ' + data.title,
+        firstAt: firstReminder,
+        every: 'day'
+      };
+      console.log(notification + ": notification");
+      this.notifications.schedule(notification);
+            
+      });
+
+    }
+  )
+}
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddPresetHabitPage');
@@ -78,3 +107,4 @@ console.log("here");
   }
 
 }
+

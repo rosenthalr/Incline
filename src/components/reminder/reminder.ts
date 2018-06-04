@@ -33,6 +33,7 @@ export class ReminderComponent implements OnInit {
 
   setReminderTime() {
     this.hasChanged = true;
+    console.log(this.reminderTime + ":This is reminder time");
   }
 
   emitGoBack() {
@@ -43,6 +44,8 @@ export class ReminderComponent implements OnInit {
 
     let habit = {
       title: localStorage.getItem("basichabit"),
+      startDate: localStorage.getItem("basicstartdate"),
+      targetEnd: localStorage.getItem("basictargetdate"),  
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
       streakCounter: 0,
       habitCategory: localStorage.getItem('habitCategory'),
@@ -70,7 +73,7 @@ export class ReminderComponent implements OnInit {
             title: 'Alert for ' + data.title,
             text: 'This is an alert for ' + data.title,
             firstAt: firstReminder,
-            every: 'minute'
+            every: 'day'
           };
 //Need to add logic in here that disable a daily reminder
           console.log(notification + ": notification");

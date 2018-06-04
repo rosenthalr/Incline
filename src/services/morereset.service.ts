@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MoreResetService {
 
-  public apiUrl = 'https://goals.digitalstudio.io/morereset';
+  public apiUrl = 'http://localhost:7000/morereset';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
 
