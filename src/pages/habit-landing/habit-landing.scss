@@ -55,7 +55,7 @@ page-habit-landing {
     padding: 10px;
     flex-basis: 43.5%;
     background-color: white;
-    transition: opacity 0.2s, height 1s, width 1s, margin 0.3s, padding 0.3s;
+    transition: opacity 1s ease-in, height 1s, width 1s, margin 0.3s, padding 0.3s;
     .habit-close-button{
       position: absolute;
       font-size: 20px;
@@ -66,23 +66,28 @@ page-habit-landing {
       height:auto;
 
     }
-    .habit-headline {
-      flex: 200px;
-      margin: auto;
-      h2 {
-        text-align: left;
+    .habit-details{
+      opacity:0;
+      transition:opacity 0.2s ease-in-out;
+      .habit-headline {
+        flex: 200px;
+        margin: auto;
+        h2 {
+          text-align: left;
+        }
+      }
+      .habit-metric {
+        text-align: center;
+      }
+      .habit-delete{
+        text-align: center;
+        margin: 100px 0 40px 0;
       }
     }
-    .habit-metric {
-      text-align: center;
-    }
-    .habit-delete{
-      text-align: center;
-      margin: 100px 0 40px 0;
-    }
-    .habit-title {
+
+    .habit-title h2 {
       font-family: Lato;
-      height: 52px;
+      height: 42px;
       color: #4a4a4a;
       text-align: left;
       transition: text-align 1s, font-size 1s, color 1s;
@@ -118,13 +123,13 @@ page-habit-landing {
     circle {
       fill: none !important;
     }
-    text {
+    .circle text {
       stroke: $dark-grey;
       fill: $dark-grey;
     }
   }
   .check {
-    transition: stroke-opacity 0.6s;
+    transition: stroke-opacity 0.3s;
     stroke-opacity: 0;
   }
   .toolbar-background {
@@ -149,6 +154,7 @@ page-habit-landing {
       height: 100%
     }
     .habit.still {
+      transition:opacity 0.2s;
       height: 0px;
       width: 0px;
       margin: 0px;
@@ -162,8 +168,8 @@ page-habit-landing {
       margin: 0px;
       padding: 22px;
       overflow-y: scroll;
-      .habit-title {
-        text-align: left;
+      .habit-title h2{
+        text-align: center;
         font-size: 22px;
       }
       .habit-close-button{
@@ -174,6 +180,10 @@ page-habit-landing {
       }
       .details{
         opacity:0;
+      }
+      .habit-details{
+        transition:opacity 1.5s ease-in;
+        opacity:1;
       }
 
     }

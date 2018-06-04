@@ -34,6 +34,9 @@ import {
   state,
   animate,
   transition,
+  query,
+  style,
+  keyframes,
 } from '@angular/animations';
 import * as moment from 'moment';
 /**
@@ -53,19 +56,44 @@ import * as moment from 'moment';
     HabitDeleteService,
   ],
   animations: [
-    trigger('checked', [
-      transition('0 => 1', animate('5000ms ease-in')),
-    ])
+    trigger('habitsEnter', [
+      transition('* => *', [
+        // remember that :enter is a special
+        // selector that will return each
+        // newly inserted node in the ngFor list
+        query(":enter", [
+          style({ opacity: 0 }),
+          animate('0.5s', style({ opacity: 1 }))
+        ],{ optional: true })
+      ])
+    ]),
+    trigger('showDetails',[
+      transition('*=>shown',[
+        query(".habit.still", [
+          style({
+            width: '163px',
+            height: '251px',
+            opacity: '1'
+          }),
+          keyframes([
+            style({
+
+              offset: 0.2})
+          ])
+        ])
+      ])
+    ]
   ]
 })
 
 export class HabitLandingPage {
-  habits: Array < any > ;
+  habits: Array < any > =[];
   testCheckboxOpen: boolean;
   testCheckboxResult: string;
   lateHabits: Array < any > ;
   resetHabits: Array < any > ;
   animating: boolean;
+  showDetails: String;
 
   constructor(private habitGetService: HabitGetService,
     public habitDeleteService: HabitDeleteService,
