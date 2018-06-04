@@ -12,7 +12,7 @@ const httpOptions = {
 @Injectable()
 export class ResetService {
 
-  public apiUrl = 'http://localhost:7000/moreReset';
+  public apiUrl = 'https://goals.digitalstudio.io/moreReset';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
 

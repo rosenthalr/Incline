@@ -30,14 +30,9 @@ import {
   ResetStreakModalPage
 } from '../reset-streak-modal/reset-streak-modal';
 import {
-  trigger,
-  state,
-  animate,
-  transition,
-  query,
-  style,
-  keyframes,
-} from '@angular/animations';
+  habitsEnter,
+  showDetails,
+} from './habit-landing.animations';
 import * as moment from 'moment';
 /**
  * Generated class for the HabitLandingPage page.
@@ -56,33 +51,8 @@ import * as moment from 'moment';
     HabitDeleteService,
   ],
   animations: [
-    trigger('habitsEnter', [
-      transition('* => *', [
-        // remember that :enter is a special
-        // selector that will return each
-        // newly inserted node in the ngFor list
-        query(":enter", [
-          style({ opacity: 0 }),
-          animate('0.5s', style({ opacity: 1 }))
-        ],{ optional: true })
-      ])
-    ]),
-    trigger('showDetails',[
-      transition('*=>shown',[
-        query(".habit.still", [
-          style({
-            width: '163px',
-            height: '251px',
-            opacity: '1'
-          }),
-          keyframes([
-            style({
-
-              offset: 0.2})
-          ])
-        ])
-      ])
-    ]
+    habitsEnter,
+    showDetails
   ]
 })
 
@@ -100,7 +70,7 @@ export class HabitLandingPage {
     public habitPutService: HabitPutService,
     public navCtrl: NavController,
     private modal: ModalController,
-    public navParams: NavParams
+    public navParams: NavParams,
   ) {}
 
   createNewPage() {
