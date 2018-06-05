@@ -13,7 +13,7 @@
         <ion-title>Step {{page}} of 4</ion-title>
       </ion-navbar>
     </ion-header>
-<ion-content no-bounce>
+<ion-content no-bounce class="background">
   <ion-slides (ionSlideDidChange)="getSlideNumber()"#modalSlider pager=false>
     <ion-slide >
       <name-habit (nextPage)="nextPage($event)" (onNamePicked)="onNamePicked($event)"></name-habit>
