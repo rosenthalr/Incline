@@ -29,9 +29,9 @@
 
     </div>
   </div>
-  <ion-grid class="habit-grid" [ngClass]="{animating:animating}">
-    <ion-row [@habitsEnter]="habits.length"class="habit-row">
-      <ion-col class="habit-col"  [ngClass]="{animating:habit.animating, still:!habit.animating}" *ngFor=" let habit of habits">
+  <ion-grid  class="habit-grid" [ngClass]="{animating:animating}">
+    <ion-row  [@habitsEnter]="habits.length" class="habit-row">
+      <ion-col  class="habit-col"  [ngClass]="{animating:habit.animating, still:!habit.animating}" *ngFor=" let habit of habits">
         <ion-card class="habit" [ngClass]="{checked:habit.checked, animating:habit.animating, still:!habit.animating}">
           <ion-card-title class="habit-title">
             <button start ion-button class="habit-close-button" (click)="animationTrigger(habit)">

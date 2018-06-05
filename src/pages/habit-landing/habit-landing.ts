@@ -63,7 +63,7 @@ export class HabitLandingPage {
   lateHabits: Array < any > ;
   resetHabits: Array < any > ;
   animating: boolean;
-  showDetails: String;
+  showDetails: String = 'hidden';
 
   constructor(private habitGetService: HabitGetService,
     public habitDeleteService: HabitDeleteService,
@@ -90,7 +90,8 @@ export class HabitLandingPage {
     let today = moment()
     this.habitGetService.habitget().subscribe(
       (data) => {
-        data.map(x => {
+        data.map((x,i) => {
+          x.index = i;
           x.checked = x.updatedAt === new Date(new Date().setHours(0, 0, 0, 0)).toISOString();
         });
         this.habits = data;
@@ -179,7 +180,8 @@ export class HabitLandingPage {
       data =>{
         habit.animating = false;
         this.animating = false;
-        setTimeout(this.loadHabits(),1000);
+        this.showDetails= 'hidden'
+        this.habits.splice(habit.index,1);
       },
       error =>{
         console.error(error);
@@ -189,6 +191,7 @@ export class HabitLandingPage {
   animationTrigger(habit) {
     habit.animating = habit.animating ? false : true;
     this.animating = this.animating ? false : true;
+    this.showDetails = this.showDetails==='shown' ? "hidden" : "shown";
   }
 
 
