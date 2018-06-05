@@ -1,5 +1,5 @@
 {
-  "name": "goals-mobile",
+  "name": "incline",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -30,7 +30,7 @@
     "@types/moment": "^2.13.0",
     "angular-svg-round-progressbar": "^1.1.1",
     "cordova-android": "^7.0.0",
-    "cordova-ios": "4.5.4",
+    "cordova-ios": "^4.5.4",
     "cordova-plugin-badge": "^0.8.7",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
@@ -47,7 +47,8 @@
     "npm": "^5.7.1",
     "rxjs": "5.5.7",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.20"
+    "zone.js": "0.8.20",
+    "cordova-plugin-screen-orientation": "^3.0.1"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.8",
@@ -66,8 +67,8 @@
       "cordova-plugin-local-notification": {}
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
