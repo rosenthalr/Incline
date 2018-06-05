@@ -7,6 +7,7 @@ import { SuccessPage } from '../success/success';
 import { CreateAccountService } from '../../services/create-account.service'
 //import { CreateAccountService } from '../../services/create-account.service';
 import {Observable} from 'rxjs/Observable';
+import {LoginService} from '../../services/login.service'
 
 
 
@@ -21,7 +22,7 @@ import {Observable} from 'rxjs/Observable';
 @Component({
   selector: 'page-create-account',
   templateUrl: 'create-account.html',
-  providers:[CreateAccountService],
+  providers:[CreateAccountService, LoginService],
 })
 export class CreateAccountPage implements OnInit {
 
@@ -41,7 +42,7 @@ export class CreateAccountPage implements OnInit {
   public user: User;
 
 
-  constructor(public createAccountService:CreateAccountService,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public loginService: LoginService,public createAccountService:CreateAccountService,public navCtrl: NavController, public navParams: NavParams) {
   }
 
     ngOnInit() {
@@ -61,6 +62,11 @@ export class CreateAccountPage implements OnInit {
       this.createAccountService.createaccount(model).subscribe(
         data => {
           console.log(model);
+          this.loginService.login(model).subscribe(
+            data=>{
+              console.log("User Logged In");
+            }
+          )
         },
         error => {
           console.error(error);
@@ -109,7 +115,7 @@ export class CreateAccountPage implements OnInit {
           this.lastname = userInfo;
         }
         else if (field='email') {
-          this.email = userInfo;
+          this.email = userInfo.toLowerCase();
         }
         else if (field='password1') {
           this.password1 = userInfo;

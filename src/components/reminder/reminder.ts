@@ -41,8 +41,10 @@ export class ReminderComponent implements OnInit {
   }
 
   emitGoToHabitLandingPage() {
-
+    let today = moment().startOf('day');
+    let yesturday = today.subtract(1,'day');
     let habit = {
+      updatedAt: today.toDate(),
       title: localStorage.getItem("basichabit"),
       startDate: localStorage.getItem("basicstartdate"),
       targetEnd: localStorage.getItem("basictargetdate"),  

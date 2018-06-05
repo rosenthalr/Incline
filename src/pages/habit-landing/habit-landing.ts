@@ -18,6 +18,9 @@ import {
   HabitPutService
 } from '../../services/habitput.service';
 import {
+  HabitDeleteService
+} from '../../services/habitdelete.service';
+import {
   HabitDetailsPage
 } from '../habit-details/habit-details';
 import {
@@ -38,6 +41,10 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import {
+  habitsEnter,
+  showDetails,
+} from './habit-landing.animations';
 import * as moment from 'moment';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Platform } from 'ionic-angular';
@@ -55,24 +62,27 @@ import { Platform } from 'ionic-angular';
   providers: [
     HabitGetService,
     HabitPutService,
+    HabitDeleteService,
   ],
   animations: [
-    trigger('checked', [
-      transition('0 => 1', animate('5000ms ease-in')),
-    ])
+    habitsEnter,
+    showDetails
   ]
 })
 
 export class HabitLandingPage {
-  habits: Array <any> ;
-  testCheckboxOpen: boolean;
-  testCheckboxResult: string;
-  lateHabits: Array <any> ;
-  resetHabits: Array <any>;
   expiredHabits: Array <object>;
   completedHabits: Array <object>;
+  habits: Array < any > =[];
+  testCheckboxOpen: boolean;
+  testCheckboxResult: string;
+  lateHabits: Array < any > ;
+  resetHabits: Array < any > ;
+  animating: boolean;
+  showDetails: String = 'hidden';
 
   constructor(private habitGetService: HabitGetService,
+    public habitDeleteService: HabitDeleteService,
     public habitPutService: HabitPutService,
     public navCtrl: NavController,
     private modal: ModalController,
@@ -95,11 +105,12 @@ export class HabitLandingPage {
   }
 
   loadHabits() {
-    let today = moment();
-     this.habitGetService.habitget().subscribe(
+    let today = moment()
+    this.habitGetService.habitget().subscribe(
       (data) => {
-        data.map(x => {
-          x.checked = x.updatedAt === new Date(new Date().setHours(0,0,0,0)).toISOString();
+        data.map((x,i) => {
+          x.index = i;
+          x.checked = x.updatedAt === new Date(new Date().setHours(0, 0, 0, 0)).toISOString();
         });
         this.habits = data;
         console.log(this.habits);
@@ -274,8 +285,8 @@ export class HabitLandingPage {
         return
       } else {
         habit.streakCounter -= 1;
-        habit.updatedAt = today.subtract(1,'day').toDate();
-
+        habit.updateCounter -= 1;
+        habit.updatedAt = today.subtract(1, 'day').toDate();
         this.habitPutService.habitput(habit).subscribe(
           data => {
             habit.checked = false;
@@ -287,6 +298,8 @@ export class HabitLandingPage {
       }
     } else {
       habit.streakCounter += 1;
+      habit.updateCounter += 1;
+      habit.longestStreakCounter = habit.longestStreakCounter < habit.streakCounter ? habit.streakCounter : habit.longestStreakCounter;
       habit.updatedAt = today.toDate();
 
       if(habit.streakCounter === 21) {
@@ -318,9 +331,42 @@ export class HabitLandingPage {
   animationEnded(habit) {
     habit.animating = false
   }
+  
+  setReminderTime(habit){
+    this.habitPutService.habitput(habit).subscribe(
+      data=>{
+        console.log(data);
+      },
+      error=>{
+        console.error(error);
+      }
+    )
+  }
+  deleteHabit(habit){
+    this.habitDeleteService.habitdelete(habit).subscribe(
+      data =>{
+        habit.animating = false;
+        this.animating = false;
+        this.showDetails= 'hidden'
+        this.habits.splice(habit.index,1);
+      },
+      error =>{
+        console.error(error);
+      }
+    )
+  }
+  animationTrigger(habit) {
+    habit.animating = habit.animating ? false : true;
+    this.animating = this.animating ? false : true;
+    this.showDetails = this.showDetails==='shown' ? "hidden" : "shown";
+  }
+
 
   openCheckboxModal(habits) {
-    if(habits.length >= 1){
+    if (habits.length < 1) {
+      this.openResetModal(this.resetHabits);
+      return
+    } else {
       const myModalOptions: ModalOptions = {
         enableBackdropDismiss: false,
         showBackdrop: false
@@ -356,7 +402,7 @@ export class HabitLandingPage {
   }
 
   openResetModal(habits) {
-    if(habits.length < 1) {
+    if (habits.length < 1) {
       return
     } else {
       const myModalOptions: ModalOptions = {
@@ -364,8 +410,8 @@ export class HabitLandingPage {
         showBackdrop: false
       };
       const resetModal = this.modal.create(ResetStreakModalPage, {
-         data: habits
-        }, myModalOptions);
+        data: habits
+      }, myModalOptions);
       resetModal.present();
       resetModal.onDidDismiss((data) => {});
     }

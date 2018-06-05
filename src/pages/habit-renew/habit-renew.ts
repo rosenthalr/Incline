@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { DeleteHabitService } from '../../services/delete-habit.service';
+import { HabitDeleteService } from '../../services/habitdelete.service';
 /**
  * Generated class for the HabitRenewPage page.
  *
@@ -16,7 +16,7 @@ import { DeleteHabitService } from '../../services/delete-habit.service';
 export class HabitRenewPage {
   habit: object;
 
-  constructor(public viewCtrl: ViewController, private deleteHabitService: DeleteHabitService) {
+  constructor(public viewCtrl: ViewController, private deleteHabitService: HabitDeleteService) {
     this.habit = this.viewCtrl.data.expiredHabit;
     console.log(this.viewCtrl);
   }
@@ -26,7 +26,7 @@ export class HabitRenewPage {
   }
 
   deleteHabit() {
-    this.deleteHabitService.deleteHabit(this.habit).subscribe( (res) => {
+    this.deleteHabitService.habitdelete(this.habit).subscribe( (res) => {
       this.viewCtrl.dismiss(this.habit, 'delete');
       }, (err) => {
       this.viewCtrl.dismiss(this.habit, 'delete');

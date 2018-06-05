@@ -58,6 +58,7 @@ name-habit{
 }
   .name-habit-input-group {
     border-top-color: transparent !important;
+    margin-top: 110px;
   }
   .Rectangle-3{
       border-radius: 0px;
@@ -65,10 +66,107 @@ name-habit{
       height: 44px;
       background-color: $cerulean;
       opacity: 0.5;
-      margin-top: 21%;
+      margin-top: 18%;
       transition: all 500ms ease;
       .active{
           opacity:1;
       }
   }
 }
+  
+  /*
+  
+  .name-habit-header {
+    height: 25%;
+    width: 100%;
+    position:absolute;
+    top:0;
+    height: 186px;
+    //background:linear-gradient($cerulean,#0aafed)
+  }
+  .background{
+    background-color: #006dc6;
+  }
+  .name-habit-header-title {
+    font-family: Lato;
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: left;
+    color: $white-two;
+    height: 100px;
+    width: 100%;
+}
+
+  .name-habit-header-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      font-family: Lato;
+      font-size: 26px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.18;
+      letter-spacing: normal;
+      color: $white-two;
+      height:100%;
+      width: 100%;
+      background-color: transparent;
+      padding:0px 30px;
+      //margin-left: 7.5%;
+      //padding-top:30px;
+  }
+  .name-habit-body{
+    height: calc(100vh - 28vh - 186px);
+  }
+  .name-habit-sun{
+      position: absolute;
+      left: 0;
+      bottom:0;
+  }
+  .name-habit-container{
+    width: 82%;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  .name-habit-container > .item-ios {
+    padding-left:0;
+}
+  .name-habit-input-group {
+    border-top-color: transparent !important;
+    background-color: transparent;
+    color: white;
+  }
+  .name-habit-input{
+    color:white;
+  }
+  .text-input{
+    color: white;
+  }
+  .next{
+      color: white;
+      float: right;
+      font-family: Lato;
+      font-size: 16px;
+     // font-weight: bold;
+      letter-spacing: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      z-index:-1;
+      position:relative;
+      //margin-top: 10%;
+      margin-right: 4%;
+      transition: all 500ms ease;
+      .inactive{
+          opacity:0;
+      }
+  }
+}
+*/

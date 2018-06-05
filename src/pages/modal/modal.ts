@@ -40,7 +40,7 @@ export class ModalPage implements OnInit {
   }
   onCategorySelected(category) {
     this.category = category;
-    localStorage.setItem("category", category);              
+    localStorage.setItem("category", category);
     // Navigate to the next page (hasn't been created yet -- next sprint)
     //this.navCtslideNexttPage);
   }
@@ -60,7 +60,8 @@ export class ModalPage implements OnInit {
   }
 
   goToHabitLandingPage(){
-    this.navCtrl.push(HabitLandingPage);
+    this.navCtrl.pop();
+    this.navCtrl.parent.select(0);
   }
 
 

@@ -184,7 +184,7 @@ input {
 
 .login-main {
   position: absolute;
-  top: 282px;;
+  top: 230px;
   width: 100%;
 }
 
@@ -200,7 +200,10 @@ input {
   letter-spacing: normal;
   text-align: center;
   color: $black;
-  margin-top: 35px;
+  margin-top: 10px;
+}
+.input-container{
+  height: 75px;
 }
 
 .Rectangle-3 {
@@ -208,7 +211,7 @@ input {
   width: 255px;
   height: 44px;
   background-color: $white;
-  margin-top: 10%;
+  margin-top: 5%;
   transition: all 500ms ease;
 }
 
@@ -290,8 +293,9 @@ color: $cerulean;
   left: 0px;
   width: 100%;
   min-width: 378px;
-  min-height: 280px;
-  background-image: url('../assets/imgs/mainBackDrop.png');
+  min-height: 270px;
+  margin-top: -45px;
+  background-image: url('../assets/svgs/login-screen.svg');
   background-size: cover;
 }
 

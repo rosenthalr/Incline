@@ -106,4 +106,6 @@
     <allow-navigation href="http://10.13.229.81:8100" />
     <allow-navigation href="http://10.0.0.94:8100" />
     <allow-navigation href="http://10.10.188.154:8101" />
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
+    <allow-navigation href="http://10.10.182.70:8101" />
 </widget>

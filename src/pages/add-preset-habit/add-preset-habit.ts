@@ -22,7 +22,7 @@ import { Platform } from 'ionic-angular';
   providers: [HabitPostService]
 })
 export class AddPresetHabitPage {
-  private startDate: String;
+  private startDate: Date|moment.Moment;
   private minDateOfPicker: String;
   private maxDateOfPicker: String;
   target: string;
@@ -34,7 +34,7 @@ export class AddPresetHabitPage {
 
   constructor(private habitPostService: HabitPostService, public navCtrl: NavController, public navParams: NavParams, private platform: Platform, private notifications: LocalNotifications) {
    this.habit = this.navParams.get('habit');
-   this.startDate= moment().add(1, 'days').startOf("day").toISOString(true);
+   this.startDate= moment().add(1, 'days').startOf("day");
    this.minDateOfPicker= moment().add(1, 'days').startOf("day").toISOString(true);
    this.maxDateOfPicker= moment().add(1, 'year').startOf("day").toISOString(true);
    this.target = moment().add(22, 'days').toISOString(true);
