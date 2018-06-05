@@ -20,7 +20,7 @@ import { TabsPage } from '../tabs/tabs';
   providers: [HabitPostService]
 })
 export class AddPresetHabitPage {
-  private startDate: String;
+  private startDate: Date|moment.Moment;
   private minDateOfPicker: String;
   private maxDateOfPicker: String;
   private target: String;
@@ -32,7 +32,7 @@ export class AddPresetHabitPage {
 
   constructor(private habitPostService: HabitPostService, public navCtrl: NavController, public navParams: NavParams) {
    this.habit = this.navParams.get('habit');
-   this.startDate= moment().add(1, 'days').startOf("day").toISOString(true);
+   this.startDate= moment().add(1, 'days').startOf("day");
    this.minDateOfPicker= moment().add(1, 'days').startOf("day").toISOString(true);
    this.maxDateOfPicker= moment().add(1, 'year').startOf("day").toISOString(true);
    this.target = moment().add(22, 'days').toISOString(true);
@@ -50,9 +50,11 @@ export class AddPresetHabitPage {
   }
 
   goToHabitLandingPage(){
+    const today = moment().startOf('day');
     let habit = {
       title: this.habit,
-      startDate: this.startDate,
+      startDate: today.toDate(),
+      updatedAt: today.subtract(1,'day').toDate(),
       targeteEnd: this.target,
       reminder: this.reminder,
       streakCounter: 0,

@@ -18,8 +18,8 @@ export class ForgotService {
   // This function takes the user's login input values as a parameter (username and password)
   // and then checks to see if an account with those credentials exist
   forgotUser(user) {
-   // var apiString = 'http://localhost:7000/forgot';
+   // var apiString = 'https://goals.digitalstudio.io/forgot';
     let body = JSON.stringify(user);
-    return this.http.post('http://localhost:7000/forgot', body, httpOptions);
+    return this.http.post('https://goals.digitalstudio.io/forgot', body, httpOptions);
   }
 }
