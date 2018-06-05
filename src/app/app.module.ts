@@ -23,6 +23,8 @@ import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 import { HabitDetailsPage } from '../pages/habit-details/habit-details';
 import { HabitCompletePage } from '../pages/habit-complete/habit-complete';
 import { HabitRenewPage } from '../pages/habit-renew/habit-renew';
+import { SplashPage } from '../pages/splash/splash';
+
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -79,6 +81,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     ResetStreakModalPage,
     HabitCompletePage,
     HabitRenewPage,
+    SplashPage
   ],
   imports: [
     BrowserModule,
@@ -112,6 +115,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     ResetStreakModalPage,
     HabitCompletePage,
     HabitRenewPage,
+    SplashPage
   ],
   providers: [
     StatusBar,
