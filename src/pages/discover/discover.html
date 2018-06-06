@@ -7,12 +7,57 @@
 <ion-header>
 
   <ion-navbar>
+      <ion-buttons end>
+      <button end ion-button class="habit-landing-modal-button" (click)="openModal()">
+          <ion-icon class="habit-landing-modal-icon" name="add"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title class="title">Discover</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding no-bounce>
+
+  <div class = "description">
+      Not sure where to begin? The categories below focus on the distinct areas of life that most people shape their
+      habits around. Click inside each for example habits that you can begin tracking towards!
+  </div>
+
+  <ion-list class="discover">
+      <!-- temporary page directing you to reminder page -->
+  <button (click)="goToProductivity()" type="button" value="Productivity" class="discover-button">
+      <div class="categories-button-icon-container"><ion-icon name="clock"></ion-icon></div>
+      <div class="categories-button-title">Productivity</div>
+      <div> <ion-img class="prod-image" src="assets/imgs/Prod-Discover.png"></ion-img> </div>
+  </button>
+
+  <button (click)="goToMentalWellness()" type="button" value="Mental Wellness" class="discover-button">
+      <div class="categories-button-icon-container"><ion-icon name="flower"></ion-icon></div>
+      <div class="categories-button-title">Mental Wellness</div>
+      <div> <ion-img class="mental-image" src="assets/imgs/Mental-Discover.png"> </ion-img></div>
+  </button>
+
+  <button (click)="goToPhysicalHealth()" type="button" value="Physical Health" class="discover-button">
+      <div class="categories-button-icon-container"><ion-icon name="flame"></ion-icon></div>
+      <div class="categories-button-title">Physical health</div>
+      <div> <ion-img class="physical-image" src="assets/imgs/Physical-Discover.png"> </ion-img> </div>
+  </button>
+
+  <button (click)="goToBasics()" type="button" value="The Basics" class="discover-button">
+      <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
+      <div class="categories-button-title">The Basics</div>
+      <div> <ion-img class="basics-image" src="assets/imgs/Basics-Discover.png"> </ion-img> </div>
+  </button>
+
+
+</ion-list>
+
+  <!--
+  <button class= "mental-button">
+      Mental Wellness
+  </button>
+-->
 
 </ion-content>

@@ -4,29 +4,95 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-nav [root]="myHabitsRoot"></ion-nav>
-<ion-header no-border>
+<ion-header no-border [ngClass]="{animating:animating}">
   <ion-navbar hideBackButton>
     <ion-buttons end>
       <button end ion-button class="habit-landing-modal-button" (click)="openModal()">
-          <ion-icon class="habit-landing-modal-icon" name="add"></ion-icon>
+        <ion-icon class="habit-landing-modal-icon" name="add"></ion-icon>
       </button>
     </ion-buttons>
-      <ion-title>My Habits</ion-title>
+    <ion-title>My Habits</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
-  <div class="habit-landing-habits">
+<ion-content  [fullscreen]=animating no-bounce [ngClass]="{animating:animating}">
+  <div class="habit-landing-habits" *ngIf="!habits?.length">
     <div class="add-button">
       <h2>
-          Click the <b>Add Button  </b> <ion-icon class="arorw-to-add-button-icon" name="undo"></ion-icon>
+        Click the
+        <b>Add Button </b>
+        <ion-icon class="arorw-to-add-button-icon" name="undo"></ion-icon>
       </h2>
-      
+
       <p>
-          to create your first habit to begin tracking towards your goals!
+        to create your first habit to begin tracking towards your goals!
       </p>
-      </div>
+
+    </div>
   </div>
+  <ion-grid  class="habit-grid" [ngClass]="{animating:animating}">
+    <ion-row  [@habitsEnter]="habits.length" class="habit-row">
+      <ion-col  class="habit-col"  [ngClass]="{animating:habit.animating, still:!habit.animating}" *ngFor=" let habit of habits">
+        <ion-card class="habit" [ngClass]="{checked:habit.checked, animating:habit.animating, still:!habit.animating}">
+          <ion-card-title class="habit-title">
+            <button start ion-button class="habit-close-button" (click)="animationTrigger(habit)">
+              <ion-icon class="habit-close-icon" name="arrow-back"></ion-icon>
+            </button>
+            <h2>{{habit.title}}</h2>
+          </ion-card-title>
+          <div class="circle">
+            <habit-progress [ngClass]="setHabitClass(habit.habitCategory)" (click)="increment(habit)" class="circle" [current]="habit.streakCounter">
+            </habit-progress>
+          </div>
+          <div class="details">
+            <ion-icon class="details-icon" (click)="animationTrigger(habit)" name="expand"></ion-icon>
+          </div>
+          <ion-card-content class="habit-details">
+            <ion-grid>
+              <ion-row>
+                <ion-col class="habit-headline" width-75>
+                  <h2>Total time tracked </h2>
+                </ion-col>
+                <ion-col width-10>
+
+                </ion-col>
+                <ion-col class="habit-metric"width-10>
+                  <h1>{{habit.updateCounter
+                    < 10 ? "0"+habit.updateCounter : habit.updateCounter}}</h1>
+                      <p>{{habit.updateCounter === 1 ? "Day" : "Days"}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="habit-headline" width-75>
+                  <h2>Your longest streak</h2>
+                </ion-col>
+                <ion-col width-10>
+
+                </ion-col>
+                <ion-col class="habit-metric" width-10>
+                  <h1>{{habit.longestStreakCounter
+                    < 10 ? "0"+habit.longestStreakCounter : habit.longestStreakCounter}}</h1>
+                      <p>{{habit.longestStreakCounter === 1 ? "Day" : "Days"}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-item class="reminder-input-group">
+              <ion-label class="reminder-label" floating>Reminder Time</ion-label>
+              <ion-datetime
+                class="date-value"
+                displayFormat="h:mm A"
+                pickerFormat="h mm A"
+                name="reminder"
+                [(ngModel)]="habit.reminder"
+                (ngModelChange)="setReminderTime(habit)"></ion-datetime>
+            </ion-item>
+            <div class="habit-delete">
+              <button (click)="deleteHabit(habit)" ion-button clear class="habit-delete-button">Delete</button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
 </ion-footer>

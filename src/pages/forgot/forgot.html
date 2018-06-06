@@ -1,0 +1,35 @@
+
+<ion-header no-border>
+    <ion-navbar hideBackButton>
+      <ion-buttons>
+        <button  ion-button class="forgot-back-button" (click)="goToLogin()">
+            <ion-icon icon class="forgot-back-icon" name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+        <ion-title>Forgot Password</ion-title>
+    </ion-navbar>
+  </ion-header>
+          
+<ion-content>
+
+    <h1 class="forgot-header">Enter Email</h1>       
+              <ion-list class='login-container'>
+                <form #forgotForm="ngForm" (ngSubmit)="forgot(forgotForm.value)">
+                    <div class="input-container">
+                        <ion-item class="input-group" [ngClass]="{'input-error': emailError }">
+                          <ion-label class="Field-Label" [ngClass]="{'error': emailError }" floating>Email Address</ion-label>
+                            <ion-input class="Field-Input Email-Input" [ngClass]="{'error': emailError}" type="text" name="email"  [ngModel]="email" (ngModelChange)="checkIfEmailEmpty($event, 'email')" (ngModelChange)="checkIfComplete($event, 'email')" value=""></ion-input>
+                        </ion-item>
+                          <ion-item [ngClass]="{shown:!emailError,error:emailError}" class="Error-Text">Hmm...We don't have an account for this email.</ion-item>
+                      </div>
+                  
+                      <button class="btn-reset" type="submit" [ngClass]="{'buttonActive': active }" ion-button>CONTINUE</button>
+                     
+
+              <!--      <button class="btn-create" [ngClass]="{email.valid}" 
+                    [disabled]="email.invalid"  type="submit" (click)="goToForgotPage();" ion-button> Submit PW Reset</button>
+              -->   
+                </form>
+              </ion-list>
+            </ion-content>
+    

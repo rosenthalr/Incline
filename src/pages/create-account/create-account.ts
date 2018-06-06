@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormControl, FormGroup, Validators,ValidatorFn,AbstractControl } from '@angular/forms';
 import { OnInit } from '@angular/core';
-import { HomePage } from '../home/home';
 import { User } from './user.interface';
 import { SuccessPage } from '../success/success';
 import { CreateAccountService } from '../../services/create-account.service'
 //import { CreateAccountService } from '../../services/create-account.service';
 import {Observable} from 'rxjs/Observable';
+import {LoginService} from '../../services/login.service'
 
 
 
@@ -22,7 +22,7 @@ import {Observable} from 'rxjs/Observable';
 @Component({
   selector: 'page-create-account',
   templateUrl: 'create-account.html',
-  providers:[CreateAccountService],
+  providers:[CreateAccountService, LoginService],
 })
 export class CreateAccountPage implements OnInit {
 
@@ -34,21 +34,21 @@ export class CreateAccountPage implements OnInit {
   public emailError:boolean;
   public passwordLengthError:boolean;
   public passwordMatchError:boolean;
-  public firstName:string;
-  public lastName:string;
+  public firstname:string;
+  public lastname:string;
   public email:string;
   public password1:string;
   public password2:string;
   public user: User;
-  
 
-  constructor(public createAccountService:CreateAccountService,public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public loginService: LoginService,public createAccountService:CreateAccountService,public navCtrl: NavController, public navParams: NavParams) {
   }
 
     ngOnInit() {
       this.user = {
-        firstName: '',
-        lastName: '',
+        firstname: '',
+        lastname: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -62,6 +62,11 @@ export class CreateAccountPage implements OnInit {
       this.createAccountService.createaccount(model).subscribe(
         data => {
           console.log(model);
+          this.loginService.login(model).subscribe(
+            data=>{
+              console.log("User Logged In");
+            }
+          )
         },
         error => {
           console.error(error);
@@ -102,15 +107,15 @@ export class CreateAccountPage implements OnInit {
   }
 
   checkIfComplete(userInfo, field) {
-    
-        if (field='firstName') {
-          this.firstName = userInfo;
+
+        if (field='firstname') {
+          this.firstname = userInfo;
         }
-        else if (field='lastName'){
-          this.lastName = userInfo;
+        else if (field='lastname'){
+          this.lastname = userInfo;
         }
         else if (field='email') {
-          this.email = userInfo;
+          this.email = userInfo.toLowerCase();
         }
         else if (field='password1') {
           this.password1 = userInfo;
@@ -118,10 +123,9 @@ export class CreateAccountPage implements OnInit {
         else if (field='password2') {
           this.password2 = userInfo;
         }
-    
-        if(this.firstName && this.lastName && this.email && this.password1 && this.password2) {
-           this.isComplete = true;
-        }
+            if(this.firstname && this.lastname && this.email && this.password1 && this.password2) {
+              this.isComplete = true;
+            }
          else {
            this.isComplete = false;
          }

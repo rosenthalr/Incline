@@ -3,10 +3,10 @@ import { Observable } from 'rxjs/Rx';
 import { LoginService } from '../../services/login.service';
 import { NavController } from 'ionic-angular';
 import { CreateAccountPage } from '../create-account/create-account';
-import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { TabsPage } from '../tabs/tabs';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { ForgotPage } from '../forgot/forgot';
 
 
 @Component({
@@ -15,10 +15,10 @@ import 'rxjs/add/operator/map';
 })
 
 export class LoginPage {
-  
+
   public active: boolean;
   public email: string = '';
-  public password: string; 
+  public password: string;
   public isComplete: boolean;
   public emailError: boolean;
   public passwordError: boolean;
@@ -34,10 +34,11 @@ export class LoginPage {
   }
 
   goToCreateAccountPage(){
-    // Temporarily changing navigation to the Habit Landing Page for testing purposes.
-    // This should be replaced with CreateAccountPage after testing is complete
     this.navCtrl.push(CreateAccountPage);
+  }
 
+goToForgotPage(){
+  this.navCtrl.push(ForgotPage);
 }
 
 //Unhide and hide password
@@ -71,7 +72,7 @@ checkIfComplete(userInfo, field) {
 
 
 // removes the error class when field is deleted so that the error message doesn't hang
-// Not sure why, but when I tried to combine into one function I received an errorHandler. 
+// Not sure why, but when I tried to combine into one function I received an errorHandler.
 // I think it had to do with placing the same ngModelChange in two elements
 checkIfEmailEmpty(){
   if(this.email !== ''){
@@ -89,34 +90,37 @@ checkIfPasswordEmpty(){
 
 
   login(userInfo) {
+
       let user = {
-        email: userInfo.email,
+        email: userInfo.email.toLowerCase(),
         password: userInfo.password
       };
 
-      if(this.email == "test" && this.password == "test"){
+      // Test successful login without connection to DB
+      if(this.email.toUpperCase()==='TEST' && this.password.toUpperCase()==='TEST'){
         this.navCtrl.push(TabsPage);
-      }
-      //Adding this to test on simulator because email input is automatically set to capitalize
-      if(this.email == "Test" && this.password == "test"){
-        this.navCtrl.push(TabsPage);
+
+        // Prevent the function from finishing, so an error isn't thrown
+        return true;
       }
 
       this.loginService.login(user).subscribe(
-      
-        // If a user has entered in valid login credentials, error messages will be removed and 
+
+        // If a user has entered in valid login credentials, error messages will be removed and
         // they'll be redirected to the Habit Landing Page
         data => {
-  
+
           // Remove any error messages that may have appeared on previous login attempts
           this.emailError = false;
           this.passwordError = false;
-  
+          localStorage.setItem("pw", userInfo.password);
           // Navigate to Habit Landing Page
           this.navCtrl.push(TabsPage);
        },
         error => {
-        const errorMessage = error.error.info.message
+          console.error(error);
+          const errorMessage = error.error.info.message
+
         if(errorMessage == 'Wrong Email') {
           this.emailError = true;
           //Needed to add this below to make sure that both errors don't appear at the same time.

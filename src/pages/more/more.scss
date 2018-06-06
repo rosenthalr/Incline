@@ -1,5 +1,212 @@
 page-more {
-    .title{
-        background: linear-gradient(300deg, $sunset-orange, $sunset-red);
+    .toolbar-title{
+        text-align: center;
     }
+    .nav-bar{
+      height: 48px;
+      font-family: Lato;
+    }
+    //title
+    .Reset-Password {
+        width: 153px;
+        height: 26px;
+        object-fit: contain;
+        font-family: Lato;
+        font-size: 22px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.18;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4a4a4a;
+        margin-top: 28px;
+        margin-bottom: 16px;
+        margin-left: 61px;
+      }
+
+
+  .Field-Input {
+    padding-bottom: 0px;
+  }
+
+
+  .eye{
+    font-size: 2.2 rem;
+  }
+  .error{
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $error-red !important;
+  }
+  .input-error:not(.input-has-focus) > .item-inner {
+    border-bottom: 2px solid $error-red !important;
+  }
+
+  .input-group {
+    width:255px;
+    margin:0 auto;
+    margin-bottom: 41px;
+    color: $brownish-grey;
+    background-color: transparent !important;
+    font-family: Lato;
+}
+  .input{
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  .back-button, .toolbar-title {
+    color: $white-two;
+  }
+
+  .return{
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .return-link{
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .btn-reset {
+    width: 255px;
+    height: 44px;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0.49;
+    border-radius: 0px;
+    color: #7d7d7d;
+    color: var(--warm-grey);
+    margin-top: 38px;
+    margin-bottom: 24px;
+    background-color: $white-three
+  }
+  // .reset-active:{
+  //   background-color: $cerulean;
+  // }
+  .btn-logout {
+    width: 255px;
+    height: 44px;
+    font-size: 14px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 0px;
+    background-color: $cerulean;
+  }
+
+
+  .Error-Text {
+    background: transparent;
+    height: 11px;
+    border-bottom: 1px solid transparent;
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $error-red;
+    width: 64.2667%;
+    margin: 0 auto;
+    z-index: 5;
+    padding-left: 0px;
+    margin-top: -50px;
+  }
+
+  .floating {
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  .Field-Label {
+    width: 241px;
+    height: 15px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  .text-input{
+    color: $black;
+  }
+
+
+//eye icon location
+.Field-Label.item-md.item-label-stacked [item-right], .Field-Label.item-md.item-label-floating [item-right],
+.Field-Label.item-md.item-label-stacked [item-end], .Field-Label.item-md.item-label-floating [item-end]{
+  padding: 0px;
+  top: 15px !important;
+  left: 8px;
+}
+.Field-Label.item-ios.item-label-stacked [item-right], .Field-Label.item-ios.item-label-floating [item-right],
+.Field-Label.item-ios.item-label-stacked [item-end], .Field-Label.item-ios.item-label-floating [item-end]{
+  padding: 0px;
+  top: 15px !important;
+  left: 8px;
+}
+
+.ion-ios-eye-off-outline:before, .ion-ios-eye-outline:before{
+  font-size: 2.2rem;
+}
+//Changes the color of the input's bottom border when the field is clicked on
+//This needs to be here because, by design, ionic doesn't allow IOS on-focus highlight changes
+//Transparent box shadow removes an automatic blue box shadow that appears when clicked
+
+.item-md.item-input.item-input-has-focus.item-inner, .item-md.item-input.input-has-focus .item-inner{
+  border-bottom: solid 2px $cerulean;
+  box-shadow: inset 0 -1px 0 0 transparent !important;
+}
+
+.item-ios.item-input.item-input-has-focus.item-inner,
+.item-ios.item-input.input-has-focus .item-inner{
+  border-bottom: solid 2px $cerulean;
+  box-shadow: inset 0 -1px 0 0 transparent !important;
+}
+
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+  border-bottom: 1px transparent !important;
+}
+
+//Makes sure the floating label is grey when not clicked on the input
+.Field-Label.item-input-has-value .label-ios[floating], .Field-Label.input-has-value .label-ios[floating]{
+  color: $grey;
+}
+
+.buttonActive{
+  background-color: #097ed5;
+  color: white;
+  opacity: 1;
+}
+
 }

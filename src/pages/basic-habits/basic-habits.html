@@ -1,0 +1,33 @@
+<!--
+  Generated template for the BasicHabitsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-nav></ion-nav>
+<ion-header no-border class="navbar">
+    <ion-navbar hideBackButton>
+        <ion-buttons>
+            <button  ion-button class="create-account-back-button" (click)="goToDiscover()">
+                <ion-icon class="create-account-back-icon" name="arrow-back"></ion-icon>
+            </button>
+          </ion-buttons>
+      <ion-title>The Basics</ion-title>
+  </ion-navbar>
+  <div class="imgContainer" src="../www/assets/imgs/The-Basics-Category.png"></div>
+</ion-header>
+
+<ion-content padding>
+ 
+  <div class="descriptionContainer">Your best life is one you’re in control of. Let us help you shape those little habits to build your best life.</div>
+  <div class="habitItem" *ngFor="let basicHabit of basicHabits">
+      <ion-icon class="icons" [name]="basicHabit.icon"></ion-icon> 
+    <div class="habit">
+    <h1 class="habitTitle">{{ basicHabit.habit }}</h1>
+    <p class="habitDescription">{{ basicHabit.description }}</p>
+    </div>
+    <button class="addButton" (click)="goToCreateHabit(basicHabit)">ADD</button>
+  </div>
+  
+  
+</ion-content>

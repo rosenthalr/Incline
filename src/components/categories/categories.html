@@ -4,38 +4,36 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
-    <div class="categories-header">
+<div class="categories-header">
         <div class="categories-header-container">
            <div class="categories-header-title">Which category does this habit fit best with?</div>
         </div>
-        <img class="categories-sun" src="../www/assets/svgs/categories.svg" alt="" srcset=""> 
+        <img class="categories-sun" src="assets/svgs/categories.svg" alt="" srcset="">
      </div>
-    <ion-list class="categories">
-      <button (click)="setCategory('Work')" type="button" value="Work" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="clock"></ion-icon></div>
-          <div class="categories-button-title">Work</div>
-      </button>
-  
-      <button (click)="setCategory('Life')" type="button" value="Life" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
-          <div class="categories-button-title">Life</div>
-      </button>
-  
-      <button (click)="setCategory('Physical Health')" type="button" value="Physical Health" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="football"></ion-icon></div>
-          <div class="categories-button-title">Physical Health</div>
-      </button>
-  
-      <button (click)="setCategory('Mental Health')" type="button" value="Mental Health" class="categories-button">
-          <div class="categories-button-icon-container"><ion-icon name="sunny"></ion-icon></div>
-          <div class="categories-button-title">Mental Health</div>
-      </button>
-    </ion-list>
-  
+     <div class="categories-body">
+        <ion-list class="categories">
+            
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Productivity'}" value="Productivity" (click)="setCategory('Productivity')" type="button" class="categories-button">
+            <div class="categories-button-icon-container"><ion-icon name="time"></ion-icon></div>
+            <div class="categories-button-title">Productivity</div>
+        </button>
+
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Mental Wellness'}" value="Mental Wellness" (click)="setCategory('Mental Wellness')" type="button" class="categories-button">
+            <div class="categories-button-icon-container"><ion-icon name="sunny"></ion-icon></div>
+            <div class="categories-button-title">Mental Wellness</div>
+        </button> 
+
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='Physical Health'}" value="Physical Health" (click)="setCategory('Physical Health')" type="button" class="categories-button">
+            <div class="categories-button-icon-container"><ion-icon name="flame"></ion-icon></div>
+            <div class="categories-button-title">Physical Health</div>
+        </button>
+
+        <button [ngClass]="{'inactive': categorySelected && categorySelected!=='The Basics'}" value="The Basics" (click)="setCategory('The Basics')" type="button" class="categories-button">
+            <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
+            <div class="categories-button-title">The Basics</div>
+        </button>
+        </ion-list>
+    </div>
     <div class="categories-back">
       <button (click)="emitGoBack()" ion-button clear class="categories-back-button">Go Back</button>
     </div>
-    
-
-  

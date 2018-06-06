@@ -19,7 +19,6 @@ export class MyHabitsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyHabitsPage');
   }
 
 }

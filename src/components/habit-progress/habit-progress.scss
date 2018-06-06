@@ -1,0 +1,21 @@
+
+.progress-wrapper {
+  position: relative;
+  margin: 0px auto 0px auto;
+  font-size: 40px;
+}
+
+svg {
+  margin: auto;
+}
+text{
+  font-size: 4rem;
+  font-family: Lato;
+  color: white !important;
+  .habit-progress-count{
+    font-size: 34pt;
+  }
+  .habit-progress-days{
+    font-size: 20pt;
+  }
+}

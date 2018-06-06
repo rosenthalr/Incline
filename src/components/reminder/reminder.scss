@@ -1,0 +1,165 @@
+@import '../../styles/global';
+
+.reminder-header {
+    height: 25%;
+    width: 100%;
+    background-color: $grey;
+    position:absolute;
+    top:0;
+    height: 186px;
+    background:linear-gradient($cerulean,$baby-blue);
+}
+.reminder-sun {
+    // background-image: url('../www/assets/svgs/categories.svg');
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.reminder-header-title {
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: left;
+    color: $white-two;
+    height: 100px;
+}
+
+.reminder-header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+    line-height: 1.18;
+    letter-spacing: normal;
+    color: $white-two;  
+    height:100%;
+    background-color: transparent;
+    padding: 0px 60px; 
+    padding-right:64px; 
+}
+.reminder-body{
+    height: calc(100vh - 28vh - 186px);
+}
+.reminder-container {
+    width: 68%;
+    margin:0 auto;
+    padding-top: 106px;
+}
+
+.reminder-input-group, .reminder-target {
+    border-top-color: transparent !important;
+}
+.reminder-back {
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 18vh;
+}
+.reminder-back-button{
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $cerulean;
+}
+.reminder-target {
+    text-align: left;
+    margin-top: 16px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $purplish-grey;
+}
+.target-date-value {
+    height: 151px;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $cerulean;
+}
+.target-date-value.active {
+    color: $teal;
+}
+.target-date-label{
+    font-size: 14px;
+    font-weight: normal;
+    color: $brownish-grey;
+}
+.reminder-label.label-ios{
+    margin:0;
+    font-family: Lato;
+    font-size: 15px;
+    color: $brownish-grey;
+}
+.reminder-container > .item-ios {
+    padding-left:0;
+}
+
+.reminder-input-group{
+    border-bottom: 2px solid $grey;
+}
+.reminder-input-group.input-has-focus {
+    border-bottom: 2px solid $cerulean;
+}
+.reminder-next{
+    margin-bottom: 0px;
+    margin-top: 60px;
+    padding-top:10px
+}
+.Rectangle-4 {
+    width: 255px;
+    height: 44px;
+    background-color: $deep-blue-sea;
+    border-radius: 0;
+  }
+  .ACTIVE-BUTTON {
+    width: 255px;
+    height: 17px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $white-two;
+  }
+  ion-backdrop{
+      opacity: 0 !important;
+  }
+.date-value {
+    padding-top: 4px;
+    padding-bottom: 4px !important;
+    font-size: 14px !important;
+    color: black;
+}
+.reminder-label{
+  margin-top: 20px !important;
+}
