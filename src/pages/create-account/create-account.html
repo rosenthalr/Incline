@@ -52,15 +52,21 @@
         <ion-item class="input-group">
             <ion-label floating class="label">Password</ion-label>
 
-            <ion-input type="{{type}}" name="password" [ngModel]="user.password" [ngModelOptions] = "{ updateOn: 'blur' }"
-            required validateEqual="confirmPassword" minlength="8" reverse="true" #password="ngModel"></ion-input>
+            <ion-input
+            type="{{type}}"
+            name="password"
+            [ngModel]="user.password"
+            [ngModelOptions] = "{ updateOn: 'blur' }"
+            required validateEqual="confirmPassword"
+            pattern ="^(?=[a-zA-Z0-9#@$?]{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).*"
+            #password="ngModel"></ion-input>
 
             <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
             <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
 
         </ion-item>
-        <ion-item no-lines class = "error-text" [ngClass]="{hiding:(password.valid || password.pristine),show:!(password.valid || password.pristine)}">
-            Password must be at least 8 characters.
+        <ion-item no-lines class = "error-text" [ngClass]="{hiding:(!password.errors?.pattern),show:(password.errors?.pattern)}">
+          Your password requires at least 8 characters a lowercase, uppercase, and special character.
         </ion-item>
 
 
