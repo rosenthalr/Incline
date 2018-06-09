@@ -5,14 +5,17 @@
   Ionic pages and navigation.
 -->
 
-  <ion-header no-border>
-      <ion-navbar transparent>
-        <button ion-button icon-only class="close-modal-button" (click)="closeModal()">
-            <ion-icon class="close-modal-button-icon" name="close"></ion-icon>
-        </button>
-        <ion-title>Step {{page}} of 4</ion-title>
-      </ion-navbar>
-    </ion-header>
+<ion-header no-border>
+  <ion-navbar >
+    <div>
+      <button ion-button icon-only class="close-modal-button" (click)="closeModal()">
+        <ion-icon class="close-modal-button-icon" name="close"></ion-icon>
+      </button>
+    </div>
+    <div class="modal-title">Step {{page}} of 4</div>
+    <div></div>
+  </ion-navbar>
+</ion-header>
 <ion-content no-bounce class="background">
   <ion-slides (ionSlideDidChange)="getSlideNumber()"#modalSlider pager=false>
     <ion-slide >

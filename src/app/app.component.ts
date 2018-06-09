@@ -25,7 +25,7 @@ import { SplashPage } from '../pages/splash/splash';
 })
 export class MyApp {
   // Temporarily changing the rootPage to the categories page for testing purposes
-  rootPage:any = LoginPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation, modalCtrl: ModalController) {
     platform.ready().then(() => {
@@ -35,11 +35,11 @@ export class MyApp {
         statusBar.overlaysWebView(true);
         statusBar.styleLightContent();
         statusBar.backgroundColorByName('white');
-        screenOrientation.lock(screenOrientation.ORIENTATIONS.PORTRAIT);
+        //screenOrientation.lock(screenOrientation.ORIENTATIONS.PORTRAIT);
       }
 
-      let splash = modalCtrl.create(SplashPage);
-      splash.present();
+      //let splash = modalCtrl.create(SplashPage);
+      //splash.present();
       //splashScreen.hide(); remove this to add splash page for animation
     });
   }

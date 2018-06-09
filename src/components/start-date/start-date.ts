@@ -29,20 +29,9 @@ export class StartDateComponent implements OnInit {
    this.min= moment().add(1, 'days').startOf("day").toISOString(true);
    this.max= moment().add(1, 'year').startOf("day").toISOString(true);
    this.targetDate = moment().add(22, 'days').toISOString(true);
-  //  this.reminder = moment().hours(this.navParams.get('reminder')).minutes(0).seconds(0).toISOString(true);
   }
 
-  ngOnInit() {
-    // this.min =  moment().add(1, 'days').toISOString(true);
-    // this.max = moment().add(1, 'years').toISOString(true);
-    // this.startDate = moment(this.startDate).add(1,"days").toISOString(true);
-    // this.targetDate = moment(this.startDate).add(21,'days').toISOString(true);
-  }
-
-  // setTargetDate() {
-  //   this.targetDate = moment(this.startDate).add(21,'days').toISOString(true);
-  //   this.hasChanged = true;
-  // }
+  ngOnInit() {}
 
   setTargetDate(startDate){
     this.targetDate = moment(startDate).add(22, 'days').startOf("day").toISOString(true);
@@ -61,10 +50,5 @@ export class StartDateComponent implements OnInit {
     console.log(this.startDate + ": this is startdate");
     localStorage.setItem("basictargetdate", this.targetDate);
     console.log(this.targetDate + ": this is targetdate");
-    // console.log('startdate: '+  this.startDate + '    targetdate : '+ this.targetDate); //if I don't log the output, it doesn't save to local storage/post to the service for some reason
-
   }
-
-  // localStorage.setItem("basichabit", this.habitName);
-  // console.log(this.habitName);
 }

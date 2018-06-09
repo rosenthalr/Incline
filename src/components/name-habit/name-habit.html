@@ -1,37 +1,23 @@
 <!-- Generated template for the NameHabitComponent component -->
-<div class="name-habit-header">
-
-    <div class="name-habit-header">
-        <div class="name-habit-header-container">
-           <div class="name-habit-header-title">Tell us about the habit you would like to track</div>
-        </div>
-        <img class="name-habit-sun" src="assets/svgs/name-habit.svg" alt="" srcset="">
-     </div>
-    
-     <div class="name-habit-body">
-      <ion-list class="name-habit-container">
-        <ion-item class="name-habit-input-group">
-          <ion-label floating>Habit Name</ion-label>
-          <ion-input class = "name-habit-input" type="text" maxlength="20" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionChange)="setName(habitName)" required #name="ngModel"></ion-input>
-        </ion-item>
-      </ion-list>
+<div class="custom-habit-container">
+  <div class="custom-habit-body">
+    <div class="custom-habit-header">
+        A habit should be a simple daily task that is built into your routine.
     </div>
-    <button class="Rectangle-3" [ngClass]="{'active':!name.errors?.required}" [disabled]="name.errors?.required" ion-button (click)="emitNextPage()">NEXT</button>
-    
-    <!--
-      Uncomment for when we update styling in sprint 6
-    <button class="next" [ngClass]="{'inactive':name.errors?.required}" [disabled]="name.errors?.required" ion-button clear (click)="emitNextPage()">Next</button>
-    <div class="name-habit-header-container">
-       <div class="name-habit-header-title">A habit should be a simple daily task that is built into your routine.</div>
-    </div>
- </div>
- <div class="name-habit-body">
-  <ion-list class="name-habit-container">
     <ion-item class="name-habit-input-group">
       <ion-label floating>Habit Name</ion-label>
-      <ion-input class = "name-habit-input" type="text" maxlength="20" name="name" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="habitName" (ionChange)="setName(habitName)" required #name="ngModel"></ion-input>
+      <ion-input 
+          class="name-habit-input" 
+          type="text" 
+          maxlength="20" 
+          name="name" 
+          [ngModelOptions]="{updateOn: 'blur'}" 
+          [(ngModel)]="habitName" 
+          (ionChange)="setName(habitName)" 
+          required 
+          #name="ngModel">
+        </ion-input>
     </ion-item>
-  </ion-list>
+  </div>
 </div>
--->
 
