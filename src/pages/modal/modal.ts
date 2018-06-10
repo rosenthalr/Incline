@@ -16,15 +16,18 @@ import { TabsPage } from '../tabs/tabs';
 })
 
 export class ModalPage implements OnInit {
+  
   @ViewChild('modalSlider')slides:Slides;
   public category: string;
   public name:string;
   public page:number=1;
-  public totalPages:number;
+  public habitName: string='';
+
   ngOnInit() {
     this.category = '';
     this.name = '';
     this.page = 1;
+
   }
   ngAfterViewInit() {
     // child is set
@@ -47,6 +50,7 @@ export class ModalPage implements OnInit {
   getSlideNumber(){
     this.page = this.slides.getActiveIndex()+1;
   }
+
   // Go back to previous page. If the user is on the first page of the modal, the modal closes
   goBack(){
     this.slides.lockSwipes(false);

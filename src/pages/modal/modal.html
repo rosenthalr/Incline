@@ -6,23 +6,27 @@
 -->
 
 <ion-header no-border>
-  <ion-navbar >
+  <ion-navbar>
     <div>
-      <button ion-button icon-only class="close-modal-button" (click)="closeModal()">
-        <ion-icon class="close-modal-button-icon" name="close"></ion-icon>
+      <button ion-button class="close-modal-button" (click)="page == 1 ? closeModal() : goBack($event)">
+          <ion-icon *ngIf="page > 1;else Cancel" class="modal-back-icon" name="arrow-back"></ion-icon>
+          <ng-template #Cancel>Cancel</ng-template>
       </button>
     </div>
-    <div class="modal-title">Step {{page}} of 4</div>
-    <div></div>
+    <div class="modal-title">{{page}} of 3</div>
+    <div>
+          <button class="continue-button" [disabled]="name.length == 0"
+            ion-button clear (click)="page == 3 ? goToHabitLandingPage($event) : nextPage($event)">
+            {{page == 3 ? "Finish" : "Next" }}
+          </button>
+    </div>
+
   </ion-navbar>
 </ion-header>
 <ion-content no-bounce class="background">
   <ion-slides (ionSlideDidChange)="getSlideNumber()"#modalSlider pager=false>
     <ion-slide >
       <name-habit (nextPage)="nextPage($event)" (onNamePicked)="onNamePicked($event)"></name-habit>
-    </ion-slide>
-    <ion-slide>
-      <categories (nextPage)="nextPage($event)" (goBack)="goBack($event)" (onCategorySelected)="onCategorySelected($event)"></categories>
     </ion-slide>
     <ion-slide>
       <start-date (nextPage)="nextPage($event)" (goBack)="goBack($event)"></start-date>
