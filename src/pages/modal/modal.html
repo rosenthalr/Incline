@@ -26,7 +26,7 @@
 <ion-content no-bounce class="background">
   <ion-slides (ionSlideDidChange)="getSlideNumber()"#modalSlider pager=false>
     <ion-slide >
-      <name-habit (nextPage)="nextPage($event)" (onNamePicked)="onNamePicked($event)"></name-habit>
+      <name-habit (nextPage)="nextPage($event)" (onNamePicked)="onNamePicked($event)" [habitName]="name"></name-habit>
     </ion-slide>
     <ion-slide>
       <start-date (nextPage)="nextPage($event)" (goBack)="goBack($event)"></start-date>

@@ -18,7 +18,6 @@ import { MentalHabitsPage } from '../pages/mental-habits/mental-habits';
 import { PhysicalHabitsPage } from '../pages/physical-habits/physical-habits';
 import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
-import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 import { HabitDetailsPage } from '../pages/habit-details/habit-details';
 import { HabitCompletePage } from '../pages/habit-complete/habit-complete';
@@ -76,7 +75,6 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     PhysicalHabitsPage,
     BasicHabitsPage,
     AddPresetHabitPage,
-    TrackingReminderPage,
     ModalCheckboxPage,
     ResetStreakModalPage,
     HabitCompletePage,
@@ -110,7 +108,6 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     PhysicalHabitsPage,
     BasicHabitsPage,
     AddPresetHabitPage,
-    TrackingReminderPage,
     ModalCheckboxPage,
     ResetStreakModalPage,
     HabitCompletePage,
