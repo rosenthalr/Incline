@@ -32,7 +32,7 @@
       <start-date (nextPage)="nextPage($event)" (goBack)="goBack($event)"></start-date>
     </ion-slide>
     <ion-slide>
-        <reminder (goToHabitLandingPage)="goToHabitLandingPage($event)" (goBack)="goBack($event)"></reminder>
+        <reminder (goToHabitLandingPage)="goToHabitLandingPage($event)" (onReminderPicked)="onReminderPicked($event)" (goBack)="goBack($event)"></reminder>
       </ion-slide>
   </ion-slides>
 </ion-content>

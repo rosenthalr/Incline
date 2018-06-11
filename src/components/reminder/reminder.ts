@@ -19,10 +19,13 @@ export class ReminderComponent implements OnInit {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
   @Output() goToHabitLandingPage: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onReminderPicked: EventEmitter<any> = new EventEmitter<any>();
+
   reminderTime: string;
   min: string;
   max: string;
   hasChanged: boolean = false;
+  formattedReminder: Moment;
 
   constructor(private habitPostService: HabitPostService, private platform: Platform, private notifications: LocalNotifications){}
 
@@ -33,7 +36,9 @@ export class ReminderComponent implements OnInit {
 
   setReminderTime() {
     this.hasChanged = true;
-    console.log(this.reminderTime + ":This is reminder time");
+    this.formattedReminder = moment(this.reminderTime, "HH:mm:ss.SSSZ");
+    this.reminderTime = moment().hours(this.formattedReminder.hours()).minutes(this.formattedReminder.minutes()).toISOString(true);
+    this.onReminderPicked.emit(this.reminderTime);
   }
 
   emitGoBack() {
@@ -41,63 +46,6 @@ export class ReminderComponent implements OnInit {
   }
 
   emitGoToHabitLandingPage() {
-    let today = moment().startOf('day');
-    let yesturday = today.subtract(1,'day');
-    let habit = {
-      updatedAt: today.toDate(),
-      title: localStorage.getItem("basichabit"),
-      startDate: localStorage.getItem("basicstartdate"),
-      targetEnd: localStorage.getItem("basictargetdate"),  
-      reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
-      streakCounter: 0,
-      habitCategory: localStorage.getItem('habitCategory'),
-      activehabit: true,
-    };
-        
-    this.habitPostService.habitpost(habit).subscribe(
-      data => {
-
-        var startDate = data.startDate;
-        var reminder = data.reminder;
-        var reminderHour = moment(reminder).get('hour');
-        var reminderMinute = moment(reminder).get('minute');
-        var now = moment();
-
-        // Create notification here
-        this.platform.ready().then(() => {
-          console.log(data);
-    
-          var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
-          console.log(startDate + ": this is startDate");
-          console.log(firstReminder + ": this is firstReminder");
-    
-          let notification = {
-            // id: data._id,
-            title: 'Alert for ' + data.title,
-            text: 'This is an alert for ' + data.title,
-            firstAt: now,
-            every: 'minute'
-          };
-          console.log(notification + ": notification");
-          this.notifications.schedule(notification);
-    
-          //Setting the 21 days notification
-    
-          let reminderNotification = {
-            id: data._id,
-            title: '21 day alert for ' + data.title,
-            text: 'This is your 21st day tracking this habit: ' + data.title,
-            firstAt: data.targetEnd,
-          };
-          this.notifications.schedule(reminderNotification);
-                
-          });
-      
-        this.goToHabitLandingPage.emit();
-      },
-      error => {
-        console.error(error);
-      })
-
+    this.goToHabitLandingPage.emit();
   }
 }

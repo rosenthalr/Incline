@@ -56,6 +56,10 @@ export class ModalPage implements OnInit {
   onNamePicked(name){
     this.name = name;
   }
+  onReminderPicked(reminder:string):void {
+    this.reminder = reminder;
+    console.log('onreminderpicked',this.reminder);
+  }
   onCategorySelected(category) {
     this.category = category;
     localStorage.setItem("category", category);
@@ -79,11 +83,18 @@ export class ModalPage implements OnInit {
   }
 
   goToHabitLandingPage(){
+
+    if(!this.reminder) {
+      this.reminder = moment().hours(this.reminder.hours()).minutes(this.reminder.minutes()).toISOString(true);
+    } 
+
+    console.log("reminder time being added",this.reminder);
+
     let habit = {
       title: this.name,
-      startDate: moment().add(1, 'days').toISOString(),
-      targetEnd: moment().add(22, 'days').toISOString(),
-      reminder: moment().hours(8).minutes(0).seconds(0).toISOString(true),
+      startDate: moment().add(1, 'days').toISOString(true),
+      targetEnd: moment().add(22, 'days').toISOString(true),
+      reminder: this.reminder,
       streakCounter: 0,
       activehabit: true,
     };
@@ -102,9 +113,7 @@ export class ModalPage implements OnInit {
         console.log(data);
   
         var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
-        console.log(startDate + ": this is startDate");
-        console.log(firstReminder + ": this is firstReminder");
-  
+
         let notification = {
           // id: data._id,
           title: 'Alert for ' + data.title,
@@ -112,11 +121,9 @@ export class ModalPage implements OnInit {
           firstAt: now,
           every: 'minute'
         };
-        console.log(notification + ": notification");
         this.notifications.schedule(notification);
   
         //Setting the 21 days notification
-  
         let reminderNotification = {
           id: data._id,
           title: '21 day alert for ' + data.title,
