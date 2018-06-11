@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams, ViewController} from 'ionic-angula
 import { Slides } from 'ionic-angular/components/slides/slides';
 import { TabsPage } from '../tabs/tabs';
 import * as moment from 'moment';
+import { HabitPostService } from '../../services/habitpost.service';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Platform } from 'ionic-angular';
 /**
  * Generated class for the ModalPage page.
  *
@@ -36,15 +39,15 @@ export class ModalPage implements OnInit {
     this.category = '';
     this.name = this.name == null ? '' : this.name;
     this.page = 1;
-    console.log(this.name+ 1);
-
   }
+
   ngAfterViewInit() {
     // child is set
     this.slides.lockSwipes(true);
     console.log(this.name+ 2);
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private platform: Platform,
+  private notifications: LocalNotifications, private habitPostService: HabitPostService) {
     this.name = this.navParams.get('habit');
   }
   closeModal(){
@@ -76,7 +79,59 @@ export class ModalPage implements OnInit {
   }
 
   goToHabitLandingPage(){
-    this.navCtrl.push(TabsPage);
+    let habit = {
+      title: this.name,
+      startDate: moment().add(1, 'days').toISOString(),
+      targetEnd: moment().add(22, 'days').toISOString(),
+      reminder: moment().hours(8).minutes(0).seconds(0).toISOString(true),
+      streakCounter: 0,
+      activehabit: true,
+    };
+  
+    this.habitPostService.habitpost(habit).subscribe(
+      data => {
+  
+        //Set notification below
+        var startDate = data.startDate;
+        var reminder = data.reminder;
+        var reminderHour = moment(reminder).get('hour');
+        var reminderMinute = moment(reminder).get('minute');
+        var now = moment();
+  
+      this.platform.ready().then(() => {
+        console.log(data);
+  
+        var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+        console.log(startDate + ": this is startDate");
+        console.log(firstReminder + ": this is firstReminder");
+  
+        let notification = {
+          // id: data._id,
+          title: 'Alert for ' + data.title,
+          text: 'This is an alert for ' + data.title,
+          firstAt: now,
+          every: 'minute'
+        };
+        console.log(notification + ": notification");
+        this.notifications.schedule(notification);
+  
+        //Setting the 21 days notification
+  
+        let reminderNotification = {
+          id: data._id,
+          title: '21 day alert for ' + data.title,
+          text: 'This is your 21st day tracking this habit: ' + data.title,
+          firstAt: data.targetEnd,
+        };
+        this.notifications.schedule(reminderNotification);
+
+        
+        this.navCtrl.push(TabsPage);
+              
+        });
+  
+      }
+    )
   }
 
 
