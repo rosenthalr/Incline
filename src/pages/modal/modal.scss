@@ -1,17 +1,24 @@
 @import '../../styles/global.scss';
 
-.close-modal {
-    position: absolute;
-    top: 15px;
-    left: 0px;
-}
 .background{
    // background-color: #006dc6;
 }
 
+.continue-button {
+    background-color:transparent;
+    margin: 0px;
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    color: $white-two;
+}
 .close-modal-button {
     background-color:transparent;
     margin: 0px;
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    color: $white-two;
 }
 .close-modal-button-icon {
     font-size:  2em;

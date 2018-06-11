@@ -10,8 +10,8 @@
           class="name-habit-input" 
           type="text" 
           maxlength="20" 
-          name="name" 
-          [ngModelOptions]="{updateOn: 'blur'}" 
+          name="name"
+          value = "{{habitName}}"
           [(ngModel)]="habitName" 
           (ionChange)="setName(habitName)" 
           required 
