@@ -58,7 +58,6 @@ export class ModalPage implements OnInit {
   }
   onReminderPicked(reminder:string):void {
     this.reminder = reminder;
-    console.log('onreminderpicked',this.reminder);
   }
   onCategorySelected(category) {
     this.category = category;
@@ -88,7 +87,7 @@ export class ModalPage implements OnInit {
       this.reminder = moment().hours(this.reminder.hours()).minutes(this.reminder.minutes()).toISOString(true);
     } 
 
-    console.log("reminder time being added",this.reminder);
+    console.log("reminder time being added " ,this.reminder);
 
     let habit = {
       title: this.name,
