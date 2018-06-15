@@ -10,7 +10,7 @@ start-date{
     background-image: url(../../assets//svgs/Background2.svg);
     background-size: cover;
     .custom-habit-container {
-        padding-top: 96px;
+        padding-top: 60px;
         width: 81.6%;
         display: flex;
         align-items: baseline;
@@ -76,6 +76,21 @@ start-date{
         letter-spacing: normal;
         text-align: center;
         color: $white-two;
+    }
+
+    .footer {
+        font-family: Lato;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: -0.4px;
+        text-align: left;
+        color: #4a4a4a;
+        position: absolute;
+        bottom: 60px;
+        width: 81.6%;
     }
   
  

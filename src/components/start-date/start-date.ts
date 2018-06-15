@@ -22,7 +22,6 @@ export class StartDateComponent implements OnInit {
   max: string;
   hasChanged: boolean = false;
 
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
    this.habit = this.navParams.get('habit');
    this.startDate= moment().add(1, 'days').startOf("day").toISOString(true);
