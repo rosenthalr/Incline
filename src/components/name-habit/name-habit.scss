@@ -4,10 +4,13 @@ name-habit {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  height: 90vh;
+  height: 100vh;
   position: absolute;
-  top: 96px;
+  top: 0px;
+  background-image: url(../../assets//svgs/Background1.svg);
+  background-size: cover;
   .custom-habit-container {
+    padding-top: 96px;
     width: 81.6%;
     display: flex;
     align-items: baseline;
@@ -25,7 +28,7 @@ name-habit {
     line-height: normal;
     letter-spacing: 0.1px;
     text-align: left;
-    color: #4a4a4a;
+    color: $white-two;
     height: 14.5%;
     margin-bottom: 12.7%;
   }
@@ -33,8 +36,8 @@ name-habit {
     padding-left: 0;
   }
   .item-ios.name-habit-input-group > .item-inner {
-    border-bottom: solid 1px #4a4a4a !important;
-    border-right: 0;
+    border-bottom: solid 2px $white-two !important;
+    border-right: 0 solid $cerulean;
   }
   .name-habit-input > .text-input {
     font-family: Lato;
@@ -45,13 +48,15 @@ name-habit {
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #4a4a4a;
+    color: $white-two;
   }
   .item-ios {
-    color: #4a4a4a;
+    color: $white-two;
+    background-color: $cerulean;
+
   }
   .input-has-focus,
   .input-has-focus .label-ios[floating] {
-    color: #4a4a4a !important;
+    color: $white-two !important;
   }
 }

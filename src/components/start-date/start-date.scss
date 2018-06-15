@@ -4,21 +4,22 @@ start-date{
     display: flex;
     align-items: baseline;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
     position: absolute;
-    top: 96px;
-
+    top: 0px;
+    background-image: url(../../assets//svgs/Background2.svg);
+    background-size: cover;
     .custom-habit-container {
+        padding-top: 96px;
         width: 81.6%;
         display: flex;
         align-items: baseline;
         justify-content: center;
     }
-
     .custom-habit-body {
         width: 100%;
+        height: 80vh;
     }
-
     .custom-habit-header{
         font-family: Lato;
         font-size: 22px;
@@ -28,11 +29,10 @@ start-date{
         line-height: normal;
         letter-spacing: 0.1px;
         text-align: left;
-        color: #4a4a4a;
+        color: $white-two;
         height: 14.5%;
         margin-bottom: 12.7%;
     }
-
     .start-date-back {
         display:flex;
         justify-content: center;
@@ -42,8 +42,7 @@ start-date{
         width: 100%;
         height: 18vh;
     }
-
-    .start-date-back-button{
+    .start-date-back-button {
         font-family: Lato;
         font-size: 14px;
         font-weight: bold;
@@ -54,20 +53,17 @@ start-date{
         text-align: center;
         color: $cerulean;
     }
-
     .start-date-next{
         margin-bottom: 0px;
         margin-top: 60px;
         padding-top:10px
     }
-
     .Rectangle-4 {
         width: 255px;
         height: 44px;
         background-color: $deep-blue-sea;
         border-radius: 0;
     }
-
     .ACTIVE-BUTTON {
         width: 255px;
         height: 17px;

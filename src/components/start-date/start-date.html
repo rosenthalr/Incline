@@ -1,8 +1,32 @@
 <div class="custom-habit-container">
     <div class="custom-habit-body">
         <div class="custom-habit-header">
-            <p>Research shows that you must repeat a behavior at least 21 days in a row to build a habit.</p>
-            <p>Each day you complete your habit, you will add to your streak by tapping your habit sreak circle.</p>
+            <p> 
+                Tap your habit as complete 
+                every day to build your streak!
+            </p>
+        </div>
+        <div class="circle">
+            <habit-progress 
+            [ngClass]="productivity" 
+            (click)="increment({
+                '_id' : ObjectId('5b23f02ce3da5943f119e6c3'),
+                'habittype' : 'Simple',
+                'startDate' : ISODate('2018-06-16T04:00:00.000Z'),
+                'targetEnd' : null,
+                'updateCounter' : 0,
+                'streakCounter' : 0,
+                'longestStreakCounter' : 0,
+                'updatedAt' : ISODate('2018-06-14T04:00:00.000Z'),
+                'createdAt' : ISODate('2018-06-15T04:00:00.000Z'),
+                'title' : 'Drink 64 ounces of water',
+                'habitCategory' : 'Physical Health',
+                'reminder' : ISODate('2018-06-15T11:00:00.584Z'),
+                '__v' : 0
+            })" 
+            class="circle" 
+            [current]="0">
+            </habit-progress>
         </div>
     </div>
 </div>

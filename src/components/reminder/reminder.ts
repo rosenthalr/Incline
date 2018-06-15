@@ -25,7 +25,7 @@ export class ReminderComponent implements OnInit {
   min: string;
   max: string;
   hasChanged: boolean = false;
-  formattedReminder: Moment;
+  formattedReminder: moment.Moment;
 
   constructor(private habitPostService: HabitPostService, private platform: Platform, private notifications: LocalNotifications){}
 

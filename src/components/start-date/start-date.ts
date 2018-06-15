@@ -35,8 +35,6 @@ export class StartDateComponent implements OnInit {
 
   setTargetDate(startDate){
     this.targetDate = moment(startDate).add(22, 'days').startOf("day").toISOString(true);
-    console.log(this.startDate + ": this is startdate");
-    console.log(this.targetDate + ": this is targetdate");
     this.hasChanged = true;
   }
 
@@ -47,8 +45,18 @@ export class StartDateComponent implements OnInit {
   emitNextPage() {
     this.nextPage.emit();
     localStorage.setItem("basicstartdate", this.startDate);
-    console.log(this.startDate + ": this is startdate");
     localStorage.setItem("basictargetdate", this.targetDate);
-    console.log(this.targetDate + ": this is targetdate");
+  }
+
+  increment(habit) {
+    if(habit.checked) {
+        habit.streakCounter -= 1;
+        habit.updateCounter -= 1;
+        habit.checked = false;
+    } else {
+      habit.streakCounter += 1;
+      habit.updateCounter += 1;
+      habit.checked = true;
+    }
   }
 }
