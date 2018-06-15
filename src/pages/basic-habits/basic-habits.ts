@@ -28,6 +28,10 @@ export class BasicHabitsPage {
     console.log('ionViewDidLoad BasicHabitsPage');
   }
 
+  goToDiscover(){
+    this.navCtrl.pop();
+  }
+
   openModal(basicHabit) {
     const myModal = this.modal.create('ModalPage', {
       'habit': basicHabit.habit,
@@ -38,18 +42,5 @@ export class BasicHabitsPage {
     myModal.present();
   }
 
-  goToDiscover(){
-    this.navCtrl.pop();
-  }
-
-  goToCreateHabit(basicHabit){
-    this.navCtrl.push(AddPresetHabitPage, {
-      'habit': basicHabit.habit,
-      'reminder': basicHabit.reminder,
-      'currentColor': basicHabit.currentColor,
-      'habitCategory':basicHabit.habitCategory
-    });
-
-  }
 
 }
