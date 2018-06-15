@@ -20,8 +20,7 @@ export class NameHabitComponent {
     this.onNamePicked.emit(name);
   }
   emitNextPage(){
-    this.nextPage.emit()
     localStorage.setItem("basichabit", this.habitName);
-    console.log(this.habitName);
+    this.nextPage.emit()
   }
 }
