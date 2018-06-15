@@ -47,16 +47,4 @@ export class StartDateComponent implements OnInit {
     localStorage.setItem("basicstartdate", this.startDate);
     localStorage.setItem("basictargetdate", this.targetDate);
   }
-
-  increment(habit) {
-    if(habit.checked) {
-        habit.streakCounter -= 1;
-        habit.updateCounter -= 1;
-        habit.checked = false;
-    } else {
-      habit.streakCounter += 1;
-      habit.updateCounter += 1;
-      habit.checked = true;
-    }
-  }
 }
