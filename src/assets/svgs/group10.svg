@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="202" height="197" viewBox="0 0 202 197">
+    <defs>
+        <path id="a" d="M101 197c55.78 0 101-44.1 101-98.5S156.78 0 101 0 0 44.1 0 98.5 45.22 197 101 197z"/>
+        <mask id="b" width="202" height="197" x="0" y="0" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <ellipse cx="101" cy="98.5" fill="#EAEAEA" rx="101" ry="98.5"/>
+        <use stroke="#FFF" stroke-dasharray="800,9999" stroke-width="20" mask="url(#b)" transform="matrix(1 0 0 -1 0 197)" xlink:href="#a"/>
+        <ellipse cx="91.493" cy="89.5" fill="#0477D6" rx="90.654" ry="88.601" transform="translate(10 9)"/>
+    </g>
+</svg>

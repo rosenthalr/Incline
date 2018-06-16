@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="667px" viewBox="0 0 375 667" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #59A9E4;">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>VIZ - Pre-Achievements v3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="VIZ---Pre-Achievements-v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Rectangle-2" fill="#CDE8FF" transform="translate(187.669150, 378.683026) scale(-1, -1) translate(-187.669150, -378.683026) " points="-0.0735896751 139.366053 375.411891 139.366053 374.42301 431.973288 0.78054379 618"></polygon>
+        <path d="M105.395206,618 L170.025554,559.020385 L315.866,575.397237 L374.77338,508 L374.77338,618 L105.395206,618 Z" id="Combined-Shape" fill="#CFE9FF"></path>
+        <g id="Group-2" opacity="0.637171649" transform="translate(-1.000000, 377.000000)">
+            <polygon id="Rectangle-8" fill="#85C8FF" opacity="0.428045743" points="212.915167 84.7081271 298.432647 115.122377 375.32695 0 375.32695 241.81369 1 241.81369 0.714634259 163.5 32.8219391 163.5"></polygon>
+            <rect id="Rectangle" fill="#D4EBFF" x="1" y="241" width="375" height="51"></rect>
+            <polygon id="Path-4" fill="#59A9E4" opacity="0.165647645" points="79 242 171.025554 158.020385 316.866 174.397237 375.77338 107 375.77338 242"></polygon>
+        </g>
+        <polygon id="Line" fill="#FFFFFF" points="0 282.631464 375.455689 98.5747268 375.617779 143.467929 0 327.458162"></polygon>
+        <rect id="Rectangle-5" fill="#59A9E4" x="0" y="0" width="375" height="100"></rect>
+        <path d="M0,98.999402 L375,99 L375,199 C375.699541,132.169907 375.699541,98.8365742 375,99 C374.300459,99.1634258 249.300459,161.699112 0,286.607057 L0,98.999402 Z" id="Rectangle-5" fill="#59A9E4"></path>
+        <ellipse id="Oval" stroke="#FFFFFF" stroke-width="12" fill="#0477D6" cx="246.5" cy="189.086634" rx="97.5" ry="95.0866337"></ellipse>
+    </g>
+</svg>
