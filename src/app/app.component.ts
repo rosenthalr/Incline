@@ -24,7 +24,6 @@ import { SplashPage } from '../pages/splash/splash';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // Temporarily changing the rootPage to the categories page for testing purposes
   rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation, modalCtrl: ModalController) {
