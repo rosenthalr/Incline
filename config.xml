@@ -96,16 +96,14 @@
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <allow-navigation href="http://10.0.0.104:8101" />
     <allow-navigation href="http://10.0.0.104:8100" />
-    <engine name="android" spec="^7.0.0" />
     <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
-    <engine name="ios" spec="~4.5.4" />
     <allow-navigation href="http://10.18.19.51:8100" />
     <allow-navigation href="http://10.18.19.64:8100" />
-    <engine name="android" spec="^7.0.0" />
-    <engine name="ios" spec="~4.5.4" />
     <allow-navigation href="http://10.13.229.81:8100" />
     <allow-navigation href="http://10.0.0.94:8100" />
     <allow-navigation href="http://10.10.188.154:8101" />
     <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
     <allow-navigation href="http://10.10.182.70:8101" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="^7.0.0" />
 </widget>

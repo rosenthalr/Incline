@@ -5,6 +5,11 @@ page-habit-landing {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
+  .scroll-content{
+    background: url('../assets/svgs/habit-landing-background.svg') no-repeat right bottom;
+    background-size: cover;
+
+  }
   ion-header {
     z-index: 1;
   }
@@ -36,6 +41,7 @@ page-habit-landing {
     transition: height 0.2s, width 0.2s margin 0.4s;
     height: 100%;
     width: 100%;
+    background:transparent;
   }
   .habit-row {
     transition: height 0.2s, width 0.2s margin 0.2s;

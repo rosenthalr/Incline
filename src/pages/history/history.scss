@@ -1,3 +1,24 @@
 page-history {
-
+  .history-cards{
+    margin-top:60%;
+    .history-card{
+      padding:15px 26px;
+      height: 66px;
+      width:304px;
+      margin: 12px auto;
+      display:flex;
+      p{
+        margin: auto 0;
+        width:80%;
+      }
+      div{
+        margin: auto 0 auto auto;
+        width: 20%;
+        p{
+          text-align:center;
+        }
+      }
+    }
+  }
 }
+

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, FabContainer } from 'ionic-angular';
-
+import { HabitGetService } from '../../services/habitget.service';
+import { Habit } from '../../models/habit';
+import { habitsEnter } from './history.animations'
 /**
  * Generated class for the HistoryPage page.
  *
@@ -12,25 +14,29 @@ import { IonicPage, NavController, NavParams, FabContainer } from 'ionic-angular
 @Component({
   selector: 'page-history',
   templateUrl: 'history.html',
+  providers: [HabitGetService],
+  animations: [habitsEnter]
 })
-
 export class HistoryPage {
+  habits: Habit[] =[];
+  present: boolean = false;
+  constructor(public habitGetService: HabitGetService, public navCtrl: NavController, public navParams: NavParams) {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-  current: number = 1;
-  max: number = 21;
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HistoryPage');
-  }
-  openFab($event,fab:FabContainer){
-    fab.toggleList();
-    console.log(fab._events);
-    console.log(fab._listsActive);
+  loadHabits() {
+    this.habitGetService.habitget().subscribe(
+      (data)=>{
+        this.habits = data.filter((habit:Habit)=>habit.activeHabit)
+        this.present = data.length > 0 ? true : false;
+      },(err)=>{
+        console.error(err);
+      }
+    )
   }
 
-  closeFab($event,fab:FabContainer){
-    fab.close();
-    console.log(fab._listsActive);
+  ionViewDidEnter() {
+    this.loadHabits();
+  }
+  ionViewDidLoad(){
+    console.log('ionViewDidLoad ArchivePage');
   }
 }

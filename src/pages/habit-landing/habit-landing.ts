@@ -21,9 +21,6 @@ import {
   HabitDeleteService
 } from '../../services/habitdelete.service';
 import {
-  HabitDetailsPage
-} from '../habit-details/habit-details';
-import {
   ModalCheckboxPage
 } from '../modal-checkbox/modal-checkbox';
 import {
@@ -35,12 +32,6 @@ import {
 import {
   HabitRenewPage
 } from '../habit-renew/habit-renew';
-import {
-  trigger,
-  state,
-  animate,
-  transition,
-} from '@angular/animations';
 import {
   habitsEnter,
   showDetails,
@@ -87,7 +78,7 @@ export class HabitLandingPage {
     public navCtrl: NavController,
     private modal: ModalController,
     public navParams: NavParams,
-    private platform: Platform, 
+    private platform: Platform,
     private notifications: LocalNotifications
   ) {}
 
@@ -98,10 +89,6 @@ export class HabitLandingPage {
   openModal() {
     const myModal = this.modal.create('ModalPage');
     myModal.present();
-  }
-  goToHabitDetails(habit) {
-    const habitDetailsPage = this.modal.create(HabitDetailsPage, habit)
-    habitDetailsPage.present();
   }
 
   loadHabits() {
@@ -121,7 +108,7 @@ export class HabitLandingPage {
         });
 
         this.expiredHabits = this.habits.filter(habit => {
-          return (today.diff(moment(habit.targetEnd),'days') === 0) && habit.streakCounter !== 21 
+          return (today.diff(moment(habit.targetEnd),'days') === 0) && habit.streakCounter !== 21
           && (today.isSame(moment(habit.updatedAt),'days'));
         });
 
@@ -151,7 +138,7 @@ export class HabitLandingPage {
       let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
       habitRenewModal.present();
       habitRenewModal.onDidDismiss((habit, action) => {
-      // Instead of delete, will need to update to be archived 
+      // Instead of delete, will need to update to be archived
       if(action === 'delete') {
         let deletedHabit = habit._id;
 
@@ -162,17 +149,17 @@ export class HabitLandingPage {
       }
         if(this.expiredHabits.length > 0) {
             this.showRenewHabitModal();
-        } 
+        }
       });
     } else {
       let expiredHabit = habit;
       let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
       habitRenewModal.present();
       habitRenewModal.onDidDismiss((habit, action) => {
-        // Instead of delete, will need to update to be archived 
+        // Instead of delete, will need to update to be archived
         if(action === 'delete') {
           let deletedHabit = habit._id;
-  
+
           // After a habit is deleted, remove it from the habits array
           this.habits = this.habits.filter((habit) => {
             return habit._id !== deletedHabit;
@@ -194,7 +181,7 @@ export class HabitLandingPage {
       let habitCompleteModal = this.modal.create(HabitCompletePage, { habit }, myModalOptions);
         habitCompleteModal.present();
         habitCompleteModal.onDidDismiss((habit, action) => {
-          // Instead of delete, will need to update to be archived 
+          // Instead of delete, will need to update to be archived
           if(action === 'delete') {
             let deletedHabit = habit._id;
 
@@ -213,7 +200,7 @@ export class HabitLandingPage {
         habitCompleteModal.present();
         habitCompleteModal.onDidDismiss((habit, action) => {
 
-          // Instead of delete, will need to update to be archived 
+          // Instead of delete, will need to update to be archived
           if(action === 'delete') {
             let deletedHabit = habit._id;
 
@@ -231,7 +218,7 @@ export class HabitLandingPage {
             this.showRenewHabitModal();
           }
       });
-    } 
+    }
   }
 
   setHabitClass(habitCategory: string) {
@@ -249,7 +236,7 @@ export class HabitLandingPage {
     let today = moment().startOf('day');
 
     this.platform.ready().then(() => {
-    
+
     var newStartDate = moment(habit.startDate).toISOString();
     var reminder = habit.reminder;
     var reminderHour = moment(reminder).get('hour');
@@ -276,7 +263,7 @@ export class HabitLandingPage {
     }
   });
   }
-  
+
 
   increment(habit) {
     let today = moment().startOf('day');
@@ -304,7 +291,7 @@ export class HabitLandingPage {
 
       if(habit.streakCounter === 21) {
         this.showHabitCompleteModal(habit);
-      } else if(habit.streakCounter !== 21 
+      } else if(habit.streakCounter !== 21
         && (today.isSame(moment(habit.updatedAt),'days'))
         && (today.isSame(moment(habit.targetEnd),'days'))) {
         this.showRenewHabitModal(habit);
@@ -320,18 +307,9 @@ export class HabitLandingPage {
           console.error(error)
         });
     }
-      
+
   }
 
-  
-
-  animationStarted(habit) {
-    habit.animating = true;
-  }
-  animationEnded(habit) {
-    habit.animating = false
-  }
-  
   setReminderTime(habit){
     this.habitPutService.habitput(habit).subscribe(
       data=>{
@@ -342,6 +320,7 @@ export class HabitLandingPage {
       }
     )
   }
+
   deleteHabit(habit){
     this.habitDeleteService.habitdelete(habit).subscribe(
       data =>{
@@ -358,7 +337,7 @@ export class HabitLandingPage {
   animationTrigger(habit) {
     habit.animating = habit.animating ? false : true;
     this.animating = this.animating ? false : true;
-    this.showDetails = this.showDetails==='shown' ? "hidden" : "shown";
+
   }
 
 
@@ -378,13 +357,13 @@ export class HabitLandingPage {
       checkboxModal.onDidDismiss(() => {
         this.openResetModal(this.resetHabits);
 
-        // If there was expired habits when we intially loaded the page, then make another call to 
+        // If there was expired habits when we intially loaded the page, then make another call to
         // the db to ensure that this is still the case b/c may have changed after user completed the other pop-ups
         if(this.expiredHabits.length > 0) {
           this.habitGetService.habitget().subscribe((habits) => {
             this.expiredHabits = habits.filter(habit => {
-              return (moment().diff(moment(habit.targetEnd),'days') === 0) 
-              && habit.streakCounter !== 21 
+              return (moment().diff(moment(habit.targetEnd),'days') === 0)
+              && habit.streakCounter !== 21
               && (moment(habit.updatedAt).diff(moment(),'days') === 0);
             });
             this.completedHabits = habits.filter(habit => {

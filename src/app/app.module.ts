@@ -20,11 +20,9 @@ import { BasicHabitsPage } from '../pages/basic-habits/basic-habits';
 import { AddPresetHabitPage } from '../pages/add-preset-habit/add-preset-habit';
 import { TrackingReminderPage } from '../pages/tracking-reminder/tracking-reminder';
 import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
-import { HabitDetailsPage } from '../pages/habit-details/habit-details';
 import { HabitCompletePage } from '../pages/habit-complete/habit-complete';
 import { HabitRenewPage } from '../pages/habit-renew/habit-renew';
 import { SplashPage } from '../pages/splash/splash';
-
 
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
@@ -33,8 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import Components
-import {ComponentsModule} from '../components/components.module'
-
+import {ComponentsModule} from '../components/components.module';
+import {Habit} from '../models/habit';
 // Import Local Notifications
 import { LocalNotifications } from '@ionic-native/local-notifications';
 
@@ -64,7 +62,6 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     CreateAccountPage,
     EqualValidator,
     HabitLandingPage,
-    HabitDetailsPage,
     TabsPage,
     DiscoverPage,
     MorePage,
@@ -98,7 +95,6 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     SuccessPage,
     CreateAccountPage,
     HabitLandingPage,
-    HabitDetailsPage,
     TabsPage,
     DiscoverPage,
     MorePage,

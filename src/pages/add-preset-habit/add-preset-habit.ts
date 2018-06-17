@@ -62,6 +62,7 @@ goToHabitLandingPage(){
     streakCounter: 0,
     habitCategory: this.habitCategory,
     activehabit: true,
+    updatedAt: moment().startOf('day').subtract(1,'day'),
   };
 
   this.habitPostService.habitpost(habit).subscribe(
@@ -78,8 +79,8 @@ goToHabitLandingPage(){
       var reminderMinute = moment(reminder).get('minute');
       var now = moment();
 
+
     this.platform.ready().then(() => {
-      console.log(data);
 
       var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
       console.log(startDate + ": this is startDate");
@@ -104,7 +105,7 @@ goToHabitLandingPage(){
         firstAt: data.targetEnd,
       };
       this.notifications.schedule(reminderNotification);
-            
+
       });
 
     }

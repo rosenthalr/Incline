@@ -13,6 +13,16 @@
 </ion-header>
 
 
-<ion-content padding no-bounce>
+<ion-content no-padding no-bounce>
+  <div class="history-background" [ngClass]="{present:present}">
 
+  </div>
+  <ion-list class="history-cards" [@habitsEnter]="habits.length">
+    <ion-card class="history-card" *ngFor="let habit of habits">
+        <p class="history-card-title">{{habit.title}}</p>
+        <div><h2>{{habit.updateCounter}}</h2>
+          <p>Days</p>
+        </div>
+    </ion-card>
+  </ion-list>
 </ion-content>

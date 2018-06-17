@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable()
 export class CreateAccountService {
   public apiUrl = 'http://localhost:7000/addUser';
-  // public apiUrl = 'https://goals.digitalstudio.io/addUser';
+  // public apiUrl = 'http://localhost:7000/addUser';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
 
