@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { CategoriesComponent } from './categories/categories';
 import { CommonModule } from '@angular/common';
 import { HabitProgressComponent } from './habit-progress/habit-progress';
 import { HabitProgressConfig } from './habit-progress/habit-progress.config';
@@ -13,16 +12,13 @@ import { ReminderComponent } from './reminder/reminder';
 
 @NgModule({
 	declarations: [
-      CategoriesComponent,
       HabitProgressComponent,
       NameHabitComponent,
-      CategoriesComponent,
       StartDateComponent,
       ReminderComponent,
   ],
 	imports: [IonicPageModule,CommonModule],
 	exports: [
-    CategoriesComponent,
     HabitProgressComponent,
     NameHabitComponent,
     StartDateComponent,

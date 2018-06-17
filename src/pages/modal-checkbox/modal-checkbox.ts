@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ModalController, ModalOptions } from 'ionic-angular';
 import { checkedHabits } from '../../app/data/checkboxhabits';
-import { TrackingReminderPage } from '../tracking-reminder/tracking-reminder';
 import { HabitGetService } from '../../services/habitget.service';
 import { HabitPutService } from '../../services/habitput.service';
 import * as moment from 'moment';

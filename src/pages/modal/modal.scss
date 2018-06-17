@@ -1,30 +1,65 @@
 @import '../../styles/global.scss';
 
-.close-modal {
-    position: absolute;
-    top: 15px;
-    left: 0px;
-}
 .background{
    // background-color: #006dc6;
 }
 
+.continue-button {
+    background-color:transparent;
+    margin: 0px;
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    color: $white-two;
+}
 .close-modal-button {
     background-color:transparent;
     margin: 0px;
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    color: $white-two;
 }
 .close-modal-button-icon {
     font-size:  2em;
     font-weight: bold;
     color: $white-two;
 }
-page-modal{
-.scroll-content{
-    padding-top:0;
-    margin-top:0!important;
+.modal-back-icon {
+    font-size: 2.2em;
 }
-.bar-buttons,
-.toolbar-title {
-    color: $white-two;
-  }
+page-modal {
+
+    .scroll-content{
+        padding-top:0;
+        margin-top:0!important;
+    }
+    ion-header {
+        height: 68px;
+        background-color: $cerulean;
+    }
+    .bar-buttons,
+    .modal-title {
+        color: $white-two;
+    }
+    .modal-title {
+        font-family: Lato;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: -0.4px;
+        text-align: center;
+    }
+    .toolbar-content-ios {
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .toolbar-content-ios > div {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
 }

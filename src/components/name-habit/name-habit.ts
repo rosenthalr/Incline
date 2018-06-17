@@ -1,4 +1,4 @@
-import { Component,EventEmitter, Output} from '@angular/core';
+import { Component,EventEmitter, Input, Output} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -14,14 +14,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class NameHabitComponent {
   @Output() onNamePicked: EventEmitter<string> = new EventEmitter<string>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
-  public habitName: string='';
+  @Input() public habitName: string='';
 
   setName(name){
     this.onNamePicked.emit(name);
   }
   emitNextPage(){
-    this.nextPage.emit()
     localStorage.setItem("basichabit", this.habitName);
-    console.log(this.habitName);
+    this.nextPage.emit()
   }
 }

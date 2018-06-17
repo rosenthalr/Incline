@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ModalOptions } from 'ionic-angular';
 import { mentalHabits } from '../../app/data/habits';
 import { PhysicalHabitsPage } from '../physical-habits/physical-habits';
 import { TabsPage } from '../tabs/tabs';
@@ -21,7 +21,7 @@ export class MentalHabitsPage {
 
   mentalHabits: Array<any> = mentalHabits;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -31,14 +31,14 @@ export class MentalHabitsPage {
     this.navCtrl.pop();
   }
 
-  goToCreateHabit(mentalHabit){
-    this.navCtrl.push(AddPresetHabitPage, {
+  openModal(mentalHabit) {
+    const myModal = this.modal.create('ModalPage', {
       'habit': mentalHabit.habit,
       'reminder': mentalHabit.reminder,
       'currentColor': mentalHabit.currentColor,
       'habitCategory':mentalHabit.habitCategory,
     });
-
+    myModal.present();
   }
 
 }
