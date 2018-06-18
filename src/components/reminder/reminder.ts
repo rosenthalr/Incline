@@ -72,24 +72,24 @@ export class ReminderComponent implements OnInit {
           console.log(firstReminder + ": this is firstReminder");
     
           let notification = {
-            // id: data._id,
-            title: 'Alert for ' + data.title,
-            text: 'This is an alert for ' + data.title,
-            firstAt: now,
-            every: 'minute'
+            id: data._id,
+            title: data.title,
+            text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
+            firstAt: firstReminder,
+            every: 'day'
           };
           console.log(notification + ": notification");
           this.notifications.schedule(notification);
     
           //Setting the 21 days notification
     
-          let reminderNotification = {
-            id: data._id,
-            title: '21 day alert for ' + data.title,
-            text: 'This is your 21st day tracking this habit: ' + data.title,
-            firstAt: data.targetEnd,
-          };
-          this.notifications.schedule(reminderNotification);
+          // let reminderNotification = {
+          //   id: data._id,
+          //   title: '21 day alert for ' + data.title,
+          //   text: 'This is your 21st day tracking this habit: ' + data.title,
+          //   firstAt: data.targetEnd,
+          // };
+          // this.notifications.schedule(reminderNotification);
                 
           });
       

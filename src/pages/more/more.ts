@@ -172,6 +172,7 @@ export class MorePage implements OnInit {
 
   logout(user) {
     let actionSheet = this.actionSheetCtrl.create({
+      enableBackdropDismiss: true,
       title: 'Are you sure you want to log out?',
       cssClass: 'action-sheets-logout',
       buttons: [

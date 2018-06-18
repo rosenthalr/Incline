@@ -349,11 +349,14 @@ export class HabitLandingPage {
         this.animating = false;
         this.showDetails= 'hidden'
         this.habits.splice(habit.index,1);
+        console.log(habit.customId + " this is customID delete");
+        this.notifications.clear(habit.customId);
       },
       error =>{
         console.error(error);
       }
     )
+    
   }
   animationTrigger(habit) {
     habit.animating = habit.animating ? false : true;
