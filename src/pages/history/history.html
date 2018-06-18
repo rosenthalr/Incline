@@ -13,9 +13,27 @@
 </ion-header>
 
 
-<ion-content class = "background" padding no-bounce>
-<div class="No-Achievements"> No Achievements Yet </div>
-<div class="No-Achieve-Description">Come back when you complete your first 21 day streak for 
-a shiny trophy and an even shinier new daily habit! </div>
+<ion-content class="background" padding no-bounce>
+        <!-- THIS CODE IS FOR WHEN THERE ARE NO ACHEIVEMENTS
+        Insert this into the below div when backend functionality is ready: *ngIf="!achievements?.length"
+        <div class= "No-Achievements">
+        <div class="No-Achievements-Title"> No Achievements Yet. </div>
+        <div class="No-Achieve-Description">Come back when you complete your first 21 day streak for 
+                    a shiny trophy and an even shinier new daily habit! </div>
+        </div>
+        -->
+        <div class="trophy-circle"> </div>
+
+        <div class="Achievements-Title"> You did it!</div>
+        <div class="Achieve-Description">Your hard work has made these daily activities easy. </div>
+
+         <!-- Insert this below when backend functionality is ready: *ngFor=" let achievement of achievements" -->
+        <ion-card class="habit">
+        <div class="test">
+          <span class="achievement-name"> Make my bed </span>
+          <span class="achievement-streak"> 21 </span>
+          <span class="days">DAYS </span>
+        </div>
+        </ion-card>
 
 </ion-content>
