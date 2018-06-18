@@ -141,15 +141,6 @@ page-habit-landing {
   .toolbar-background {
     background-color: #0477d6;
   }
-  .productivity {
-    path,
-    polyline {
-      stroke: $productivity;
-    }
-    circle {
-      fill: $productivity-fill;
-    }
-  }
   ion-header.animating {
     z-index: 0;
   }
@@ -204,33 +195,6 @@ page-habit-landing {
     .habit-col {
       transition: max-width 0.6s, padding 0.4s, height 0.3s, flex 0.6s;
       padding: 0px
-    }
-  }
-  .mental {
-    path,
-    polyline {
-      stroke: $mental;
-    }
-    circle {
-      fill: $mental-fill;
-    }
-  }
-  .basic {
-    path,
-    polyline {
-      stroke: $basic;
-    }
-    circle {
-      fill: $basic-fill;
-    }
-  }
-  .physical {
-    path,
-    polyline {
-      stroke: $physical
-    }
-    circle {
-      fill: $physical-fill;
     }
   }
 }

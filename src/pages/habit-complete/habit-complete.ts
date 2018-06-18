@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { HabitDeleteService } from '../../services/habitdelete.service';
+import {Habit} from '../../models/habit';
+import * as moment from 'moment';
 /*
  * Generated class for the HabitCompletePage page.
  *
@@ -14,23 +16,20 @@ import { HabitDeleteService } from '../../services/habitdelete.service';
   templateUrl: 'habit-complete.html',
 })
 export class HabitCompletePage {
-  habit: object;
+  habit: Habit;
 
   constructor(public viewCtrl: ViewController, private deleteHabitService: HabitDeleteService) {
     this.habit = this.viewCtrl.data.habit;
   }
 
-  keepTracking() {
+  keepTracking(habit) {
+    this.habit.targetEnd = moment().add(21,'days').toISOString();
     this.viewCtrl.dismiss(this.habit, 'keep');
   }
 
-  deleteHabit() {
-    this.deleteHabitService.habitdelete(this.habit).subscribe( (res) => {
-      this.viewCtrl.dismiss(this.habit, 'delete');
-    },(err) => {
-      this.viewCtrl.dismiss(this.habit, 'delete');
-    }
-  );
+  deleteHabit(habit) {
+    this.habit.activeHabit = false;
+    this.viewCtrl.dismiss(this.habit, 'delete');
   }
 
 }

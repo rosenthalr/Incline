@@ -40,7 +40,7 @@
             <h2>{{habit.title}}</h2>
           </ion-card-title>
           <div class="circle">
-            <habit-progress [ngClass]="setHabitClass(habit.habitCategory)" (click)="increment(habit)" class="circle" [current]="habit.streakCounter">
+            <habit-progress (click)="increment(habit)" class="circle" [current]="habit.streakCounter">
             </habit-progress>
           </div>
           <div class="details">

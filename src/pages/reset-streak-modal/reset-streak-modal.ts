@@ -40,12 +40,12 @@ export class ResetStreakModalPage {
       let today = moment().startOf('day')
       habits.map(habit=>{
           habit.streakCounter = 0 ;
-          habit.updatedAt = today.toDate();
+          habit.updatedAt = today.subtract(1,'days').toDate();
           habit.targetEnd = today.add(21,'days').toDate();
           this.habitPutService.habitput(habit).subscribe(
             data => {
               console.log(data);
-              habit.checked = true
+              habit.checked = false
               habit.updatedAt = habit.updatedAt.toISOString();
               habit.targetEnd = habit.targetEnd.toISOString();
             },

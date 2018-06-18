@@ -28,7 +28,7 @@ export class ModalPage implements OnInit {
   reminder;
   currentColor:string;
   habitCategory:string;
-  
+
   @ViewChild('modalSlider')slides:Slides;
   public category: string;
   public name:string;
@@ -85,32 +85,33 @@ export class ModalPage implements OnInit {
 
     if(!this.reminder) {
       this.reminder = moment().hours(this.reminder.hours()).minutes(this.reminder.minutes()).toISOString(true);
-    } 
+    }
 
     console.log("reminder time being added " ,this.reminder);
 
     let habit = {
       title: this.name,
-      startDate: moment().add(1, 'days').toISOString(true),
-      targetEnd: moment().add(22, 'days').toISOString(true),
+      startDate: moment().startOf('day').toDate(),
+      targetEnd: moment().startOf('day').add(21, 'days').toDate(),
+      updatedAt: moment().startOf('day').subtract(1,'day').toDate(),
       reminder: this.reminder,
       streakCounter: 0,
       activehabit: true,
     };
-  
+
     this.habitPostService.habitpost(habit).subscribe(
       data => {
-  
+
         //Set notification below
         var startDate = data.startDate;
         var reminder = data.reminder;
         var reminderHour = moment(reminder).get('hour');
         var reminderMinute = moment(reminder).get('minute');
         var now = moment();
-  
+
       this.platform.ready().then(() => {
         console.log(data);
-  
+
         var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
 
         let notification = {
@@ -121,7 +122,7 @@ export class ModalPage implements OnInit {
           every: 'minute'
         };
         this.notifications.schedule(notification);
-  
+
         //Setting the 21 days notification
         let reminderNotification = {
           id: data._id,
@@ -131,11 +132,11 @@ export class ModalPage implements OnInit {
         };
         this.notifications.schedule(reminderNotification);
 
-        
+
         this.navCtrl.push(TabsPage);
-              
+
         });
-  
+
       }
     )
   }

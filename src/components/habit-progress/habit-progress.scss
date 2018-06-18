@@ -19,3 +19,33 @@ text{
     font-size: 20pt;
   }
 }
+path,polyline,circle{
+  transition: stroke 0.5s, fill 0.5s;
+}
+.beginning {
+  path,
+  polyline {
+    stroke: $physical;
+  }
+  circle {
+    fill: $physical-fill;
+  }
+}
+.middle {
+  path,
+  polyline {
+    stroke: $basic;
+  }
+  circle {
+    fill: $basic-fill;
+  }
+}
+.complete {
+  path,
+  polyline {
+    stroke:$mental
+  }
+  circle {
+    fill: $mental-fill;
+  }
+}

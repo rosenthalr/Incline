@@ -26,6 +26,7 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class HabitProgressComponent implements OnChanges{
     private _lastAnimationId: number = 0;
     @ViewChild('path')         _path;
+    @Input() text:             string;
     @Input() current:          number = this._defaults.get('current');
     @Input() max:              number = this._defaults.get('max');
     @Input() radius:           number = this._defaults.get('radius');
@@ -114,6 +115,17 @@ export class HabitProgressComponent implements OnChanges{
       } else if (!this.clockwise) {
         return `scale(-1, 1) translate(-${diameter} 0)`;
       }
+    }
+
+    /** Set Habit class to the right state  */
+    setHabitClass() {
+      let classes = {
+        'beginning': this.current < 4 ,
+        'middle': (this.current >=4 && this.current <=20),
+        'complete': this.current >  20,
+
+      };
+      return classes;
     }
 
     /** Resolves a color through the service. */

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
+import {HabitProgressComponent} from '../habit-progress/habit-progress';
 /**
  * Generated class for the StartDateComponent component.
  *
@@ -15,26 +16,33 @@ import * as moment from 'moment';
 export class StartDateComponent implements OnInit {
   @Output() goBack = new EventEmitter<any>();
   @Output() nextPage: EventEmitter<any> = new EventEmitter<any>();
-  startDate: string;
-  targetDate: string;
-  habit;
-  min: string;
-  max: string;
-  hasChanged: boolean = false;
+  state:string;
+  current:number;
+  text: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-   this.habit = this.navParams.get('habit');
-   this.startDate= moment().add(1, 'days').startOf("day").toISOString(true);
-   this.min= moment().add(1, 'days').startOf("day").toISOString(true);
-   this.max= moment().add(1, 'year').startOf("day").toISOString(true);
-   this.targetDate = moment().add(22, 'days').toISOString(true);
   }
 
-  ngOnInit() {}
 
-  setTargetDate(startDate){
-    this.targetDate = moment(startDate).add(22, 'days').startOf("day").toISOString(true);
-    this.hasChanged = true;
+  ngOnInit() {
+    this.state = 'first';
+    this.current = 0;
+    this.text = '0-3';
+  }
+  changeState(){
+    if(this.state==='first'){
+      this.state = 'second';
+      this.current = 4;
+      this.text = '4-20'
+      return;
+    }else if(this.state==='second'){
+      this.state = 'final'
+      this.current = 21;
+      this.text = '21+';
+      return;
+    }else{
+      return
+    }
   }
 
   emitGoBack() {
@@ -43,7 +51,5 @@ export class StartDateComponent implements OnInit {
 
   emitNextPage() {
     this.nextPage.emit();
-    localStorage.setItem("basicstartdate", this.startDate);
-    localStorage.setItem("basictargetdate", this.targetDate);
   }
 }

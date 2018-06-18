@@ -1,11 +1,14 @@
 <div class="custom-habit-container">
     <div class="custom-habit-body">
         <div class="custom-habit-header">
-            <p> 
-                Tap your habit as complete 
+            <p>
+                Tap your habit as complete
                 every day to build your streak!
             </p>
         </div>
+        <h2 class="custom-habit-instruction"><b>Give it a try below</b></h2>
+        <habit-progress (click)='changeState()'[current]="current" [text]="text"></habit-progress>
+
         <div class="footer">
             We found that it takes at least 21 consecutive days to form a new habit.
         </div>

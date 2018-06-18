@@ -25,7 +25,7 @@ export class HistoryPage {
   loadHabits() {
     this.habitGetService.habitget().subscribe(
       (data)=>{
-        this.habits = data.filter((habit:Habit)=>habit.activeHabit)
+        this.habits = data.filter((habit:Habit)=>!habit.activeHabit)
         this.present = data.length > 0 ? true : false;
       },(err)=>{
         console.error(err);

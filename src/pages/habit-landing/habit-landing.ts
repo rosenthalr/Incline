@@ -39,6 +39,7 @@ import {
 import * as moment from 'moment';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Platform } from 'ionic-angular';
+import {Habit} from '../../models/habit';
 /**
  * Generated class for the HabitLandingPage page.
  *
@@ -99,7 +100,7 @@ export class HabitLandingPage {
           x.index = i;
           x.checked = x.updatedAt === new Date(new Date().setHours(0, 0, 0, 0)).toISOString();
         });
-        this.habits = data;
+        this.habits = data.filter((habit:Habit)=>habit.activeHabit);
         console.log(this.habits);
         this.lateHabits = this.habits.filter(habit => {
           var habitUpdatedAt = moment(habit.updatedAt).toISOString(true);
@@ -183,12 +184,17 @@ export class HabitLandingPage {
         habitCompleteModal.onDidDismiss((habit, action) => {
           // Instead of delete, will need to update to be archived
           if(action === 'delete') {
-            let deletedHabit = habit._id;
-
+            // Set the habitActive to false to archive
+            this.habitPutService.habitput(habit).subscribe(
+              data=>{
+                this.habits = this.habits.filter((habit)=>{
+                  return habit.activeHabit;
+                })
+              },err=>{
+                console.error(err);
+              }
+            )
             // After a habit is deleted, remove it from the habits array
-            this.habits = this.habits.filter((habit) => {
-              return habit._id !== deletedHabit;
-            });
           } else {
             habit.targetEnd = moment().add(21,'days').toISOString();
             this.habitPutService.habitput(habit).subscribe();
@@ -202,12 +208,15 @@ export class HabitLandingPage {
 
           // Instead of delete, will need to update to be archived
           if(action === 'delete') {
-            let deletedHabit = habit._id;
-
-            // After a habit is deleted, remove it from the habits array
-            this.habits = this.habits.filter((habit) => {
-              return habit._id !== deletedHabit;
-            });
+            this.habitPutService.habitput(habit).subscribe(
+              data=>{
+                this.habits = this.habits.filter((habit)=>{
+                  return habit.activeHabit;
+                })
+              },err=>{
+                console.error(err);
+              }
+            )
           } else {
             habit.targetEnd = moment().add(21,'days').toISOString();
             this.habitPutService.habitput(habit).subscribe();
@@ -219,16 +228,6 @@ export class HabitLandingPage {
           }
       });
     }
-  }
-
-  setHabitClass(habitCategory: string) {
-    let classes = {
-      'productivity': habitCategory === 'Productivity',
-      'mental': habitCategory === 'Mental Wellness',
-      'physical': habitCategory === 'Physical Health',
-      'basic': habitCategory === 'The Basics'
-    };
-    return classes;
   }
 
 
