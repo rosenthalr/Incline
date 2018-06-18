@@ -13,19 +13,19 @@
 </ion-header>
 
 
-<ion-content class="background" padding no-bounce [@habitsEnter]="habits.length">
-
-  <div class="trophy-circle" *ngIf="habits.length>1"> </div>
+<ion-content class="scroll-background" padding no-bounce [@habitsEnter]="habits.length">
+  <img class="background" src="../assets/svgs/VIZ - Pre-Achievements v3.svg" alt="">
+  <div class="trophy-circle" [ngClass]="{show:habits.length>1}"> </div>
 
   <div class="Achievements-Title"> {{title}}</div>
   <div class="Achieve-Description">{{subtitle}} </div>
 
   <ion-card class="habit" *ngFor="let habit of habits">
-    <div class="achievement">
       <span class="achievement-name"> {{habit.title}} </span>
-      <span class="achievement-streak">{{habit.updateCounter}}</span>
-      <span class="days">DAYS </span>
-    </div>
+      <div class="achievement-streak-container">
+        <span class="achievement-streak">{{habit.updateCounter}}</span>
+        <span class="days">DAYS</span>
+      </div>
   </ion-card>
 
 </ion-content>

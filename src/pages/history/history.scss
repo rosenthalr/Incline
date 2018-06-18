@@ -20,13 +20,19 @@ page-history {
       }
     }
   }
+    .scroll-background{
+        background:#59A9E4;
+    }
     .background{
-        background-image: url('../assets/svgs/VIZ - Pre-Achievements v3.svg');
+      position: absolute;
+      top:0;
+      left:0;
+      z-index: -1;
     }
     .No-Achievements-Title{
         font-family: Lato;
         font-size: 30px;
-        color: #0477d6;
+        color: $cerulean;
         width: 83.7%;
         text-align: left;
         margin-top: 285px;
@@ -35,7 +41,7 @@ page-history {
     .No-Achieve-Description{
         font-size: 22px;
         font-family: Lato;
-        color: #6c6c6c;
+        color: $dark-grey;
         width: 81.7%;
         text-align: left;
         margin-left: 11.5%;
@@ -46,12 +52,14 @@ page-history {
         margin-left: 149px;
         width: 202px;
         height: 197px;
-        //background-image: url('../assets/svgs/TrophyAndCircle.svg')
+        &.show{
+          background-image: url('../assets/svgs/TrophyAndCircle.svg')
+        }
     }
     .Achievements-Title{
         font-family: Lato;
         font-size: 30px;
-        color: #0477d6;
+        color: $cerulean;
         width: 83.7%;
         text-align: left;
         margin-top: 45px;
@@ -60,13 +68,14 @@ page-history {
     .Achieve-Description{
         font-size: 22px;
         font-family: Lato;
-        color: #6c6c6c;
+        color: $dark-grey;
         width: 82.1%;
         text-align: left;
         margin-left: 11.5%;
     }
 
     .habit{
+      display: flex;
         width: 81.2%;
         height: 66px;
         margin-top: 21px;
@@ -74,25 +83,27 @@ page-history {
     }
 
     .achievement-name{
+        flex:80%;
         font-family: Lato;
         font-size: 18px;
-        margin-left: 26px;
-        margin-top: 45px;
-        color: #4a4a4a;
+        margin: auto auto auto 35px;
+        color: $dark-grey;
     }
-    .achievement-streak{
+    .achievement-streak-container{
+      margin: auto 27px auto auto;
+      text-align: center;
+      .achievement-streak{
         font-family: Lato;
         font-size: 30px;
-        margin-left: 107px;
-        color: #4a4a4a;
-    }
-    .days{
+        color: $dark-grey;
+      }
+      .days{
         font-family: Lato;
-        margin-left: 243px;
-        margin-top: -45px;
         font-size: 12px;
-        color: #4a4a4a;
+        color: $dark-grey;
+      }
     }
+
     .achievement{
         margin-top: 5px;
     }
