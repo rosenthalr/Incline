@@ -84,10 +84,10 @@ export class ModalPage implements OnInit {
   goToHabitLandingPage(){
 
     if(!this.reminder) {
-      this.reminder = moment().hours(this.reminder.hours()).minutes(this.reminder.minutes()).toISOString(true);
+      this.reminder = moment().hour(8).minutes(0).utcOffset(-240).toISOString(true);
     }
 
-    console.log("reminder time being added " ,this.reminder);
+    console.log("reminder time being added " , this.reminder);
 
     let habit = {
       title: this.name,
