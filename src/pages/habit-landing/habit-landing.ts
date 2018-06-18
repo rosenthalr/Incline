@@ -342,15 +342,18 @@ export class HabitLandingPage {
       }
     )
   }
+
   deleteHabit(habit){
+    var blah = habit.customId;
+
     this.habitDeleteService.habitdelete(habit).subscribe(
       data =>{
         habit.animating = false;
         this.animating = false;
         this.showDetails= 'hidden'
         this.habits.splice(habit.index,1);
-        console.log(habit.customId + " this is customID delete");
-        this.notifications.clear(habit.customId);
+        console.log(blah + " this is customID delete")
+        this.notifications.clear(blah);
       },
       error =>{
         console.error(error);
