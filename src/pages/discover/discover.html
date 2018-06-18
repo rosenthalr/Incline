@@ -21,35 +21,46 @@
 <ion-content padding no-bounce>
 
   <div class = "description">
-      Not sure where to begin? The categories below focus on the distinct areas of life that most people shape their
-      habits around. Click inside each for example habits that you can begin tracking towards!
+        The categories below focus on distinct areas that people often shape habits around. Click inside for example habits!
   </div>
 
   <ion-list class="discover">
-      <!-- temporary page directing you to reminder page -->
+      <!-- All comments are for the old button design in case they wan to revert the change -->
+<!--
   <button (click)="goToProductivity()" type="button" value="Productivity" class="discover-button">
       <div class="categories-button-icon-container"><ion-icon name="clock"></ion-icon></div>
       <div class="categories-button-title">Productivity</div>
       <div> <ion-img class="prod-image" src="assets/imgs/Prod-Discover.png"></ion-img> </div>
   </button>
+-->
+<div> <ion-img (click)="goToProductivity()" class="discover-button" src="assets/svgs/Productivity.svg"> </ion-img> </div>
 
+  <!--
   <button (click)="goToMentalWellness()" type="button" value="Mental Wellness" class="discover-button">
       <div class="categories-button-icon-container"><ion-icon name="flower"></ion-icon></div>
       <div class="categories-button-title">Mental Wellness</div>
       <div> <ion-img class="mental-image" src="assets/imgs/Mental-Discover.png"> </ion-img></div>
   </button>
-
+  -->
+  <div> <ion-img (click)="goToMentalWellness()" class="discover-button" src="assets/svgs/Mental Wellness.svg"> </ion-img> </div>
+  <!--
   <button (click)="goToPhysicalHealth()" type="button" value="Physical Health" class="discover-button">
       <div class="categories-button-icon-container"><ion-icon name="flame"></ion-icon></div>
       <div class="categories-button-title">Physical health</div>
       <div> <ion-img class="physical-image" src="assets/imgs/Physical-Discover.png"> </ion-img> </div>
-  </button>
+   </button>
+   -->
+      <div> <ion-img (click)="goToPhysicalHealth()" class="discover-button" src="assets/svgs/Physical Health.svg"> </ion-img> </div>
 
-  <button (click)="goToBasics()" type="button" value="The Basics" class="discover-button">
+
+    <!--
+        <button (click)="goToBasics()" type="button" value="The Basics" class="discover-button">
+     
       <div class="categories-button-icon-container"><ion-icon name="home"></ion-icon></div>
       <div class="categories-button-title">The Basics</div>
-      <div> <ion-img class="basics-image" src="assets/imgs/Basics-Discover.png"> </ion-img> </div>
-  </button>
+      </button>
+      -->
+      <div> <ion-img (click)="goToBasics()" class="discover-button" src="assets/svgs/The Basics.svg"> </ion-img> </div>
 
 
 </ion-list>

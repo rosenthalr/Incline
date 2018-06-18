@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="327px" height="84px" viewBox="0 0 327 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 11</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="327" height="84"></rect>
+    </defs>
+    <g id="Sprint-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="VIZ-Discover---UPDATED-NEW" transform="translate(-24.000000, -331.000000)">
+            <g id="Group-11" transform="translate(24.000000, 331.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)">
+                    <g transform="translate(1.000000, -25.000000)">
+                        <g id="Group-7" stroke-width="1" fill-rule="evenodd">
+                            <polygon id="Rectangle-8" fill="#FF9E00" points="183.485757 25 326 25 326 109 198.405397 109"></polygon>
+                            <g id="Asset-3" transform="translate(273.200186, 54.902058) scale(1, -1) rotate(20.000000) translate(-273.200186, -54.902058) translate(200.200186, 23.902058)" fill="#FFFFFF" fill-rule="nonzero">
+                                <rect id="Rectangle-path" x="22.4435089" y="27.8930123" width="113.669394" height="7.64254352"></rect>
+                                <rect id="Rectangle-path" x="114.376386" y="0.935146205" width="13.3763184" height="60.193433" rx="3.46"></rect>
+                                <path d="M126.080664,8.45932533 L126.080664,53.6044001 L133.351504,53.6044001 C135.800025,53.6044001 137.784943,51.6031983 137.784943,49.1345907 L137.784943,12.9291347 C137.784943,10.4605272 135.800025,8.45932533 133.351504,8.45932533 L126.080664,8.45932533 Z" id="Shape"></path>
+                                <rect id="Rectangle-path" x="17.4958036" y="0.100710715" width="13.3763184" height="60.193433" rx="3.46"></rect>
+                                <path d="M20.0038633,7.62488984 L20.0038633,52.7699646 L12.6886891,52.7699646 C10.2646537,52.7699646 8.29958464,50.7687628 8.29958464,48.3001552 L8.29958464,12.0946992 C8.29958464,9.62609167 10.2646537,7.62488984 12.6886891,7.62488984 L20.0038633,7.62488984 Z" id="Shape"></path>
+                                <path d="M9.97162445,16.8211088 L9.97162445,44.4097656 L4.25996953,44.4097656 C2.34139903,44.4097834 0.78374713,42.8865085 0.775405519,41.0021052 L0.775405519,20.2436498 C0.775405519,18.3534326 2.33549797,16.8211088 4.25996953,16.8211088 L9.97162445,16.8211088 Z" id="Shape"></path>
+                            </g>
+                            <rect id="Rectangle-7" stroke="#FF9E00" stroke-width="3" x="1.5" y="26.5" width="323" height="81"></rect>
+                        </g>
+                        <text id="Physical-Health" font-family="Lato-Bold, Lato" font-size="22" font-weight="bold" line-spacing="26">
+                            <tspan x="11" y="77" fill="#FF9E00">Physical Health</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

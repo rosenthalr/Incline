@@ -7,22 +7,32 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title class="title">History</ion-title>
+    <ion-title class="title">Achievements</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content no-padding no-bounce>
-  <div class="history-background" [ngClass]="{present:present}">
-
-  </div>
-  <ion-list class="history-cards" [@habitsEnter]="habits.length">
-    <ion-card class="history-card" *ngFor="let habit of habits">
-        <p class="history-card-title">{{habit.title}}</p>
-        <div><h2>{{habit.updateCounter}}</h2>
-          <p>Days</p>
+<ion-content class="background" padding no-bounce [@habitsEnter]="habits.length">
+  <!-- THIS CODE IS FOR WHEN THERE ARE NO ACHEIVEMENTS
+        Insert this into the below div when backend functionality is ready: *ngIf="!achievements?.length"
+        <div class= "No-Achievements">
+        <div class="No-Achievements-Title"> No Achievements Yet. </div>
+        <div class="No-Achieve-Description">Come back when you complete your first 21 day streak for
+                    a shiny trophy and an even shinier new daily habit! </div>
         </div>
-    </ion-card>
-  </ion-list>
+        -->
+  <div class="trophy-circle"> </div>
+
+  <div class="Achievements-Title"> You did it!</div>
+  <div class="Achieve-Description">Your hard work has made these daily activities easy. </div>
+
+  <ion-card class="habit" *ngFor="let habit of habits">
+    <div class="achievement">
+      <span class="achievement-name"> {{habit.title}} </span>
+      <span class="achievement-streak">{{habit.updateCounter}}</span>
+      <span class="days">DAYS </span>
+    </div>
+  </ion-card>
+
 </ion-content>
