@@ -17,8 +17,14 @@
   <img class="background" src="../assets/svgs/VIZ - Pre-Achievements v3.svg" alt="">
   <div class="trophy-circle" [ngClass]="{show:habits.length>1}"> </div>
 
-  <div class="Achievements-Title"> {{title}}</div>
-  <div class="Achieve-Description">{{subtitle}} </div>
+  <div [ngClass]="{
+    'No-Achievements-Title':habits.length<1,
+    'Achievements-Title':habits.length>1
+    }" > {{title}}</div>
+  <div [ngClass]="{
+    'No-Achieve-Description':habits.length<1,
+    'Achieve-Description':habits.length>1
+    }">{{subtitle}} </div>
 
   <ion-card class="habit" *ngFor="let habit of habits">
       <span class="achievement-name"> {{habit.title}} </span>

@@ -21,21 +21,23 @@ page-history {
     }
   }
     .scroll-background{
-        background:#59A9E4;
+        background:#a5d8ef;
     }
     .background{
+      background-image: url('../assets/svgs/VIZ - Pre-Achievements v3.svg');
       position: absolute;
       top:0;
       left:0;
       z-index: -1;
     }
+
     .No-Achievements-Title{
         font-family: Lato;
         font-size: 30px;
         color: $cerulean;
         width: 83.7%;
         text-align: left;
-        margin-top: 285px;
+        margin-top: 105px;
         margin-left: 11.5%;
     }
     .No-Achieve-Description{
