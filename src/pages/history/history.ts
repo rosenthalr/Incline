@@ -20,6 +20,8 @@ import { habitsEnter } from './history.animations'
 export class HistoryPage {
   habits: Habit[] =[];
   present: boolean = false;
+  subtitle: String='Come back when you complete your first 21 day streak for a shiny trophy and an even shinier new daily habit!';
+  title: String='No achievements yet.' ;
   constructor(public habitGetService: HabitGetService, public navCtrl: NavController, public navParams: NavParams) {}
 
   loadHabits() {
@@ -27,6 +29,8 @@ export class HistoryPage {
       (data)=>{
         this.habits = data.filter((habit:Habit)=>!habit.activeHabit)
         this.present = data.length > 0 ? true : false;
+        this.subtitle = 'Your hard work has made these daily activities easy.'
+        this.title = 'You did it! ';
       },(err)=>{
         console.error(err);
       }

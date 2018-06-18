@@ -14,18 +14,11 @@
 
 
 <ion-content class="background" padding no-bounce [@habitsEnter]="habits.length">
-  <!-- THIS CODE IS FOR WHEN THERE ARE NO ACHEIVEMENTS
-        Insert this into the below div when backend functionality is ready: *ngIf="!achievements?.length"
-        <div class= "No-Achievements">
-        <div class="No-Achievements-Title"> No Achievements Yet. </div>
-        <div class="No-Achieve-Description">Come back when you complete your first 21 day streak for
-                    a shiny trophy and an even shinier new daily habit! </div>
-        </div>
-        -->
-  <div class="trophy-circle"> </div>
 
-  <div class="Achievements-Title"> You did it!</div>
-  <div class="Achieve-Description">Your hard work has made these daily activities easy. </div>
+  <div class="trophy-circle" *ngIf="habits.length>1"> </div>
+
+  <div class="Achievements-Title"> {{title}}</div>
+  <div class="Achieve-Description">{{subtitle}} </div>
 
   <ion-card class="habit" *ngFor="let habit of habits">
     <div class="achievement">
