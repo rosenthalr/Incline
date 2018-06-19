@@ -22,7 +22,7 @@ import { Platform } from 'ionic-angular';
   providers: [HabitPostService]
 })
 export class AddPresetHabitPage {
-  private startDate: Date|moment.Moment;
+  private startDate: String;
   private minDateOfPicker: String;
   private maxDateOfPicker: String;
   target: string;
@@ -34,7 +34,7 @@ export class AddPresetHabitPage {
 
   constructor(private habitPostService: HabitPostService, public navCtrl: NavController, public navParams: NavParams, private platform: Platform, private notifications: LocalNotifications) {
    this.habit = this.navParams.get('habit');
-   this.startDate= moment().add(1, 'days').startOf("day");
+   this.startDate= moment().add(1, 'days').startOf("day").toISOString(true);
    this.minDateOfPicker= moment().add(1, 'days').startOf("day").toISOString(true);
    this.maxDateOfPicker= moment().add(1, 'year').startOf("day").toISOString(true);
    this.target = moment().add(22, 'days').toISOString(true);
@@ -54,6 +54,7 @@ export class AddPresetHabitPage {
 
 
 goToHabitLandingPage(){
+  let today = moment().startOf('day');
   let habit = {
     title: this.habit,
     startDate: this.startDate,
@@ -87,25 +88,25 @@ goToHabitLandingPage(){
       console.log(firstReminder + ": this is firstReminder");
 
       let notification = {
-        // id: data._id,
-        title: 'Alert for ' + data.title,
-        text: 'This is an alert for ' + data.title,
-        firstAt: now,
-        every: 'minute'
+        // id: data.customId,
+        title: data.title,
+        text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
+        firstAt: firstReminder,
+        every: 'day'
       };
       console.log(notification + ": notification");
       this.notifications.schedule(notification);
 
       //Setting the 21 days notification
 
-      let reminderNotification = {
-        id: data._id,
-        title: '21 day alert for ' + data.title,
-        text: 'This is your 21st day tracking this habit: ' + data.title,
-        firstAt: data.targetEnd,
-      };
-      this.notifications.schedule(reminderNotification);
-
+      // let reminderNotification = {
+      //   id: data.customId,
+      //   title: '21 day alert for ' + data.title,
+      //   text: 'This is your 21st day tracking this habit: ' + data.title,
+      //   firstAt: data.targetEnd,
+      // };
+      // this.notifications.schedule(reminderNotification);
+            
       });
 
     }

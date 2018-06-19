@@ -313,6 +313,7 @@ export class HabitLandingPage {
     this.habitPutService.habitput(habit).subscribe(
       data=>{
         console.log(data);
+        // this.notifications.cancel(habit.customId);
       },
       error=>{
         console.error(error);
@@ -321,17 +322,26 @@ export class HabitLandingPage {
   }
 
   deleteHabit(habit){
+    var blah = habit.customId;
+
     this.habitDeleteService.habitdelete(habit).subscribe(
       data =>{
         habit.animating = false;
         this.animating = false;
         this.showDetails= 'hidden'
         this.habits.splice(habit.index,1);
+        // console.log(blah + " this is customID delete")
+
+        // this.platform.ready().then(() => {
+        // this.notifications.clear(blah);
+        // })
+
       },
       error =>{
         console.error(error);
       }
     )
+    
   }
   animationTrigger(habit) {
     habit.animating = habit.animating ? false : true;

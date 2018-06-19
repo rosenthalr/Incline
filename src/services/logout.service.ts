@@ -21,8 +21,8 @@ export class LogoutService {
 
   logout(user) {
     let body = JSON.stringify(user);
-    return this.http.post('http://localhost:7000/logout', body, httpOptions);
     // return this.http.post('http://localhost:7000/logout', body, httpOptions);
+    return this.http.post('https://goals.digitalstudio.io/logout', body, httpOptions);
   }
 
 }

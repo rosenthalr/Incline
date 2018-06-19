@@ -16,6 +16,9 @@
 // automatically applied to the <body> element in the app.
 
 $action-sheet-ios-button-destructive-text-color: black; 
+.action-sheet-ios{
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .action-sheets-logout {
   .LogoutButton {
     height: 24px;

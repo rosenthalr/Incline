@@ -5,33 +5,33 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title class="title">Achievements</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content class="scroll-background" padding no-bounce [@habitsEnter]="habits.length">
-  <img class="background" src="../assets/svgs/VIZ - Pre-Achievements v3.svg" alt="">
-  <div class="trophy-circle" [ngClass]="{show:habits.length>1}"> </div>
-
-  <div [ngClass]="{
-    'No-Achievements-Title':habits.length<1,
-    'Achievements-Title':habits.length>1
-    }" > {{title}}</div>
-  <div [ngClass]="{
-    'No-Achieve-Description':habits.length<1,
-    'Achieve-Description':habits.length>1
-    }">{{subtitle}} </div>
-
-  <ion-card class="habit" *ngFor="let habit of habits">
-      <span class="achievement-name"> {{habit.title}} </span>
-      <div class="achievement-streak-container">
-        <span class="achievement-streak">{{habit.updateCounter}}</span>
-        <span class="days">DAYS</span>
-      </div>
-  </ion-card>
-
-</ion-content>
+  
+    <ion-navbar>
+      <ion-title class="title">Achievements</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="scroll-background" padding no-bounce [@habitsEnter]="habits.length">
+    <img class="background" src="../assets/svgs/VIZ - Pre-Achievements v3.svg" alt="">
+    <div class="trophy-circle" [ngClass]="{show:habits.length>1}"> </div>
+  
+    <div [ngClass]="{
+      'No-Achievements-Title':habits.length<1,
+      'Achievements-Title':habits.length>1
+      }" > {{title}}</div>
+    <div [ngClass]="{
+      'No-Achieve-Description':habits.length<1,
+      'Achieve-Description':habits.length>1
+      }">{{subtitle}} </div>
+  
+    <ion-card class="habit" *ngFor="let habit of habits">
+        <span class="achievement-name"> {{habit.title}} </span>
+        <div class="achievement-streak-container">
+          <span class="achievement-streak">{{habit.updateCounter}}</span>
+          <span class="days">DAYS</span>
+        </div>
+    </ion-card>
+  
+  </ion-content>
