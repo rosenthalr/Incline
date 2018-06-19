@@ -84,7 +84,8 @@ export class ModalPage implements OnInit {
   goToHabitLandingPage(){
 
     if(!this.reminder) {
-      this.reminder = moment().hour(8).minutes(0).utcOffset(-240);
+      this.reminder = "08:00:00.000Z";
+      this.reminder = moment.utc(this.reminder, "HH:mm:ss.SSSZ")
     }
 
 

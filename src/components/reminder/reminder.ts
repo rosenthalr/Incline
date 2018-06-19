@@ -36,8 +36,7 @@ export class ReminderComponent implements OnInit {
 
   setReminderTime() {
     this.hasChanged = true;
-    this.formattedReminder = moment(this.reminderTime, "HH:mm:ss.SSSZ");
-    //this.reminderTime = moment().hours(this.formattedReminder.hours()).minutes(this.formattedReminder.minutes()).toISOString(true);
+    this.formattedReminder = moment.utc(this.reminderTime, "HH:mm:ss.SSSZ");
     console.log(this.formattedReminder);
     this.onReminderPicked.emit(this.formattedReminder);
   }
