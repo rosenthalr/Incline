@@ -84,23 +84,24 @@ export class ModalPage implements OnInit {
   goToHabitLandingPage(){
 
     if(!this.reminder) {
-      this.reminder = moment().hours(this.reminder.hours()).minutes(this.reminder.minutes()).toISOString(true);
+      this.reminder = moment().hour(8).minutes(0).utcOffset(-240);
     }
 
-    console.log("reminder time being added " ,this.reminder);
 
     let habit = {
       title: this.name,
       startDate: moment().startOf('day').toDate(),
       targetEnd: moment().startOf('day').add(21, 'days').toDate(),
       updatedAt: moment().startOf('day').subtract(1,'day').toDate(),
-      reminder: this.reminder,
+      reminder: this.reminder.toDate(),
       streakCounter: 0,
       activehabit: true,
     };
 
     this.habitPostService.habitpost(habit).subscribe(
       data => {
+
+        console.log(data.reminder)
 
         //Set notification below
         var startDate = data.startDate;
@@ -110,8 +111,6 @@ export class ModalPage implements OnInit {
         var now = moment();
 
       this.platform.ready().then(() => {
-        console.log(data);
-
         var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
 
         let notification = {

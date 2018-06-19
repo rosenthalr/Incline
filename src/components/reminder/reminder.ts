@@ -30,15 +30,15 @@ export class ReminderComponent implements OnInit {
   constructor(private habitPostService: HabitPostService, private platform: Platform, private notifications: LocalNotifications){}
 
   ngOnInit() {
-    this.reminderTime = moment("08:00:00.000Z",'HH:mm:ss.SSSZ').toISOString();
+    this.reminderTime = "08:00:00.000Z";
 
   }
 
   setReminderTime() {
     this.hasChanged = true;
     this.formattedReminder = moment(this.reminderTime, "HH:mm:ss.SSSZ");
-    this.reminderTime = moment().hours(this.formattedReminder.hours()).minutes(this.formattedReminder.minutes()).toISOString(true);
-    console.log(this.reminderTime);
+    //this.reminderTime = moment().hours(this.formattedReminder.hours()).minutes(this.formattedReminder.minutes()).toISOString(true);
+    console.log(this.formattedReminder);
     this.onReminderPicked.emit(this.formattedReminder);
   }
 
