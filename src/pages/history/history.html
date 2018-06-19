@@ -15,15 +15,15 @@
   
   <ion-content class="scroll-background" padding no-bounce [@habitsEnter]="habits.length">
     <img class="background" src="../assets/svgs/VIZ - Pre-Achievements v3.svg" alt="">
-    <div class="trophy-circle" [ngClass]="{show:habits.length>1}"> </div>
+    <div class="trophy-circle" [ngClass]="{show:habits.length>=1}"> </div>
   
     <div [ngClass]="{
-      'No-Achievements-Title':habits.length<1,
-      'Achievements-Title':habits.length>1
+      'No-Achievements-Title':habits.length<=1,
+      'Achievements-Title':habits.length>=1
       }" > {{title}}</div>
     <div [ngClass]="{
-      'No-Achieve-Description':habits.length<1,
-      'Achieve-Description':habits.length>1
+      'No-Achieve-Description':habits.length<=1,
+      'Achieve-Description':habits.length>=1
       }">{{subtitle}} </div>
   
     <ion-card class="habit" *ngFor="let habit of habits">
