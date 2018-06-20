@@ -330,11 +330,11 @@ export class HabitLandingPage {
         this.animating = false;
         this.showDetails= 'hidden'
         this.habits.splice(habit.index,1);
-        // console.log(blah + " this is customID delete")
+        console.log(blah + " this is customID delete")
 
-        // this.platform.ready().then(() => {
-        // this.notifications.clear(blah);
-        // })
+        this.platform.ready().then(() => {
+        this.notifications.clear(blah);
+        })
 
       },
       error =>{
