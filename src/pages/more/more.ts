@@ -152,7 +152,7 @@ export class MorePage implements OnInit {
   }
   checkIfCorrect(userInfo, field) {
     if (this.isComplete = true) {
-      if (this.password.length > localStorage.getItem("pw").length - 1) {
+      if (this.password.length > localStorage.getItem("pw").length - 3) {
         // console.log('isComplete:   ' + this.isComplete)
         // console.log('passwordError:    ' + this.passwordError + '     pw ----- '+ this.password + '  l  '+ this.password.length)
         if (this.password !== localStorage.getItem("pw")) {

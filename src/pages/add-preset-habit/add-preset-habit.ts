@@ -87,8 +87,10 @@ goToHabitLandingPage(){
       console.log(startDate + ": this is startDate");
       console.log(firstReminder + ": this is firstReminder");
 
+      console.log(data.customId + ": THIS IS CUSTOM ID");
+
       let notification = {
-        // id: data.customId,
+        id: data.customId,
         title: data.title,
         text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
         firstAt: firstReminder,
