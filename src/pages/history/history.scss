@@ -26,9 +26,9 @@ page-history {
     .background{
       background-image: url('../assets/svgs/VIZ - Pre-Achievements v3.svg');
       position: absolute;
-      top:0;
+      top:-20%;
       left:0;
-      height:100%;
+      height:125%;
       width:100%;
       z-index: -1;
     }
@@ -39,7 +39,7 @@ page-history {
         color: $cerulean;
         width: 83.7%;
         text-align: left;
-        margin-top: 105px;
+        margin-top: 18%;
         margin-left: 11.5%;
     }
     .No-Achieve-Description{
@@ -52,8 +52,8 @@ page-history {
     }
 
     .trophy-circle{
-        margin-top: 25px;
-        margin-left: 149px;
+        margin-top: 7%;
+        margin-left: 40%;
         width: 202px;
         height: 197px;
         &.show{
@@ -66,7 +66,7 @@ page-history {
         color: $cerulean;
         width: 83.7%;
         text-align: left;
-        margin-top: 90px;
+        margin-top: 55px;
         margin-left: 11.5%;
     }
     .Achieve-Description{
