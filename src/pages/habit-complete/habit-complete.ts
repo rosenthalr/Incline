@@ -18,7 +18,7 @@ import * as moment from 'moment';
 export class HabitCompletePage {
   habit: Habit;
 
-  constructor(public viewCtrl: ViewController, private deleteHabitService: HabitDeleteService) {
+  constructor(public viewCtrl: ViewController) {
     this.habit = this.viewCtrl.data.habit;
   }
 

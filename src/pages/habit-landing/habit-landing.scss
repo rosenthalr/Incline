@@ -1,4 +1,5 @@
 @import "../../styles/_colors.scss";
+$transition-in:0.5s;
 page-habit-landing {
   .animating .scroll-content {
     transition: margin 0.2s;
@@ -22,29 +23,17 @@ page-habit-landing {
     flex: 50%;
     max-width: 50%;
     height: 50%;
-    transition: max-width 0.5s, padding 0.4s, height .4s, flex 0.5s;
+    transition: max-width $transition-in, padding $transition-in, height $transition-in, flex $transition-in;
   }
-  .habit-landing-habits {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: nowrap;
-  }
-  .habit-landing-habits div {
-    display: block;
-    text-align: center;
-    width: 80%;
-  }
+
   .habit-grid {
-    transition: height 0.2s, width 0.2s margin 0.4s;
+    transition: height $transition-in, width $transition-in, margin $transition-in;
     height: 100%;
     width: 100%;
     background:transparent;
   }
   .habit-row {
-    transition: height 0.2s, width 0.2s margin 0.2s;
+    transition: height $transition-in, width $transition-in, margin $transition-in;
   }
   .habit-landing-modal-icon {
     font-size: 2em;
@@ -56,20 +45,20 @@ page-habit-landing {
   }
   .habit {
     width: 163px;
-    height: 251px;
+    height: 270px;
     margin: auto;
     padding: 10px;
     flex-basis: 43.5%;
     background-color: white;
-    transition: opacity 1s ease-in, height 0.5s, width 0.5s, margin 0.5s, padding 0.5s;
+    transition: opacity 1s ease-in, height $transition-in, width $transition-in, margin $transition-in, padding $transition-in;
     .habit-close-button{
       position: absolute;
       font-size: 20px;
       display: none;
       color:$black;
       background-color: transparent;
-      float:left;
-      height:auto;
+      margin-left: 13px;
+      height:21px;
 
     }
     .reminder-label{
@@ -77,7 +66,7 @@ page-habit-landing {
     }
     .habit-details{
       opacity:0;
-      transition:opacity 0.2s ease-in-out;
+      height: 0;
       .habit-headline {
         flex: 200px;
         margin: auto;
@@ -95,23 +84,23 @@ page-habit-landing {
     }
 
     .habit-title h2 {
-      font-size:22px;
+      font-size:19px;
       font-family: Lato;
       height: 42px;
       color: #4a4a4a;
       text-align: left;
-      transition: text-align 1s, font-size 1s, color 1s;
+      transition: text-align $transition-in, font-size $transition-in, color $transition-in;
     }
     .details {
-      padding: 0;
+      padding-top:10px;
       font-family: Lato;
       font-size: 22px;
       text-align: right;
-      transition: opacity 1s;
+      transition: opacity $transition-in;
     }
     .details-icon {
       color: #0477d6;
-      font-size: 27px;
+      font-size: 30px;
       margin-right: 5px;
       font-weight: bold;
     }
@@ -122,7 +111,7 @@ page-habit-landing {
         stroke: $white-two;
         fill: $white-two;
       }
-      transition : width 1.5s
+      transition : width $transition-in
     }
   }
 
@@ -139,7 +128,7 @@ page-habit-landing {
     }
   }
   .check {
-    transition: stroke-opacity 0.3s;
+    transition: stroke-opacity $transition-in;
     stroke-opacity: 0;
   }
   .toolbar-background {
@@ -155,7 +144,7 @@ page-habit-landing {
       height: 100%
     }
     .habit.still {
-      transition:opacity 0.2s;
+      transition:opacity $transition-in;
       height: 0px;
       width: 0px;
       margin: 0px;
@@ -183,7 +172,8 @@ page-habit-landing {
         opacity:0;
       }
       .habit-details{
-        transition:opacity 1.5s ease-in;
+        transition:opacity 0.2s ease-in;
+        transition-delay: 0.5s;
         opacity:1;
       }
     }
@@ -197,7 +187,7 @@ page-habit-landing {
       flex: 0%;
     }
     .habit-col {
-      transition: max-width 0.6s, padding 0.4s, height 0.3s, flex 0.6s;
+      transition: max-width $transition-in, padding $transition-in, height $transition-in, flex $transition-in;
       padding: 0px
     }
   }
