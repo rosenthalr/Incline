@@ -31,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import Components
 import {ComponentsModule} from '../components/components.module';
-import {Habit} from '../models/habit';
+
+
 // Import Local Notifications
 import { LocalNotifications } from '@ionic-native/local-notifications';
 

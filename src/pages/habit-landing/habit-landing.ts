@@ -40,6 +40,7 @@ import * as moment from 'moment';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Platform } from 'ionic-angular';
 import {Habit} from '../../models/habit';
+import { SharedElements } from '../../transitions/shared-view.transition';
 /**
  * Generated class for the HabitLandingPage page.
  *
@@ -322,26 +323,32 @@ export class HabitLandingPage {
   }
 
   deleteHabit(habit){
-    var blah = habit.customId;
-
+    if(habit.longestStreakCounter){
+      habit.activeHabit = false
+      this.habitPutService.habitput(habit).subscribe(
+        data=>{
+          habit.animating = false;
+          this.animating = false;
+          this.showDetails= 'hidden';
+          this.habits.splice(this.habits.indexOf(habit),1);
+          this.loadHabits();
+        },error=>{
+          console.error(error);
+        }
+      )
+    }
     this.habitDeleteService.habitdelete(habit).subscribe(
       data =>{
         habit.animating = false;
         this.animating = false;
-        this.showDetails= 'hidden'
-        this.habits.splice(habit.index,1);
-        // console.log(blah + " this is customID delete")
-
-        // this.platform.ready().then(() => {
-        // this.notifications.clear(blah);
-        // })
-
+        this.showDetails= 'hidden';
+        this.loadHabits();
       },
       error =>{
         console.error(error);
       }
     )
-    
+
   }
   animationTrigger(habit) {
     habit.animating = habit.animating ? false : true;
@@ -388,7 +395,6 @@ export class HabitLandingPage {
       });
     }
   }
-
   openResetModal(habits) {
     if (habits.length < 1) {
       return

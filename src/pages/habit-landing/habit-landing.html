@@ -34,7 +34,7 @@
       <ion-col  class="habit-col"  [ngClass]="{animating:habit.animating, still:!habit.animating}" *ngFor=" let habit of habits">
         <ion-card class="habit" [ngClass]="{checked:habit.checked, animating:habit.animating, still:!habit.animating}">
           <ion-card-title class="habit-title">
-            <button start ion-button class="habit-close-button" (click)="animationTrigger(habit)">
+            <button ion-button class="habit-close-button" (click)="animationTrigger(habit)">
               <ion-icon class="habit-close-icon" name="arrow-back"></ion-icon>
             </button>
             <h2>{{habit.title}}</h2>

@@ -114,7 +114,7 @@ export const workHabits = [
       "reminder": 7,
       "currentColor": "dark-sky-blue",
       "habitCategory":"The Basics",
-      icon: "pizza"
+      icon: "cafe"
     },
     {
       "habit": "Read the news",
