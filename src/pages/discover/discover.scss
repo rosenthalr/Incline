@@ -40,8 +40,8 @@ page-discover {
         margin-left: 25px;
         //background-color: #ff5200;   
         display: flex;   
-        position: relative; 
-        font-family: 'Lato'; 
+        position: relative;  
+        font-family: lato;
     }
     .categories-button-icon-container {
         position: absolute;
@@ -105,23 +105,26 @@ page-discover {
         height: 84px;
         margin-top: 13px;
         margin-left: 25px;
-        background-color: #00b39f;       
+        background-color: #00b39f;
     }
 */
-    .discover-button:first-child {
-        background-color: #ff5200;   
+    tspan{
+      font-family: Lato;
     }
-    
+    .discover-button:first-child {
+        background-color: #ff5200;
+    }
+
     .discover-button:nth-child(2) {
         background-color: #00b39f;
     }
-    
+
     .discover-button:nth-child(3) {
         background-color: #ff9e00;
     }
-    
+
     .discover-button:nth-child(4) {
         background-color: #59a9e4;
     }
-    
+
 }

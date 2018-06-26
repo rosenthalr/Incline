@@ -31,9 +31,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import Components
 import {ComponentsModule} from '../components/components.module';
-import {Habit} from '../models/habit';
+
+
 // Import Local Notifications
 import { LocalNotifications } from '@ionic-native/local-notifications';
+// import { LocalNotifications } from '../../node_modules/de.appplant.cordova.plugin.local-notification';
 
 // Import Services
 import { LoginService } from "../services/login.service";
