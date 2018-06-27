@@ -1,12 +1,13 @@
 import {
-  Component
+  Component, ViewChild
 } from '@angular/core';
 import {
   IonicPage,
   NavController,
   ModalController,
   NavParams,
-  ModalOptions
+  ModalOptions,
+  Content,
 } from 'ionic-angular';
 import {
   TestDashboardPage
@@ -81,7 +82,7 @@ export class HabitLandingPage {
   resetHabits: Array < any > ;
   animating: boolean;
   showDetails: String = 'hidden';
-
+  @ViewChild(Content) content : Content;
   constructor(private habitGetService: HabitGetService,
     public habitDeleteService: HabitDeleteService,
     public habitPutService: HabitPutService,
@@ -377,9 +378,14 @@ export class HabitLandingPage {
 
   }
   animationTrigger(habit) {
-    habit.animating = habit.animating ? false : true;
-    this.animating = this.animating ? false : true;
-
+    if(habit.animating){
+      this.content.scrollToTop;
+      this.animating = false;
+      habit.animating = false;
+    }else{
+      this.animating = true;
+      habit.animating = true;
+    }
   }
 
 
