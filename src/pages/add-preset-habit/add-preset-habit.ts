@@ -5,7 +5,8 @@ import { HabitLandingPage } from '../habit-landing/habit-landing';
 import { HabitPostService } from '../../services/habitpost.service';
 import { Habit } from './habit.interface'
 import { TabsPage } from '../tabs/tabs';
-import { LocalNotifications } from '@ionic-native/local-notifications';
+import { LocalNotifications } from '@ionic-native/local-notifications'; 
+// import { LocalNotifications } from 'de.appplant.cordova.plugin.local-notification';
 import { Platform } from 'ionic-angular';
 
 /**
@@ -81,35 +82,36 @@ goToHabitLandingPage(){
       var now = moment();
 
 
-    this.platform.ready().then(() => {
+    // this.platform.ready().then(() => {
 
-      var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
-      console.log(startDate + ": this is startDate");
-      console.log(firstReminder + ": this is firstReminder");
+    //   var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+    //   console.log(startDate + ": this is startDate");
+    //   console.log(firstReminder + ": this is firstReminder");
 
-      console.log(data.customId + ": THIS IS CUSTOM ID");
+    //   console.log(data.customId + ": THIS IS CUSTOM ID");
 
-      let notification = {
-        id: data.customId,
-        title: data.title,
-        text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
-        firstAt: firstReminder,
-        every: 'day'
-      };
-      console.log(notification + ": notification");
-      this.notifications.schedule(notification);
+    //   let notification = {
+    //     id: data.customId,
+    //     title: data.title,
+    //     text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
+    //     firstAt: now,
+    //     every: "minute",
+    //   };
+    //   console.log(notification + ": notification");
+    //   this.notifications.schedule(notification);
 
-      //Setting the 21 days notification
 
-      // let reminderNotification = {
-      //   id: data.customId,
-      //   title: '21 day alert for ' + data.title,
-      //   text: 'This is your 21st day tracking this habit: ' + data.title,
-      //   firstAt: data.targetEnd,
-      // };
-      // this.notifications.schedule(reminderNotification);
+    //   //Setting the 21 days notification
+
+    //   // let reminderNotification = {
+    //   //   id: data.customId,
+    //   //   title: '21 day alert for ' + data.title,
+    //   //   text: 'This is your 21st day tracking this habit: ' + data.title,
+    //   //   firstAt: data.targetEnd,
+    //   // };
+    //   // this.notifications.schedule(reminderNotification);
             
-      });
+    //   });
 
     }
   )
