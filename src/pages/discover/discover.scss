@@ -24,7 +24,7 @@ page-discover {
 
     .description{
         width: 87%;
-        height: 84px;
+        height: 12%;
         font-family: Lato;
         font-size: 18px;
         letter-spacing: 0.1px;
@@ -64,41 +64,6 @@ page-discover {
         font-size: 22px;
     }
 
-    .prod-image{
-        position: absolute;
-        top: 10px;
-        right: 0px;
-        width: 89px;
-        height: 58px;
-        border: 0;
-    }
-
-    .mental-image{
-        position: absolute;
-        top: 10px;
-        right: 0px;
-        width: 76px;
-        height: 74px;
-        border: 0;
-    }
-
-    .physical-image{
-        position: absolute;
-        top: 10px;
-        right: 0px;
-        width: 33px;
-        height: 72px;
-        border: 0;
-    }
-
-    .basics-image{
-        position: absolute;
-        top: 2px;
-        right: 0px;
-        width: 86px;
-        height: 82px;
-        border: 0;
-    }
 /*
     .mental-button{
         width: 326px;

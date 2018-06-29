@@ -27,11 +27,11 @@ export class HistoryPage {
   loadHabits() {
     this.habitGetService.habitget().subscribe(
       (data)=>{
-        this.habits = data.filter((habit:Habit)=>habit.activeHabit)
-        this.present = data.length > 0 ? true : false;
-        if(this.habits.length>=1){
-        this.subtitle = 'Your hard work has made these daily activities easy.'
-        this.title = 'You did it! ';
+        this.habits = data.filter((habit:Habit)=>!habit.activeHabit)
+        this.present = this.habits.length > 0
+        if(this.present){
+          this.subtitle = 'Your hard work has made these daily activities easy.'
+          this.title = 'You did it! ';
         }
       },(err)=>{
         console.error(err);

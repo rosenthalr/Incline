@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="375px" height="667px" viewBox="0 0 375 667" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-    <title>S2 - Background 1</title>
+    <title>Combined Shape</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Sprint-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="VIZ-1.1-I-want-to">
-            <g id="S2---Background-1" transform="translate(-32.000000, 0.000000)">
-                <rect id="Rectangle-10" fill="#0477D6" x="32" y="0" width="375" height="672"></rect>
-                <polygon id="Path-2" fill="#FFFFFF" points="29 718.443426 417 533 417 1031.71935 29 1031.71935"></polygon>
-                <polygon id="Line" fill="#FFFFFF" points="33.5610472 741.97596 0 711.377804 427.438953 503 461 526.598156 227.042705 640.653057"></polygon>
-            </g>
-        </g>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Combined-Shape" fill="#0477D6" fill-rule="nonzero" points="375 494.730011 59.0308186 667 0 667 0 0 375 0"></polygon>
     </g>
 </svg>

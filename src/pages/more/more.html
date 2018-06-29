@@ -20,7 +20,7 @@
 
     <div class="input-container">
       <ion-item class="input-group" [ngClass]="{'input-error': passwordError }">>
-        <ion-label class="Field-Label" [ngClass]="{'error': passwordError }" floating>Confirm Password</ion-label>
+        <ion-label class="Field-Label" [ngClass]="{'error': passwordError }" floating>Current Password</ion-label>
         <ion-input class="Field-Input" [ngClass]="{'error': passwordError }" type={{type}} name="password" [ngModel]="more.password"
           (ngModelChange)="checkIfComplete($event, 'password')" (ngModelChange)="checkIfCorrect($event, 'password')" (ngModelChange)="checkIfPasswordEmpty($event, 'password')"
           value=""></ion-input>
