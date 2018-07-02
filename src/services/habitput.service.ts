@@ -7,7 +7,11 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class HabitPutService {
 
+<<<<<<< HEAD
   // public apiUrl = 'http://localhost:7000/habitaction';
+=======
+  //public apiUrl = 'http://localhost:7000/habitaction';
+>>>>>>> dd59ad5e2302eff616e6cc210b4ae83ac859e9d5
   public apiUrl = 'https://goals.digitalstudio.io/habitaction';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }

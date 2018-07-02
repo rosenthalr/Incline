@@ -1,6 +1,7 @@
 @import "../../styles/_colors.scss";
 $transition-in:0.5s;
 page-habit-landing {
+  
   .animating .scroll-content {
     transition: margin 0.2s;
     margin-top: 0 !important;

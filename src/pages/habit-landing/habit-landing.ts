@@ -7,7 +7,11 @@ import {
   ModalController,
   NavParams,
   ModalOptions,
+<<<<<<< HEAD
   Content,
+=======
+  ActionSheetController
+>>>>>>> dd59ad5e2302eff616e6cc210b4ae83ac859e9d5
 } from 'ionic-angular';
 import {
   TestDashboardPage
@@ -90,7 +94,8 @@ export class HabitLandingPage {
     private modal: ModalController,
     public navParams: NavParams,
     private platform: Platform,
-    private notifications: LocalNotifications
+    private notifications: LocalNotifications,
+    public actionSheetCtrl: ActionSheetController
   ) {}
 
   createNewPage() {
@@ -341,42 +346,68 @@ export class HabitLandingPage {
     )
   }
 
-  deleteHabit(habit) {
-    if (habit.longestStreakCounter) {
-      habit.activeHabit = false
-      this.habitPutService.habitput(habit).subscribe(
-        data => {
-          habit.animating = false;
-          this.animating = false;
-          this.showDetails = 'hidden';
-          this.habits.splice(this.habits.indexOf(habit), 1);
-          this.loadHabits();
-          this.platform.ready().then(() => {
+  deleteHabit(habit){
+    var blah = habit.customId;
+      let actionSheet = this.actionSheetCtrl.create({
+        enableBackdropDismiss: true,
+        title: 'Are you sure you want to delete this habit?',
+        cssClass: 'action-sheets-delete',
+        buttons: [
+          {
+            text: 'Delete',
+            cssClass: 'DeleteButton',
+            handler: () => {
+              if (habit.longestStreakCounter>21) {
+                habit.activeHabit = false
+                this.habitPutService.habitput(habit).subscribe(
+                  data => {
+                    habit.animating = false;
+                    this.animating = false;
+                    this.showDetails = 'hidden';
+                    this.habits.splice(this.habits.indexOf(habit), 1);
+                    this.loadHabits();
+                    this.platform.ready().then(() => {
 
-          })
-        }, error => {
-          console.error(error);
-        }
-      )
-    }
-    this.habitDeleteService.habitdelete(habit).subscribe(
-      data => {
-        habit.animating = false;
-        this.animating = false;
-        this.showDetails = 'hidden';
-        this.habits.splice(this.habits.indexOf(habit), 1);
-        this.loadHabits();
-        this.platform.ready().then(() => {
+                    })
+                  }, error => {
+                    console.error(error);
+                  }
+                )
+              }
+              else{
+                this.habitDeleteService.habitdelete(habit).subscribe(
+                  data => {
+                    habit.animating = false;
+                    this.animating = false;
+                    this.showDetails = 'hidden';
+                    this.habits.splice(this.habits.indexOf(habit), 1);
+                    this.loadHabits();
+                    this.platform.ready().then(() => {
 
-        })
-
-      },
-      error => {
-        console.error(error);
-      }
-    )
-
+                    })
+                  },
+                  error => {
+                    console.error(error);
+                  }
+                )
+              }
+            }
+          },
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            cssClass: 'CancelButton',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+        ]
+      });
+      actionSheet.present();
   }
+
+
+
   animationTrigger(habit) {
     if(habit.animating){
       this.content.scrollToTop;
