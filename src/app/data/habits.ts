@@ -1,6 +1,6 @@
 export const workHabits = [
     {
-      "habit": "Get out of bed",
+      "habit": "Don't snooze your alarm",
       "description": "The early bird gets the worm",
       "reminder": 7,
       "currentColor": "red",
@@ -44,7 +44,7 @@ export const workHabits = [
       icon: "ios-search"
     },
     {
-      "habit": "Go to sleep without a device",
+      "habit": "Go to bed without a device",
       "description": "Unplug and unwind.",
       "reminder": 21,
       "currentColor": "tealish",
@@ -96,7 +96,7 @@ export const workHabits = [
       icon: "move"
     },
     {
-      "habit": "Eat vegetables with dinner",
+      "habit": "Eat veggies with dinner",
       "description": "Healthy is not a size, it’s a lifestyle",
       "reminder": 19,
       "currentColor": "yellow-productivity",
