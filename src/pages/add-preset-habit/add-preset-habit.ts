@@ -17,7 +17,7 @@ import { Platform } from 'ionic-angular';
  */
 
 @IonicPage()
-@Component({
+  @Component({
   selector: 'page-add-preset-habit',
   templateUrl: 'add-preset-habit.html',
   providers: [HabitPostService]

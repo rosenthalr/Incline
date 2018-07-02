@@ -1,6 +1,19 @@
 @import "../../styles/_colors.scss";
 $transition-in:0.5s;
 page-habit-landing {
+  .habit-landing-habits {
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: nowrap;
+  }
+  .habit-landing-habits div{
+    display: block;
+    text-align:center;
+    width:80%;
+  }
   .animating .scroll-content {
     transition: margin 0.2s;
     margin-top: 0 !important;
@@ -42,6 +55,9 @@ page-habit-landing {
   }
   .arorw-to-add-button-icon {
     transform: rotate(110deg);
+  }
+  .add-button{
+
   }
   .habit {
     width: 163px;

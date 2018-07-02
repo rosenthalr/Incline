@@ -19,8 +19,8 @@
   <form #r="ngForm" (ngSubmit)="reset(r.value, r.valid);" novalidate>
 
     <div class="input-container">
-      <ion-item class="input-group" [ngClass]="{'input-error': passwordError }">>
-        <ion-label class="Field-Label" [ngClass]="{'error': passwordError }" floating>Confirm Password</ion-label>
+      <ion-item class="input-group" [ngClass]="{'input-error': passwordError }">
+        <ion-label class="Field-Label" [ngClass]="{'error': passwordError }" floating>Current Password</ion-label>
         <ion-input class="Field-Input" [ngClass]="{'error': passwordError }" type={{type}} name="password" [ngModel]="more.password"
           (ngModelChange)="checkIfComplete($event, 'password')" (ngModelChange)="checkIfCorrect($event, 'password')" (ngModelChange)="checkIfPasswordEmpty($event, 'password')"
           value=""></ion-input>
@@ -35,22 +35,25 @@
     </div>
 
     <div class="input-container">
-  <ion-item class="input-group" [ngClass]="{'input-error': sameError }">
-        <ion-label floating class="Field-Label" [ngClass]="{'error': sameError }">New Password</ion-label>
-    <ion-input class="Field-Input" type="{{type2}}" [ngClass]="{'error': sameError }" name="password2" [ngModel]="more.password2" (ngModelChange)="checkIfComplete($event, 'password2')" (ngModelChange)="checkIfSame($event, 'password2')"
-        value="" required minlength="8" reverse="true" #password2="ngModel"></ion-input>
-      <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
-      <ion-icon name="ios-eye-off-outline"></ion-icon>
-      </button>
-      <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
-        <ion-icon name="ios-eye-outline"></ion-icon>
-      </button>
-        </ion-item>
+      <ion-item class="input-group" [ngClass]="{'input-error': sameError }" [ngClass]="{'input-error': lengthError }" >
+        <ion-label floating class="Field-Label" [ngClass]="{'error': sameError }" [ngClass]="{'error': lengthError }" >New Password</ion-label>
+        <ion-input class="Field-Input" type="{{type2}}" [ngClass]="{'error': sameError }" name="password2" [ngModel]="more.password2"
+          (ngModelChange)="checkIfComplete($event, 'password2')" (ngModelChange)="checkIfSame($event, 'password2')" (ngModelChange)="checkIfLength($event, 'password2')" value=""
+          required minlength="8" reverse="true" #password2="ngModel"></ion-input>
+        <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
+          <ion-icon name="ios-eye-off-outline"></ion-icon>
+        </button>
+        <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
+          <ion-icon name="ios-eye-outline"></ion-icon>
+        </button>
+      </ion-item>
       <ion-item [hidden]="!sameError" class="Error-Text">Hmm...That's your current password!</ion-item>
+      <ion-item [hidden]="!lengthError" class="Error-Text">New Password must be at least 8 characters.</ion-item>
     </div>
-    
-    
-    <div class="input-container">
+
+
+      <div class="input-container">
+
       <ion-item class="input-group" [ngClass]="{'input-error': confirmError }">
         <ion-label floating class="Field-Label" [ngClass]="{'error': confirmError }">Confirm New Password</ion-label>
 

@@ -117,6 +117,25 @@ page-more {
   background-color: $cerulean;
 }
 
+  .Error-Text {
+    background: transparent;
+    height: 11px;
+    border-bottom: 1px solid transparent;
+    font-family: Lato;
+    font-size: 9px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $error-red;
+    width: 64.2667%;
+    margin: 0 auto;
+    z-index: 5;
+    margin-top: -63px;
+    padding-left: -4px;
+  }
 
 .Error-Text {
   background: transparent;
