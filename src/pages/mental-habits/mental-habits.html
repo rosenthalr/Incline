@@ -19,9 +19,9 @@
 
 <ion-content padding>
 
-  <div class="descriptionContainer">In the craziness of life, it’s often easy to forget to think about yourself. Let us help you clear your mind and remind you when to take a step back.</div>
+  <div class="descriptionContainer">Let us help you clear your mind and remind you when to take a step back.</div>
   <div class="habitItem" *ngFor="let mentalHabit of mentalHabits">
-      <ion-icon class="icons" [name]="mentalHabit.icon"></ion-icon>
+      <!-- <ion-icon class="icons" [name]="mentalHabit.icon"></ion-icon> -->
     <div class="habit">
     <h1 class="habitTitle">{{ mentalHabit.habit }}</h1>
     <p class="habitDescription">{{ mentalHabit.description }}</p>
