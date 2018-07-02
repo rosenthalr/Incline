@@ -132,9 +132,7 @@ export class LoginPage {
         this.navCtrl.push(TabsPage);
       },
       error => {
-        console.error(error);
-        const errorMessage = error.error.info.message
-
+        const errorMessage =error.error.info.message;
         if (errorMessage == 'Wrong Email') {
           this.emailError = true;
           //Needed to add this below to make sure that both errors don't appear at the same time.
@@ -142,9 +140,7 @@ export class LoginPage {
         } else {
           this.passwordError = true;
           this.emailError = false;
-        }
-
-        return Observable.throw(error);
+        };
       }
     );
   }

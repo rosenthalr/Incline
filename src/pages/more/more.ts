@@ -46,6 +46,7 @@ export class MorePage implements OnInit {
   public passwordError: boolean;
   public confirmError: boolean;
   public sameError: boolean;
+  public lengthError: boolean;
   public confirmComplete: boolean;
   public more: More;
   public active: boolean;
@@ -59,6 +60,7 @@ export class MorePage implements OnInit {
     this.active = false;
     this.confirmError = false;
     this.sameError = false;
+    this.lengthError = false;
     this.confirmComplete = false;
   }
   ngOnInit() {
@@ -134,25 +136,40 @@ export class MorePage implements OnInit {
     }
   }
 
+  checkIfLength(userInfo, field) {
+    if (this.password2.length > 0) {
+      if (this.password2.length < 8) {
+        this.lengthError = true;
+        this.active = false;
+      }
+      else {
+        this.lengthError = true;
+      }
+    }
+    if (this.password2.length >=8) {
+      this.lengthError=false;
+    }
+  }
+
   checkIfConfirm(userInfo, field) {
     if (this.confirmComplete = true) {
-      if (this.password3.length > this.password2.length - 1) {
+      if (this.password3.length > this.password2.length - 5) {
         console.log(this.active);
-        if(this.password2 !== localStorage.getItem("pw")) {
-        if (this.password2 !== this.password3 ) {
-          this.confirmError = true;
-          this.active = false;
-        } else {
-          this.confirmError = false;
-          this.active = true;
+        if (this.password2 !== localStorage.getItem("pw")) {
+          if (this.password2 !== this.password3) {
+            this.confirmError = true;
+            this.active = false;
+          } else {
+            this.confirmError = false;
+            this.active = true;
+          }
         }
       }
     }
   }
-  }
   checkIfCorrect(userInfo, field) {
     if (this.isComplete = true) {
-      if (this.password.length > localStorage.getItem("pw").length - 3) {
+      if (this.password.length > localStorage.getItem("pw").length - 6) {
         // console.log('isComplete:   ' + this.isComplete)
         // console.log('passwordError:    ' + this.passwordError + '     pw ----- '+ this.password + '  l  '+ this.password.length)
         if (this.password !== localStorage.getItem("pw")) {
