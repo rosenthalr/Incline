@@ -6,7 +6,9 @@
                 every day to build your streak!
             </p>
         </div>
-        <h2 class="custom-habit-instruction"><b>Give it a try below</b></h2>
+        <h2 class="custom-habit-instruction">
+            <span class="helper-text"><b>Give it a try below</b></span>
+        </h2>
         <habit-progress (click)='changeState()'[current]="current" [text]="text"></habit-progress>
 
         <div class="footer">

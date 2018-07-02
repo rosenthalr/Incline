@@ -25,12 +25,18 @@ start-date{
     .custom-habit-instruction{
       margin:30% auto auto auto;
       color:$white;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
+    }
+    .helper-text {
+      position: absolute;
+      width: 100%;
+      left: 0px;
+      top: 246px;
+      letter-spacing: normal;
     }
     habit-progress{
       svg{
         width:165px;
-        // box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.19), 0 4px 4px rgba(0, 0, 0, 0.23);
         border-radius: 165px;
       }
@@ -39,7 +45,7 @@ start-date{
         stroke: $white-two;
         fill: $white-two;
       }
-      .check{
+      .check {
         opacity:0;
       }
 
@@ -55,7 +61,7 @@ start-date{
         text-align: left;
         color: #4a4a4a;
         position: absolute;
-        bottom: 60px;
+        bottom: 78px;
         width: 81.6%;
     }
 }

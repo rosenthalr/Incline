@@ -24,7 +24,7 @@ import { SplashPage } from '../pages/splash/splash';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation, modalCtrl: ModalController) {
     platform.ready().then(() => {
