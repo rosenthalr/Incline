@@ -1,12 +1,13 @@
 import {
-  Component
+  Component, ViewChild
 } from '@angular/core';
 import {
   IonicPage,
   NavController,
   ModalController,
   NavParams,
-  ModalOptions
+  ModalOptions,
+  Content,
 } from 'ionic-angular';
 import {
   TestDashboardPage
@@ -37,9 +38,18 @@ import {
   showDetails,
 } from './habit-landing.animations';
 import * as moment from 'moment';
-import { LocalNotifications } from '@ionic-native/local-notifications';
-import { Platform } from 'ionic-angular';
-import {Habit} from '../../models/habit';
+import {
+  LocalNotifications
+} from '@ionic-native/local-notifications';
+import {
+  Platform
+} from 'ionic-angular';
+import {
+  Habit
+} from '../../models/habit';
+import {
+  SharedElements
+} from '../../transitions/shared-view.transition';
 /**
  * Generated class for the HabitLandingPage page.
  *
@@ -63,16 +73,16 @@ import {Habit} from '../../models/habit';
 })
 
 export class HabitLandingPage {
-  expiredHabits: Array <object>;
-  completedHabits: Array <object>;
-  habits: Array < any > =[];
+  expiredHabits: Array < object > ;
+  completedHabits: Array < object > ;
+  habits: Array < any > = [];
   testCheckboxOpen: boolean;
   testCheckboxResult: string;
   lateHabits: Array < any > ;
   resetHabits: Array < any > ;
   animating: boolean;
   showDetails: String = 'hidden';
-
+  @ViewChild(Content) content : Content;
   constructor(private habitGetService: HabitGetService,
     public habitDeleteService: HabitDeleteService,
     public habitPutService: HabitPutService,
@@ -96,11 +106,11 @@ export class HabitLandingPage {
     let today = moment()
     this.habitGetService.habitget().subscribe(
       (data) => {
-        data.map((x,i) => {
+        data.map((x, i) => {
           x.index = i;
           x.checked = x.updatedAt === new Date(new Date().setHours(0, 0, 0, 0)).toISOString();
         });
-        this.habits = data.filter((habit:Habit)=>habit.activeHabit);
+        this.habits = data.filter((habit: Habit) => habit.activeHabit);
         console.log(this.habits);
         this.lateHabits = this.habits.filter(habit => {
           var habitUpdatedAt = moment(habit.updatedAt).toISOString(true);
@@ -109,18 +119,18 @@ export class HabitLandingPage {
         });
 
         this.expiredHabits = this.habits.filter(habit => {
-          return (today.diff(moment(habit.targetEnd),'days') === 0) && habit.streakCounter !== 21
-          && (today.isSame(moment(habit.updatedAt),'days'));
+          return (today.diff(moment(habit.targetEnd), 'days') === 0) && habit.streakCounter !== 21 &&
+            (today.isSame(moment(habit.updatedAt), 'days'));
         });
 
         // If there are no late habits, then it is safe to show the 21 Day Progress Notice pop-up (if applicable)
         // If this is not the case, we'll wait until the other pop-ups are shown
-        if(this.lateHabits.length === 0 && this.expiredHabits.length > 0) {
+        if (this.lateHabits.length === 0 && this.expiredHabits.length > 0) {
           this.showRenewHabitModal();
         }
 
-        this.resetHabits = this.habits.filter(habit =>{
-          return today.diff(habit.updatedAt,'days') > 2
+        this.resetHabits = this.habits.filter(habit => {
+          return today.diff(habit.updatedAt, 'days') > 2
         });
 
       },
@@ -133,32 +143,36 @@ export class HabitLandingPage {
     )
   }
 
-  showRenewHabitModal(habit: object = undefined):void {
-    if(!habit) {
+  showRenewHabitModal(habit: object = undefined): void {
+    if (!habit) {
       let expiredHabit = this.expiredHabits.pop();
-      let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
+      let habitRenewModal = this.modal.create(HabitRenewPage, {
+        expiredHabit
+      });
       habitRenewModal.present();
       habitRenewModal.onDidDismiss((habit, action) => {
-      // Instead of delete, will need to update to be archived
-      if(action === 'delete') {
-        let deletedHabit = habit._id;
+        // Instead of delete, will need to update to be archived
+        if (action === 'delete') {
+          let deletedHabit = habit._id;
 
-        // After a habit is deleted, remove it from the habits array
-        this.habits = this.habits.filter((habit) => {
-          return habit._id !== deletedHabit;
-        });
-      }
-        if(this.expiredHabits.length > 0) {
-            this.showRenewHabitModal();
+          // After a habit is deleted, remove it from the habits array
+          this.habits = this.habits.filter((habit) => {
+            return habit._id !== deletedHabit;
+          });
+        }
+        if (this.expiredHabits.length > 0) {
+          this.showRenewHabitModal();
         }
       });
     } else {
       let expiredHabit = habit;
-      let habitRenewModal = this.modal.create(HabitRenewPage, { expiredHabit });
+      let habitRenewModal = this.modal.create(HabitRenewPage, {
+        expiredHabit
+      });
       habitRenewModal.present();
       habitRenewModal.onDidDismiss((habit, action) => {
         // Instead of delete, will need to update to be archived
-        if(action === 'delete') {
+        if (action === 'delete') {
           let deletedHabit = habit._id;
 
           // After a habit is deleted, remove it from the habits array
@@ -166,101 +180,107 @@ export class HabitLandingPage {
             return habit._id !== deletedHabit;
           });
         } else {
-          habit.targetEnd = moment().add(21,'days').toISOString();
+          habit.targetEnd = moment().add(21, 'days').toISOString();
           this.habitPutService.habitput(habit).subscribe();
         }
       });
     }
   }
 
-  showHabitCompleteModal(habit: object = undefined):void {
+  showHabitCompleteModal(habit: object = undefined): void {
     const myModalOptions: ModalOptions = {
       enableBackdropDismiss: false,
       showBackdrop: false
     };
-    if(habit) {
-      let habitCompleteModal = this.modal.create(HabitCompletePage, { habit }, myModalOptions);
-        habitCompleteModal.present();
-        habitCompleteModal.onDidDismiss((habit, action) => {
-          // Instead of delete, will need to update to be archived
-          if(action === 'delete') {
-            // Set the habitActive to false to archive
-            this.habitPutService.habitput(habit).subscribe(
-              data=>{
-                this.habits = this.habits.filter((habit)=>{
-                  return habit.activeHabit;
-                })
-              },err=>{
-                console.error(err);
-              }
-            )
-            // After a habit is deleted, remove it from the habits array
-          } else {
-            habit.targetEnd = moment().add(21,'days').toISOString();
-            this.habitPutService.habitput(habit).subscribe();
-          }
+    if (habit) {
+      let habitCompleteModal = this.modal.create(HabitCompletePage, {
+        habit
+      }, myModalOptions);
+      habitCompleteModal.present();
+      habitCompleteModal.onDidDismiss((habit, action) => {
+        // Instead of delete, will need to update to be archived
+        if (action === 'delete') {
+          // Set the habitActive to false to archive
+          this.habitPutService.habitput(habit).subscribe(
+            data => {
+              this.habits = this.habits.filter((habit) => {
+                return habit.activeHabit;
+              })
+            }, err => {
+              console.error(err);
+            }
+          )
+          // After a habit is deleted, remove it from the habits array
+        } else {
+          habit.targetEnd = moment().add(21, 'days').toISOString();
+          this.habitPutService.habitput(habit).subscribe();
+        }
       });
     } else {
       let habit = this.completedHabits.pop();
-      let habitCompleteModal = this.modal.create(HabitCompletePage, { habit }, myModalOptions);
-        habitCompleteModal.present();
-        habitCompleteModal.onDidDismiss((habit, action) => {
+      let habitCompleteModal = this.modal.create(HabitCompletePage, {
+        habit
+      }, myModalOptions);
+      habitCompleteModal.present();
+      habitCompleteModal.onDidDismiss((habit, action) => {
 
-          // Instead of delete, will need to update to be archived
-          if(action === 'delete') {
-            this.habitPutService.habitput(habit).subscribe(
-              data=>{
-                this.habits = this.habits.filter((habit)=>{
-                  return habit.activeHabit;
-                })
-              },err=>{
-                console.error(err);
-              }
-            )
-          } else {
-            habit.targetEnd = moment().add(21,'days').toISOString();
-            this.habitPutService.habitput(habit).subscribe();
-          }
-          if(this.completedHabits.length > 0) {
-            this.showHabitCompleteModal();
-          } else if (this.expiredHabits.length > 0) {
-            this.showRenewHabitModal();
-          }
+        // Instead of delete, will need to update to be archived
+        if (action === 'delete') {
+          this.habitPutService.habitput(habit).subscribe(
+            data => {
+              this.habits = this.habits.filter((habit) => {
+                return habit.activeHabit;
+              })
+            }, err => {
+              console.error(err);
+            }
+          )
+        } else {
+          habit.targetEnd = moment().add(21, 'days').toISOString();
+          this.habitPutService.habitput(habit).subscribe();
+        }
+        if (this.completedHabits.length > 0) {
+          this.showHabitCompleteModal();
+        } else if (this.expiredHabits.length > 0) {
+          this.showRenewHabitModal();
+        }
       });
     }
   }
 
 
-  resetNotification(habit){
+  resetNotification(habit) {
     let today = moment().startOf('day');
 
     this.platform.ready().then(() => {
 
-    var newStartDate = moment(habit.startDate).toISOString();
-    var reminder = habit.reminder;
-    var reminderHour = moment(reminder).get('hour');
-    var reminderMinute = moment(reminder).get('minute');
-    var firstReminder = moment(newStartDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+      var newStartDate = moment(habit.startDate).toISOString();
+      var reminder = habit.reminder;
+      var reminderHour = moment(reminder).get('hour');
+      var reminderMinute = moment(reminder).get('minute');
+      var firstReminder = moment(newStartDate).set({
+        'hour': reminderHour,
+        'minute': reminderMinute
+      }).toDate();
 
-    console.log(newStartDate + ": this is newStartDate");
-    if (today.isSame(moment(habit.updatedAt), 'days'))
-    {
-      console.log("in today is same as updated");
-      this.notifications.cancel(habit._id);
+      console.log(newStartDate + ": this is newStartDate");
+      if (today.isSame(moment(habit.updatedAt), 'days')) {
+        console.log("in today is same as updated");
+        this.notifications.cancel(habit._id);
 
-      let notification = {
-        id: habit._id,
-        title: 'New Alert ' + habit.title,
-        text: 'This is a new alert ' + habit.title,
-        firstAt: firstReminder,
-        every: 'minute'
-      };
-      //make sure to add a day from today
-      console.log(notification + ": notification");
-      this.notifications.schedule(notification);
+        let notification = {
+          id: habit._id,
+          title: 'New Alert ' + habit.title,
+          text: 'This is a new alert ' + habit.title,
+          firstAt: firstReminder,
+          every: 'minute'
+        };
+        //make sure to add a day from today
+        console.log(notification + ": notification");
+        this.notifications.schedule(notification);
 
-    }
-  });
+      }
+    });
   }
 
 
@@ -288,11 +308,11 @@ export class HabitLandingPage {
       habit.longestStreakCounter = habit.longestStreakCounter < habit.streakCounter ? habit.streakCounter : habit.longestStreakCounter;
       habit.updatedAt = today.toDate();
 
-      if(habit.streakCounter === 21) {
+      if (habit.streakCounter === 21) {
         this.showHabitCompleteModal(habit);
-      } else if(habit.streakCounter !== 21
-        && (today.isSame(moment(habit.updatedAt),'days'))
-        && (today.isSame(moment(habit.targetEnd),'days'))) {
+      } else if (habit.streakCounter !== 21 &&
+        (today.isSame(moment(habit.updatedAt), 'days')) &&
+        (today.isSame(moment(habit.targetEnd), 'days'))) {
         this.showRenewHabitModal(habit);
       }
 
@@ -309,44 +329,63 @@ export class HabitLandingPage {
 
   }
 
-  setReminderTime(habit){
+  setReminderTime(habit) {
     this.habitPutService.habitput(habit).subscribe(
-      data=>{
+      data => {
         console.log(data);
         // this.notifications.cancel(habit.customId);
       },
-      error=>{
+      error => {
         console.error(error);
       }
     )
   }
 
-  deleteHabit(habit){
-    var blah = habit.customId;
+  deleteHabit(habit) {
+    if (habit.longestStreakCounter) {
+      habit.activeHabit = false
+      this.habitPutService.habitput(habit).subscribe(
+        data => {
+          habit.animating = false;
+          this.animating = false;
+          this.showDetails = 'hidden';
+          this.habits.splice(this.habits.indexOf(habit), 1);
+          this.loadHabits();
+          this.platform.ready().then(() => {
 
+          })
+        }, error => {
+          console.error(error);
+        }
+      )
+    }
     this.habitDeleteService.habitdelete(habit).subscribe(
-      data =>{
+      data => {
         habit.animating = false;
         this.animating = false;
-        this.showDetails= 'hidden'
-        this.habits.splice(habit.index,1);
-        // console.log(blah + " this is customID delete")
+        this.showDetails = 'hidden';
+        this.habits.splice(this.habits.indexOf(habit), 1);
+        this.loadHabits();
+        this.platform.ready().then(() => {
 
-        // this.platform.ready().then(() => {
-        // this.notifications.clear(blah);
-        // })
+        })
 
       },
-      error =>{
+      error => {
         console.error(error);
       }
     )
-    
+
   }
   animationTrigger(habit) {
-    habit.animating = habit.animating ? false : true;
-    this.animating = this.animating ? false : true;
-
+    if(habit.animating){
+      this.content.scrollToTop;
+      this.animating = false;
+      habit.animating = false;
+    }else{
+      this.animating = true;
+      habit.animating = true;
+    }
   }
 
 
@@ -368,12 +407,12 @@ export class HabitLandingPage {
 
         // If there was expired habits when we intially loaded the page, then make another call to
         // the db to ensure that this is still the case b/c may have changed after user completed the other pop-ups
-        if(this.expiredHabits.length > 0) {
+        if (this.expiredHabits.length > 0) {
           this.habitGetService.habitget().subscribe((habits) => {
             this.expiredHabits = habits.filter(habit => {
-              return (moment().diff(moment(habit.targetEnd),'days') === 0)
-              && habit.streakCounter !== 21
-              && (moment(habit.updatedAt).diff(moment(),'days') === 0);
+              return (moment().diff(moment(habit.targetEnd), 'days') === 0) &&
+                habit.streakCounter !== 21 &&
+                (moment(habit.updatedAt).diff(moment(), 'days') === 0);
             });
             this.completedHabits = habits.filter(habit => {
               return habit.streakCounter === 21;
@@ -388,7 +427,6 @@ export class HabitLandingPage {
       });
     }
   }
-
   openResetModal(habits) {
     if (habits.length < 1) {
       return

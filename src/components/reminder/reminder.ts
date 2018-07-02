@@ -61,7 +61,7 @@ export class ReminderComponent implements OnInit {
         
     this.habitPostService.habitpost(habit).subscribe(
       data => {
-
+        console.log("before post service");
         var startDate = data.startDate;
         var reminder = data.reminder;
         var reminderHour = moment(reminder).get('hour');
@@ -75,9 +75,10 @@ export class ReminderComponent implements OnInit {
           var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
           console.log(startDate + ": this is startDate");
           console.log(firstReminder + ": this is firstReminder");
+          console.log(data.customId + ": THIS IS CUSTOM ID");
     
           let notification = {
-            // id: data.customId,
+            id: data.customId,
             title: data.title,
             text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
             firstAt: firstReminder,
@@ -103,6 +104,6 @@ export class ReminderComponent implements OnInit {
       error => {
         console.error(error);
       })
-
+      console.log("outside of post service");
   }
 }
