@@ -16,6 +16,36 @@
 // automatically applied to the <body> element in the app.
 
 $action-sheet-ios-button-destructive-text-color: black; 
+.action-sheets-delete {
+  .DeleteButton {
+    height: 24px;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #000000;
+    color: var(--black); 
+    overflow: visible;
+  }
+  .CancelButton {
+    width: 65px;
+    height: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #007aff;
+    background: #f9f9f9;
+  }
+}
+
+
 .action-sheet-ios{
   background-color: rgba(0, 0, 0, 0.5);
 }
