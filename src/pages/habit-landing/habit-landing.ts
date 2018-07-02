@@ -6,7 +6,8 @@ import {
   NavController,
   ModalController,
   NavParams,
-  ModalOptions
+  ModalOptions,
+  ActionSheetController
 } from 'ionic-angular';
 import {
   TestDashboardPage
@@ -80,7 +81,8 @@ export class HabitLandingPage {
     private modal: ModalController,
     public navParams: NavParams,
     private platform: Platform,
-    private notifications: LocalNotifications
+    private notifications: LocalNotifications,
+    public actionSheetCtrl: ActionSheetController
   ) {}
 
   createNewPage() {
@@ -323,26 +325,51 @@ export class HabitLandingPage {
 
   deleteHabit(habit){
     var blah = habit.customId;
-
-    this.habitDeleteService.habitdelete(habit).subscribe(
-      data =>{
-        habit.animating = false;
-        this.animating = false;
-        this.showDetails= 'hidden'
-        this.habits.splice(habit.index,1);
-        console.log(blah + " this is customID delete")
-
-        this.platform.ready().then(() => {
-        this.notifications.clear(blah);
-        })
-
-      },
-      error =>{
-        console.error(error);
-      }
-    )
-    
+      let actionSheet = this.actionSheetCtrl.create({
+        enableBackdropDismiss: true,
+        title: 'Are you sure you want to delete this habit?',
+        cssClass: 'action-sheets-delete',
+        buttons: [
+          {
+            text: 'Delete',
+            cssClass: 'DeleteButton',
+            handler: () => {
+              this.habitDeleteService.habitdelete(habit).subscribe(
+                data =>{
+                  habit.animating = false;
+                  this.animating = false;
+                  this.showDetails= 'hidden'
+                  this.habits.splice(habit.index,1);
+                  console.log(blah + " this is customID delete")
+          
+                  this.platform.ready().then(() => {
+                  this.notifications.clear(blah);
+                  })
+          
+                },
+                error =>{
+                  console.error(error);
+                }
+              );
+              console.log('Delete clicked');
+            }
+          },
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            cssClass: 'CancelButton',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+        ]
+      });
+   
+      actionSheet.present();
   }
+    
+
+
   animationTrigger(habit) {
     habit.animating = habit.animating ? false : true;
     this.animating = this.animating ? false : true;
