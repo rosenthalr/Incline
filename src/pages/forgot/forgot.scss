@@ -1,8 +1,8 @@
 @import "../../styles/global";
 
 h1.forgot-header {
-  margin-top: 15.9%;
-  margin-bottom: 8.2%;
+  margin-top: 30%;
+  margin-bottom: 16.5%;
 }
 .Error-Text.shown{
   color: #ffffff;
@@ -24,8 +24,8 @@ h1.forgot-header {
   border-radius: 0px;
   color: #7d7d7d;
   color: var(--warm-grey);
-  margin-top: 38px;
-  margin-bottom: 24px;
+  margin-top: 35px;
+  // margin-bottom: 24px;
   background-color: $white-three    
 }
 .input-error:not(.input-has-focus) > .item-inner {
@@ -34,6 +34,55 @@ h1.forgot-header {
 .Field-Input {
   padding-bottom: 0px;
 }
+
+.newUser{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0px !important; 
+}
+
+.newUser1{
+  height: 17px;
+  padding-right: 10px;
+  font-family: Lato;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: $dark-grey;
+}
+
+.newUser2{
+  height: 17px;
+  font-family: Lato;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: $dark-grey;
+}
+
+.imgContainer {
+  background-image: url('../assets/imgs/group-2.png');
+  max-height: 100%;
+  max-width: 100%;
+  margin-left: 40%
+}
+
+.imgDiv{
+  height: 110px;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 input {
   font-family: Lato;
   font-size: 14px;

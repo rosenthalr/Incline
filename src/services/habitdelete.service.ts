@@ -8,11 +8,11 @@ import { catchError } from 'rxjs/operators';
 export class HabitDeleteService {
 
   public apiUrl = 'https://goals.digitalstudio.io/habitaction';
-<<<<<<< HEAD
-  // public apiUrl = 'http://localhost:7000/habitaction';
-=======
+
+
+
   //public apiUrl = 'http://localhost:7000/habitaction';
->>>>>>> dd59ad5e2302eff616e6cc210b4ae83ac859e9d5
+
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }
 

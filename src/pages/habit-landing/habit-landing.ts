@@ -7,11 +7,8 @@ import {
   ModalController,
   NavParams,
   ModalOptions,
-<<<<<<< HEAD
   Content,
-=======
   ActionSheetController
->>>>>>> dd59ad5e2302eff616e6cc210b4ae83ac859e9d5
 } from 'ionic-angular';
 import {
   TestDashboardPage
@@ -405,7 +402,6 @@ export class HabitLandingPage {
       });
       actionSheet.present();
   }
-
 
 
   animationTrigger(habit) {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { catchError } from 'rxjs/operators/catchError';
 
 @Injectable()
 export class LoginService {
@@ -12,11 +13,8 @@ export class LoginService {
   // This function takes the user's login input values as a parameter (username and password)
   // and then checks to see if an account with those credentials exist
   login(user) {
-<<<<<<< HEAD
-    // return this.http.post<any>('http://localhost:7000/login', user, { withCredentials: true });
-=======
+
     //return this.http.post<any>('http://localhost:7000/login', user, { withCredentials: true });
->>>>>>> dd59ad5e2302eff616e6cc210b4ae83ac859e9d5
     return this.http.post<any>('https://goals.digitalstudio.io/login', user, { withCredentials: true });
   }
 }

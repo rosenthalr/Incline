@@ -19,10 +19,10 @@
 
 <ion-content padding>
 
-  <div class="descriptionContainer">Your job takes up the bulk of your day. By tracking habits for managing your time on the job, we can help you work smarter, not harder!
+  <div class="descriptionContainer">Let us help you be focused every minute so you end the day feeling accomplished.
     </div>
   <div class="habitItem" *ngFor="let workHabit of workHabits">
-    <ion-icon class="icons" [name]="workHabit.icon"></ion-icon>
+    <!-- <ion-icon class="icons" [name]="workHabit.icon"></ion-icon> -->
     <div class="habit">
     <h1 class="habitTitle">{{ workHabit.habit }}</h1>
     <p class="habitDescription">{{ workHabit.description }}</p>

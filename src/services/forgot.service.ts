@@ -20,11 +20,8 @@ export class ForgotService {
   forgotUser(user) {
    // var apiString = 'http://localhost:7000/forgot';
     let body = JSON.stringify(user);
-<<<<<<< HEAD
     // return this.http.post('http://localhost:7000/forgot', body, httpOptions);
-=======
     //return this.http.post('http://localhost:7000/forgot', body, httpOptions);
->>>>>>> dd59ad5e2302eff616e6cc210b4ae83ac859e9d5
     return this.http.post('https://goals.digitalstudio.io/forgot', body, httpOptions);
   }
 }
