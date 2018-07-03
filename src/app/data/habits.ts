@@ -1,6 +1,6 @@
 export const workHabits = [
     {
-      "habit": "Get out of bed",
+      "habit": "Don't snooze your alarm",
       "description": "The early bird gets the worm",
       "reminder": 7,
       "currentColor": "red",
@@ -96,7 +96,7 @@ export const workHabits = [
       icon: "move"
     },
     {
-      "habit": "Eat vegetables with dinner",
+      "habit": "Eat veggies with dinner",
       "description": "Healthy is not a size, it’s a lifestyle",
       "reminder": 19,
       "currentColor": "yellow-productivity",

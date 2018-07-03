@@ -29,6 +29,9 @@
     font-size: 2.2em;
 }
 page-modal {
+    ion-navbar {
+        align-items: center;
+    }
 
     .scroll-content{
         padding-top:0;
@@ -37,6 +40,7 @@ page-modal {
     ion-header {
         height: 68px;
         background-color: $cerulean;
+        top: 3px;
     }
     .bar-buttons,
     .modal-title {
@@ -51,9 +55,10 @@ page-modal {
         line-height: normal;
         letter-spacing: -0.4px;
         text-align: center;
+        margin-top: -8px;
     }
     .toolbar-content-ios {
-        padding-top: 20px;
+        padding-top: 0px;
         display: flex;
         justify-content: space-between;
         align-items: center;
