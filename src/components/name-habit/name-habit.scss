@@ -60,5 +60,6 @@ name-habit {
   .input-has-focus,
   .input-has-focus .label-ios[floating] {
     color: $white-two !important;
+    caret-color: white !important;
   }
 }

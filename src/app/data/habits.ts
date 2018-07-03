@@ -45,7 +45,7 @@ export const workHabits = [
     },
     {
       "habit": "Go to sleep without a device",
-      "description": "Unplug and unwind.",
+      "description": "Unplug and unwind",
       "reminder": 21,
       "currentColor": "tealish",
       "habitCategory":"Mental Wellness",

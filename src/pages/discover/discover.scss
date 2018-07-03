@@ -34,13 +34,12 @@ page-discover {
         color: #4c4c4c;
     }
     .discover-button{
-        width: 87%;
+        width: auto;
         height: 84px;
         margin-top: 15px;
-        margin-left: 25px;
-        //background-color: #ff5200;   
-        display: flex;   
-        position: relative;  
+        background-color: $white-two;
+        display: flex;
+        position: relative;
         font-family: lato;
     }
 
@@ -112,20 +111,13 @@ page-discover {
     tspan{
       font-family: Lato;
     }
-    .discover-button:first-child {
-        background-color: #ff5200;
+    .discover-button img{
+        background-color: $white-two;
+        margin-left: auto;
+        margin-right:auto;
+        width:90%;
+        object-fit: contain;
     }
 
-    .discover-button:nth-child(2) {
-        background-color: #00b39f;
-    }
-
-    .discover-button:nth-child(3) {
-        background-color: #ff9e00;
-    }
-
-    .discover-button:nth-child(4) {
-        background-color: #59a9e4;
-    }
 
 }

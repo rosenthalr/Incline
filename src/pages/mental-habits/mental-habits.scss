@@ -12,7 +12,7 @@ page-mental-habits {
     //     align-items: center;
     //     flex-flow: nowrap;
     // }
-    
+
     .icons{
         font-size: 30px;
         padding-right: 13px;
@@ -90,15 +90,16 @@ page-mental-habits {
     .toolbar-background {
         background-color: $tealish;
     }
-   
+
     .imgContainer {
         background-image: url('../assets/svgs/Mental-Health-Category.svg');
         height: 140px;
         background-color: rgba(0, 179, 159, 0.5);
-        background-position: center; 
+        background-position: center;
         background-position: top;
+        background-size: cover;
     }
-   
+
     .descriptionContainer{
         height: 80px;
         border-bottom: solid 1px rgba(151,151,151,.28);
@@ -119,7 +120,7 @@ page-mental-habits {
         font-weight: bold;
         color: $white-two;
     }
-   
+
     // .bar-buttons,
     // .toolbar-title,
     // .habit-landing-modal-button {

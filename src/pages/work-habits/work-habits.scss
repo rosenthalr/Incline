@@ -86,13 +86,14 @@ page-work-habits {
     .toolbar-background {
         background-color: #ff5200;
     }
-   
+
     .imgContainer {
         background-image: url('../assets/svgs/Productivity-Category.svg');
         height: 140px;
         background-color: #feb692;
         background-repeat: no-repeat;
-        background-position: center; 
+        background-position: center;
+        background-size: cover;
     }
     .descriptionContainer{
         height: 80px;
