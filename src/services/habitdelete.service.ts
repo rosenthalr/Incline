@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class HabitDeleteService {
 
-  public apiUrl = 'https://goals.digitalstudio.io/habitaction';
+  public apiUrl = 'https://ec2-35-168-103-149.compute-1.amazonaws.com/habitaction';
 
 
 

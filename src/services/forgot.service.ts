@@ -22,6 +22,6 @@ export class ForgotService {
     let body = JSON.stringify(user);
     // return this.http.post('http://localhost:7000/forgot', body, httpOptions);
     //return this.http.post('http://localhost:7000/forgot', body, httpOptions);
-    return this.http.post('https://goals.digitalstudio.io/forgot', body, httpOptions);
+    return this.http.post('https://ec2-35-168-103-149.compute-1.amazonaws.com/forgot', body, httpOptions);
   }
 }
