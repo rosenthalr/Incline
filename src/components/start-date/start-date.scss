@@ -23,7 +23,7 @@ start-date{
         margin-top:20.8%;
         margin-left:auto;
         margin-right:auto;
-        p{
+        p {
           margin-left: auto;
           margin-right: auto;
         }
@@ -38,6 +38,11 @@ start-date{
       left: 0px;
       top: 236px;
       letter-spacing: normal;
+    }
+    .helper-arrow {
+      position: absolute;
+      right: 68px;
+      top: 264px;
     }
     habit-progress{
       position: absolute;
