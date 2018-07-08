@@ -69,35 +69,39 @@ export class ReminderComponent implements OnInit {
         var now = moment();
 
         // Create notification here
-        this.platform.ready().then(() => {
-          console.log(data);
-    
-          var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
-          console.log(startDate + ": this is startDate");
-          console.log(firstReminder + ": this is firstReminder");
-          console.log(data.customId + ": THIS IS CUSTOM ID");
-    
-          let notification = {
-            id: data.customId,
-            title: data.title,
-            text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
-            firstAt: firstReminder,
-            every: 'day'
-          };
-          console.log(notification + ": notification");
-          this.notifications.schedule(notification);
-    
-          //Setting the 21 days notification
-    
-          // let reminderNotification = {
-          //   id: data.customId,
-          //   title: '21 day alert for ' + data.title,
-          //   text: 'This is your 21st day tracking this habit: ' + data.title,
-          //   firstAt: data.targetEnd,
-          // };
-          // this.notifications.schedule(reminderNotification);
-                
-          });
+        var startDate = data.startDate;
+        var reminder = data.reminder;
+        var reminderHour = moment(reminder).get('hour');
+        var reminderMinute = moment(reminder).get('minute');
+        var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+        console.log(startDate + ": this is startDate");
+        console.log(firstReminder + ": this is firstReminder");
+       
+          
+            this.platform.ready().then(() => {
+          
+          
+            let reminderNotification = {
+              // id: 120,
+              title: data.title,
+              text: 'Have you done this habit yet today? Update in the app!',
+              at: firstReminder,
+              // every: 1
+            };
+      
+            this.notifications.schedule(reminderNotification);
+          
+            //   //Setting the 21 days notification
+          
+            //   // let reminderNotification = {
+            //   //   id: data.customId,
+            //   //   title: '21 day alert for ' + data.title,
+            //   //   text: 'This is your 21st day tracking this habit: ' + data.title,
+            //   //   firstAt: data.targetEnd,
+            //   // };
+            //   // this.notifications.schedule(reminderNotification);
+                    
+              });
       
         this.goToHabitLandingPage.emit();
       },

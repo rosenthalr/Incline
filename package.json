@@ -46,7 +46,8 @@
     "npm": "^6.1.0",
     "rxjs": "5.5.7",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.20"
+    "zone.js": "0.8.20",
+    "de.appplant.cordova.plugin.local-notification": "~0.8.5"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.8",
@@ -61,7 +62,8 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-screen-orientation": {}
+      "cordova-plugin-screen-orientation": {},
+      "de.appplant.cordova.plugin.local-notification": {}
     },
     "platforms": [
       "android",

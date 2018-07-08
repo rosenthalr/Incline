@@ -79,9 +79,39 @@ goToHabitLandingPage(){
       var reminder = data.reminder;
       var reminderHour = moment(reminder).get('hour');
       var reminderMinute = moment(reminder).get('minute');
-      var now = moment();
-
-
+      var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+      console.log(startDate + ": this is startDate");
+      console.log(firstReminder + ": this is firstReminder");
+     
+        var now = new Date().getTime(),
+        _10_sec_from_now = new Date(now + 10*1000);
+        console.log("notification");
+        
+          this.platform.ready().then(() => {
+        
+        
+          let reminderNotification = {
+            // id: 120,
+            title: data.title,
+            text: 'Have you done this habit yet today? Update in the app!',
+            at: firstReminder,
+            // every: 1
+          };
+    
+          this.notifications.schedule(reminderNotification);
+        
+          //   //Setting the 21 days notification
+        
+          //   // let reminderNotification = {
+          //   //   id: data.customId,
+          //   //   title: '21 day alert for ' + data.title,
+          //   //   text: 'This is your 21st day tracking this habit: ' + data.title,
+          //   //   firstAt: data.targetEnd,
+          //   // };
+          //   // this.notifications.schedule(reminderNotification);
+                  
+            });
+    
     // this.platform.ready().then(() => {
 
     //   var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
