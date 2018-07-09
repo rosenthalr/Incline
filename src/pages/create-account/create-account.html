@@ -45,7 +45,7 @@
       required  #email="ngModel"  ng-model-options="{ updateOn: 'blur' }" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[com]+$"> </ion-input>
 
   </ion-item>
-  <ion-item no-lines class="error-text" [ngClass]="{hiding:(email.valid || email.pristine),show:!(email.valid || email.pristine)}" >
+  <ion-item no-lines class="error-text" [ngClass]="{hiding:(email.valid || email.pristine),show:(!(email.valid || email.pristine) || (emailError) )}" >
       Hmm...This email seems invalid.
   </ion-item>
 
@@ -80,7 +80,7 @@
 
 
   <button class="btn-create" [ngClass]="{'active': firstname.valid && lastname.valid && email.valid && password.valid && confirmPassword.valid }"
-  [disabled]="firstname.invalid || lastname.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" (click)="goToSuccessPage();" ion-button> CREATE</button>
+  [disabled]="firstname.invalid || lastname.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" ion-button> CREATE</button>
 
 
 
