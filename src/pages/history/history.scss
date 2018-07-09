@@ -25,6 +25,7 @@ page-history {
     }
     .background{
       background-image: url('../assets/svgs/VIZ - Pre-Achievements v3.svg');
+      background-size: cover;
       position: absolute;
       top:0;
       left:0;
@@ -39,7 +40,7 @@ page-history {
         color: $cerulean;
         width: 83.7%;
         text-align: left;
-        margin-top: 105px;
+        // margin-top: 105px;
         margin-left: 11.5%;
     }
     .No-Achieve-Description{
