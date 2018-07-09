@@ -25,7 +25,7 @@ page-create-account {
         opacity: 0.49;
         border-radius: 0px;
         background-color: $cerulean;
-        margin-top: 7%;
+        margin-top: 13%;
       }
 
       .btn-create.active{
@@ -39,7 +39,9 @@ page-create-account {
         height: 48px;
         font-family: Lato;
       }
-
+      .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input{
+        margin-bottom:0px;
+      }
       .error-text{
         font-size: 12px;
         border-style: none;
@@ -58,12 +60,12 @@ page-create-account {
           color:$error-red !important;
         }
       }
-      
+
       .input-wrapper{
         height:auto;
       }
 
-      
+
       .input-group {
         width:64.2667%;
         height: 65px;
