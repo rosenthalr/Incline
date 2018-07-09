@@ -20,7 +20,7 @@
   <ion-item class="input-group">
     <ion-label floating class="label">First Name</ion-label>
     <ion-input type="text" name="firstname" [ngModel]="user.firstname" [ngModelOptions]="{ updateOn: 'blur' }"
-      required minlength="2" #firstname="ngModel"> </ion-input>
+      required minlength="1" #firstname="ngModel"> </ion-input>
 
   </ion-item>
   <ion-item no-lines class="error-text" [ngClass]="{hiding:(firstname.valid || firstname.pristine),show:!(firstname.valid || firstname.pristine)}" >
@@ -30,7 +30,7 @@
   <ion-item class="input-group">
       <ion-label floating class="label">Last Name</ion-label>
       <ion-input type="text"  name="lastname" [ngModel]="user.lastname" [ngModelOptions] = "{ updateOn: 'blur' }"
-        required minlength="2" #lastname="ngModel"> </ion-input>
+        required minlength="1" #lastname="ngModel"> </ion-input>
 
     </ion-item>
     <ion-item no-lines class="error-text" [ngClass]="{hiding:(lastname.valid || lastname.pristine),show:!(lastname.valid || lastname.pristine)}">
