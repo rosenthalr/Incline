@@ -65,10 +65,12 @@ export class CreateAccountPage implements OnInit {
           this.loginService.login(model).subscribe(
             data=>{
               console.log("User Logged In");
+              this.goToSuccessPage();
             }
           )
         },
         error => {
+          this.emailError = true;
           console.error(error);
         }
       )
