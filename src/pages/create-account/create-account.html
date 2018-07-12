@@ -20,7 +20,7 @@
   <ion-item class="input-group">
     <ion-label floating class="label">First Name</ion-label>
     <ion-input type="text" name="firstname" [ngModel]="user.firstname" [ngModelOptions]="{ updateOn: 'blur' }"
-      required minlength="2" #firstname="ngModel"> </ion-input>
+      required minlength="1" #firstname="ngModel"> </ion-input>
 
   </ion-item>
   <ion-item no-lines class="error-text" [ngClass]="{hiding:(firstname.valid || firstname.pristine),show:!(firstname.valid || firstname.pristine)}" >
@@ -30,7 +30,7 @@
   <ion-item class="input-group">
       <ion-label floating class="label">Last Name</ion-label>
       <ion-input type="text"  name="lastname" [ngModel]="user.lastname" [ngModelOptions] = "{ updateOn: 'blur' }"
-        required minlength="2" #lastname="ngModel"> </ion-input>
+        required minlength="1" #lastname="ngModel"> </ion-input>
 
     </ion-item>
     <ion-item no-lines class="error-text" [ngClass]="{hiding:(lastname.valid || lastname.pristine),show:!(lastname.valid || lastname.pristine)}">
@@ -45,7 +45,7 @@
       required  #email="ngModel"  ng-model-options="{ updateOn: 'blur' }" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[com]+$"> </ion-input>
 
   </ion-item>
-  <ion-item no-lines class="error-text" [ngClass]="{hiding:(email.valid || email.pristine),show:!(email.valid || email.pristine)}" >
+  <ion-item no-lines class="error-text" [ngClass]="{hiding:(email.valid || email.pristine),show:(!(email.valid || email.pristine) || (emailError) )}" >
       Hmm...This email seems invalid.
   </ion-item>
 
@@ -80,7 +80,7 @@
 
 
   <button class="btn-create" [ngClass]="{'active': firstname.valid && lastname.valid && email.valid && password.valid && confirmPassword.valid }"
-  [disabled]="firstname.invalid || lastname.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" (click)="goToSuccessPage();" ion-button> CREATE</button>
+  [disabled]="firstname.invalid || lastname.invalid || email.invalid || password.invalid || confirmPassword.invalid"  type="submit" ion-button> CREATE</button>
 
 
 

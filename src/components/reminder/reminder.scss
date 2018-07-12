@@ -35,10 +35,16 @@ reminder{
     .reminder-body{
         height: calc(100vh - 28vh - 186px);
     }
-   
+
 
     .reminder-input-group, .reminder-target {
         border-top-color: transparent !important;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:auto;
+        bottom:46%;
+        width:85%;
     }
     .reminder-back {
         display:flex;
@@ -97,7 +103,10 @@ reminder{
         margin:0;
         font-family: Lato;
         font-size: 15px;
-        color: $brownish-grey;
+        color: $brownish-grey !important;
+    }
+    .item-input-has-focus .label-ios[stacked], .input-has-focus .label-ios[stacked], .item-input-has-focus .label-ios[floating], .input-has-focus .label-ios[floating] {
+        color: $brownish-grey !important;
     }
     .reminder-container > .item-ios {
         padding-left:0;
@@ -105,9 +114,13 @@ reminder{
 
     .reminder-input-group{
         border-bottom: 2px solid $grey;
+
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom:  solid 2px #9b9b9b;
     }
     .reminder-input-group.input-has-focus {
-        border-bottom: 2px solid $cerulean;
+        border-bottom: 2px solid #9b9b9b;
     }
     .reminder-next{
         margin-bottom: 0px;
@@ -138,9 +151,16 @@ reminder{
     }
     .date-value {
         padding-top: 4px;
-        padding-bottom: 4px !important;
-        font-size: 14px !important;
-        color: black;
+        padding-bottom: 0px !important;
+        font-family: Lato;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
     }
     .reminder-label{
     margin-top: 20px !important;
@@ -151,6 +171,8 @@ reminder{
     }
     ion-item {
         padding-left: 0 !important;
+        min-height: 76px !important;
+        padding-top: 3px !important;
     }
     .footer {
         font-family: Lato;
@@ -163,8 +185,10 @@ reminder{
         text-align: left;
         color: #4a4a4a;
         position: absolute;
-        bottom: 60px;
+        bottom: 100px;
         width: 81.6%;
     }
-    
+    ion-backdrop {
+        opacity: 0;
+    }
 }

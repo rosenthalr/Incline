@@ -1,6 +1,6 @@
 export const workHabits = [
     {
-      "habit": "Get out of bed on your first alarm",
+      "habit": "Don't snooze your alarm",
       "description": "The early bird gets the worm",
       "reminder": 7,
       "currentColor": "red",
@@ -9,27 +9,27 @@ export const workHabits = [
     },
     {
       "habit": "Visualize your next day",
-      "description": "A surefire was to keep uncertainty at bay!",
+      "description": "A surefire way to keep uncertainty at bay",
       "reminder": 21,
       "currentColor": "red",
       "habitCategory":"Productivity",
       icon: "clipboard"
     },
     {
-      "habit": "Pick 3 priorities for the day",
-      "description": "Create some structure, discipline, and focus in your life",
-      "reminder": 9,
-      "currentColor": "red",
-      "habitCategory":"Productivity",
-      icon: "mail"
-    },
-    {
       "habit": "Check off your to-do list",
-      "description": "Those tasks aren't going to check off themselves",
+      "description": "Tasks aren't going to check off themselves",
       "reminder": 19,
       "currentColor": "red",
       "habitCategory":"Productivity",
       icon: "hand"
+    },
+    {
+      "habit": "Take a lunch break",
+      "description": "Take that well deserved break",
+      "reminder": 9,
+      "currentColor": "red",
+      "habitCategory":"Productivity",
+      icon: "mail"
     }
 
   ]
@@ -37,7 +37,7 @@ export const workHabits = [
   export const mentalHabits = [
     {
       "habit": "Meditate",
-      "description": "Take some time to focus on you.",
+      "description": "Take some time to focus on you",
       "reminder": 7,
       "currentColor": "tealish",
       "habitCategory":"Mental Wellness",
@@ -45,7 +45,7 @@ export const workHabits = [
     },
     {
       "habit": "Go to sleep without a device",
-      "description": "Unplug and unwind.",
+      "description": "Unplug and unwind",
       "reminder": 21,
       "currentColor": "tealish",
       "habitCategory":"Mental Wellness",
@@ -53,7 +53,7 @@ export const workHabits = [
     },
     {
       "habit": "Get 8 hours of sleep",
-      "description": "Kick back and drift into dream world.",
+      "description": "Kick back and drift into dream world",
       "reminder": 21,
       "currentColor": "tealish",
       "habitCategory":"Mental Wellness",
@@ -61,7 +61,7 @@ export const workHabits = [
     },
     {
       "habit": "Read before going to bed",
-      "description": "Distract your mind from those daily stresses.",
+      "description": "Distract your mind from those daily stresses",
       "reminder": 19,
       "currentColor": "tealish",
       "habitCategory":"Mental Wellness",
@@ -73,7 +73,7 @@ export const workHabits = [
   export const physicalHabits = [
     {
       "habit": "Drink 64 ounces of water",
-      "description": "Motivate, hydrate feel great.",
+      "description": "Motivate, hydrate, feel great",
       "reminder": 7,
       "currentColor": "yellow-productivity",
       "habitCategory":"Physical Health",
@@ -81,7 +81,7 @@ export const workHabits = [
     },
     {
       "habit": "Do 30 minutes of exercise",
-      "description": "No matter how slow you go, you're still lapping everyone on the couch.",
+      "description": "30 minutes of sweat, 24 hours of energy",
       "reminder": 6,
       "currentColor": "yellow-productivity",
       "habitCategory":"Physical Health",
@@ -89,15 +89,15 @@ export const workHabits = [
     },
     {
       "habit": "Stretch for 20 minutes",
-      "description": "Keep those muscles flexible, strong, and healthy for the road ahead.",
+      "description": "Keep those muscles flexible",
       "reminder": 7,
       "currentColor": "yellow-productivity",
       "habitCategory":"Physical Health",
       icon: "move"
     },
     {
-      "habit": "Eat vegetables with dinner",
-      "description": "Healthy is not a size, it's a lifestyle.",
+      "habit": "Eat veggies with dinner",
+      "description": "Healthy is not a size, it’s a lifestyle",
       "reminder": 19,
       "currentColor": "yellow-productivity",
       "habitCategory":"Physical Health",
@@ -110,7 +110,7 @@ export const workHabits = [
   export const basicHabits = [
     {
       "habit": "Eat breakfast",
-      "description": "give yourself the fuel to start firing on all cylinders.",
+      "description": "Fuel up for a great day",
       "reminder": 7,
       "currentColor": "dark-sky-blue",
       "habitCategory":"The Basics",
@@ -118,7 +118,7 @@ export const workHabits = [
     },
     {
       "habit": "Read the news",
-      "description": "#BlessThePress",
+      "description": "Keep your day “fake news” free",
       "reminder": 8,
       "currentColor": "dark-sky-blue",
       "habitCategory":"The Basics",
@@ -126,7 +126,7 @@ export const workHabits = [
     },
     {
       "habit": "Make your bed",
-      "description": "Accomplish that first task and set yourself up for success.",
+      "description": "Tuck in for a quick win",
       "reminder": 7,
       "currentColor": "dark-sky-blue",
       "habitCategory":"The Basics",
@@ -134,7 +134,7 @@ export const workHabits = [
     },
     {
       "habit": "Take your vitamins",
-      "description": "Your insurance policy to getting the nutrients you need.",
+      "description": "An apple a day is only step one",
       "reminder": 7,
       "currentColor": "dark-sky-blue",
       "habitCategory":"The Basics",

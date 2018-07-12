@@ -34,7 +34,7 @@ export class MyApp {
         statusBar.overlaysWebView(true);
         statusBar.styleLightContent();
         statusBar.backgroundColorByName('white');
-        //screenOrientation.lock(screenOrientation.ORIENTATIONS.PORTRAIT);
+        screenOrientation.lock(screenOrientation.ORIENTATIONS.PORTRAIT);
       }
 
       //let splash = modalCtrl.create(SplashPage);

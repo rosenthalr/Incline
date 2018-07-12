@@ -128,7 +128,7 @@ input {
   margin: 0 auto;
   z-index: 5;
   padding-left: 0px;
-  margin-top: -12px;
+  margin-top: -21px;
 }
 
 .floating {
@@ -208,7 +208,7 @@ input {
   border-radius: 0px;
   width: 255px;
   height: 44px;
-  background-color: $white;
+  background-color: #e6e6e6;
   margin-top: 5%;
   transition: all 500ms ease;
 }
@@ -288,11 +288,11 @@ color: $cerulean;
   top: 30px;
   left: 0px;
   width: 100%;
-  min-width: 378px;
   min-height: 270px;
   margin-top: -45px;
   background-image: url('../assets/svgs/login-screen.svg');
   background-size: cover;
+  background-position: cover;
 }
 
 .Mask {

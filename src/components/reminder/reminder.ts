@@ -2,7 +2,6 @@ import { Component,EventEmitter, Output, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
 import { HabitPostService } from '../../services/habitpost.service';
-import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Platform } from 'ionic-angular';
 import { stagger } from '@angular/animations/src/animation_metadata';
 /**
@@ -27,7 +26,7 @@ export class ReminderComponent implements OnInit {
   hasChanged: boolean = false;
   formattedReminder: moment.Moment;
 
-  constructor(private habitPostService: HabitPostService, private platform: Platform, private notifications: LocalNotifications){}
+  constructor(private habitPostService: HabitPostService, private platform: Platform){}
 
   ngOnInit() {
     this.reminderTime = "08:00:00.000Z";
@@ -67,37 +66,6 @@ export class ReminderComponent implements OnInit {
         var reminderHour = moment(reminder).get('hour');
         var reminderMinute = moment(reminder).get('minute');
         var now = moment();
-
-        // Create notification here
-        this.platform.ready().then(() => {
-          console.log(data);
-    
-          var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
-          console.log(startDate + ": this is startDate");
-          console.log(firstReminder + ": this is firstReminder");
-          console.log(data.customId + ": THIS IS CUSTOM ID");
-    
-          let notification = {
-            id: data.customId,
-            title: data.title,
-            text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
-            firstAt: firstReminder,
-            every: 'day'
-          };
-          console.log(notification + ": notification");
-          this.notifications.schedule(notification);
-    
-          //Setting the 21 days notification
-    
-          // let reminderNotification = {
-          //   id: data.customId,
-          //   title: '21 day alert for ' + data.title,
-          //   text: 'This is your 21st day tracking this habit: ' + data.title,
-          //   firstAt: data.targetEnd,
-          // };
-          // this.notifications.schedule(reminderNotification);
-                
-          });
       
         this.goToHabitLandingPage.emit();
       },

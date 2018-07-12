@@ -8,6 +8,7 @@ import {
   NavParams,
   ModalOptions,
   Content,
+  ActionSheetController
 } from 'ionic-angular';
 import {
   TestDashboardPage
@@ -38,9 +39,6 @@ import {
   showDetails,
 } from './habit-landing.animations';
 import * as moment from 'moment';
-import {
-  LocalNotifications
-} from '@ionic-native/local-notifications';
 import {
   Platform
 } from 'ionic-angular';
@@ -90,7 +88,7 @@ export class HabitLandingPage {
     private modal: ModalController,
     public navParams: NavParams,
     private platform: Platform,
-    private notifications: LocalNotifications
+    public actionSheetCtrl: ActionSheetController
   ) {}
 
   createNewPage() {
@@ -249,40 +247,7 @@ export class HabitLandingPage {
   }
 
 
-  resetNotification(habit) {
-    let today = moment().startOf('day');
-
-    this.platform.ready().then(() => {
-
-      var newStartDate = moment(habit.startDate).toISOString();
-      var reminder = habit.reminder;
-      var reminderHour = moment(reminder).get('hour');
-      var reminderMinute = moment(reminder).get('minute');
-      var firstReminder = moment(newStartDate).set({
-        'hour': reminderHour,
-        'minute': reminderMinute
-      }).toDate();
-
-      console.log(newStartDate + ": this is newStartDate");
-      if (today.isSame(moment(habit.updatedAt), 'days')) {
-        console.log("in today is same as updated");
-        this.notifications.cancel(habit._id);
-
-        let notification = {
-          id: habit._id,
-          title: 'New Alert ' + habit.title,
-          text: 'This is a new alert ' + habit.title,
-          firstAt: firstReminder,
-          every: 'minute'
-        };
-        //make sure to add a day from today
-        console.log(notification + ": notification");
-        this.notifications.schedule(notification);
-
-      }
-    });
-  }
-
+  
 
   increment(habit) {
     let today = moment().startOf('day');
@@ -341,42 +306,67 @@ export class HabitLandingPage {
     )
   }
 
-  deleteHabit(habit) {
-    if (habit.longestStreakCounter) {
-      habit.activeHabit = false
-      this.habitPutService.habitput(habit).subscribe(
-        data => {
-          habit.animating = false;
-          this.animating = false;
-          this.showDetails = 'hidden';
-          this.habits.splice(this.habits.indexOf(habit), 1);
-          this.loadHabits();
-          this.platform.ready().then(() => {
+  deleteHabit(habit){
+    var blah = habit.customId;
+      let actionSheet = this.actionSheetCtrl.create({
+        enableBackdropDismiss: true,
+        title: 'Are you sure you want to delete this habit?',
+        cssClass: 'action-sheets-delete',
+        buttons: [
+          {
+            text: 'Delete',
+            cssClass: 'DeleteButton',
+            handler: () => {
+              if (habit.longestStreakCounter>21) {
+                habit.activeHabit = false
+                this.habitPutService.habitput(habit).subscribe(
+                  data => {
+                    habit.animating = false;
+                    this.animating = false;
+                    this.showDetails = 'hidden';
+                    this.habits.splice(this.habits.indexOf(habit), 1);
+                    this.loadHabits();
+                    this.platform.ready().then(() => {
 
-          })
-        }, error => {
-          console.error(error);
-        }
-      )
-    }
-    this.habitDeleteService.habitdelete(habit).subscribe(
-      data => {
-        habit.animating = false;
-        this.animating = false;
-        this.showDetails = 'hidden';
-        this.habits.splice(this.habits.indexOf(habit), 1);
-        this.loadHabits();
-        this.platform.ready().then(() => {
+                    })
+                  }, error => {
+                    console.error(error);
+                  }
+                )
+              }
+              else{
+                this.habitDeleteService.habitdelete(habit).subscribe(
+                  data => {
+                    habit.animating = false;
+                    this.animating = false;
+                    this.showDetails = 'hidden';
+                    this.habits.splice(this.habits.indexOf(habit), 1);
+                    this.loadHabits();
+                    this.platform.ready().then(() => {
 
-        })
-
-      },
-      error => {
-        console.error(error);
-      }
-    )
-
+                    })
+                  },
+                  error => {
+                    console.error(error);
+                  }
+                )
+              }
+            }
+          },
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            cssClass: 'CancelButton',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+        ]
+      });
+      actionSheet.present();
   }
+
+
   animationTrigger(habit) {
     if(habit.animating){
       this.content.scrollToTop;

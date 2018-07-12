@@ -32,7 +32,7 @@ page-work-habits {
 
     .habitTitle{
         font-family: Lato;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
@@ -40,7 +40,7 @@ page-work-habits {
         letter-spacing: 0.1px;
         text-align: left;
         color: #4a4a4a;
-        width: 250px;
+        width: 275px;
         padding-bottom: 0px;
         margin-bottom: 3px;
     }
@@ -55,7 +55,7 @@ page-work-habits {
         letter-spacing: normal;
         text-align: left;
         color: #ff5200;
-        margin-left: 19px !important;
+        margin-left: 60px !important;
         margin-bottom: 25px !important;
         padding: 0px 0px;
         height: auto;
@@ -70,7 +70,7 @@ page-work-habits {
 
     .habitDescription{
         font-family: Lato;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
@@ -80,26 +80,27 @@ page-work-habits {
         color: #9b9b9b;
         padding: 0px;
         margin: 0px;
+        width: 260px;
     }
 
     .toolbar-background {
         background-color: #ff5200;
     }
-   
+
     .imgContainer {
         background-image: url('../assets/svgs/Productivity-Category.svg');
         height: 140px;
         background-color: #feb692;
         background-repeat: no-repeat;
-        background-position: center; 
+        background-position: center;
+        background-size: cover;
     }
-   
     .descriptionContainer{
-        height: 85px;
+        height: 80px;
         border-bottom: solid 1px rgba(151,151,151,.28);
-        padding: 15px 33px 15px 33px;
+        padding: 20px 33px 20px 33px;
         font-family: Lato;
-        font-size: 14px;
+        font-size: 17px;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;

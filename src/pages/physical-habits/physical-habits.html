@@ -19,10 +19,10 @@
 
 <ion-content padding>
  
-  <div class="descriptionContainer">Getting in shape isn’t done from the couch. Let us be your coach, personal trainer, and biggest fan in and out of the gym.
+  <div class="descriptionContainer">Let us be your coach, personal trainer, and biggest fan in and out of the gym.
     </div>
   <div class="habitItem" *ngFor="let physicalHabit of physicalHabits">
-      <ion-icon class="icons" [name]="physicalHabit.icon"></ion-icon> 
+      <!-- <ion-icon class="icons" [name]="physicalHabit.icon"></ion-icon>  -->
     <div class="habit">
     <h1 class="habitTitle">{{ physicalHabit.habit }}</h1>
     <p class="habitDescription">{{ physicalHabit.description }}</p>

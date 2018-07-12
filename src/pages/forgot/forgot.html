@@ -22,14 +22,25 @@
                         </ion-item>
                           <ion-item [ngClass]="{shown:!emailError,error:emailError}" class="Error-Text">Hmm...We don't have an account for this email.</ion-item>
                       </div>
-                  
-                      <button class="btn-reset" type="submit" [ngClass]="{'buttonActive': active }" ion-button>CONTINUE</button>
+                      <div class="imgDiv">
+                          <img class="imgContainer" src="../assets/imgs/group-2.png">
+                      <!-- <div class="imgContainer" src="../www/assets/imgs/group-2.png"></div> -->
+                      </div>
+                      <button class="btn-reset" type="submit" [ngClass]="{'buttonActive': active }" ion-button>SUBMIT</button>
+                      <div class="newUser">
+                          <div class="newUser1">Are you a new user? </div>
+                          <div class="newUser2">
+                            <a class="signUp" (click)="goToCreateAccountPage()">Sign up for free</a>
+                          </div>
+                        </div>
                      
 
               <!--      <button class="btn-create" [ngClass]="{email.valid}" 
                     [disabled]="email.invalid"  type="submit" (click)="goToForgotPage();" ion-button> Submit PW Reset</button>
               -->   
-                </form>
+                </form> 
               </ion-list>
+              <!-- <div class="imgContainer" src="../www/assets/imgs/group-2@3x.png"></div> -->
+              
             </ion-content>
     
