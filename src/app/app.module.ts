@@ -33,10 +33,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ComponentsModule} from '../components/components.module';
 
 
-// Import Local Notifications
-import { LocalNotifications } from '@ionic-native/local-notifications';
-// import { LocalNotifications } from '../../node_modules/de.appplant.cordova.plugin.local-notification';
-
 // Import Services
 import { LoginService } from "../services/login.service";
 import { EqualValidator } from '../pages/create-account/equal-validator.directive';
@@ -118,7 +114,6 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     SplashScreen,
     StatusBar,
     ScreenOrientation,
-    LocalNotifications,
     ForgotService,
     LogoutService,
     ResetService,
@@ -127,7 +122,6 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     HabitGetService,
     HabitDeleteService,
     HabitPutService,
-    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HabitDeleteService,
   ]
