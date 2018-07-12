@@ -12,7 +12,7 @@ const httpOptions = {
 @Injectable()
 export class ResetService {
   // public apiUrl = 'https://ec2-35-168-103-149.compute-1.amazonaws.com/moreReset';
-  public apiUrl = 'https://goals.digitalstudio.io/moreResest';
+  public apiUrl = 'https://goals.digitalstudio.io/moreReset';
   
   
 
