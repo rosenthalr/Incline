@@ -40,9 +40,6 @@ import {
 } from './habit-landing.animations';
 import * as moment from 'moment';
 import {
-  LocalNotifications
-} from '@ionic-native/local-notifications';
-import {
   Platform
 } from 'ionic-angular';
 import {
@@ -91,7 +88,6 @@ export class HabitLandingPage {
     private modal: ModalController,
     public navParams: NavParams,
     private platform: Platform,
-    private notifications: LocalNotifications,
     public actionSheetCtrl: ActionSheetController
   ) {}
 
@@ -251,40 +247,7 @@ export class HabitLandingPage {
   }
 
 
-  resetNotification(habit) {
-    let today = moment().startOf('day');
-
-    this.platform.ready().then(() => {
-
-      var newStartDate = moment(habit.startDate).toISOString();
-      var reminder = habit.reminder;
-      var reminderHour = moment(reminder).get('hour');
-      var reminderMinute = moment(reminder).get('minute');
-      var firstReminder = moment(newStartDate).set({
-        'hour': reminderHour,
-        'minute': reminderMinute
-      }).toDate();
-
-      console.log(newStartDate + ": this is newStartDate");
-      if (today.isSame(moment(habit.updatedAt), 'days')) {
-        console.log("in today is same as updated");
-        this.notifications.cancel(habit._id);
-
-        let notification = {
-          id: habit._id,
-          title: 'New Alert ' + habit.title,
-          text: 'This is a new alert ' + habit.title,
-          firstAt: firstReminder,
-          every: 'minute'
-        };
-        //make sure to add a day from today
-        console.log(notification + ": notification");
-        this.notifications.schedule(notification);
-
-      }
-    });
-  }
-
+  
 
   increment(habit) {
     let today = moment().startOf('day');

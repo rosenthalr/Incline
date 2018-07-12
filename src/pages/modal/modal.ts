@@ -4,7 +4,6 @@ import { Slides } from 'ionic-angular/components/slides/slides';
 import { TabsPage } from '../tabs/tabs';
 import * as moment from 'moment';
 import { HabitPostService } from '../../services/habitpost.service';
-import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Platform } from 'ionic-angular';
 /**
  * Generated class for the ModalPage page.
@@ -47,7 +46,7 @@ export class ModalPage implements OnInit {
     console.log(this.name+ 2);
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private platform: Platform,
-  private notifications: LocalNotifications, private habitPostService: HabitPostService) {
+   private habitPostService: HabitPostService) {
     this.name = this.navParams.get('habit');
   }
   closeModal(){
@@ -111,31 +110,6 @@ export class ModalPage implements OnInit {
         var reminderMinute = moment(reminder).get('minute');
         var now = moment();
 
-      this.platform.ready().then(() => {
-        var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
-
-        let notification = {
-          // id: data._id,
-          title: 'Alert for ' + data.title,
-          text: 'This is an alert for ' + data.title,
-          firstAt: now,
-          every: 'minute'
-        };
-        this.notifications.schedule(notification);
-
-        //Setting the 21 days notification
-        let reminderNotification = {
-          id: data._id,
-          title: '21 day alert for ' + data.title,
-          text: 'This is your 21st day tracking this habit: ' + data.title,
-          firstAt: data.targetEnd,
-        };
-        this.notifications.schedule(reminderNotification);
-
-
-        this.navCtrl.push(TabsPage);
-
-        });
 
       }
     )
