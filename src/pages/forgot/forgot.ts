@@ -40,7 +40,7 @@ export class ForgotPage {
     this.navCtrl.push(ForgotPage);
   }
   goToLogin(){
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.pop();
   }
   checkIfEmailEmpty(){
     if(this.email == ''){
