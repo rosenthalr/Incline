@@ -22,8 +22,8 @@ export class LogoutService {
   logout(user) {
     let body = JSON.stringify(user);
 
-    // return this.http.post('http://localhost:7000/logout', body, httpOptions);
-    return this.http.post<any>('https://goals.digitalstudio.io/logout', user, { withCredentials: true });
+    return this.http.post('http://localhost:7000/logout', body, httpOptions);
+    // return this.http.post<any>('https://goals.digitalstudio.io/logout', user, { withCredentials: true });
     
     // return this.http.post('https://ec2-35-168-103-149.compute-1.amazonaws.com/logout', body, httpOptions);
   }

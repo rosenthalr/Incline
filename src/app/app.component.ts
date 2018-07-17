@@ -19,12 +19,13 @@ import { TestDashboardPage } from '../pages/test-dashboard/test-dashboard';
 import { HabitCompletePage } from '../pages/habit-complete/habit-complete';
 import { HabitRenewPage } from '../pages/habit-renew/habit-renew';
 import { SplashPage } from '../pages/splash/splash';
+import { NotificationsPage } from '../pages/notifications/notifications';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = NotificationsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,screenOrientation:ScreenOrientation, modalCtrl: ModalController) {
     platform.ready().then(() => {
