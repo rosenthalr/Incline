@@ -117,8 +117,8 @@ console.log("in modal.ts");
           id: data.customId,
           title: data.title,
           text: 'Local notification text',
-          at: now,
-          every: 'minute'
+          at: firstReminder,
+          every: 'day'
         };
 
 
