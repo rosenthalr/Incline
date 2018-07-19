@@ -53,13 +53,13 @@ export class ReminderComponent implements OnInit {
       updatedAt: today.toDate(),
       title: localStorage.getItem("basichabit"),
       startDate: localStorage.getItem("basicstartdate"),
-      targetEnd: localStorage.getItem("basictargetdate"),  
+      targetEnd: localStorage.getItem("basictargetdate"),
       reminder: moment(this.reminderTime, "HH:mm:ss.SSSZ").toDate(),
       streakCounter: 0,
       habitCategory: localStorage.getItem('habitCategory'),
       activehabit: true,
     };
-        
+
     this.habitPostService.habitpost(habit).subscribe(
       data => {
         console.log("before post service");
@@ -69,8 +69,8 @@ export class ReminderComponent implements OnInit {
         var reminderMinute = moment(reminder).get('minute');
         var now = moment();
         var firstReminder = moment(startDate).set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
-        
-    
+
+
           let notification = {
             id: data.customId,
             title: data.title,
@@ -89,12 +89,12 @@ export class ReminderComponent implements OnInit {
           // };
 
 
-          console.log("notification to be scheduled: ");
+          console.log(`notification to be scheduled: {$firstReminder}`);
           if(this.platform.is('cordova')){
-            this.localNotifications.schedule(notification);           
+            this.localNotifications.schedule(notification);
           }
-        
-      
+
+
         this.goToHabitLandingPage.emit();
       },
       error => {
