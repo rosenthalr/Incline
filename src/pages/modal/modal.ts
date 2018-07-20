@@ -113,6 +113,7 @@ export class ModalPage implements OnInit {
 
       }
     )
+    //this.navCtrl.pop();
     this.navCtrl.push(TabsPage);
   }
 
