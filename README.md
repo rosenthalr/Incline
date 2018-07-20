@@ -1,10 +1,5 @@
-Goals Mobile Project
+Incline
 =====================
-An Ionic Angular project containing features for the TFP C4 application. Configured for use on both iOS and Android devices. Consists of the following additional features:
-
-* Sass for stylesheets
-* Jasmine and Karma for unit tests 
-
 ## Requirements
 - [Node.js](http://nodejs.org/)
 - [XCode](https://developer.apple.com/xcode/)
