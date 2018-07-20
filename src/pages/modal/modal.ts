@@ -5,6 +5,8 @@ import { TabsPage } from '../tabs/tabs';
 import * as moment from 'moment';
 import { HabitPostService } from '../../services/habitpost.service';
 import { Platform } from 'ionic-angular';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 /**
  * Generated class for the ModalPage page.
  *
@@ -46,7 +48,7 @@ export class ModalPage implements OnInit {
     console.log(this.name+ 2);
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private platform: Platform,
-   private habitPostService: HabitPostService) {
+   private habitPostService: HabitPostService, public localNotifications: LocalNotifications) {
     this.name = this.navParams.get('habit');
   }
   closeModal(){
@@ -81,7 +83,7 @@ export class ModalPage implements OnInit {
   }
 
   goToHabitLandingPage(){
-
+console.log("in modal.ts");
     if(!this.reminder) {
       this.reminder = "08:00:00.000Z";
       this.reminder = moment.utc(this.reminder, "HH:mm:ss.SSSZ")
@@ -108,7 +110,32 @@ export class ModalPage implements OnInit {
         var reminder = data.reminder;
         var reminderHour = moment(reminder).get('hour');
         var reminderMinute = moment(reminder).get('minute');
+        var firstReminder = moment().set({'hour': reminderHour, 'minute': reminderMinute}).toDate();
+        
         var now = moment();
+        let notification = {
+          id: data.customId,
+          title: data.title,
+          text: 'Local notification text',
+          at: firstReminder,
+          every: 'day'
+        };
+
+
+        // let notification = {
+        //   // id: data.customId,
+        //   title: data.title,
+        //   text: 'Did you do your habit yet today? If so, open Incline to add it to your streak!',
+        //   // firstAt: firstReminder,
+        //   every: 'day'
+        // };
+
+
+        console.log("notification to be scheduled: ");
+        if(this.platform.is('cordova')){
+          this.localNotifications.schedule(notification);           
+        }
+      
 
 
       }

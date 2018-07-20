@@ -26,6 +26,8 @@ import { SplashPage } from '../pages/splash/splash';
 // Including http module for use on login page
 import { HttpClientModule } from '@angular/common/http';
 
+
+
 // Including Browser Animations module for animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -48,6 +50,7 @@ import { ModalCheckboxPage } from '../pages/modal-checkbox/modal-checkbox';
 import { ResetStreakModalPage } from '../pages/reset-streak-modal/reset-streak-modal';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
 
@@ -114,6 +117,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     SplashScreen,
     StatusBar,
     ScreenOrientation,
+    LocalNotifications,
     ForgotService,
     LogoutService,
     ResetService,

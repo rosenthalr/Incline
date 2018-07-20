@@ -13,9 +13,15 @@ const httpOptions = {
 export class ResetService {
   // public apiUrl = 'https://ec2-35-168-103-149.compute-1.amazonaws.com/moreReset';
   public apiUrl = 'https://goals.digitalstudio.io/moreReset';
+<<<<<<< HEAD
+
+
+
+=======
   
   
 
+>>>>>>> 1e9554a4718ee09c44119df660c6d9a85b5269f7
   // public apiUrl = ' http://localhost:7000/moreReset';
   // Inject HttpClient module into service so can make Rest API calls
   constructor(public http: HttpClient) { }

@@ -1,6 +1,14 @@
 @import "../../styles/_colors.scss";
 $transition-in:0.5s;
 page-habit-landing {
+  .add-button{
+    margin-bottom: 75%;
+  }
+  .title{
+    color: $white-two;
+    font-family: Lato;
+    text-align: center;
+  }
   .habit-landing-habits {
     height:100%;
     width:100%;
@@ -8,6 +16,10 @@ page-habit-landing {
     justify-content: center;
     align-items: center;
     flex-flow: nowrap;
+  }
+
+  .item-label-floating ion-datetime{
+    color: black;
   }
   .habit-landing-habits div{
     display: block;
@@ -30,8 +42,11 @@ page-habit-landing {
   .bar-buttons,
   .toolbar-title,
   .habit-landing-modal-button {
-    color: $white-two;
+      color: $white-two;
+      font-family: Lato;
+      text-align: center;
   }
+  
   .habit-col {
     flex: 50%;
     max-width: 50%;
@@ -214,5 +229,6 @@ page-habit-landing {
       transition: max-width $transition-in, padding $transition-in, height $transition-in, flex $transition-in;
       padding: 0px
     }
+
   }
 }
